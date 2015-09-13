@@ -7,23 +7,22 @@
   <title>Logos Project</title>
 
   <!-- CSS  -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="../bower_components/materialize/bin/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="app/assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="app/assets/css/circle.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body ng-app="app">
   <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a href="#">
-        <img src="assets/logo.jpg" height="60px" width="60px" />
+      <a href="#/home">
+        <img src="app/assets/logo.svg" class="nav-logo" height="60px" width="60px" />
       </a>
-      <a id="logo-container" href="#" class="brand-logo">
+      <a id="logo-container" href="#/home" class="brand-logo">
         <font color="#0277BD">Logos</font>Project</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#About">About</a></li>
-        <li><a href="#HowitWorks">How it Works</a></li>
         <li><a class="small waves-effect waves-light btn blue darken-3" href="#/login">Login/Register</a></li>
       </ul>
 
@@ -71,16 +70,16 @@
   <!-- SCRIPTS -->
 
   <!-- materialize css and jquery -->
-  <script src="js/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/materialize/bin/materialize.js"></script>
+  <script src="../bower_components/materialize/js/parallax.js"></script>
 
   <!-- angular -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
   <!-- angular routing -->
-  <script src="app.js"></script>
+  <script src="app/app.js"></script>
 
   <!-- angular module -->
   <!-- <script src="app.js"></script> -->

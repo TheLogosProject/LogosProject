@@ -10,13 +10,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
         // home state
         .state('home', {
             url: '/home',
-            templateUrl: 'home/home.html'
+            templateUrl: 'app/home/home.html'
         })
 
         // about page
         .state('login', {
           url: '/login',
-          templateUrl: 'login.html'
+          templateUrl: 'app/loginRegister/loginRegister.html'
+        })
+
+        .state('userLanding', {
+          // will want to be /userLanding/:id when live
+          url: '/userLanding',
+          templateUrl: 'app/userLanding/userLanding.html'
         });
 
 });
