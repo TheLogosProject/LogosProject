@@ -7,16 +7,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
 
-        // home state
         .state('home', {
             url: '/home',
             templateUrl: 'app/home/home.html'
         })
 
-        // about page
         .state('login', {
           url: '/login',
           templateUrl: 'app/loginRegister/loginRegister.html'
+        })
+
+        .state('userProfile', {
+          url: '/userProfile',
+          // will want to be /userProfile/:id when live
+          templateUrl: 'app/userProfile/userProfile.html'
         })
 
         .state('userLanding', {

@@ -35,6 +35,7 @@
   .input-field input[type=email]:focus + label {
     color: #0C61AF;
   }
+
   /* label underline focus color */
 
   textarea:focus {
