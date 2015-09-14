@@ -20,7 +20,9 @@
           </div>
 <!-- end progress chart-->
           <h5 class="center">Logos</h5>
-
+          <p class="center">
+            <a class="btn waves-effect waves-light blue darken-3" href="#/Logos" id="download-button">Enter</a>
+          </p>
           <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
       </div>
@@ -36,8 +38,9 @@
             </div>
           </div>
 <!-- end progress chart-->
-          <p>
-            <h5 class="center">Pathos</h5>
+          <h5 class="center">Pathos</h5>
+          <p class="center">
+            <a class="btn waves-effect waves-light blue darken-3" href="#/Pathos" id="download-button">Enter</a>
           </p>
           <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -55,7 +58,9 @@
           </div>
 <!-- end progress chart-->
           <h5 class="center">Ethos</h5>
-
+          <p class="center">
+            <a class="btn waves-effect waves-light blue darken-3" href="#/Ethos" id="download-button">Enter</a>
+          </p>
           <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
       </div>
@@ -68,26 +73,26 @@
   <div class="modal-content">
     <h4 class="center">Welcome User.FirstName</h4>
     <p>
-    What brought you to CrossFit?
-    <textarea class="materialize-textarea" type="text" id="textarea1" placeholder="Enter Text Here"></textarea>
-    What are your CrossFit goals?
-    <textarea class="materialize-textarea" type="text" placeholder="Enter Text Here"></textarea>
-  </div>
-  <div class="modal-footer">
+      What brought you to CrossFit?
+      <textarea class="materialize-textarea" id="textarea1" placeholder="Enter Text Here" type="text"></textarea>
+      What are your CrossFit goals?
+      <textarea class="materialize-textarea" placeholder="Enter Text Here" type="text"></textarea>
+    </div>
+    <div class="modal-footer">
       <button class="btn waves-effect waves blue darken-3 center modal-close" type="submit">Submit</button>
+    </div>
   </div>
-</div>
 
-<script>
-  $(document).ready(function() {
-    $('#modal1').openModal();
-  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal({
-      dismissible: true, // Modal can be dismissed by clicking outside of the modal
-      opacity: .5, // Opacity of modal background
-      in_duration: 300, // Transition in duration
-      out_duration: 200, // Transition out duration
-      complete: function() {} // Callback for Modal close
+  <script>
+    $(document).ready(function() {
+      $('#modal1').openModal();
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal({
+        dismissible: true, // Modal can be dismissed by clicking outside of the modal
+        opacity: .5, // Opacity of modal background
+        in_duration: 300, // Transition in duration
+        out_duration: 200, // Transition out duration
+        complete: function() {} // Callback for Modal close
+      });
     });
-  });
-</script>
+  </script>
