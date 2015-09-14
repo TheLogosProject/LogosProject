@@ -1,0 +1,5 @@
+client/bower_components
+.pdf
+.tmp
+.sass-cache
+.DS_Store
