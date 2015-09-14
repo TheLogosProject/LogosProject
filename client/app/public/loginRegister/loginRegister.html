@@ -1,0 +1,85 @@
+<div class="container">
+<div class="row center">
+  <!-- Login Form -->
+  <div class="col s6">
+    <div class="input-field col s12">
+      <h4 class="center light-blue-text text-darken-3">Login</h4>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" ng-model="email" class="validate" required>
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" ng-model="password" class="validate" required>
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <button class="btn waves-effect waves blue darken-3 center" ng-click="signIn()" type="submit">Sign In</button>
+    </div>
+  </div>
+  <!-- Register Form -->
+  <div class="col s6">
+    <div class="input-field col s12">
+      <h4 class="center light-blue-text text-darken-3">Register</h4>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="firstName" type="text" ng-model="firstName" class="validate" required>
+          <label for="firstName">First Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="lastName" type="text" ng-model="lastName" class="validate" required>
+          <label for="lastName">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="emailReg" type="text" ng-model="email" class="validate" required>
+          <label for="emailReg">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="gym" type="text" ng-model="gym" class="validate" required>
+          <label for="gym">Enter Gym Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password1" type="password" ng-model="passwordReg" class="validate" required>
+          <label for="passwordReg">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password2" type="password" ng-model="passwordRegCheck" class="validate">
+          <label for="passwordRegCheck">Password</label>
+          <p id="validate-status"></p>
+        </div>
+      </div>
+      <button class="btn waves-effect waves blue darken-3 center" ng-click="register()" type="submit">Register</button>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $("#password2").keyup(validate);
+    });
+
+    function validate() {
+      var password1 = $("#password1").val();
+      var password2 = $("#password2").val();
+
+      if (password1 == password2) {
+        $("#validate-status").text("Password is valid!");
+      } else {
+        $("#validate-status").text("Passwords DO NOT match!");
+      }
+    }
+  </script>
+
+</div>
+</div>
+</div>
