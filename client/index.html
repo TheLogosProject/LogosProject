@@ -15,56 +15,12 @@
 </head>
 
 <body ng-app="app">
-  <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
-      <a href="#/home">
-        <img src="app/assets/logo.svg" class="nav-logo" height="60px" width="60px" />
-      </a>
-      <a id="logo-container" href="#/home" class="brand-logo">
-        <font color="#0277BD">Logos</font>Project</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="small waves-effect waves-light btn blue darken-3" href="#/login">Login/Register</a></li>
-      </ul>
-
-      <!-- Mobile nav menu -->
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#About">About</a></li>
-        <li><a href="#HowitWorks">How it Works</a></li>
-        <li><a href="#/login">Login/Register</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="small material-icons">toc</i></a>
-    </div>
-  </nav>
+  <div ng-include="'components/navbar/navbar.html'"></div>
 
   <!-- Angular View -->
   <div ui-view></div>
 
-  <footer class="page-footer blue darken-3">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">About Us</h5>
-          <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-
-        </div>
-        <div class="col l3 s12 right">
-          <h5 class="white-text">Connect</h5>
-          <ul>
-            <li><a class="white-text" href="http://www.crossfit.com" target="new"><i class="fa fa-globe"></i> CrossFit.com</a></li>
-            <li><a class="white-text" href="#!"><i class="fa fa-facebook"></i> Facebook</a></li>
-            <li><a class="white-text" href="#!"><i class="fa fa-instagram"></i> Instagram</a></li>
-            <li><a class="white-text" href="#!"><i class="fa fa-twitter"></i> Twitter</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright blue darken-4">
-      <div class="container">
-        Copyright &#169; LogosProject 2015</a>
-      </div>
-    </div>
-  </footer>
+  <div ng-include="'components/footer/footer.html'"></div>
 
 
   <!-- SCRIPTS -->
@@ -80,6 +36,13 @@
 
   <!-- angular routing -->
   <script src="app/app.js"></script>
+  <script src="app/public/home/homeRoute.js"></script>
+  <script src="app/public/loginRegister/loginRegisterRoute.js"></script>
+  <script src="app/user/ethos/ethosRoute.js"></script>
+  <script src="app/user/logos/logosRoute.js"></script>
+  <script src="app/user/pathos/pathosRoute.js"></script>
+  <script src="app/user/userLanding/userLandingRoute.js"></script>
+  <script src="app/user/userProfile/userProfileRoute.js"></script>
 
   <!-- angular module -->
   <!-- <script src="app.js"></script> -->
