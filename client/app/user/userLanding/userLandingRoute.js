@@ -6,6 +6,7 @@ angular.module('app')
     .state('userLanding', {
       // will want to be /userLanding/:id when live
       url: '/userLanding',
-      templateUrl: 'app/user/userLanding/userLanding.html'
+      templateUrl: 'app/user/userLanding/userLanding.html',
+      controller: 'userLandingCtrl'
     });
   });

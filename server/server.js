@@ -32,6 +32,7 @@ app.post('/api/gym', gymsCtrl.save);
 // app.put('/api/gym/:id', gymsCtrl.updateById);
 //--User Endpoints--//
 app.get('/api/user', userCtrl.find);
+app.get('/api/user/:id', userCtrl.findByID);
 app.post('/api/user', userCtrl.save);
 // app.put('/api/user/:id', userCtrl.updateById);
 //--Pathway Endpoints--//
