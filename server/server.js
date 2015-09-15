@@ -31,12 +31,12 @@ app.get('/api/gym', gymsCtrl.find);
 app.post('/api/gym', gymsCtrl.save);
 // app.put('/api/gym/:id', gymsCtrl.updateById);
 //--User Endpoints--//
-// app.get('/api/user', userCtrl.find);
-// app.post('/api/user', userCtrl.save);
+app.get('/api/user', userCtrl.find);
+app.post('/api/user', userCtrl.save);
 // app.put('/api/user/:id', userCtrl.updateById);
 //--Pathway Endpoints--//
-// app.get('/api/pathway', pathwaysCtrl.find);
-// app.post('api/pathway', pathwaysCtrl.save);
+app.get('/api/pathway', pathwaysCtrl.find);
+app.post('/api/pathway', pathwaysCtrl.save);
 // app.put('/api/pathway/:id', pathwaysCtrl.updateById);
 
 //LISTEN

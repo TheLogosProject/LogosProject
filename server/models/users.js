@@ -14,10 +14,16 @@ var newUserSchema = new Schema({
         email: { type: String }
     },
     gym: { type: Schema.Types.ObjectId, ref: 'gyms' },
-    goals: [{ type: String }],
+    goals: [
+        { type: String }
+    ],
     get_to_know: {
-        questions: [{ type: Schema.Types.ObjectId, ref: 'gyms' }],
-        answers: [{ type: String }]
+        questions: [
+            { type: Schema.Types.ObjectId, ref: 'gyms' }
+        ],
+        answers: [
+            { type: String }
+        ]
     },
     pathways: {
         logos: { type: Schema.Types.ObjectId, ref: 'pathways' },
@@ -37,3 +43,47 @@ var newUserSchema = new Schema({
 });
 
 module.exports = mongoose.model('users', newUserSchema);
+
+//For testing with Postman
+/*
+{
+    "name": {
+        "first": "test",
+        "last": "test"
+    },
+    "gender": "test",
+    "age": 10,
+    "weight": 10,
+    "contact_info": {
+        "phone": "test",
+        "email": "test"
+    },
+    "gym": "55f75fe457a73b1ae912dad1",
+    "goals": [
+        "test"
+    ],
+    "get_to_know": {
+        "questions": [
+            "55f75fe457a73b1ae912dad1"
+        ],
+        "answers": [
+            "test"
+        ]
+    },
+    "pathways": {
+        "logos": "55f75fe457a73b1ae912dad1",
+        "pathos": "55f75fe457a73b1ae912dad1",
+        "ethos": "55f75fe457a73b1ae912dad1"
+    },
+    "login_details": {
+        "email": "test",
+        "hashed_password": "test",
+        "salt": "test",
+        "provider": "test",
+        "role": "test"
+    },
+    "is_master": false,
+    "is_admin": false,
+    "currently_active": true
+}
+*/

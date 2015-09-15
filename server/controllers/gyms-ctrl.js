@@ -13,15 +13,12 @@ module.exports = {
     },
     save: function (req, res) {
         var newGym = new Gym(req.body);
-        newGym.save(function (err, answer) {
+        newGym.save(function (err, response) {
             if (err) {
                 res.send(err);
             } else {
-                res.send(answer);
+                res.send(response);
             }
         });
     }
-    // updateById: function (req, res) {
-
-    // }
 };

@@ -13,8 +13,12 @@ var newGymSchema = new Schema({
         phone: { type: String },
         email: { type: String }
     },
-    admin: [{ type: Schema.Types.ObjectId, ref: 'users' }],
-    members: [{ type: Schema.Types.ObjectId, ref: 'users' }],
+    admin: [
+        { type: Schema.Types.ObjectId, ref: 'users' }
+    ],
+    members: [
+        { type: Schema.Types.ObjectId, ref: 'users' }
+    ],
     gym_details: {
         hours_of_operation: { type: String },
         website: { type: String },
@@ -27,7 +31,9 @@ var newGymSchema = new Schema({
         pathos: { type: Schema.Types.ObjectId, ref: 'pathways' },
         ethos: { type: Schema.Types.ObjectId, ref: 'pathways' }
     },
-    get_to_know_questions: [{ type: String }],
+    get_to_know_questions: [
+        { type: String }
+    ],
     currently_active: { type: Boolean }
 });
 
