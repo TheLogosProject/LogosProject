@@ -72,15 +72,17 @@
 <div class="modal fixed-footer" id="modal1">
   <div class="modal-content">
     <h4 class="center">Welcome User.FirstName</h4>
-    <p>
-      What brought you to CrossFit?
-      <textarea class="materialize-textarea" id="textarea1" placeholder="Enter Text Here" type="text"></textarea>
-      What are your CrossFit goals?
-      <textarea class="materialize-textarea" placeholder="Enter Text Here" type="text"></textarea>
-    </div>
-    <div class="modal-footer">
-      <button class="btn waves-effect waves blue darken-3 center modal-close" type="submit">Submit</button>
-    </div>
+    <form ng-submit="submitModal(answers)">
+      <p>
+        What brought you to CrossFit?
+        <textarea class="materialize-textarea" id="textarea1" placeholder="Enter Text Here" type="text"></textarea>
+        What are your CrossFit goals?
+        <textarea class="materialize-textarea" placeholder="Enter Text Here" type="text"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn waves-effect waves blue darken-3 center modal-close" ng-click="submitModal()" type="submit">Submit</button>
+      </div>
+    </form>
   </div>
 
   <script>

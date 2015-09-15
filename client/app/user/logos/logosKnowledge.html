@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 center">
+<!-- progress chart-->
+        <div class="c100 p50 center">
+          <span>50%</span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+        </div>
+<!-- end progress chart-->
+        <h5 class="center">Logos Progress</h5>
+
+        <ul class="tabs">
+          <li class=" tab col s4">
+            <a class="active blue darken-3 white-text" href="#Step1">Step 1</a>
+          </li>
+          <li class="tab col s4">
+            <a class="active blue darken-3 white-text" href="#Step2">Step 2</a>
+          </li>
+          <li class="tab col s4 disabled">
+            <a class="grey-text text-lighten-2" href="#Step3">Step 3</a>
+          </li>
+        </ul>
+        <br>
+        <h5>Knowledge</h5>
+        <form ng-submit="submitModal(answers)">
+          <p class="left">What is CrossFit?</p>
+          <textarea class="materialize-textarea" id="question1" placeholder="Enter Answer Here" type="text"></textarea>
+
+          <p class="left">What is the Hopper Model?</p>
+          <textarea class="materialize-textarea" id="question2" placeholder="Enter Answer Here" type="text"></textarea>
+
+          <p class="left">What is the Health/Wellness Model?</p>
+          <textarea class="materialize-textarea" id="question3" placeholder="Enter Answer Here" type="text"></textarea>
+
+          <br>
+          <button class="btn waves-effect waves blue darken-3 center modal-close" ng-click="submitModal(answers)" type="submit">Submit</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
