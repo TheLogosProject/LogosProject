@@ -6,6 +6,8 @@
  * Made By MaterializeCSS.com
  */
 
+  /* START of materialize settings */
+
   nav ul a, nav .brand-logo {
     color: #444;
   }
@@ -54,6 +56,32 @@
     border-bottom: 1px solid #0C61AF;
     box-shadow: 0 1px 0 0 #0C61AF;
   }
+  .icon-block {
+    padding: 0 15px;
+  }
+  .icon-block .material-icons {
+    font-size: inherit;
+  }
+  footer.page-footer {
+    margin: 0;
+  }
+  /* END of materialize settings */
+
+  /* jumbotron */
+  blue {
+    font-weight: 900;
+  }
+  black {
+    font-weight: 900;
+    color: #343434 !important;
+  }
+
+  /* jumbotron */
+  .badge {
+    width: 80px;
+  }
+
+  /* START of mobile */
   @media only screen and (max-width: 992px) {
     .parallax-container .section {
       position: absolute;
@@ -81,19 +109,5 @@
       display: none;
     }
   }
-  .icon-block {
-    padding: 0 15px;
-  }
-  .icon-block .material-icons {
-    font-size: inherit;
-  }
-  footer.page-footer {
-    margin: 0;
-  }
-  blue {
-    font-weight: 900;
-  }
-  black {
-    font-weight: 900;
-    color: #343434 !important;
-  }
+  /* END of mobile */
+
