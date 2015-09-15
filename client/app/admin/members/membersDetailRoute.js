@@ -5,7 +5,7 @@ angular.module('app')
     $stateProvider
     .state('membersDetail', {
       // will want to be /userLanding/:id when live
-      url: '/membersDetail',
+      url: '/members/id',
       templateUrl: 'app/admin/members/membersDetail.html'
     });
   });

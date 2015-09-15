@@ -73,11 +73,25 @@
   <div class="modal-content">
     <h4 class="center">Welcome {{ user.name.first }} {{ user.name.last }}</h4>
     <form ng-submit="submitModal(answers)">
-      <p>
-        What brought you to CrossFit?
-        <textarea class="materialize-textarea" id="textarea1" placeholder="Enter Text Here" type="text"></textarea>
-        What are your CrossFit goals?
-        <textarea class="materialize-textarea" placeholder="Enter Text Here" type="text"></textarea>
+      What brought you to CrossFit?
+      <textarea class="materialize-textarea" id="textarea1" placeholder="Enter Text Here" type="text"></textarea>
+      What are your CrossFit goals?
+      <textarea class="materialize-textarea" placeholder="Enter Text Here" type="text"></textarea>
+    </div>
+    <div class="modal-footer">
+      <button class="btn waves-effect waves blue darken-3 center modal-trigger modal-close" href="#modal2" ng-click="submitModal()" type="submit">Next</button>
+    </div>
+  </form>
+</div>
+
+<div class="modal fixed-footer" id="modal2">
+  <div class="modal-content">
+    <h4 class="center">Welcome User.FirstName</h4>
+    <form ng-submit="submitModal(answers)">
+<!-- Goals -->
+      <p class="center">Add a Goal</p>
+      <div class="input-field col s12">
+        <input class="validate" id="newGoal" ng-model="newGoal" placeholder="Enter CrossFit Goal" required type="text">
       </div>
       <div class="modal-footer">
         <button class="btn waves-effect waves blue darken-3 center modal-close" ng-click="submitModal()" type="submit">Submit</button>
