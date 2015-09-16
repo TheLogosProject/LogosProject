@@ -39,33 +39,35 @@ var newGymSchema = new Schema({
 
 module.exports = mongoose.model('gyms', newGymSchema);
 
-//For testing with Postman
-/*{
-    "name": "test",
+//For testing with Postman, please don't change this info!
+/*
+{
+    "name": "The Gorilla Joe",
     "address": {
-        "street": "test",
-        "city": "test",
-        "state": "test",
-        "zip": "test"
+        "street": "123 Ripped St.",
+        "city": "Hanford",
+        "state": "CA",
+        "zip": "93230"
     },
     "contact_info": {
-        "phone": "test",
-        "email": "test"
+        "phone": "559-584-1234",
+        "email": "gorillajoecf@gjcrossfit.com"
     },
-    "admin": "55d6199bfcce565a1a3e9e71",
-    "members": "55d6199bfcce565a1a3e9e71",
+    "admin": "55f8c5fd35fb603e5387d01a",
+    "members": "55f8c5fd35fb603e5387d01a",
     "gym_details": {
-        "hours_of_operation": "test",
-        "website": "test",
-        "about_us": "test",
-        "gym_logo": "test"
+        "hours_of_operation": "Monday-Friday: 7:00AM - 10:00PM, Saturday: 9:00AM - 4:00PM, Sunday: Closed",
+        "website": "www.gjcrossfit.com",
+        "about_us": "We are a bad ass crossfit gym who doesn't f around",
+        "gym_logo": "http://onedaylate.com/images/angry_gorilla.png"
     },
     "gym_pictures": "test",
     "gym_pathway_program": {
-        "logos": "55d6199bfcce565a1a3e9e71",
-        "pathos": "55d6199bfcce565a1a3e9e71",
-        "ethos": "55d6199bfcce565a1a3e9e71"
+        "logos": "55f8d7abbe359ba670c4ae26",
+        "pathos": "55f8d7abbe359ba670c4ae01",
+        "ethos": "55f8d7abbe359ba670c4addc"
     },
-    "get_to_know_questions": "test",
-    "currently_active": false
-}*/
+    "get_to_know_questions": "How did you hear about crossfit?",
+    "currently_active": true
+}
+*/

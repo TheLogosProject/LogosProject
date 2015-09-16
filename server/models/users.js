@@ -44,46 +44,46 @@ var newUserSchema = new Schema({
 
 module.exports = mongoose.model('users', newUserSchema);
 
-//For testing with Postman
+//For testing with Postman, please don't change this info!
 /*
 {
     "name": {
-        "first": "test",
-        "last": "test"
+        "first": "Mike",
+        "last": "Buckley"
     },
-    "gender": "test",
-    "age": 10,
-    "weight": 10,
+    "gender": "Male",
+    "age": 28,
+    "weight": 205,
     "contact_info": {
-        "phone": "test",
-        "email": "test"
+        "phone": "559-430-9293",
+        "email": "que.onda.buckley@gmail.com"
     },
-    "gym": "55f75fe457a73b1ae912dad1",
+    "gym": "55f8c47ba11f9a255010bd91",
     "goals": [
-        "test"
+        "Lift 100lbs. by November 1st, 2015"
     ],
     "get_to_know": {
         "questions": [
-            "55f75fe457a73b1ae912dad1"
+            "55f75fe457a73b1ae912dad1" /////THIS NEEDS TO BE FIXED/////
         ],
         "answers": [
-            "test"
+            "I heard about it from friends."
         ]
     },
     "pathways": {
-        "logos": "55f75fe457a73b1ae912dad1",
-        "pathos": "55f75fe457a73b1ae912dad1",
-        "ethos": "55f75fe457a73b1ae912dad1"
+        "logos": "55f8d7abbe359ba670c4ae26",
+        "pathos": "55f8d7abbe359ba670c4ae01",
+        "ethos": "55f8d7abbe359ba670c4addc"
     },
     "login_details": {
-        "email": "test",
-        "hashed_password": "test",
+        "email": "que.onda.buckley@gmail.com",
+        "hashed_password": "blahblahblah",
         "salt": "test",
         "provider": "test",
         "role": "test"
     },
     "is_master": false,
-    "is_admin": false,
+    "is_admin": true,
     "currently_active": true
 }
 */
