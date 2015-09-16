@@ -1,79 +1,79 @@
 <div class="container">
-    <div class="section">
-        <div class="row">
+  <div class="section">
+    <div class="row">
 
-            <!-- User Header -->
-            <div class="col s12 center">
-                <img class="responsive-img circle" src="app/assets/rambo.jpg" />
-                <br>
-                <div class="col l4 center offset-l4 s10 offset-m1 m10 offset-s1">
-                  <form action="#">
-                    <div class="file-field input-field">
-                      <div class="btn waves-effect blue darken-3">
-                        <span>Add Pic</span>
-                        <input type="file">
-                      </div>
-
-                      <div class="file-path-wrapper">
-                        <input class="file-path validate" type="text">
-                      </div>
-                    </div>
-                  </form>
+<!-- User Header -->
+      <div class="col s12 center">
+        <img class="responsive-img circle" src="app/assets/rambo.jpg"/>
+        <br>
+        <div class="col l4 center offset-l4 s10 offset-m1 m10 offset-s1">
+          <form action="#">
+            <div class="file-field input-field">
+              <div class="waves-effect btn-flat grey lighten-2">
+                <span>Add Pic</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
               </div>
             </div>
-            <div class="col s6 center offset-s3">
-                <h4>Welcome User.FirstName</h4>
-                <h5 class="grey-text">Member of User.Gym.Name</h5>
-            </div>
+          </form>
         </div>
-
-        <div class="row">
-
-            <!-- Athlete Info -->
-            <div class="col l8 center offset-l2 m12 s12">
-              <h5>Athlete Info</h5>
-              <form ng-submit="updateProfile(profile)">
-                <div class="input-field col s12">
-                    <input class="validate" id="firstName" ng-model="firstName" placeholder="First Name" required type="text">
-                </div>
-                <div class="input-field col s12">
-                    <input class="validate" id="lastName" ng-model="lastName" placeholder="Last Name" required type="text">
-                </div>
-                <div class="input-field col s12">
-                    <input class="validate" id="email" ng-model="email" placeholder="E-mail" required type="text">
-                </div>
-                <br>
-                <h6>Gender:</h6>
-                <input class="input-field" id="male" name="group1" type="radio" />
-                <label for="male">Male</label>
-                <input id="female" name="group1" type="radio" />
-                <label for="female">Female</label>
-                <br>
-                <div class="input-field col s6">
-                    <input class="validate" id="height" ng-model="heightFeet" placeholder="Height Feet" required type="text">
-                </div>
-                <div class="input-field col s6">
-                  <input class="validate" id="height" ng-model="heightInches" placeholder="Height Inches" required type="text">
-                </div>
-                <div class="input-field col s12">
-                    <input class="validate" id="weight" ng-model="weight" placeholder="Weight (lbs)" required type="text">
-                </div>
-
-                <!-- Goals -->
-                <div class="row">
-                    <div class="col s12">
-                        <h5> Your Goals </h5>
-                        <a class="waves-effect btn-flat">Add Goal</a>
-                        <ol>
-                            <li>ng-repeat showing goals
-                                <i class="material-icons right"> <a href="#" ng-click="deleteGoal(goal)">delete</i></a>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-
-            </form>
-
-            </div>
-        </div>
+      </div>
+      <div class="col s6 center offset-s3">
+        <h4>Welcome User.FirstName</h4>
+        <h5 class="grey-text">Member of User.Gym.Name</h5>
+      </div>
     </div>
+    <div class="row">
+      
+<!-- Athlete Info -->
+      <div class="col l8 center offset-l2 m12 s12">
+        <h5>Athlete Info</h5>
+        <form ng-submit="updateProfile(profile)">
+          <div class="input-field col s12">
+            <input class="validate" id="firstName" ng-model="firstName" placeholder="First Name" required type="text">
+          </div>
+          <div class="input-field col s12">
+            <input class="validate" id="lastName" ng-model="lastName" placeholder="Last Name" required type="text">
+          </div>
+          <div class="input-field col s12">
+            <input class="validate" id="email" ng-model="email" placeholder="E-mail" required type="text">
+          </div>
+          <br>
+          <h6>Gender:</h6>
+          <input class="input-field" id="male" name="group1" type="radio"/>
+          <label for="male">Male</label>
+          <input id="female" name="group1" type="radio"/>
+          <label for="female">Female</label>
+          <br>
+          <div class="input-field col s6">
+            <input class="validate" id="height" ng-model="heightFeet" placeholder="Height Feet" required type="text">
+          </div>
+          <div class="input-field col s6">
+            <input class="validate" id="height" ng-model="heightInches" placeholder="Height Inches" required type="text">
+          </div>
+          <div class="input-field col s12">
+            <input class="validate" id="weight" ng-model="weight" placeholder="Weight (lbs)" required type="text">
+          </div>
+
+<!-- Goals -->
+          <div class="row">
+            <div class="col s12">
+              <h5>
+                Your Goals
+              </h5>
+              <a class="waves-effect btn-flat grey lighten-2">Add Goal</a>
+              <ol>
+                <li>ng-repeat showing goals
+                  <i class="material-icons right">
+                    <a href="#" ng-click="deleteGoal(goal)">delete</i>
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
