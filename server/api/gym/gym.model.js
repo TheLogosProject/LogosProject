@@ -27,9 +27,9 @@ var newGymSchema = new Schema({
     },
     gym_pictures: { type: String },
     gym_pathway_program: {
-        logos: { type: Schema.Types.ObjectId, ref: 'pathways' },
-        pathos: { type: Schema.Types.ObjectId, ref: 'pathways' },
-        ethos: { type: Schema.Types.ObjectId, ref: 'pathways' }
+        logos: { type: Object },
+        pathos: { type: Object },
+        ethos: { type: Object }
     },
     get_to_know_questions: [
         { type: String }

@@ -1,5 +1,6 @@
 var User = require('./user.model'),
-    Pathway = require('./pathway.model');
+    Pathway = require('../pathway/pathway.model');
+
 module.exports = {
     find: function (req, res) {
         User.find(req.query)
@@ -34,16 +35,23 @@ module.exports = {
                         if (err) {
                             res.send(err);
                         } else {
-                            Pathway.populate(response, {
-                                path: 'gym.gym_pathway_program.logos'
-                            }, function (err, response) {
-                                if (err) {
-                                    res.send(err);
-                                } else {
-                                    console.log("!!!!!!!!!!", response, "!!!!!!!!!!!");
-                                    res.send(response);
-                                }
-                            });
+                            var newUserObj = response;
+                            var logos = response.gym.gym_pathway_program.logos;
+                            var pathos = response.gym.gym_pathway_program.pathos;
+                            var ethos = response.gym.gym_pathway_program.ethos;
+                            newUserObj.pathways = {
+                                logos: logos,
+                                pathos: pathos,
+                                ethos: ethos
+                            };
+                            User.findByIdAndUpdate(userID, newUserObj)
+                                .exec(function (err, response) {
+                                    if (err) {
+                                        res.send(err);
+                                    } else {
+                                        res.send(response);
+                                    }
+                                });
                         }
                     });
             }

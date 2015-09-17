@@ -13,8 +13,8 @@
       <div class="col s12 m4">
         <div class="icon-block">
 <!-- progress chart-->
-          <div class="c100 p25 center">
-            <span>25%</span>
+          <div class="c100 p{{ user.pathways.logos.completion.amount_completed }} center">
+            <span>{{ user.pathways.logos.completion.amount_completed }}%</span>
             <div class="slice">
               <div class="bar"></div>
               <div class="fill"></div>
@@ -32,8 +32,8 @@
       <div class="col s12 m4">
         <div class="icon-block">
 <!-- progress chart-->
-          <div class="c100 p55 center">
-            <span>55%</span>
+          <div class="c100 p{{ user.pathways.pathos.completion.amount_completed }} center">
+            <span>{{ user.pathways.pathos.completion.amount_completed }}%</span>
             <div class="slice">
               <div class="bar"></div>
               <div class="fill"></div>
@@ -51,8 +51,8 @@
       <div class="col s12 m4">
         <div class="icon-block">
 <!-- progress chart-->
-          <div class="c100 p73 center">
-            <span>73%</span>
+          <div class="c100 p{{ user.pathways.ethos.completion.amount_completed }} center">
+            <span>{{ user.pathways.ethos.completion.amount_completed }}%</span>
             <div class="slice">
               <div class="bar"></div>
               <div class="fill"></div>

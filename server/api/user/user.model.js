@@ -26,9 +26,9 @@ var newUserSchema = new Schema({
         ]
     },
     pathways: {
-        logos: { type: Schema.Types.ObjectId, ref: 'pathways' },
-        pathos: { type: Schema.Types.ObjectId, ref: 'pathways' },
-        ethos: { type: Schema.Types.ObjectId, ref: 'pathways' }
+        logos: { type: Object },
+        pathos: { type: Object },
+        ethos: { type: Object }
     },
     login_details: {
         email: { type: String },
