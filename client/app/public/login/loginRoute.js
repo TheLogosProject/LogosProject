@@ -5,6 +5,6 @@ angular.module('app')
     $stateProvider
     .state('login', {
       url: '/login',
-      templateUrl: 'app/public/loginRegister/loginRegister.html'
+      templateUrl: 'app/public/login/login.html'
     });
   });
