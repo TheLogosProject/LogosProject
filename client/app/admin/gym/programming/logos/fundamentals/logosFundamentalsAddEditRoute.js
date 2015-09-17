@@ -5,7 +5,7 @@ angular.module('app')
         $stateProvider
             .state('addEditMove', {
                 // will be :gymId when live
-                url: '/gym/programming/path/logos/fundamentals/create/gymId',
-                templateUrl: 'app/admin/gym/programming/logos/logosFundamentalsAddEdit.html'
+                url: '/gym/programming/gymId/fundamentals/create',
+                templateUrl: 'app/admin/gym/programming/logos/fundamentals/logosFundamentalsAddEdit.html'
             });
     });
