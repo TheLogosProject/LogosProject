@@ -65,6 +65,10 @@
   footer.page-footer {
     margin: 0;
   }
+
+  .approval-button-padding {
+    padding-top: 5%;
+  }
   /* END of materialize settings */
 
   /* jumbotron */

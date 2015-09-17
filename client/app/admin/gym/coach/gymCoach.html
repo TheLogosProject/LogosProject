@@ -15,7 +15,7 @@
             <tr>
               <td>
                 <div class="chip">
-                  <img src="app/assets/rambo.jpg" alt="User.Name" class="responsive-img circle" height="50px" width="50px">
+                  <img alt="User.Name" class="responsive-img circle" height="50px" src="app/assets/rambo.jpg" width="50px">
                 </div>
               </td>
               <td>
@@ -38,7 +38,7 @@
           <tr>
             <th data-field="id">Athlete</th>
             <th data-field="name">Movement Approving</th>
-            <th class="center" data-field="price">Action</th>
+            <th data-field="price">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -47,8 +47,11 @@
             <td>Matt Guenther</td>
             <td>Strict Press</td>
             <td>
+
               <a class="waves-effect btn-flat grey lighten-2" ng-click="decline()">Decline</a>
-              <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
+              <div class="approval-button-padding">
+                <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
+              </div>
             </td>
           </tr>
 <!-- end ng repeat. Data below is just dummy data and can be deleted -->
@@ -57,7 +60,9 @@
             <td>Deadlift</td>
             <td>
               <a class="waves-effect btn-flat grey lighten-2" ng-click="decline()">Decline</a>
-              <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
+              <div class="approval-button-padding">
+                <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
+              </div>
             </td>
           </tr>
           <tr>
@@ -65,7 +70,9 @@
             <td>Overhead Squat</td>
             <td>
               <a class="waves-effect btn-flat grey lighten-2" ng-click="decline()">Decline</a>
-              <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
+              <div class="approval-button-padding">
+                <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
+              </div>
             </td>
           </tr>
         </tbody>
