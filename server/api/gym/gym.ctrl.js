@@ -1,5 +1,5 @@
-var Gym = require('../models/gyms'),
-    Pathway = require('../models/pathways');
+var Gym = require('./gym.model'),
+    Pathway = require('./pathway.model');
 
 module.exports = {
     find: function (req, res) {

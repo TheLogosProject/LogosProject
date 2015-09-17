@@ -1,4 +1,4 @@
-var Pathway = require('../models/pathways');
+var Pathway = require('./pathway.model');
 
 module.exports = {
     find: function (req, res) {

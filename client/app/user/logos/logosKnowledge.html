@@ -26,18 +26,25 @@
         </ul>
         <br>
         <h5>Knowledge</h5>
-        <form ng-submit="submitModal(answers)">
-          <p class="left">What is CrossFit?</p>
-          <textarea class="materialize-textarea" id="question1" placeholder="Enter Answer Here" type="text"></textarea>
+        <form ng-submit="submitKnowledge(answers)">
 
-          <p class="left">What is the Hopper Model?</p>
-          <textarea class="materialize-textarea" id="question2" placeholder="Enter Answer Here" type="text"></textarea>
+          <div class="input-field col s12">
+            <textarea class="materialize-textarea" id="textarea1" type="text"></textarea>
+            <label for="textarea1">What is CrossFit?</label>
+          </div>
 
-          <p class="left">What is the Health/Wellness Model?</p>
-          <textarea class="materialize-textarea" id="question3" placeholder="Enter Answer Here" type="text"></textarea>
+          <div class="input-field col s12">
+            <textarea class="materialize-textarea" id="textarea2" type="text"></textarea>
+            <label for="textarea2">What is the Hopper Model?</label>
+          </div>
+
+          <div class="input-field col s12">
+            <textarea class="materialize-textarea" id="textarea3" type="text"></textarea>
+            <label for="textarea3">What is the Health/Wellness model?</label>
+          </div>
 
           <br>
-          <button class="btn waves-effect waves blue darken-3 center modal-close" ng-click="submitModal(answers)" type="submit">Submit</button>
+          <button class="btn waves-effect waves blue darken-3 center modal-close" ng-click="submitKnowledge(answers)" type="submit">Submit</button>
 
         </div>
       </div>

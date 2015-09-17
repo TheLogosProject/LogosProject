@@ -34,10 +34,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
-  <!-- angular routing -->
+  <!-- angular routing - public -->
   <script src="app/app.js"></script>
   <script src="app/public/home/homeRoute.js"></script>
   <script src="app/public/loginRegister/loginRegisterRoute.js"></script>
+  
+  <!-- angular routing - member -->
   <script src="app/user/ethos/ethosRoute.js"></script>
   <script src="app/user/logos/logosRoute.js"></script>
   <script src="app/user/logos/logosKnowledgeRoute.js"></script>
@@ -49,13 +51,24 @@
   <script src="app/user/userProfile/userProfileRoute.js"></script>
   <script src="app/user/congrats/congrats.js"></script>
   <script src="app/user/stats/statsRoute.js"></script>
-  <script src="app/admin/members/membersLandingRoute.js"></script>
-  <script src="app/admin/members/membersDetailRoute.js"></script>
-  <script src="app/admin/gym/gymLandingRoute.js"></script>
-  <script src="app/admin/gym/gymDetailRoute.js"></script>
-  <script src="app/admin/gym/gymCreateRoute.js"></script>
-  <script src="app/admin/addEditMove/addEditMoveRoute.js"></script>
-  <script src="app/admin/manageGym/manageGymRoute.js"></script>
+
+  <!-- angular routing - admin -->
+  
+  <!-- /gym/main -->
+  <script src="app/admin/gym/main/gymLandingRoute.js"></script>
+  <script src="app/admin/gym/main/gymCreateRoute.js"></script>
+  <script src="app/admin/gym/main/gymDetailRoute.js"></script>
+  
+  <!-- /gym/coach -->
+  <script src="app/admin/gym/coach/gymCoachRoute.js"></script>
+  
+  <!-- /gym/members -->
+  <script src="app/admin/gym/members/membersLandingRoute.js"></script>
+  <script src="app/admin/gym/members/membersDetailRoute.js"></script>
+  
+  <!-- /gym/programming -->
+  <script src="app/admin/gym/programming/programmingLandingRoute.js"></script>
+  <script src="app/admin/gym/programming/addEditMoveRoute.js"></script>
 
 
   <!-- angular module -->

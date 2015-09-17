@@ -1,9 +1,12 @@
 {
-  "name": "client",
+  "name": "LogosProject",
   "version": "0.0.0",
   "homepage": "https://github.com/TheLogosProject/LogosProject",
   "authors": [
     "mguenther006 <mguenther006@gmail.com>"
+    "bdamore <brian.damore@gmail.com>"
+    "mikebuckley5 <que.onda.buckley@gmail.com>"
+    "bcng <bcn220@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [

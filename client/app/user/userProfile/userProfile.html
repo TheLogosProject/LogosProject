@@ -26,19 +26,22 @@
       </div>
     </div>
     <div class="row">
-      
+
 <!-- Athlete Info -->
       <div class="col l8 center offset-l2 m12 s12">
         <h5>Athlete Info</h5>
         <form ng-submit="updateProfile(profile)">
           <div class="input-field col s12">
-            <input class="validate" id="firstName" ng-model="firstName" placeholder="First Name" required type="text">
+            <input class="validate" id="firstName" ng-model="firstName" required type="text">
+            <label for="firstName">First Name</label>
           </div>
           <div class="input-field col s12">
-            <input class="validate" id="lastName" ng-model="lastName" placeholder="Last Name" required type="text">
+            <input class="validate" id="lastName" ng-model="lastName" required type="text">
+            <label for="lastName">Last Name</label>
           </div>
           <div class="input-field col s12">
-            <input class="validate" id="email" ng-model="email" placeholder="E-mail" required type="text">
+            <input class="validate" id="email" ng-model="email" required type="text">
+            <label for="email">E-mail</label>
           </div>
           <br>
           <h6>Gender:</h6>
@@ -48,13 +51,16 @@
           <label for="female">Female</label>
           <br>
           <div class="input-field col s6">
-            <input class="validate" id="height" ng-model="heightFeet" placeholder="Height Feet" required type="text">
+            <input class="validate" id="heightFeet" ng-model="heightFeet" required type="text">
+            <label for="heightFeet">Height (Feet)</label>
           </div>
           <div class="input-field col s6">
-            <input class="validate" id="height" ng-model="heightInches" placeholder="Height Inches" required type="text">
+            <input class="validate" id="heightInches" ng-model="heightInches" required type="text">
+            <label for="heightInches">Height (Inches)</label>
           </div>
           <div class="input-field col s12">
-            <input class="validate" id="weight" ng-model="weight" placeholder="Weight (lbs)" required type="text">
+            <input class="validate" id="weight" ng-model="weight" required type="text">
+            <label for="weight">Weight (lbs)</label>
           </div>
 
 <!-- Goals -->

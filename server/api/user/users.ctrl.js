@@ -1,6 +1,5 @@
-var User = require('../models/users'),
-    Pathway = require('../models/pathways');
-
+var User = require('./user.model'),
+    Pathway = require('./pathway.model');
 module.exports = {
     find: function (req, res) {
         User.find(req.query)
