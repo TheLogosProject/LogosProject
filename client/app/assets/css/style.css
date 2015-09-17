@@ -90,7 +90,7 @@
     #index-banner .section {
       top: 10%;
     }
-    .nav-logo {
+    .nav-logo, .recent-activity {
       display: none;
     }
   }
@@ -102,12 +102,8 @@
       height: 50px;
       width: 50px;
     }
-    .brand-logo {
+    .brand-logo, .recent-activity, .get-started {
       display: none !important;
-    }
-    .get-started {
-      display: none;
     }
   }
   /* END of mobile */
-
