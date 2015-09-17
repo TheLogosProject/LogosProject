@@ -5,7 +5,7 @@
       <div class="col s12 center">
         <h4>Welcome
           {{ user.name.first }}
-          {{ user.name.last }}</h4>
+          {{ user.name.last }}!</h4>
       </div>
       <div class="col s12 center">
         &nbsp;
@@ -13,8 +13,8 @@
       <div class="col s12 m4">
         <div class="icon-block">
 <!-- progress chart-->
-          <div class="c100 p{{ user.pathways.logos.completion.amount_completed }} center">
-            <span>{{ user.pathways.logos.completion.amount_completed }}%</span>
+          <div class="c100 p{{ logosPercent }} center">
+            <span>{{ logosPercent }}%</span>
             <div class="slice">
               <div class="bar"></div>
               <div class="fill"></div>
@@ -32,8 +32,8 @@
       <div class="col s12 m4">
         <div class="icon-block">
 <!-- progress chart-->
-          <div class="c100 p{{ user.pathways.pathos.completion.amount_completed }} center">
-            <span>{{ user.pathways.pathos.completion.amount_completed }}%</span>
+          <div class="c100 p{{ pathosPercent }} center">
+            <span>{{ pathosPercent }}%</span>
             <div class="slice">
               <div class="bar"></div>
               <div class="fill"></div>
@@ -51,8 +51,8 @@
       <div class="col s12 m4">
         <div class="icon-block">
 <!-- progress chart-->
-          <div class="c100 p{{ user.pathways.ethos.completion.amount_completed }} center">
-            <span>{{ user.pathways.ethos.completion.amount_completed }}%</span>
+          <div class="c100 p{{ ethosPercent }} center">
+            <span>{{ ethosPercent }}%</span>
             <div class="slice">
               <div class="bar"></div>
               <div class="fill"></div>
