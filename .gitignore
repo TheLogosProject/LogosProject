@@ -4,3 +4,4 @@ client/bower_components
 .sass-cache
 .DS_Store
 server/node_modules
+.vscode

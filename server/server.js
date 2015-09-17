@@ -33,7 +33,7 @@ app.post('/api/gym', gymsCtrl.save);
 //--User Endpoints--//
 app.get('/api/user', userCtrl.find);
 app.get('/api/user/:id', userCtrl.findByID);
-app.post('/api/user', userCtrl.save);
+app.post('/api/add-user', userCtrl.initialSave);
 // app.put('/api/user/:id', userCtrl.updateById);
 //--Pathway Endpoints--//
 app.get('/api/pathway', pathwaysCtrl.find);
