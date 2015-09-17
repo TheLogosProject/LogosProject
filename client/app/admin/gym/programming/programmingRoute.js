@@ -22,5 +22,5 @@ angular.module('app')
             .state('programming.logosPhysical', {
               url: '/physical',
               templateUrl: 'app/admin/gym/programming/logos/physical/logosPhysical.html'
-            })
+            });
     });
