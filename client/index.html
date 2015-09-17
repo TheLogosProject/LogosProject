@@ -2,87 +2,87 @@
 <html lang="en">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
-  <title>Logos Project</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+          <title>Logos Project</title>
 
-  <!-- CSS  -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../bower_components/materialize/bin/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="app/assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="app/assets/css/circle.css" type="text/css" rel="stylesheet" media="screen,projection" />
+          <!-- CSS  -->
+          <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <link href="../bower_components/materialize/bin/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+          <link href="app/assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+          <link href="app/assets/css/circle.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body ng-app="app">
-  <div ng-include="'components/navbar/navbar.html'"></div>
+          <div ng-include="'components/navbar/navbar.html'"></div>
 
-  <!-- Angular View -->
-  <div ui-view></div>
+          <!-- Angular View -->
+          <div ui-view></div>
 
-  <div ng-include="'components/footer/footer.html'"></div>
+          <div ng-include="'components/footer/footer.html'"></div>
 
 
-  <!-- SCRIPTS -->
+          <!-- SCRIPTS -->
 
-  <!-- materialize css and jquery -->
-  <script src="../bower_components/jquery/dist/jquery.js"></script>
-  <script src="../bower_components/materialize/bin/materialize.js"></script>
-  <script src="../bower_components/materialize/js/parallax.js"></script>
+          <!-- materialize css and jquery -->
+          <script src="../bower_components/jquery/dist/jquery.js"></script>
+          <script src="../bower_components/materialize/bin/materialize.js"></script>
+          <script src="../bower_components/materialize/js/parallax.js"></script>
 
-  <!-- angular -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+          <!-- angular -->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
-  <!-- angular routing - public -->
-  <script src="app/app.js"></script>
-  <script src="app/public/home/homeRoute.js"></script>
-  <script src="app/public/login/loginRoute.js"></script>
-  <script src="app/public/register/registerRoute.js"></script>
+          <!-- angular routing - public -->
+          <script src="app/app.js"></script>
+          <script src="app/public/home/homeRoute.js"></script>
+          <script src="app/public/login/loginRoute.js"></script>
+          <script src="app/public/register/registerRoute.js"></script>
 
-  <!-- angular routing - member -->
-  <script src="app/user/ethos/ethosRoute.js"></script>
-  <script src="app/user/logos/logosRoute.js"></script>
-  <script src="app/user/logos/logosKnowledgeRoute.js"></script>
-  <script src="app/user/logos/logosPhysicalRoute.js"></script>
-  <script src="app/user/pathos/pathosRoute.js"></script>
-  <script src="app/user/userLanding/userLandingRoute.js"></script>
-  <script src="app/user/userLanding/userLandingCtrl.js"></script>
-  <script src="app/user/userService/userService.js"></script>
-  <script src="app/user/userProfile/userProfileRoute.js"></script>
-  <script src="app/user/congrats/congrats.js"></script>
-  <script src="app/user/stats/statsRoute.js"></script>
+          <!-- angular routing - member -->
+          <script src="app/user/ethos/ethosRoute.js"></script>
+          <script src="app/user/logos/logosRoute.js"></script>
+          <script src="app/user/logos/logosKnowledgeRoute.js"></script>
+          <script src="app/user/logos/logosPhysicalRoute.js"></script>
+          <script src="app/user/pathos/pathosRoute.js"></script>
+          <script src="app/user/userLanding/userLandingRoute.js"></script>
+          <script src="app/user/userLanding/userLandingCtrl.js"></script>
+          <script src="app/user/userService/userService.js"></script>
+          <script src="app/user/userProfile/userProfileRoute.js"></script>
+          <script src="app/user/congrats/congrats.js"></script>
+          <script src="app/user/stats/statsRoute.js"></script>
 
-  <!-- angular routing - admin -->
+          <!-- angular routing - admin -->
 
-  <!-- /gym/main -->
-  <script src="app/admin/gym/main/gymLandingRoute.js"></script>
-  <script src="app/admin/gym/main/gymCreateRoute.js"></script>
-  <script src="app/admin/gym/main/gymDetailRoute.js"></script>
+          <!-- /gym/main -->
+          <script src="app/admin/gym/main/gymLandingRoute.js"></script>
+          <script src="app/admin/gym/main/gymCreateRoute.js"></script>
+          <script src="app/admin/gym/main/gymDetailRoute.js"></script>
 
-  <!-- /gym/coach -->
-  <script src="app/admin/gym/coach/gymCoachRoute.js"></script>
+          <!-- /gym/coach -->
+          <script src="app/admin/gym/coach/gymCoachRoute.js"></script>
 
-  <!-- /gym/members -->
-  <script src="app/admin/gym/members/membersLandingRoute.js"></script>
-  <script src="app/admin/gym/members/membersDetailRoute.js"></script>
+          <!-- /gym/members -->
+          <script src="app/admin/gym/members/membersLandingRoute.js"></script>
+          <script src="app/admin/gym/members/membersDetailRoute.js"></script>
 
-  <!-- /gym/programming/logos -->
-  <script src="app/admin/gym/programming/programmingRoute.js"></script>
-  <script src="app/admin/gym/programming/logos/fundamentals/logosFundamentalsAddEditRoute.js"></script>
-  <script src="app/admin/gym/programming/logos/knowledge/logosKnowledgeAddEditRoute.js"></script>
-  <script src="app/admin/gym/programming/logos/physical/logosPhysicalAddEditRoute.js"></script>
+          <!-- /gym/programming/logos -->
+          <script src="app/admin/gym/programming/programmingRoute.js"></script>
+          <script src="app/admin/gym/programming/logos/fundamentals/logosFundamentalsAddEditRoute.js"></script>
+          <script src="app/admin/gym/programming/logos/knowledge/logosKnowledgeAddEditRoute.js"></script>
+          <script src="app/admin/gym/programming/logos/physical/logosPhysicalAddEditRoute.js"></script>
 
-  <!-- angular module -->
-  <!-- <script src="app.js"></script> -->
+          <!-- angular module -->
+          <!-- <script src="app.js"></script> -->
 
-  <!-- angular controllers -->
-  <script src="app/public/register/registerCtrl.js"></script>
-  <script src="app/public/login/loginCtrl.js"></script>
+          <!-- angular controllers -->
+          <script src="app/public/register/registerCtrl.js"></script>
+          <script src="app/public/login/loginCtrl.js"></script>
 
-  <!-- angular services -->
-  <script src="app/components/auth/auth.service.js"></script>
-  <script src="app/components/auth/user.service.js"></script>
+          <!-- angular services -->
+          <script src="app/components/auth/auth.service.js"></script>
+          <script src="app/components/auth/user.service.js"></script>
 
 </body>
 
