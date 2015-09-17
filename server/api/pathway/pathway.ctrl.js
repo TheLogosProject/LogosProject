@@ -1,8 +1,8 @@
-var Gym = require('../models/gyms');
+var Pathway = require('./pathway.model');
 
 module.exports = {
     find: function (req, res) {
-        Gym.find(req.query)
+        Pathway.find(req.query)
             .exec(function (err, response) {
                 if (err) {
                     res.send(err);
@@ -12,8 +12,8 @@ module.exports = {
             });
     },
     save: function (req, res) {
-        var newGym = new Gym(req.body);
-        newGym.save(function (err, response) {
+        var newPathway = new Pathway(req.body);
+        newPathway.save(function (err, response) {
             if (err) {
                 res.send(err);
             } else {

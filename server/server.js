@@ -5,9 +5,9 @@ var express = require('express'),
     cors = require('cors');
 
 //CONTROLLERS
-var gymsCtrl = require('./controllers/gyms-ctrl.js'),
-    userCtrl = require('./controllers/users-ctrl.js'),
-    pathwaysCtrl = require('./controllers/pathways-ctrl.js');
+var gymsCtrl = require('./api/gym/gym.ctrl.js'),
+    userCtrl = require('./api/user/user.ctrl.js'),
+    pathwaysCtrl = require('./api/pathway/pathway.ctrl.js');
 
 //EXPRESS
 var app = express();
