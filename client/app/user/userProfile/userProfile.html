@@ -22,10 +22,10 @@
       </div>
       <div class="col s6 center offset-s3">
         <h4>
-          {{userInfo.firstName}}
-          {{userInfo.lastName}}</h4>
+          {{userInfo.name.first}}
+          {{userInfo.name.last}}</h4>
         <h5 class="grey-text">Member of
-          {{userInfo.gym}}</h5>
+          {{gymName}}</h5>
       </div>
     </div>
     <div class="row">
@@ -33,18 +33,22 @@
       <div class="col l8 center offset-l2 m12 s12">
         <h5>Athlete Info</h5>
 <!--beginning of form-->
-        <form ng-submit="updateProfile(userInfo)">
+        <form>
           <div class="input-field col s12">
-            <input class="validate" id="firstName" ng-model="userInfo.firstName" required type="text">
+            <input class="validate" id="firstName" ng-model="userInfo.name.first" required type="text">
             <label class="active" for="firstName">First Name</label>
           </div>
           <div class="input-field col s12">
-            <input class="validate" id="lastName" ng-model="userInfo.lastName" required type="text">
+            <input class="validate" id="lastName" ng-model="userInfo.name.last" required type="text">
             <label class="active" for="lastName">Last Name</label>
           </div>
           <div class="input-field col s12">
-            <input class="validate" id="email" ng-model="userInfo.email" required type="text">
+            <input class="validate" id="email" ng-model="userInfo.contact_info.email" required type="text">
             <label class="active" for="email">E-mail</label>
+          </div>
+          <div class="input-field col s12">
+            <input class="validate" id="phone" ng-model="userInfo.contact_info.phone" required type="text">
+            <label class="active" for="phone">Phone</label>
           </div>
           <br>
           <h6>Gender:</h6>
@@ -54,11 +58,11 @@
           <label for="female">Female</label>
           <br>
           <div class="input-field col s6">
-            <input class="validate" id="heightFeet" ng-model="userInfo.heightFeet" required type="text">
+            <input class="validate" id="heightFeet" ng-model="userInfo.height.feet" required type="text">
             <label class="active" for="heightFeet">Height (Feet)</label>
           </div>
           <div class="input-field col s6">
-            <input class="validate" id="heightInches" ng-model="userInfo.heightInches" required type="text">
+            <input class="validate" id="heightInches" ng-model="userInfo.height.inches" required type="text">
             <label class="active" for="heightInches">Height (Inches)</label>
           </div>
           <div class="input-field col s12">

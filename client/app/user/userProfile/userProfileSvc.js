@@ -14,7 +14,7 @@ app.service('userProfileSvc', function ($http, $stateParams) {
   this.updateUserData = function (userData) {
     return $http({
       method: 'PUT',
-      url: 'http://localhost:1337/api/user-update/' + userData._id,
+      url: 'http://localhost:8555/api/user-update',
       data: userData
     }).then(function (response) {
       return response.data;
