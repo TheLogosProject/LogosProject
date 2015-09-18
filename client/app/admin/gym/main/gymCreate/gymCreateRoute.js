@@ -7,6 +7,7 @@ angular.module('app')
         $stateProvider
             .state('gymCreate', {
                 url: '/gym/main/create',
-                templateUrl: 'app/admin/gym/main/gymCreate.html'
+                templateUrl: 'app/admin/gym/main/gymCreate/gymCreate.html',
+                controller: 'gymCreateCtrl'
             });
     });
