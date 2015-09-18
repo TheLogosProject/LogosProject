@@ -6,16 +6,20 @@ var newUserSchema = new Schema({
         first: { type: String },
         last: { type: String }
     },
-    gender: { type: String },
-    age: { type: Number },
-    weight: { type: Number },
+    gender: { type: String, default: "" },
+    age: { type: Number, default: 0 },
+    weight: { type: Number, default: 0 },
+    height: {
+        feet: { type: String, default: "" },
+        inches: { type: String, default: "" }
+    },
     contact_info: {
-        phone: { type: String },
-        email: { type: String }
+        phone: { type: String, default: "" },
+        email: { type: String, default: "" }
     },
     gym: { type: Schema.Types.ObjectId, ref: 'gyms' },
     goals: [
-        { type: String }
+        { type: String, default: "" }
     ],
     get_to_know: {
         questions: [

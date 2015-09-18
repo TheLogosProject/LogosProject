@@ -3,7 +3,7 @@ var User = require('./user.model'),
     Gym = require('../gym/gym.model');
 
 module.exports = {
-    find: function (req, res) {
+    getAllUsers: function (req, res) {
         User.find(req.query)
             .exec(function (err, response) {
                 if (err) {
@@ -23,7 +23,42 @@ module.exports = {
                 }
             });
     },
-    initialSave: function (req, res) {
+    getUserDetails: function (req, res) {
+        User.findById(req.params.memberId)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    var userObj = {
+                        _id: response._id,
+                        name: response.name,
+                        gender: response.gender,
+                        age: response.age,
+                        weight: response.weight,
+                        height: response.height,
+                        goals: response.goals,
+                        contact_info: response.contact_info
+                    };
+                    Gym.findById(response.gym)
+                        .exec(function (err, response) {
+                            if (err) {
+                                res.send(err);
+                            } else {
+                                var gymObj = {
+                                    _id: response._id,
+                                    name: response.name
+                                };
+                                var newObj = {
+                                    user: userObj,
+                                    gym: gymObj
+                                };
+                                res.send(newObj);
+                            }
+                        });
+                }
+            });
+    },
+    addUser: function (req, res) {
         var newUser = new User(req.body);
         newUser.save(function (err, response) {
             if (err) {
@@ -85,6 +120,6 @@ module.exports = {
         "first": "Mike",
         "last": "Buckley"
     },
-    "gym": "55fc1f3d0ea7d9f2f5df16fe"
+    "gym": "55fc472cddfcbac025fce11b"
 }
 */

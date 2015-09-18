@@ -33,9 +33,10 @@ app.get('/api/gym-names', gymsCtrl.getGymNames);
 app.get('/api/gym-details/:gymId', gymsCtrl.getGymDetails);
 app.post('/api/gym', gymsCtrl.saveGym);
 //--User Endpoints--//
-app.get('/api/user', userCtrl.find);
+app.get('/api/user', userCtrl.getAllUsers);
 app.get('/api/user/:memberId', userCtrl.findByID);
-app.post('/api/add-user', userCtrl.initialSave);
+app.get('/api/user-details/:memberId', userCtrl.getUserDetails);
+app.post('/api/add-user', userCtrl.addUser);
 //--Pathway Endpoints--//
 app.get('/api/pathway', pathwaysCtrl.find);
 app.post('/api/pathway', pathwaysCtrl.save);
