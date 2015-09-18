@@ -60,6 +60,6 @@ module.exports = {
 
 /* For testing adding new gym with Postman
 {
-    "name": "The Gorilla Joe",
+    "name": "The Gorilla Joe"
 }
 */

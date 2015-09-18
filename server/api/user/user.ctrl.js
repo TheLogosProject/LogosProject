@@ -82,9 +82,9 @@ module.exports = {
 /* For initial user add testing
 {
     "name": {
-        "first": "John",
+        "first": "Mike",
         "last": "Buckley"
     },
-    "gym": "55fb5ee7fbc3553cc6b616b4"
+    "gym": "55fc1f3d0ea7d9f2f5df16fe"
 }
 */

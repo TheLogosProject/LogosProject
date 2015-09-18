@@ -2,7 +2,8 @@
 var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
-    cors = require('cors');
+    cors = require('cors'),
+    MongoLab = require('./mongolab');
 
 //CONTROLLERS
 var gymsCtrl = require('./api/gym/gym.ctrl.js'),
@@ -13,7 +14,7 @@ var gymsCtrl = require('./api/gym/gym.ctrl.js'),
 var app = express();
 
 //CONNECTION
-var mongoUri = 'mongodb://localhost:27017/logos-project';
+var mongoUri = 'mongodb://' + MongoLab.userName + ':' + MongoLab.password + '@ds059682.mongolab.com:59682/the-logos-project';
 mongoose.set('debug', true);
 mongoose.connect(mongoUri);
 mongoose.connection.once('open', function () {

@@ -6,3 +6,4 @@ client/client/bower_components
 .DS_Store
 server/node_modules
 .vscode
+server/mongolab.js
