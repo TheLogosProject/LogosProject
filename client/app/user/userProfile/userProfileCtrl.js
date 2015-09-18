@@ -1,17 +1,19 @@
-app.controller('userProfileCtrl', function ($scope, $stateParams, userObj) {
+app.controller('userProfileCtrl', function ($scope, $stateParams, userProfileSvc) {
 
-//Get user profile information
-  var getProfile = function () {
-    userData.getUser().then(function (response) {
+  //Get user profile information
+  var memberId = $stateParams.memberId;
+
+  var getProfile = function (memberId) {
+    userProfileSvc.getUser(memberId).then(function (response) {
       console.log(response);
       $scope.userInfo = response;
     });
   };
-  getProfile();
+  getProfile(memberId);
 
-//Update user profile information
+  //Update user profile information
   $scope.updateProfile = function (userData) {
-    userData.updateUserData(user).then(function (response) {
+    userProfileSvc.updateUserData(user).then(function (response) {
       getProfile();
       $location.path('/userLanding');
       Materialize.toast('Updated successfully', 1000);
