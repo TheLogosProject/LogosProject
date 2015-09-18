@@ -13,7 +13,6 @@ module.exports = {
             });
     },
     save: function (req, res) {
-        var newGymObj = req.body;
         Pathway.find(req.query)
             .exec(function (err, response) {
                 if (err) {
@@ -40,6 +39,7 @@ module.exports = {
                     var logos = response[0]["pathway"]["0"];
                     var pathos = response[0]["pathway"]["1"];
                     var ethos = response[0]["pathway"]["2"];
+                    var newGymObj = req.body;
                     newGymObj.gym_pathway_program = {
                         logos: logos,
                         pathos: pathos,
@@ -61,7 +61,5 @@ module.exports = {
 /* For testing adding new gym with Postman
 {
     "name": "The Gorilla Joe",
-    "admin": "55f8c5fd35fb603e5387d01a",
-    "currently_active": true
 }
 */
