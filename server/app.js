@@ -38,6 +38,7 @@ app.get('/api/user', userCtrl.getAllUsers);
 app.get('/api/user/:memberId', userCtrl.findByID);
 app.get('/api/user-details/:memberId', userCtrl.getUserDetails);
 app.post('/api/add-user', userCtrl.addUser);
+app.put('/api/user-update', gymsCtrl.updateUser);
 //--Pathway Endpoints--//
 app.get('/api/pathway', pathwaysCtrl.find);
 app.post('/api/pathway', pathwaysCtrl.save);

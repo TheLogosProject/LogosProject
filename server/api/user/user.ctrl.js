@@ -111,6 +111,16 @@ module.exports = {
                     });
             }
         });
+    },
+    updateUser: function (req, res) {
+        User.findByIdAndUpdate(req.body._id, req.body)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    res.send(response);
+                }
+            });
     }
 };
 
