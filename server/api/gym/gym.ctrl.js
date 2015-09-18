@@ -92,6 +92,16 @@ module.exports = {
                     });
                 }
             });
+    },
+    updateGym: function (req, res) {
+        Gym.findByIdAndUpdate(req.body._id, req.body)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    res.send(response);
+                }
+            });
     }
 };
 

@@ -32,6 +32,7 @@ app.get('/api/gym', gymsCtrl.getAllGyms);
 app.get('/api/gym-names', gymsCtrl.getGymNames);
 app.get('/api/gym-details/:gymId', gymsCtrl.getGymDetails);
 app.post('/api/gym', gymsCtrl.saveGym);
+app.put('/api/gym-update', gymsCtrl.updateGym);
 //--User Endpoints--//
 app.get('/api/user', userCtrl.getAllUsers);
 app.get('/api/user/:memberId', userCtrl.findByID);
