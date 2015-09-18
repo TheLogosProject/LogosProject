@@ -30,10 +30,11 @@ app.use(express.static('./client'));
 //--Gym Endpoints--//
 app.get('/api/gym', gymsCtrl.getAllGyms);
 app.get('/api/gym-names', gymsCtrl.getGymNames);
+app.get('/api/gym-details/:gymId', gymsCtrl.getGymDetails);
 app.post('/api/gym', gymsCtrl.saveGym);
 //--User Endpoints--//
 app.get('/api/user', userCtrl.find);
-app.get('/api/user/:id', userCtrl.findByID);
+app.get('/api/user/:memberId', userCtrl.findByID);
 app.post('/api/add-user', userCtrl.initialSave);
 //--Pathway Endpoints--//
 app.get('/api/pathway', pathwaysCtrl.find);

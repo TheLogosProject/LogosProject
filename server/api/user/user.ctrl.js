@@ -14,7 +14,7 @@ module.exports = {
             });
     },
     findByID: function (req, res) {
-        User.findById(req.params.id)
+        User.findById(req.params.memberId)
             .exec(function (err, response) {
                 if (err) {
                     res.send(err);

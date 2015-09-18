@@ -31,6 +31,27 @@ module.exports = {
                 }
             });
     },
+    getGymDetails: function (req, res) {
+        Gym.findById(req.params.gymId)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    console.log(response);
+                    var gymsArr = [];
+                        var gymObj = {
+                            _id: response["_id"],
+                            name: response["name"],
+                            active: response["currently_active"],
+                            address: response["address"],
+                            contact_info: response["contact_info"],
+                            gym_details: response["gym_details"]
+                        };
+                    gymsArr.push(gymObj);
+                    res.send(gymsArr);
+                }
+            });
+    },
     saveGym: function (req, res) {
         Pathway.find(req.query)
             .exec(function (err, response) {
