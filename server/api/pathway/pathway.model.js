@@ -62,7 +62,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 1",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -82,7 +82,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -106,7 +106,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -130,7 +130,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -154,7 +154,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -166,7 +166,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 2",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -186,7 +186,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -210,7 +210,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -234,7 +234,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -258,7 +258,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -270,7 +270,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 3",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -290,7 +290,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -314,7 +314,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -338,7 +338,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -362,7 +362,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -374,7 +374,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 4",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -394,7 +394,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -418,7 +418,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -442,7 +442,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -466,7 +466,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -488,7 +488,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 1",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -508,7 +508,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -532,7 +532,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -556,7 +556,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -580,7 +580,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -592,7 +592,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 2",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -612,7 +612,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -636,7 +636,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -660,7 +660,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -684,7 +684,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -696,7 +696,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 3",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -716,7 +716,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -740,7 +740,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -764,7 +764,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -788,7 +788,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -800,7 +800,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 4",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -820,7 +820,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -844,7 +844,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -868,7 +868,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -892,7 +892,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -914,7 +914,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 1",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -934,7 +934,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -958,7 +958,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -982,7 +982,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -1006,7 +1006,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -1018,7 +1018,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 2",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -1038,7 +1038,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -1062,7 +1062,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -1086,7 +1086,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -1110,7 +1110,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -1122,7 +1122,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 3",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -1142,7 +1142,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -1166,7 +1166,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -1190,7 +1190,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -1214,7 +1214,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -1226,7 +1226,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                 {
                     "name": "Stage 4",
                     "amount_completed": 0,
-                    "total_to_complete": 25,
+                    "total_to_complete": 0,
                     "complete": false,
                     "evaluations": [
                         {
@@ -1246,7 +1246,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": true,
                             "approved_by": "",
@@ -1270,7 +1270,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -1294,7 +1294,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",
@@ -1318,7 +1318,7 @@ module.exports = mongoose.model('pathways', newPathwaySchema);
                                 "complete": false,
                                 "completed_on": ""
                             },
-                            "total_to_complete": 6.25,
+                            "total_to_complete": 0,
                             "complete": false,
                             "needs_approval": false,
                             "approved_by": "",

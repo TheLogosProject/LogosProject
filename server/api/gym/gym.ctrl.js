@@ -19,6 +19,24 @@ module.exports = {
                 if (err) {
                     res.send(err);
                 } else {
+                    var pathwayCount = response[0]["pathway"];
+                    for (var i = 0; i < pathwayCount.length; i++) {
+                        var stagesCount = response[0]["pathway"][i]["stages"];
+                        var stagesLength = stagesCount.length;
+                        var x = 0;
+                        while (x < stagesLength) {
+                            response[0]["pathway"][i]["stages"][x]["total_to_complete"] = 100 / stagesLength;
+                            var stagesValue = response[0]["pathway"][i]["stages"][x]["total_to_complete"];
+                            var evaluationCount = response[0]["pathway"][i]["stages"][x]["evaluations"];
+                            var evaluationLength = evaluationCount.length;
+                            var y = 0;
+                            while (y < evaluationLength) {
+                                response[0]["pathway"][i]["stages"][x]["evaluations"][y]["total_to_complete"] = stagesValue / evaluationLength;
+                                y++;
+                            }
+                            x++;
+                        }
+                    }
                     var logos = response[0]["pathway"]["0"];
                     var pathos = response[0]["pathway"]["1"];
                     var ethos = response[0]["pathway"]["2"];
