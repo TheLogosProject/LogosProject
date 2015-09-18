@@ -5,6 +5,12 @@ angular.module('app')
     $stateProvider
     .state('register', {
       url: '/register',
-      templateUrl: 'app/public/register/register.html'
+      templateUrl: 'app/public/register/register.html',
+      controller: 'registerCtrl',
+      resolve: {
+        gyms: function(gymLandingService) {
+          return gymLandingService.getGym();
+        }
+      }
     });
   });

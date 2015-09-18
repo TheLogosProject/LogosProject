@@ -1,10 +1,19 @@
 (function () {
   'use strict';
 
-
+// ******* Note for Mike - insert Auth dependency again
 
 angular.module('app')
-  .controller('registerCtrl', function ($scope, Auth, $location, $window) {
+  .controller('registerCtrl', function ($scope, $location, $window, gyms) {
+    // bring in gym array for gym dropdown
+    $scope.gymList = gyms;
+    $scope.gymOptions = $scope.gymList;
+    $scope.changeGym = function() {
+      $scope.gymId =
+    }
+    console.log($scope.gymOptions);
+
+    // authentication form brian d
     $scope.user = {};
     $scope.errors = {};
 
