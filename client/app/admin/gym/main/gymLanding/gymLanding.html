@@ -17,9 +17,9 @@
                 </thead>
                 <tbody>
                     <!-- ng-repeat these table rows -->
-                    <tr>
-                        <td>Generator CrossFit</td>
-                        <td>Yes</td>
+                    <tr ng-repeat="gym in gymInfo">
+                        <td>{{gym.name}}</td>
+                        <td>{{gym.active}}</td>
                         <td><a href="/#/gym/manage/gymId" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
                     </tr>
                 </tbody>
