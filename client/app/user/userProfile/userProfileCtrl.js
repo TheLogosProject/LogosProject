@@ -29,13 +29,7 @@ app.controller('userProfileCtrl', function ($scope, $stateParams, $location, use
       };
       $scope.updateProfile = function (userInfo) {
         userProfileSvc.updateUserData(userInfo).then(function (response) {
-          //reload function here, but it feels somewhat clunky
-          // window.location.reload(true);
-          // location.path doesn't seem to be redirecting
-          // var profPath = "/userProfile/" + userInfo._id;
-          // $location.path(profPath);
           Materialize.toast('Updated successfully', 5000);
-          console.log(userInfo);
         }, function (err) {
           Materialize.toast('There was an error', 3000);
         });
