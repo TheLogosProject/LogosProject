@@ -26,9 +26,13 @@
                     </div>
 
                     <!-- ************** this will need to be a dropdown that will pre-populated with existing, active gyms ************** -->
+                    <select ng-model="gymId" ng-options="gyms._id as gyms.name for gyms in gymOptions" ng-change="changeGym()">
+                      <option disabled selected> Select Your Gym </option>
+                    </select>
+
                     <div class="row">
                         <div class="input-field col s12">
-                            <input class="validate" id="gym" ng-model="gym" required type="text">
+                            <input class="validate" id="gym" ng-model="gyms" required type="text">
                             <label for="gym">Enter Gym Name</label>
                         </div>
                     </div>
@@ -73,6 +77,12 @@
                         $("#validate-status").text("Passwords DO NOT match!");
                     }
                 }
+
+                <!-- Script required for drop down menu -->
+                  $(document).ready(function() {
+                    $('select').material_select();
+                  });
+
                 </script>
             </div>
         </div>
