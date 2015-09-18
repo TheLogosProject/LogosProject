@@ -6,4 +6,8 @@ client/client/bower_components
 .DS_Store
 server/node_modules
 .vscode
+<<<<<<< Updated upstream
 server/mongolab.js
+=======
+server/mongolabs.js
+>>>>>>> Stashed changes
