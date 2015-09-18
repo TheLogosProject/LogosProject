@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 center">
+        <h4>
+          Add New Gym
+        </h4>
+      </div>
+      <div class="col l8 center offset-l2 m12 s12">
+        <div class="input-field col s12">
+          <form ng-submit="addGym(gym)">
+            <input class="validate" id="gymName" ng-model="gym.name" required type="text">
+            <label for="gymName"> Gym Name</label>
+          </div>
+          <button class="btn waves-effect waves blue darken-3 center" ng-click="addGym(gym)" type="submit">Submit</button>
+          <a href="#/gym/main">
+            <button class="btn waves-effect waves red darken-3 center">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
