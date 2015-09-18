@@ -13,7 +13,7 @@ app.service('gymDetailService', function ($http, $stateParams) {
     this.updateGym = function (gym) {
         return $http({
             method: 'PUT',
-            url: 'http://localhost:8555/api/gym-update/' + $stateParams.gymId,
+            url: 'http://localhost:8555/api/gym-update',
             data: gym
         })
             .then(function (response) {
