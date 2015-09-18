@@ -10,4 +10,14 @@ app.service('gymDetailService', function ($http, $stateParams) {
             });
     };
 
+    this.updateGym = function (gym) {
+        return $http({
+            method: 'PUT',
+            url: 'http://localhost:8555/api/gym-update/' + $stateParams.gymId,
+            data: gym
+        })
+            .then(function (response) {
+                return response.data;
+            });
+    };
 });

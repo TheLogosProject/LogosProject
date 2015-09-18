@@ -17,7 +17,10 @@
     "tests"
   ],
   "dependencies": {
+    "angular": "~1.4.6",
     "angular-cookies": "~1.4.6",
+    "angular-materialize": "*",
+    "jquery": "~2.1.4",
     "materialize": "~0.97.0"
   }
 }
