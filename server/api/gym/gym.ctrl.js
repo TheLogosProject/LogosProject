@@ -2,7 +2,7 @@ var Gym = require('./gym.model'),
     Pathway = require('../pathway/pathway.model');
 
 module.exports = {
-    find: function (req, res) {
+    getAllGyms: function (req, res) {
         Gym.find(req.query)
             .exec(function (err, response) {
                 if (err) {
@@ -12,7 +12,26 @@ module.exports = {
                 }
             });
     },
-    save: function (req, res) {
+    getGymNames: function (req, res) {
+        Gym.find(req.query)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    var gymsArr = [];
+                    for (var i = 0; i < response.length; i++) {
+                        var gymObj = {
+                            _id: response[i]["_id"],
+                            name: response[i]["name"],
+                            active: response[i]["currently_active"]
+                        };
+                        gymsArr.push(gymObj);
+                    }
+                    res.send(gymsArr);
+                }
+            });
+    },
+    saveGym: function (req, res) {
         Pathway.find(req.query)
             .exec(function (err, response) {
                 if (err) {

@@ -28,18 +28,16 @@ app.use(express.static('./client'));
 
 //ENDPOINTS
 //--Gym Endpoints--//
-app.get('/api/gym', gymsCtrl.find);
-app.post('/api/gym', gymsCtrl.save);
-// app.put('/api/gym/:id', gymsCtrl.updateById);
+app.get('/api/gym', gymsCtrl.getAllGyms);
+app.get('/api/gym-names', gymsCtrl.getGymNames);
+app.post('/api/gym', gymsCtrl.saveGym);
 //--User Endpoints--//
 app.get('/api/user', userCtrl.find);
 app.get('/api/user/:id', userCtrl.findByID);
 app.post('/api/add-user', userCtrl.initialSave);
-// app.put('/api/user/:id', userCtrl.updateById);
 //--Pathway Endpoints--//
 app.get('/api/pathway', pathwaysCtrl.find);
 app.post('/api/pathway', pathwaysCtrl.save);
-// app.put('/api/pathway/:id', pathwaysCtrl.updateById);
 
 //LISTEN
 app.listen(8555);

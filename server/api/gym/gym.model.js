@@ -34,7 +34,7 @@ var newGymSchema = new Schema({
     get_to_know_questions: [
         { type: String }
     ],
-    currently_active: { type: Boolean }
+    currently_active: { type: Boolean, default: true }
 });
 
 module.exports = mongoose.model('gyms', newGymSchema);
