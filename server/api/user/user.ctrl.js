@@ -1,5 +1,6 @@
 var User = require('./user.model'),
-    Pathway = require('../pathway/pathway.model');
+    Pathway = require('../pathway/pathway.model'),
+    Gym = require('../gym/gym.model');
 
 module.exports = {
     find: function (req, res) {
@@ -49,7 +50,26 @@ module.exports = {
                                     if (err) {
                                         res.send(err);
                                     } else {
-                                        res.send(response);
+                                        Gym.findById(req.body.gym)
+                                            .exec(function (err, response) {
+                                                if (err) {
+                                                    res.send(err);
+                                                } else {
+                                                    var newMemberToGym = response.members;
+                                                    newMemberToGym.push(userID);
+                                                    var newGymObj = {
+                                                        members: newMemberToGym
+                                                    };
+                                                    Gym.findByIdAndUpdate(req.body.gym, newGymObj)
+                                                        .exec(function (err, response) {
+                                                            if (err) {
+                                                                res.send(err);
+                                                            } else {
+                                                                res.send(response);
+                                                            }
+                                                        });
+                                                }
+                                            });
                                     }
                                 });
                         }
@@ -65,9 +85,6 @@ module.exports = {
         "first": "John",
         "last": "Buckley"
     },
-    "gym": "55f8c47ba11f9a255010bd91",
-    "is_master": false,
-    "is_admin": false,
-    "currently_active": true
+    "gym": "55fb5ee7fbc3553cc6b616b4"
 }
 */
