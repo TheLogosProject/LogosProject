@@ -30,7 +30,8 @@
 <!-- Athlete Info -->
       <div class="col l8 center offset-l2 m12 s12">
         <h5>Athlete Info</h5>
-        <form ng-submit="updateProfile(profile)">
+<!--beginning of form-->
+        <form ng-submit="updateProfile(userData)">
           <div class="input-field col s12">
             <input class="validate" id="firstName" ng-model="firstName" required type="text">
             <label for="firstName">First Name</label>
@@ -61,25 +62,28 @@
           <div class="input-field col s12">
             <input class="validate" id="weight" ng-model="weight" required type="text">
             <label for="weight">Weight (lbs)</label>
-          </div>
+            <a class="btn waves-effect waves-light blue darken-3" id="download-button" type="submit">Submit</a>
+          </form>
+<!--end of form-->
+        </div>
 
 <!-- Goals -->
-          <div class="row">
-            <div class="col s12">
-              <h5>
-                Your Goals
-              </h5>
-              <a class="waves-effect btn-flat grey lighten-2">Add Goal</a>
-              <ol>
-                <li>ng-repeat showing goals
-                  <i class="material-icons right">
-                    <a href="#" ng-click="deleteGoal(goal)">delete</i>
-                  </a>
-                </li>
-              </ol>
-            </div>
+        <div class="row">
+          <div class="col s12">
+            <h5>
+              <br>
+              Your Goals
+            </h5>
+            <a class="waves-effect btn-flat grey lighten-2">Add Goal</a>
+            <ol>
+              <li>ng-repeat showing goals
+                <i class="material-icons right">
+                  <a href="#" ng-click="deleteGoal(goal)">delete</i>
+                </a>
+              </li>
+            </ol>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </div>

@@ -7,6 +7,7 @@ angular.module('app')
         $stateProvider
             .state('gymLanding', {
                 url: '/gym/main',
-                templateUrl: 'app/admin/gym/main/gymLanding.html'
+                templateUrl: 'app/admin/gym/main/gymLanding/gymLanding.html',
+                controller: 'gymLandingCtrl'                
             });
     });
