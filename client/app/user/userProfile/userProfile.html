@@ -52,9 +52,9 @@
           </div>
           <br>
           <h6>Gender:</h6>
-          <input class="input-field" id="male" name="group1" value="male" ng-model="userInfo.gender" type="radio"/>
+          <input class="input-field" id="male" name="group1" ng-model="userInfo.gender" type="radio" value="male"/>
           <label for="male">Male</label>
-          <input class="input-field" id="female" name="group1" value="female" ng-model="userInfo.gender" type="radio"/>
+          <input class="input-field" id="female" name="group1" ng-model="userInfo.gender" type="radio" value="female"/>
           <label for="female">Female</label>
           <br>
           <div class="input-field col s6">
@@ -70,6 +70,7 @@
             <label class="active" for="weight">Weight (lbs)</label>
             <button class="btn waves-effect waves-light blue darken-3" id="submit-button" ng-click="updateProfile(userInfo)" type="submit">Update</button>
           </form>
+          <a class="btn waves-effect waves red darken-3 center modal-close" href="/#/userLanding" type="submit">Cancel</a>
 <!--end of form-->
         </div>
 
