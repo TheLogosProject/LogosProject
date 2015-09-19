@@ -81,7 +81,6 @@
               <br>
               Your Goals
             </h5>
-            <a class="waves-effect btn-flat grey lighten-2">Add Goal</a>
             <ol>
               <li>ng-repeat showing goals
                 <i class="material-icons right">
@@ -90,7 +89,15 @@
               </li>
             </ol>
           </div>
+          <!-- section for adding goal. This will need to be built out once goals are implemented in schema -->
+          <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=true">Add Goal</a>
+          <div ng-show="goalAdd">
+            <input class="validate" id="userGoal" ng-model="userInfo.goal" placeholder="Enter goal" required type="text">
+            <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false">Submit</a>
+          </div>
+          <!-- end of adding goal section -->
         </div>
       </div>
     </div>
   </div>
+</div>
