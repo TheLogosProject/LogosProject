@@ -72,14 +72,7 @@ module.exports = {
                             res.send(err);
                         } else {
                             var newUserObj = response;
-                            var logos = response.gym.gym_pathway_program.logos;
-                            var pathos = response.gym.gym_pathway_program.pathos;
-                            var ethos = response.gym.gym_pathway_program.ethos;
-                            newUserObj.pathways = {
-                                logos: logos,
-                                pathos: pathos,
-                                ethos: ethos
-                            };
+                            newUserObj.pathways = response.gym.gym_pathway_program;
                             User.findByIdAndUpdate(userID, newUserObj)
                                 .exec(function (err, response) {
                                     if (err) {

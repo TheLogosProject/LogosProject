@@ -29,11 +29,7 @@ var newUserSchema = new Schema({
             { type: String }
         ]
     },
-    pathways: {
-        logos: { type: Object },
-        pathos: { type: Object },
-        ethos: { type: Object }
-    },
+    pathways: { type: Array },
     login_details: {
         email: { type: String },
         hashed_password: { type: String },

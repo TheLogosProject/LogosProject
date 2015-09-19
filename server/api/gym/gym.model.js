@@ -26,11 +26,7 @@ var newGymSchema = new Schema({
         gym_logo: { type: String, default: "" }
     },
     gym_pictures: { type: String },
-    gym_pathway_program: {
-        logos: { type: Object },
-        pathos: { type: Object },
-        ethos: { type: Object }
-    },
+    gym_pathway_program: { type: Array },
     get_to_know_questions: [
         { type: String }
     ],

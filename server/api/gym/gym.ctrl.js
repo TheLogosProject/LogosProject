@@ -88,15 +88,12 @@ module.exports = {
                             x++;
                         }
                     }
-                    var logos = response[0]["pathway"]["0"];
-                    var pathos = response[0]["pathway"]["1"];
-                    var ethos = response[0]["pathway"]["2"];
                     var newGymObj = req.body;
-                    newGymObj.gym_pathway_program = {
-                        logos: logos,
-                        pathos: pathos,
-                        ethos: ethos
-                    };
+                    newGymObj.gym_pathway_program = [];
+                    for (var y = 0; y < pathwayCount.length; y++) {
+                        newGymObj.gym_pathway_program.push(response[0]["pathway"][y]);
+                    }
+                    console.log(newGymObj);
                     var newGym = new Gym(newGymObj);
                     newGym.save(function (err, response) {
                         if (err) {
@@ -124,7 +121,7 @@ module.exports = {
                 if (err) {
                     res.send(err);
                 } else {
-                    
+
                 }
             });
     },
