@@ -49,6 +49,21 @@ module.exports = {
                 }
             });
     },
+    getGymPathway: function (req, res) {
+        Gym.findById(req.params.gymId)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    var gymObj = {
+                        _id: response._id,
+                        name: response.name,
+                        pathways: response.gym_pathway_program
+                    };
+                    res.send(gymObj);
+                }
+            });
+    },
     saveGym: function (req, res) {
         Pathway.find(req.query)
             .exec(function (err, response) {

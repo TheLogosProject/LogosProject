@@ -31,6 +31,7 @@ app.use(express.static('./client'));
 app.get('/api/gym', gymsCtrl.getAllGyms);
 app.get('/api/gym-names', gymsCtrl.getGymNames);
 app.get('/api/gym-details/:gymId', gymsCtrl.getGymDetails);
+app.get('/api/gym-pathway/:gymId', gymsCtrl.getGymPathway);
 app.post('/api/gym', gymsCtrl.saveGym);
 app.put('/api/gym-update', gymsCtrl.updateGym);
 //--User Endpoints--//
