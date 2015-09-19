@@ -9,7 +9,9 @@ angular.module('app')
       controller: 'registerCtrl',
       resolve: {
         gyms: function(gymLandingService) {
-          return gymLandingService.getGym();
+           return gymLandingService.getGym().then(function (response) {
+                return response;
+          });
         }
       }
     });
