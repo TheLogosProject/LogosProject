@@ -36,15 +36,15 @@
 	        	<h5> Your Badges </h5>
 	        </div>
 	        <div class="col s12 m4 center">
-	        	<img class="badge" src="app/assets/badge.svg" />
+	        	<img class="badge" ng-src="{{logos.isActive === 'true' && 'app/assets/badge.svg' || 'app/assets/incompleteBadge.svg'}}" />
 	        	<h5> Logos </h5>
 	        </div>
 	        <div class="col s12 m4 center">
-	        	<img class="badge" src="app/assets/badge.svg" />
+	        	<img class="badge" ng-src="{{pathos.isActive === 'true' && 'app/assets/badge.svg' || 'app/assets/incompleteBadge.svg'}}" />
 	        	<h5> Pathos </h5>
 	        </div>
 	        <div class="col s12 m4 center">
-	        	<img class="badge" src="app/assets/badge.svg" />
+	        	<img class="badge" ng-src="{{ethos.isActive === 'true' && 'app/assets/badge.svg' || 'app/assets/incompleteBadge.svg'}}" />
 	        	<h5> Ethos </h5>
 	        </div>
         </div>
@@ -53,7 +53,6 @@
         <div class="row">
             <div class="col l8 center offset-l2 m12 s12">
                 <h5> Your Goals </h5>
-                <a class="waves-effect waves btn-flat">Add Goal</a>
                 <ol>
                     <li>ng-repeat showing goals
                     <i class="material-icons right"> <a href="#" ng-click="deleteGoal(goal)">delete</i></a>
