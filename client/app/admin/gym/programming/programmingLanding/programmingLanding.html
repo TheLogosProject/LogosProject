@@ -10,7 +10,7 @@
 <!-- Select Program -->
 <!-- There is a bug where if Logos is selected first it will not load until you click it again -->
 <!-- The other two paths work without issue -->
-      <!-- <div class="input-field col s12 m12 l4 center offset-l4">
+      <div class="input-field col s12 m12 l4 center offset-l4">
         <select ng-model="pathSelection">
           <option disabled selected>
             Select Your Program</option>
@@ -18,7 +18,7 @@
           <option value="2">Pathos</option>
           <option value="3">Ethos</option>
         </select>
-      </div> -->
+      </div>
 
       <div class="row">
           <div class=" col s12 m12 l4 center offset-l4">
@@ -28,7 +28,7 @@
           </div>
       </div>
 
-      <div class="input-field col s12 m12 l4 center offset-l4" ng-show="selected === '{{pathwaysOptions._id}}'">
+      <div class="input-field col s12 m12 l4 center offset-l4 ng-hide" ng-show="selected === '{{pathwayOptions[0].value}}'">
         Logos Options
         <select onChange="window.location.href=this.value">
           <option disabled selected value="">Select Your Program Part</option>
