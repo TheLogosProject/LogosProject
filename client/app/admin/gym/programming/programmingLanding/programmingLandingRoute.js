@@ -5,8 +5,17 @@ angular.module('app')
         $stateProvider
             .state('programming', {
                 // will be :gymId when live
-                url: '/gym/programming/gymId',
-                templateUrl: 'app/admin/gym/programming/programming.html'
+                url: '/gym/programming/:gymId',
+                templateUrl: 'app/admin/gym/programming/programmingLanding/programmingLanding.html',
+                controller: 'programmingLandingCtrl',
+                resolve: {
+                  pathways: function(programmingLandingService, $stateParams) {
+                    var gymId = $stateParams.gymId;
+                     return programmingLandingService.getGymPathway(gymId).then(function(response) {
+                          return response;
+                    });
+                  }
+                }
             })
 
             .state('programming.logosFundamentals', {
