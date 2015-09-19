@@ -1,7 +1,7 @@
 app.service('programmingLandingService', function ($http) {
 
   //get user profile information
-  this.getGymPathway = function (gymId) {
+  this.getGymObj = function (gymId) {
     return $http({
       method: 'GET',
       url: 'http://localhost:8555/api/gym-pathway/' + gymId,
