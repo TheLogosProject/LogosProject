@@ -33,7 +33,9 @@ app.get('/api/gym-names', gymsCtrl.getGymNames);
 app.get('/api/gym-details/:gymId', gymsCtrl.getGymDetails);
 app.get('/api/gym-pathway/:gymId', gymsCtrl.getGymPathway);
 app.post('/api/gym', gymsCtrl.saveGym);
+app.post('/api/gym-add-evaluation', gymsCtrl.addEvaluation);
 app.put('/api/gym-update', gymsCtrl.updateGym);
+app.put('/api/gym-edit-evaluation', gymsCtrl.editEvaluation);
 //--User Endpoints--//
 app.get('/api/user', userCtrl.getAllUsers);
 app.get('/api/user/:memberId', userCtrl.findByID);

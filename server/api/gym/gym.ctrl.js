@@ -117,6 +117,19 @@ module.exports = {
                     res.send(response);
                 }
             });
+    },
+    addEvaluation: function (req, res) {
+        Gym.findById(req.body.gymID)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    
+                }
+            });
+    },
+    editEvaluation: function (req, res) {
+
     }
 };
 
