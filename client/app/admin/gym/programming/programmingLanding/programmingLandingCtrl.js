@@ -1,15 +1,17 @@
-app.controller('programmingLandingCtrl', function ($scope, programmingLandingService, $location, pathways) {
-    $scope.addGym = function (gymInfo) {
-        gymCreateService.createGym(gymInfo).then(function (response) {
-            $scope.gym.name = '';
-            $location.path('/gym/main');
-            Materialize.toast('Gym added successfully', 5000);
-        }, function (err) {
-          Materialize.toast('There was error.  Please try again.', 3000);
-        });
-    };
+app.controller('programmingLandingCtrl', function ($scope, programmingLandingService, $location, gymObj) {
 
-    $scope.gymPathways = pathways;
+    var pathwaysArr = [];
+    for (var i = 0; i < gymObj.pathways.length; i++) {
+        var pathwayInfo = {
+            label: gymObj.pathways[i]["name"],
+            value: gymObj.pathways[i]["_id"]
+        };
+        pathwaysArr.push(pathwayInfo);
+    }
+    $scope.pathwayOptions = pathwaysArr;
 
-    console.log($scope.gymPathways);
+    console.log($scope.pathwayOptions);
+
+
+
 });
