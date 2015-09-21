@@ -9,49 +9,27 @@
 
 <!-- Select Program -->
       <div class="row">
-          <div class=" col s12 m12 l4 center offset-l4">
-              <select class="browser-default" ng-model="selected" ng-options="options.value as options.label for options in pathwayOptions">
+          <div class="col s12 m12 l4 center offset-l4">
+              <select class="browser-default" ng-model="pathwayID" ng-options="options.value as options.label for options in pathwayOptions" ng-change="onPathwaySelect()">
                   <option value="" disabled selected>Select Program</option>
               </select>
           </div>
       </div>
 
-      <div class="input-field col s12 m12 l8 center offset-l2 ng-hide" ng-show="selected === '{{pathwayOptions[0].value}}'">
-        <a ui-sref=".logosFundamentals" class="btn btn-primary">Fundamentals</a>
-        <a ui-sref=".logosKnowledge" class="btn btn-primary">Knowledge</a>
-        <a ui-sref=".logosPhysical" class="btn btn-primary">Physical</a>
+      <div class="row" ng-show="stages">
+          <div class="col s12 m12 l4 center offset-l4">
+              <select class="browser-default" ng-model="stageID" ng-options="options.value as options.label for options in stageOptions" ng-change="onStageSelect()">
+                  <option value="" disabled selected>Select Program</option>
+              </select>
+          </div>
       </div>
 
-      <div ui-view> </div>
+      <div class="row" ng-show="evaluations">
+          <div ng-repeat="field in evaluationsList">
+              {{ field.name }} - {{ field.content.explanation }}
 
-      <!-- <div class="input-field col s12 m12 l4 center offset-l4 ng-hide" ng-show="selected === '{{pathwayOptions[0].value}}'">
-        <select onChange="window.location.href=this.value">
-          <option disabled selected value="">Select Your Program Part</option>
-          <option value="/#/gym/programming/gymId/fundamentals">Fundamentals</option>
-          <option value="/#/gym/programming/gymId/knowledge">Knowledge</option>
-          <option value="/#/gym/programming/gymId/physical">Physical</option>
-        </select>
-      </div> -->
-<!--
-      <div class="input-field col s12 m12 l4 center offset-l4 ng-hide" ng-show="pathSelection === '2'">
-        Pathos Options
-        <select onChange="window.location.href=this.value">
-          <option disabled selected value="">Select Your Program Part</option>
-          <option value="/#/gym/programming/gymId/fundamentals">Fundamentals</option>
-          <option value="/#/gym/programming/gymId/knowledge">Knowledge</option>
-          <option value="/#/gym/programming/gymId/physical">Physical</option>
-        </select>
+          </div>
       </div>
-
-      <div class="input-field col s12 m12 l4 center offset-l4 ng-hide" ng-show="pathSelection === '3'">
-        Ethos Options
-        <select onChange="window.location.href=this.value">
-          <option disabled selected value="">Select Your Program Part</option>
-          <option value="/#/gym/programming/gymId/fundamentals">Fundamentals</option>
-          <option value="/#/gym/programming/gymId/knowledge">Knowledge</option>
-          <option value="/#/gym/programming/gymId/physical">Physical</option>
-        </select>
-      </div> -->
 
 <!-- Script required for drop down menu -->
 <script>

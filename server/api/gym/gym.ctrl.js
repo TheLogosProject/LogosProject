@@ -64,6 +64,51 @@ module.exports = {
                 }
             });
     },
+    getStages: function (req, res) {
+        Gym.findById(req.body.gymID)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    var gymPathway = response.gym_pathway_program;
+                    var stagesArr = [];
+                    for (var i = 0; i < gymPathway.length; i++) {
+                        if (req.body.pathwayID == gymPathway[i]["_id"]) {
+                            var pathwayStages = gymPathway[i]["stages"];
+                            for (var x = 0; x < pathwayStages.length; x++) {
+                                var stagesObj = {
+                                    value: pathwayStages[x]["_id"],
+                                    label: pathwayStages[x]["name"]
+                                };
+                                stagesArr.push(stagesObj);
+                            }
+                        }
+                    }
+                    res.send(stagesArr);
+                }
+            });
+    },
+    getEvaluations: function (req, res) {
+        Gym.findById(req.body.gymID)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    var gymPathway = response.gym_pathway_program;
+                    var evalsArr = [];
+                    for (var i = 0; i < gymPathway.length; i++) {
+                        if (req.body.pathwayID == gymPathway[i]["_id"]) {
+                            var pathwayStages = gymPathway[i]["stages"];
+                            for (var x = 0; x < pathwayStages.length; x++) {
+                                if (req.body.stageID == pathwayStages[x]["_id"]) {
+                                    res.send(pathwayStages[x]["evaluations"]);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+    },
     saveGym: function (req, res) {
         Pathway.find(req.query)
             .exec(function (err, response) {
@@ -121,7 +166,7 @@ module.exports = {
                 if (err) {
                     res.send(err);
                 } else {
-                    
+                    console.log("%%%%%%%%", response);
                 }
             });
     },
