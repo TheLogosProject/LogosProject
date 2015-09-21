@@ -21,11 +21,23 @@ app.service('programmingLandingService', function ($http) {
                 return response.data;
             });
     };
+
     this.getEvals = function (stageObj) {
         return $http({
             method: 'POST',
             url: 'http://localhost:8555/api/gym-evaluations',
             data: stageObj
+        })
+            .then(function (response) {
+                return response.data;
+            });
+    };
+
+    this.getEvalDetails = function (evalObj) {
+        return $http({
+            method: 'POST',
+            url: 'http://localhost:8555/api/gym-evaluation-specifics',
+            data: evalObj
         })
             .then(function (response) {
                 return response.data;

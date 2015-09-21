@@ -109,6 +109,31 @@ module.exports = {
                 }
             });
     },
+    getSpecificEval: function (req, res) {
+        Gym.findById(req.body.gymID)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    var gymPathway = response.gym_pathway_program;
+                    for (var i = 0; i < gymPathway.length; i++) {
+                        if (req.body.pathwayID == gymPathway[i]["_id"]) {
+                            var pathwayStages = gymPathway[i]["stages"];
+                            for (var x = 0; x < pathwayStages.length; x++) {
+                                if (req.body.stageID == pathwayStages[x]["_id"]) {
+                                    var evaluationArr = pathwayStages[x]["evaluations"];
+                                    for (var y = 0; y < evaluationArr.length; y++) {
+                                        if (req.body.evalID == evaluationArr[y]["_id"]) {
+                                            res.send(evaluationArr[y]);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+    },
     saveGym: function (req, res) {
         Pathway.find(req.query)
             .exec(function (err, response) {

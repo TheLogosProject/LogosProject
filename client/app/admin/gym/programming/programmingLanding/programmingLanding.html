@@ -18,13 +18,13 @@
 
       <div class="row" ng-show="stages">
           <div class="col s12 m12 l4 center offset-l4">
-              <select class="browser-default" ng-model="stageID" ng-options="options.value as options.label for options in stageOptions" ng-change="onStageSelect()">
+              <select class="browser-default" ng-model="stageID" ng-options="options.value as options.label for options in stageOptions" ng-change="onStageSelect() ">
                   <option value="" disabled selected>Select Program</option>
               </select>
           </div>
       </div>
 
-      <table class="centered">
+      <table class="centered" ng-show="evaluations">
           <thead>
               <tr>
                   <th data-field="id">Movement Name</th>
@@ -38,10 +38,14 @@
               <tr ng-repeat="field in evaluationsList">
                   <td>{{field.name}}</td>
                   <td>{{field.content.explanation}}</td>
-                  <td><a href="/#/gym/programming/{{field._id}}" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
+                  <td><a ng-model="field._id" ng-click="onEvalSelect(field._id)" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
               </tr>
           </tbody>
       </table>
+
+      <div ng-show="editEvaluation">
+          <b>Name:</b>{{ evaluationSpecifics.name }}<br />
+      </div>
 
 <!-- Script required for drop down menu -->
 <script>

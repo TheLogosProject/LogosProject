@@ -18,8 +18,8 @@ app.controller('programmingLandingCtrl', function ($scope, programmingLandingSer
         };
         (function getPathwayStages(id1) {
             programmingLandingService.getStages(id1).then(function (response) {
-                $scope.stages = true;
                 $scope.stageOptions = response;
+                $scope.stages = true;
                 $scope.stageID = "";
                 $scope.onStageSelect = function () {
                     var stageSpecificIds = {
@@ -29,9 +29,24 @@ app.controller('programmingLandingCtrl', function ($scope, programmingLandingSer
                     };
                     (function getStageEvals(id2) {
                         programmingLandingService.getEvals(id2).then(function (response) {
-                            $scope.evaluations = true;
                             $scope.evaluationsList = response;
-                            console.log($scope.evaluationsList);
+                            $scope.evaluations = true;
+                            $scope.evalID = '';
+                            $scope.onEvalSelect = function (id) {
+                                var evalSpecificsId = {
+                                    gymID: id2.gymID,
+                                    pathwayID: id2.pathwayID,
+                                    stageID: id2.stageID,
+                                    evalID: id
+                                };
+                                (function getEvalInfo(id3) {
+                                    programmingLandingService.getEvalDetails(id3).then(function (response) {
+                                        $scope.evaluationSpecifics = response;
+                                        $scope.evaluations = false;
+                                        $scope.editEvaluation = true;
+                                    });
+                                }(evalSpecificsId));
+                            };
                         });
                     }(stageSpecificIds));
                 };
