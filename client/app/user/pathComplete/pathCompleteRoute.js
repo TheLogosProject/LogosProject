@@ -3,9 +3,9 @@
 angular.module('app')
   .config(function ($stateProvider) {
     $stateProvider
-    .state('congrats', {
-      url: '/congrats',
+    .state('pathComplete', {
+      url: '/pathComplete',
       // will need to tie this to username for unique view for each member
-      templateUrl: 'app/user/congrats/congrats.html'
+      templateUrl: 'app/user/pathComplete/pathComplete.html'
     });
   });
