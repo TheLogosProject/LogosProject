@@ -1,4 +1,4 @@
-app.controller('programmingLandingCtrl', function ($scope, programmingLandingService, $location, gymObj) {
+app.controller('programmingLandingCtrl', function ($scope, programmingLandingService, gymObj) {
 
     var pathwaysArr = [];
     for (var i = 0; i < gymObj.pathways.length; i++) {
