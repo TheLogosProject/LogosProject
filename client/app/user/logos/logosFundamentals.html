@@ -37,47 +37,56 @@
               </li>
             </ul>
 
-            <br>
-            <h5>Physical</h5>
-
             <ul class="collapsible" data-collapsible="accordion">
 <!-- begining of movement -->
               <li ng-repeat="movement in movements">
-                <div ng-if="logos.step3.movement.name.complete">
-                  <div class="collapsible-header blue darken-3">{{logos.step3.movement.name}}
+                <div ng-if="logos.movement.name.complete">
+                  <div class="collapsible-header blue darken-3">{{logos.movement.name}}
                     - Complete</div>
                 </div>
-                <div ng-if="!logos.step3.movement.name.complete">
-                  <div class="collapsible-header">{{logos.step3.movement.name}}</div>
+                <div ng-if="!logos.movement.name.complete">
+                  <div class="collapsible-header">{{logos.movement.name}}</div>
                 </div>
                 <div class="collapsible-body">
-                  <h5>Progression</h5>
+                  <h5>Movement Standard</h5>
+                  <a class="waves-effect waves btn-flat modal-trigger" href="#modalPress">
+                    <h6 class="grey-text">See Video</h6>
+                  </a>
+                  <p>{{logos.movement.description}}</p>
 
-                  <form ng-submit="submitModal(answers)">
-                    <input id="progression1" type="checkbox"/>
-                    <label for="progression1">Perform 3 x 30 second planks</label>
-                    <br>
-                    <input id="progression2" type="checkbox"/>
-                    <label for="progression2">Perform 2 x 1 minute planks</label>
-                    <br>
-                    <input id="progression3" type="checkbox"/>
-                    <label for="progression3">Perform 50 shoulder touches in plank</label>
+                  <div ng-if="!logos.movement.name.complete">
                     <p>
-                      <div ng-if="!logos.step3.movement.name.complete">
-                        <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval()" type="submit">Submit For Approval</button>
-                      </div>
-                      <div ng-if="!logos.step3.movement.name.complete">
-                        <button class="btn waves-effect waves blue darken-3 center" disabled>Submit For Approval</button>
-                      </div>
+                      <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval()" type="submit">Submit For Approval</button>
                     </p>
-                  </form>
+                  </div>
+
+<!-- button disabled if movement is already complete -->
+                  <div ng-if="logos.movement.name.complete">
+                    <p>
+                      <button class="btn waves-effect waves blue darken-3 center" disabled>Submit For Approval</button>
+                    </p>
+                  </div>
+
+<!-- Modal Structure -->
+                  <div class="modal" id="modalPress">
+                    <div class="modal-content">
+                      <div class="video-container">
+                        <iframe allowfullscreen frameborder="0" height="315" src="https://www.youtube.com/embed/94pwgUPhdrE" width="560"></iframe>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn waves-effect waves blue darken-3 center modal-close" type="submit">Close</button>
+                    </div>
+                  </div>
+<!-- End of Modal Structure -->
+
                 </div>
               </li>
 <!-- End of Movement -->
 
 <!-- will delete these two below since there will be an ng-repeat for this. They are just here for the demo -->
               <li>
-                <div class="collapsible-header">Complete 15 push-ups in 45 seconds
+                <div class="collapsible-header">Push Press
                 </div>
                 <div class="collapsible-body">
                   <p>Lorem ipsum dolor sit amet.
@@ -85,7 +94,7 @@
                 </div>
               </li>
               <li>
-                <div class="collapsible-header">Complete 15 pull-ups in 1 minute
+                <div class="collapsible-header">Push Jerk
                 </div>
                 <div class="collapsible-body">
                   <p>Lorem ipsum dolor sit amet.
@@ -103,6 +112,12 @@
                 $('.collapsible').collapsible({
                   accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
                 });
+              });
+
+              //script for modals
+              $(document).ready(function() {
+              // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                $('.modal-trigger').leanModal();
               });
             </script>
           </div>
