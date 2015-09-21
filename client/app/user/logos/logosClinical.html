@@ -39,16 +39,19 @@
 
             <ul class="collapsible" data-collapsible="accordion">
 <!-- begining of movement -->
-              <li>
-<!-- the line below will have a color inserted when a coach has approved the submission -->
-<!-- ex: div class="collapsible-header green" -->
-                <div class="collapsible-header">Press</div>
+              <li ng-repeate="movement in movements">
+                <div ng-if="logos.movement.name.complete">
+                  <div class="collapsible-header blue darken-3">{{logos.movement.name}} - Complete</div>
+                </div>
+                <div ng-if="!logos.movement.name.complete">
+                  <div class="collapsible-header">{{logos.movement.name}}</div>
+                </div>
                 <div class="collapsible-body">
                   <h5>Movement Standard</h5>
                   <a class="waves-effect waves btn-flat modal-trigger" href="#modalPress">
                     <h6 class="grey-text">See Video</h6>
                   </a>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p>{{logos.movement.description}}</p>
                   <p>
                     <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval()" type="submit">Submit For Approval</button>
                   </p>
