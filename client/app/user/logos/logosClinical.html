@@ -41,7 +41,8 @@
 <!-- begining of movement -->
               <li ng-repeate="movement in movements">
                 <div ng-if="logos.movement.name.complete">
-                  <div class="collapsible-header blue darken-3">{{logos.movement.name}} - Complete</div>
+                  <div class="collapsible-header blue darken-3">{{logos.movement.name}}
+                    - Complete</div>
                 </div>
                 <div ng-if="!logos.movement.name.complete">
                   <div class="collapsible-header">{{logos.movement.name}}</div>
@@ -52,9 +53,19 @@
                     <h6 class="grey-text">See Video</h6>
                   </a>
                   <p>{{logos.movement.description}}</p>
-                  <p>
-                    <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval()" type="submit">Submit For Approval</button>
-                  </p>
+
+                  <div ng-if="!logos.movement.name.complete">
+                    <p>
+                      <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval()" type="submit">Submit For Approval</button>
+                    </p>
+                  </div>
+
+<!-- button disabled if movement is already complete -->
+                  <div ng-if="logos.movement.name.complete">
+                    <p>
+                      <button class="btn waves-effect waves blue darken-3 center" disabled>Submit For Approval</button>
+                    </p>
+                  </div>
 
 <!-- Modal Structure -->
                   <div class="modal" id="modalPress">
