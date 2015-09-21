@@ -1,4 +1,4 @@
-app.service('userProfileSvc', function ($http, $stateParams) {
+app.service('profileSvc', function ($http, $stateParams) {
 
   //get user profile information
   this.getUser = function (memberId) {

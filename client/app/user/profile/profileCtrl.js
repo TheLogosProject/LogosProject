@@ -1,10 +1,10 @@
-app.controller('userProfileCtrl', function ($scope, $stateParams, $location, userProfileSvc) {
+app.controller('profileCtrl', function ($scope, $stateParams, $location, profileSvc) {
 
   //Get user profile information
   var memberId = $stateParams.memberId;
 
   var getProfile = function (memberId) {
-    userProfileSvc.getUser(memberId).then(function (response) {
+    profileSvc.getUser(memberId).then(function (response) {
       console.log(response);
       $scope.gymName = response.gym.name;
       $scope.userInfo = {
@@ -28,7 +28,7 @@ app.controller('userProfileCtrl', function ($scope, $stateParams, $location, use
         // goals: response.user.goals
       };
       $scope.updateProfile = function (userInfo) {
-        userProfileSvc.updateUserData(userInfo).then(function (response) {
+        profileSvc.updateUserData(userInfo).then(function (response) {
           Materialize.toast('Updated successfully', 5000);
         }, function (err) {
           Materialize.toast('There was an error', 3000);
