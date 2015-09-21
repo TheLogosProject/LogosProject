@@ -58,6 +58,36 @@ module.exports = {
                 }
             });
     },
+    getUserLogos: function (req, res) {
+        User.findById(req.params.memberId)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    res.send(response.pathways[0]);
+                }
+            });
+    },
+    getUserPathos: function (req, res) {
+        User.findById(req.params.memberId)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    res.send(response.pathways[1]);
+                }
+            });
+    },
+    getUserEthos: function (req, res) {
+        User.findById(req.params.memberId)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    res.send(response.pathways[2]);
+                }
+            });
+    },
     addUser: function (req, res) {
         var newUser = new User(req.body);
         newUser.save(function (err, response) {
@@ -123,6 +153,6 @@ module.exports = {
         "first": "Mike",
         "last": "Buckley"
     },
-    "gym": "55fc472cddfcbac025fce11b"
+    "gym": "55fddafabb429c4575c69617"
 }
 */

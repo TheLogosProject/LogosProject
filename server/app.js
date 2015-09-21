@@ -43,6 +43,9 @@ app.put('/api/gym-edit-evaluation', gymsCtrl.editEvaluation);//PROGRAMMING/EDIT 
 app.get('/api/user', userCtrl.getAllUsers);
 app.get('/api/user/:memberId', userCtrl.findByID);
 app.get('/api/user-details/:memberId', userCtrl.getUserDetails);
+app.get('/api/user-logos/:memberId', userCtrl.getUserLogos);
+app.get('/api/user-pathos/:memberId', userCtrl.getUserPathos);
+app.get('/api/user-ethos/:memberId', userCtrl.getUserEthos);
 app.post('/api/add-user', userCtrl.addUser);
 app.put('/api/user-update', userCtrl.updateUser);
 //--Pathway Endpoints--//
