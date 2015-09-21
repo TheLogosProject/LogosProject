@@ -1,4 +1,4 @@
-app.controller('logosClinicalCtrl', function ($scope, $stateParams, userObj) {
+app.controller('logosFundamentalsCtrl', function ($scope, $stateParams, userObj) {
     // $scope.user = userObj;
     // $scope.logosPercent = Math.ceil($scope.user.pathways.logos.completion.amount_completed);
     // $scope.pathosPercent = Math.ceil($scope.user.pathways.pathos.completion.amount_completed);
