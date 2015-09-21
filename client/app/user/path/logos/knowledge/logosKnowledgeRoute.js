@@ -3,9 +3,9 @@
 angular.module('app')
   .config(function ($stateProvider) {
     $stateProvider
-    .state('logosPhysical', {
-      url: '/logosPhysical',
+    .state('logosKnowledge', {
+      url: '/path/logos/knowledge',
       // will need to tie this to username for unique view for each member
-      templateUrl: 'app/user/logos/logosPhysical.html'
+      templateUrl: 'app/user/path/logos/knowledge/logosKnowledge.html'
     });
   });
