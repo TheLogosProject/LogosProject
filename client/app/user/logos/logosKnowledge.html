@@ -17,22 +17,21 @@
           <li class=" tab col s4">
             <a class="active blue darken-3 white-text" href="#Step1">Step 1</a>
           </li>
-
           <li class="tab col s4">
-<!-- blue tab background if unlocked -->
+  <!-- blue tab background if unlocked -->
             <div ng-if="user.logos.step2.unlocked === true">
               <a class="active blue darken-3 white-text" href="#Step2">Step 2</a>
             </div>
-<!-- grey background if not unlocked -->
+  <!-- grey background if not unlocked -->
             <div ng-if="!user.logos.step2.unlocked">
               <p class="grey-text text-lighten-2">Step 2</p>
             </li>
             <li class="tab col s4" disabled>
-<!-- blue tab background if unlocked -->
+  <!-- blue tab background if unlocked -->
               <div ng-if="user.logos.step3.unlocked === true">
                 <a class="active blue darken-3 white-text" href="#Step3">Step 3</a>
               </div>
-<!-- grey background if not unlocked -->
+  <!-- grey background if not unlocked -->
               <div ng-if="!user.logos.step3.unlocked">
                 <p class="grey-text text-lighten-2">Step 3</p>
               </li>
@@ -43,7 +42,7 @@
 and the "Complete" text will display -->
             <div ng-if="user.logos.step2.unlocked">
               <div class="col s12 blue darken-3">
-                <h5>Knowledge - Complete</h5>
+                <h5 class="white-text">Knowledge - Complete</h5>
               </div>
             </div>
 
