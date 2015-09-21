@@ -52,9 +52,9 @@
           </div>
           <br>
           <h6>Gender:</h6>
-          <input class="input-field" id="male" name="group1" value="male" ng-model="userInfo.gender" type="radio"/>
+          <input class="input-field" id="male" name="group1" ng-model="userInfo.gender" type="radio" value="male"/>
           <label for="male">Male</label>
-          <input class="input-field" id="female" name="group1" value="female" ng-model="userInfo.gender" type="radio"/>
+          <input class="input-field" id="female" name="group1" ng-model="userInfo.gender" type="radio" value="female"/>
           <label for="female">Female</label>
           <br>
           <div class="input-field col s6">
@@ -70,6 +70,7 @@
             <label class="active" for="weight">Weight (lbs)</label>
             <button class="btn waves-effect waves-light blue darken-3" id="submit-button" ng-click="updateProfile(userInfo)" type="submit">Update</button>
           </form>
+          <a class="btn waves-effect waves red darken-3 center modal-close" href="/#/userLanding" type="submit">Cancel</a>
 <!--end of form-->
         </div>
 
@@ -80,7 +81,6 @@
               <br>
               Your Goals
             </h5>
-            <a class="waves-effect btn-flat grey lighten-2">Add Goal</a>
             <ol>
               <li>ng-repeat showing goals
                 <i class="material-icons right">
@@ -89,7 +89,15 @@
               </li>
             </ol>
           </div>
+          <!-- section for adding goal. This will need to be built out once goals are implemented in schema -->
+          <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=true">Add Goal</a>
+          <div ng-show="goalAdd">
+            <input class="validate" id="userGoal" ng-model="userInfo.goal" placeholder="Enter goal" required type="text">
+            <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false">Submit</a>
+          </div>
+          <!-- end of adding goal section -->
         </div>
       </div>
     </div>
   </div>
+</div>

@@ -9,9 +9,9 @@ angular.module('app')
                 templateUrl: 'app/admin/gym/programming/programmingLanding/programmingLanding.html',
                 controller: 'programmingLandingCtrl',
                 resolve: {
-                  pathways: function(programmingLandingService, $stateParams) {
+                  gymObj: function(programmingLandingService, $stateParams) {
                     var gymId = $stateParams.gymId;
-                     return programmingLandingService.getGymPathway(gymId).then(function(response) {
+                     return programmingLandingService.getGymObj(gymId).then(function(response) {
                           return response;
                     });
                   }
