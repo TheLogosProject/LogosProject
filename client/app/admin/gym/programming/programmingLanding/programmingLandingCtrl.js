@@ -32,26 +32,52 @@ app.controller('programmingLandingCtrl', function ($scope, programmingLandingSer
                             $scope.evaluationsList = response;
                             $scope.evaluations = true;
                             $scope.evalID = '';
-                            $scope.onEvalSelect = function (id) {
+                            $scope.onEvalSelect = function (ID) {
                                 var evalSpecificsId = {
                                     gymID: id2.gymID,
                                     pathwayID: id2.pathwayID,
                                     stageID: id2.stageID,
-                                    evalID: id
+                                    evalID: ID
                                 };
                                 (function getEvalInfo(id3) {
                                     programmingLandingService.getEvalDetails(id3).then(function (response) {
                                         $scope.evaluationSpecifics = response;
                                         $scope.evaluations = false;
-                                        $scope.editEvaluation = true;
+                                        $scope.editView = true;
+                                        $scope.editEval = function () {
+
+                                        };
+                                        $scope.addEval = function () {
+                                            $scope.addView = true;
+                                            $scope.evaluations = false;
+                                            var newEvalObj = {
+                                                gymID: id3.gymID,
+                                                pathwayID: id3.pathwayID,
+                                                stageID: id3.stageID,
+                                                name: "",
+                                                description: "",
+                                                videoURL: ""
+                                            };
+                                            (function addEvaluation(evalObj) {
+                                                programmingLandingService.addEvalObj(evalObj).then(function (response) {
+                                                    return response;
+                                                });
+                                            } (newEvalObj));
+                                        };
                                     });
-                                }(evalSpecificsId));
+                                } (evalSpecificsId));
                             };
                         });
-                    }(stageSpecificIds));
+                    } (stageSpecificIds));
                 };
             });
         } (pathwaySpecificIds));
+    };
+
+    $scope.cancel = function () {
+        $scope.evaluations = true;
+        $scope.editView = false;
+        $scope.addView = false;
     };
 
 
