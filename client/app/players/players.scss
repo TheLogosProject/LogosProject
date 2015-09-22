@@ -1,0 +1,305 @@
+h1 {
+  font-size: 4.9vw;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 2.4vmin;
+  font-weight: 200;
+}
+p {
+  font-size: 1.8vmin;
+  font-weight: 200;
+}
+.team {
+  padding: 10px;
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+
+.on-sale {
+  color: red;
+}
+
+.qty {
+  width: 60px;
+}
+
+$animation-duration: 0.25s;
+
+.animate-roster {
+  &.ng-enter {
+    animation: zoomInUp 0.5s;
+  }
+  &.ng-leave {
+    animation: zoomOutDown 0.5s;
+  }
+}
+
+.animate-team {
+  &.ng-enter {
+    animation: fadeInRight 1s;
+  }
+  &.ng-leave {
+    animation: fadeOutLeft 1s;
+  }
+}
+
+/* =========================== */
+/* Twitter Bootstrap Overrides */
+/* =========================== */
+.buttonadd {
+  width:40%;
+  vertical-align: middle;
+  background-color: gray;
+  border-color: rgb(42,100,150);
+  font-weight: 200;
+}
+
+.buttondetail {
+  width: 40%;
+  vertical-align: middle;
+  background-color: rgb(42,100,150);
+  border-color: rgb(42,100,150);
+  font-weight: 200;
+}
+
+.buttonreset {
+  width: 20%;
+  background-color: rgb(42,100,150);
+  border-color: rgb(42,100,150);
+  font-weight: 200;
+}
+.buttonremove {
+  background-color: #4393B9;
+  border-color: #4393B9;
+  color: white;
+  font-weight: 200;
+}
+
+.buttonclearteam {
+  background-color: #4393B9;
+  border-color: #4393B9;
+  color: white;
+  font-size: 2.8vm;
+  font-weight: 200;
+  display:block;
+  width:100%;
+}
+
+.jumbotron {
+  text-align: center;
+  padding: 2px 0;
+  margin-bottom: 0;
+}
+
+.list-group-player {
+  border: none;
+}
+
+.dl-horizontal dt {
+    text-align: left;
+    /*margin-bottom: 1em;*/
+    /*width: auto;*/
+    padding-right: 1em;
+  font-weight: 200;
+}
+
+.dl-horizontal dd {
+    margin-left: 0;
+    margin-bottom: 0;
+}
+
+.ui-accordion-header {
+   background: navy;
+   color: white;
+  font-weight: 200;
+}
+
+.playersAccordion {
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.smackTalk {
+  margin: auto;
+  width: 90%;
+  border-style: solid;
+  border-color: #4393B9;
+  padding: 3px;
+}
+
+.panel-body {
+  padding: 0px;
+}
+
+.table-hover tbody tr:hover td {
+  background-color: #4393B9;
+  color: white;
+}
+.table-hover2 tbody tr:hover td {
+  background-color: #CCD6EB;
+  color: navy;
+}
+
+table.PerformanceTable {
+  margin: auto;
+  table-layout: fixed;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5px;
+
+}
+thead {
+  font-size: 2.5vmin;
+  font-weight: 200;
+  color: white;
+  background-color: #4393B9;
+}
+wblue {
+  background-color: #4393B9;
+}
+table {
+
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding-bottom: 5px;
+
+}
+th {
+  text-align: center;
+  font-weight: 200;
+
+
+}
+
+tr {
+
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+td {
+
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 3px;
+  font-size: 1.7vmin;
+  font-weight: 200;
+}
+th {
+
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 3px;
+  font-size: 1.7vmin;
+  font-weight: 200;
+}
+/* ================================== */
+/* End of Twitter Bootstrap Overrides */
+/* ================================== */
+
+.players {
+  padding-left: 0;
+  padding-right: 30px;
+}
+
+.players p {
+  font-size: 2.0rem;
+  margin-left: 20px;
+}
+
+.players h3 {
+  color: #337ab7;
+}
+
+.player {
+  margin-top: 30px;
+}
+
+.player h2 {
+  margin-bottom: 20px;
+}
+
+.player-image {
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+.player-image img {
+}
+
+.back {
+  margin-top: 40px;
+}
+
+.search {
+  text-align: center;
+}
+/* ================================== */
+// DASHGUM Styles
+.mt {
+  margin-top: 25px;
+}
+
+/* showcase background */
+.showback {
+  background: #ffffff;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0px 3px 2px #aab2bd;
+}
+label {
+  font-weight: 400;
+}
+.round-form {
+  border-radius: 500px;
+  -webkit-border-radius: 500px;
+}
+/*Content Panel*/
+.content-panel {
+  background: #ffffff;
+  box-shadow: 0px 3px 2px #aab2bd;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+.content-panel h4 {
+  margin-left: 10px;
+}
+
+//Coiln's styles
+.draft-timer {
+  padding: 2%;
+
+}
+.timer {
+  text-align: center;
+  margin-top: 0;
+}
+body {
+  background-color: #f2f2f2;
+}
+
+//timer stuff
+#gametime {
+  position: absolute;
+  width: 30%;
+  top: 3%;
+  left: 35%;
+}
+#buttontimer {
+  position: absolute;
+  top: 2%;
+  left: 28%;
+  }
+.seconds {
+  position: absolute;
+  top: 7%;
+  left: 66%;
+  }
+// .nav-tabs {
+//    background: #840000;
+// }

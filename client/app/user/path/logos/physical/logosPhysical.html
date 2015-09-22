@@ -1,0 +1,111 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 center">
+<!-- progress chart-->
+        <div class="c100 p{{ logosPercent }} center">
+          <span>{{ logosPercent }}%</span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+        </div>
+<!-- end progress chart-->
+        <h5 class="center">Logos Progress</h5>
+
+        <ul class="tabs">
+          <li class=" tab col s4">
+            <a class="active blue darken-3 white-text" href="#Step1">Step 1</a>
+          </li>
+          <li class="tab col s4">
+<!-- blue tab background if unlocked -->
+            <div ng-if="user.logos.step2.unlocked === true">
+              <a class="active blue darken-3 white-text" href="#Step2">Step 2</a>
+            </div>
+<!-- grey background if not unlocked -->
+            <div ng-if="!user.logos.step2.unlocked">
+              <p class="grey-text text-lighten-2">Step 2</p>
+            </li>
+            <li class="tab col s4" disabled>
+<!-- blue tab background if unlocked -->
+              <div ng-if="user.logos.step3.unlocked === true">
+                <a class="active blue darken-3 white-text" href="#Step3">Step 3</a>
+              </div>
+<!-- grey background if not unlocked -->
+              <div ng-if="!user.logos.step3.unlocked">
+                <p class="grey-text text-lighten-2">Step 3</p>
+              </li>
+            </ul>
+
+            <br>
+            <h5>Physical</h5>
+
+            <ul class="collapsible" data-collapsible="accordion">
+<!-- begining of movement -->
+              <li ng-repeat="movement in movements">
+                <div ng-if="logos.step3.movement.name.complete">
+                  <div class="collapsible-header blue darken-3">{{logos.step3.movement.name}}
+                    - Complete</div>
+                </div>
+                <div ng-if="!logos.step3.movement.name.complete">
+                  <div class="collapsible-header">{{logos.step3.movement.name}}</div>
+                </div>
+                <div class="collapsible-body">
+                  <h5>Progression</h5>
+
+                  <form ng-submit="submitModal(answers)">
+                    <input id="progression1" type="checkbox"/>
+                    <label for="progression1">Perform 3 x 30 second planks</label>
+                    <br>
+                    <input id="progression2" type="checkbox"/>
+                    <label for="progression2">Perform 2 x 1 minute planks</label>
+                    <br>
+                    <input id="progression3" type="checkbox"/>
+                    <label for="progression3">Perform 50 shoulder touches in plank</label>
+                    <p>
+                      <div ng-if="!logos.step3.movement.name.complete">
+                        <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval()" type="submit">Submit For Approval</button>
+                      </div>
+                      <div ng-if="!logos.step3.movement.name.complete">
+                        <button class="btn waves-effect waves blue darken-3 center" disabled>Submit For Approval</button>
+                      </div>
+                    </p>
+                  </form>
+                </div>
+              </li>
+<!-- End of Movement -->
+
+<!-- will delete these two below since there will be an ng-repeat for this. They are just here for the demo -->
+              <li>
+                <div class="collapsible-header">Complete 15 push-ups in 45 seconds
+                </div>
+                <div class="collapsible-body">
+                  <p>Lorem ipsum dolor sit amet.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header">Complete 15 pull-ups in 1 minute
+                </div>
+                <div class="collapsible-body">
+                  <p>Lorem ipsum dolor sit amet.
+                  </p>
+                </div>
+              </li>
+<!-- end of delete -->
+<!-- be sure to keep this </ul> below -->
+            </ul>
+
+<!-- Script for collapsible list  and modals-->
+            <script>
+              //script for collapsible list
+              $(document).ready(function() {
+                $('.collapsible').collapsible({
+                  accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+                });
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>

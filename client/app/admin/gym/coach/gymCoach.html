@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col l4 right s0 m0 recent-activity">
+        <h5 class="center">Recent Activity</h5>
+
+        <table>
+          <thead>
+            <tr>
+              <th data-field="id"></th>
+              <th data-field="name"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="chip">
+                  <img alt="User.Name" class="responsive-img circle" height="50px" src="assets/rambo.jpg" width="50px">
+                </div>
+              </td>
+              <td>
+                <a href="User:id">user.firstName</a>
+                has completed the Logos Program!
+                <br>
+                <h6 class="grey-text darken-3">Sept. 17, 2015</h6>
+              </td>
+            </tr>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col l8 s12 m12 center">
+    <div class="col l12 center m12 s12">
+      <h5 class="center">Approval Queue</h5>
+      <table>
+        <thead>
+          <tr>
+            <th data-field="id">Athlete</th>
+            <th data-field="name">Movement Approving</th>
+            <th data-field="price">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+<!-- ng repeat the following section -->
+          <tr>
+            <td>Matt Guenther</td>
+            <td>Strict Press</td>
+            <td>
+
+              <a class="waves-effect btn-flat grey lighten-2" ng-click="decline()">Decline</a>
+              <div class="approval-button-padding">
+                <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
+              </div>
+            </td>
+          </tr>
+<!-- end ng repeat. Data below is just dummy data and can be deleted -->
+          <tr>
+            <td>Justin Caldwell</td>
+            <td>Deadlift</td>
+            <td>
+              <a class="waves-effect btn-flat grey lighten-2" ng-click="decline()">Decline</a>
+              <div class="approval-button-padding">
+                <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Brian Ng</td>
+            <td>Overhead Squat</td>
+            <td>
+              <a class="waves-effect btn-flat grey lighten-2" ng-click="decline()">Decline</a>
+              <div class="approval-button-padding">
+                <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>

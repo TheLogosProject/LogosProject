@@ -1,0 +1,35 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Name Your Team</h1>
+    </div>
+    <div class="col-sm-12">
+      <form class="form" name="form" ng-submit="ctrl.nameTeam(form)" novalidate>
+
+        <div class="form-group">
+          <label>Team Name</label>
+
+          <input type="text" name="team.name" class="form-control" ng-model="ctrl.team.name"
+                 required/>
+          <p class="help-block" ng-show="form.name.$error.required && submitted">
+            A name is required
+          </p>
+        </div>
+
+
+        <div>
+          <button class="btn btn-inverse btn-lg btn-login" type="submit">
+            Sign up
+          </button>
+
+        </div>
+
+
+
+      </form>
+    </div>
+  </div>
+  <hr>
+</div>

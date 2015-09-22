@@ -1,0 +1,53 @@
+<!--============================== PLAYER SEARCH SECTION =========================-->
+
+<section class="container search">
+  <form class="navbar-form" role="search">
+    <div class="form-group">
+      <input class="form-control round-form" name="search" ng-model="ctrl.searchText" placeholder="Enter Name, Team or Bye Week" style="width: 500px; margin: auto; height: 40px" type="text">
+    </div>
+    <button class="btn btn-success buttonreset" ng-click="ctrl.searchText = ''" type="clear">Clear</button>
+  </form>
+</section>
+<!-- Roster section -->
+<section class="container players">
+  <div class="list-group">
+    <div class="row">
+      <div class="card panel panel-default bootcards-media col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-hide="player.selected" ng-repeat="player in filteredPlayers = ( ctrl.roster | playerFilter : ctrl.searchText | orderBy: '-projPts' )" style="background-color: #D4E6E6; padding-top: 15px; padding-bottom: 15px">
+
+        <a class="list-group-player" data-toggle="modal" href="#detail" ng-click="ctrl.goPlayer(player)">
+          <a class="list-group-player" ng-click="ctrl.goPlayer(player)">
+
+            <h2 style="font-size: 1.5vw; color: rgb(42, 100, 150); text-align: center">{{ player.name }}</h2>
+            <article class="row">
+              <div class="col-xs-8" style="height: 100%; text-align: center">
+                <div class="card-image">
+                  <img class="middle" ng-src="/assets/images/{{player.imageFile}}" style="width: 80%; margin: auto; text-align: center"/>
+                </div>
+
+                <div class="text-center" style="font-size: 2.4vmin; padding: 6px">
+                  <button class="btn btn-sm btn-success buttonadd" ng-click="ctrl.addPlayer(player)">Add</button>
+                </div>
+              </div>
+              <div class="card-footer col-xs-4" style="font-size: 1.00vw; color: black; font-weight: 200;">
+                <!-- <dl class="dl-horizontal"> -->
+                  <dt>Pos:</dt>
+                  <dd>{{ player.position }}</dd>
+                  <dt>Proj Pts:</dt>
+                  <dd>{{ player.projPts }}</dd>
+                  <dt>Team:</dt>
+                  <dd>{{ player.team }}</dd>
+                  <dt>Bye:</dt>
+                  <dd>{{ player.bye }}</dd>
+                <!-- </dl> -->
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+      <div class="animate-roster text-center" ng-hide="filteredPlayers.length">
+        <h3>No players match your search.</h3>
+      </div>
+    </section>
+
+  </tab>
+</tabset>

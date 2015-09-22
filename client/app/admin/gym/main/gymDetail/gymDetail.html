@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 center">
+        <h4>
+          Manage Gym
+        </h4>
+      </div>
+
+      <!-- Start of form -->
+      <div class="col l8 center offset-l2 m12 s12">
+        <form>
+
+          <div class="input-field col s12">
+            <input class="validate" id="gymName" ng-model="gym.name" required type="text">
+            <label class="active" class="active" for="gymName">Gym Name</label>
+          </div>
+
+          <div class="input-field col s12">
+            <input class="validate" id="address" ng-model="gym.address.street" required type="text">
+            <label class="active" for="address">Address</label>
+          </div>
+
+          <div class="input-field col l4 s12">
+            <input class="validate" id="city" ng-model="gym.address.city" required type="text">
+            <label class="active" for="city">City</label>
+          </div>
+
+          <div class="input-field col l4 s12">
+            <input class="validate" id="state" ng-model="gym.address.state" required type="text">
+            <label class="active" for="state">State</label>
+          </div>
+
+          <div class="input-field col l4 s12">
+            <input class="validate" id="zip" ng-model="gym.address.zip" required type="text">
+            <label class="active" for="zip">Zip</label>
+          </div>
+
+          <div class="input-field col s12">
+            <input class="validate" id="phoneNumber" ng-model="gym.contact_info.phone" required type="text">
+            <label class="active" for="phoneNumber">Phone Number</label>
+          </div>
+
+          <div class="input-field col s12">
+            <input class="validate" id="gymEmail" ng-model="gym.contact_info.email" required type="text">
+            <label class="active" for="gymEmail">Gym e-mail</label>
+          </div>
+
+          <div class="input-field col s12">
+            <input class="validate" id="website" ng-model="gym.gym_details.website" required type="text">
+            <label class="active" for="website">Website</label>
+          </div>
+
+          <div class="input-field col s12">
+            <input class="validate" id="gymLogoURL" ng-model="gym.gym_details.gym_logo" required type="text">
+            <label class="active" for="gymLogoURL"> Gym Logo URL</label>
+          </div>
+
+          <button class="btn waves-effect waves blue darken-3 center" ng-click="updateGymInfo(gym)" type="submit">Submit</button>
+          <a href="/gym/main">
+            <button class="btn waves-effect waves red darken-3 center">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

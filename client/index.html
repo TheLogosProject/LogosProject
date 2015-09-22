@@ -1,0 +1,152 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <base href="/">
+  <title>LM-Logos</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(client) app/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/animate-css/animate.css" />
+  <link rel="stylesheet" href="bower_components/materialize/bin/materialize.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css({.tmp,client}) app/app.css -->
+  <!-- <link rel="stylesheet" href="app/app.css"> -->
+  <!-- injector:css -->
+  <link rel="stylesheet" href="assets/css/circle.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- endinjector -->
+  <!-- endbuild -->
+</head>
+
+<body ng-app="app">
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div ng-include="'components/navbar/navbar.html'"></div>
+  <div ui-view=""></div>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+  </script>
+
+  <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+  <!-- build:js({client,node_modules}) app/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+  <script src="bower_components/angular-socket-io/socket.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+  <script src="bower_components/dcjqaccordion/js/jquery.dcjqaccordion.2.7.min.js"></script>
+  <script src="bower_components/materialize/bin/materialize.js"></script>
+  <!-- endbower -->
+  <script src="socket.io-client/socket.io.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,client}) app/app.js -->
+  <script src="app/app.js"></script>
+  <!-- injector:js -->
+  <script src="app/account/accountRoutes.js"></script>
+  <script src="app/account/login/login.controller.js"></script>
+  <script src="app/account/nameTeam/nameteam.controller.js"></script>
+  <script src="app/account/settings/settings.controller.js"></script>
+  <script src="app/account/signup/signup.controller.js"></script>
+  <script src="app/admin/admin.controller.js"></script>
+  <script src="app/admin/adminRoute.js"></script>
+  <script src="app/admin/gym/coach/gymCoachRoute.js"></script>
+  <script src="app/admin/gym/main/gymCreate/gymCreateCtrl.js"></script>
+  <script src="app/admin/gym/main/gymCreate/gymCreateRoute.js"></script>
+  <script src="app/admin/gym/main/gymCreate/gymCreateService.js"></script>
+  <script src="app/admin/gym/main/gymDetail/gymDetailCtrl.js"></script>
+  <script src="app/admin/gym/main/gymDetail/gymDetailRoute.js"></script>
+  <script src="app/admin/gym/main/gymDetail/gymDetailService.js"></script>
+  <script src="app/admin/gym/main/gymLanding/gymLandingCtrl.js"></script>
+  <script src="app/admin/gym/main/gymLanding/gymLandingRoute.js"></script>
+  <script src="app/admin/gym/main/gymLanding/gymLandingService.js"></script>
+  <script src="app/admin/gym/members/membersDetailRoute.js"></script>
+  <script src="app/admin/gym/members/membersLandingRoute.js"></script>
+  <script src="app/admin/gym/programming/logos/fundamentals/logosFundamentalsAddEditRoute.js"></script>
+  <script src="app/admin/gym/programming/logos/knowledge/logosKnowledgeAddEditRoute.js"></script>
+  <script src="app/admin/gym/programming/logos/physical/logosPhysicalAddEditRoute.js"></script>
+  <script src="app/admin/gym/programming/programmingLanding/programmingLandingCtrl.js"></script>
+  <script src="app/admin/gym/programming/programmingLanding/programmingLandingRoute.js"></script>
+  <script src="app/admin/gym/programming/programmingLanding/programmingLandingService.js"></script>
+  <script src="app/draft/draft.controller.js"></script>
+  <script src="app/draft/draft.js"></script>
+  <script src="app/players/playerDetail/playerDetail.controller.js"></script>
+  <script src="app/players/playerDetail/playerDetail.js"></script>
+  <script src="app/players/playerFilter/playerFilter.filter.js"></script>
+  <script src="app/players/playerService/playerService.service.js"></script>
+  <script src="app/players/players.controller.js"></script>
+  <script src="app/players/players.js"></script>
+  <script src="app/players/teamService/teamService.service.js"></script>
+  <script src="app/poop/poop.controller.js"></script>
+  <script src="app/poop/poop.js"></script>
+  <script src="app/public/home/homeRoute.js"></script>
+  <script src="app/public/learnMore/learnMoreRoute.js"></script>
+  <script src="app/user/main/mainCtrl.js"></script>
+  <script src="app/user/main/mainRoute.js"></script>
+  <script src="app/user/path/ethos/ethosRoute.js"></script>
+  <script src="app/user/path/logos/complete/logosCompleteRoute.js"></script>
+  <script src="app/user/path/logos/fundamentals/logosFundamentalsCtrl.js"></script>
+  <script src="app/user/path/logos/fundamentals/logosFundamentalsRoute.js"></script>
+  <script src="app/user/path/logos/knowledge/logosKnowledgeCtrl.js"></script>
+  <script src="app/user/path/logos/knowledge/logosKnowledgeRoute.js"></script>
+  <script src="app/user/path/logos/logosLandingRoute.js"></script>
+  <script src="app/user/path/logos/physical/logosPhysicalCtrl.js"></script>
+  <script src="app/user/path/logos/physical/logosPhysicalRoute.js"></script>
+  <script src="app/user/path/pathos/pathosRoute.js"></script>
+  <script src="app/user/profile/profileCtrl.js"></script>
+  <script src="app/user/profile/profileRoute.js"></script>
+  <script src="app/user/profile/profileService.js"></script>
+  <script src="app/user/stats/statsRoute.js"></script>
+  <script src="components/auth/auth.service.js"></script>
+  <script src="components/auth/user.service.js"></script>
+  <script src="components/modal/modal.service.js"></script>
+  <script src="components/mongoose-error/mongoose-error.directive.js"></script>
+  <script src="components/navbar/navbar.controller.js"></script>
+  <script src="components/socket/socket.service.js"></script>
+  <!-- endinjector -->
+  <!-- endbuild -->
+</body>
+
+</html>

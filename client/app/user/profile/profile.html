@@ -1,0 +1,103 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+
+<!-- User Header -->
+      <div class="col s12 center">
+        <img class="responsive-img circle" src="assets/rambo.jpg"/>
+        <br>
+        <div class="col l4 center offset-l4 s10 offset-m1 m10 offset-s1">
+          <form action="#">
+            <div class="file-field input-field">
+              <div class="waves-effect btn-flat grey lighten-2">
+                <span>Add Pic</span>
+                <input type="file">
+              </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col s6 center offset-s3">
+        <h4>
+          {{userInfo.name.first}}
+          {{userInfo.name.last}}</h4>
+        <h5 class="grey-text">Member of
+          {{gymName}}</h5>
+      </div>
+    </div>
+    <div class="row">
+<!-- Athlete Info -->
+      <div class="col l8 center offset-l2 m12 s12">
+        <h5>Athlete Info</h5>
+<!--beginning of form-->
+        <form>
+          <div class="input-field col s12">
+            <input class="validate" id="firstName" ng-model="userInfo.name.first" required type="text">
+            <label class="active" for="firstName">First Name</label>
+          </div>
+          <div class="input-field col s12">
+            <input class="validate" id="lastName" ng-model="userInfo.name.last" required type="text">
+            <label class="active" for="lastName">Last Name</label>
+          </div>
+          <div class="input-field col s12">
+            <input class="validate" id="email" ng-model="userInfo.contact_info.email" required type="text">
+            <label class="active" for="email">E-mail</label>
+          </div>
+          <div class="input-field col s12">
+            <input class="validate" id="phone" ng-model="userInfo.contact_info.phone" required type="text">
+            <label class="active" for="phone">Phone</label>
+          </div>
+          <br>
+          <h6>Gender:</h6>
+          <input class="input-field" id="male" name="group1" ng-model="userInfo.gender" type="radio" value="male"/>
+          <label for="male">Male</label>
+          <input class="input-field" id="female" name="group1" ng-model="userInfo.gender" type="radio" value="female"/>
+          <label for="female">Female</label>
+          <br>
+          <div class="input-field col s6">
+            <input class="validate" id="heightFeet" ng-model="userInfo.height.feet" required type="text">
+            <label class="active" for="heightFeet">Height (Feet)</label>
+          </div>
+          <div class="input-field col s6">
+            <input class="validate" id="heightInches" ng-model="userInfo.height.inches" required type="text">
+            <label class="active" for="heightInches">Height (Inches)</label>
+          </div>
+          <div class="input-field col s12">
+            <input class="validate" id="weight" ng-model="userInfo.weight" required type="text">
+            <label class="active" for="weight">Weight (lbs)</label>
+            <button class="btn waves-effect waves-light blue darken-3" id="submit-button" ng-click="updateProfile(userInfo)" type="submit">Update</button>
+          </form>
+          <a class="btn waves-effect waves red darken-3 center modal-close" href="/#/userLanding" type="submit">Cancel</a>
+<!--end of form-->
+        </div>
+
+<!-- Goals -->
+        <div class="row">
+          <div class="col s12">
+            <h5>
+              <br>
+              Your Goals
+            </h5>
+            <ol>
+              <li>ng-repeat showing goals
+                <i class="material-icons right">
+                  <a href="#" ng-click="deleteGoal(goal)">delete</i>
+                </a>
+              </li>
+            </ol>
+          </div>
+          <!-- section for adding goal. This will need to be built out once goals are implemented in schema -->
+          <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=true">Add Goal</a>
+          <div ng-show="goalAdd">
+            <input class="validate" id="userGoal" ng-model="userInfo.goal" placeholder="Enter goal" required type="text">
+            <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false">Submit</a>
+          </div>
+          <!-- end of adding goal section -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

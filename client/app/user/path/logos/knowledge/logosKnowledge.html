@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col s12 center">
+<!-- progress chart-->
+        <div class="c100 p{{ logosPercent}} center">
+          <span>{{ logosPercent }}%</span>
+          <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+          </div>
+        </div>
+<!-- end progress chart-->
+        <h5 class="center">Logos Progress</h5>
+
+        <ul class="tabs">
+          <li class=" tab col s4">
+            <a class="active blue darken-3 white-text" href="#Step1">Step 1</a>
+          </li>
+          <li class="tab col s4">
+  <!-- blue tab background if unlocked -->
+            <div ng-if="user.logos.step2.unlocked === true">
+              <a class="active blue darken-3 white-text" href="#Step2">Step 2</a>
+            </div>
+  <!-- grey background if not unlocked -->
+            <div ng-if="!user.logos.step2.unlocked">
+              <p class="grey-text text-lighten-2">Step 2</p>
+            </li>
+            <li class="tab col s4" disabled>
+  <!-- blue tab background if unlocked -->
+              <div ng-if="user.logos.step3.unlocked === true">
+                <a class="active blue darken-3 white-text" href="#Step3">Step 3</a>
+              </div>
+  <!-- grey background if not unlocked -->
+              <div ng-if="!user.logos.step3.unlocked">
+                <p class="grey-text text-lighten-2">Step 3</p>
+              </li>
+            </ul>
+            <br>
+
+<!-- if the knowledge section is completed the BG will be blue
+and the "Complete" text will display -->
+            <div ng-if="user.logos.step2.unlocked">
+              <div class="col s12 blue darken-3">
+                <h5 class="white-text">Knowledge - Complete</h5>
+              </div>
+            </div>
+
+            <div ng-if="!user.logos.step2.unlocked">
+              <div class="col s12">
+                <h5>Knowledge</h5>
+              </div>
+            </div>
+
+            <form ng-submit="submitKnowledge(answers)">
+
+              <div class="input-field col s12">
+                <textarea class="materialize-textarea" id="textarea1" type="text"></textarea>
+                <label for="textarea1">What is CrossFit?</label>
+              </div>
+
+              <div class="input-field col s12">
+                <textarea class="materialize-textarea" id="textarea2" type="text"></textarea>
+                <label for="textarea2">What is the Hopper Model?</label>
+              </div>
+
+              <div class="input-field col s12">
+                <textarea class="materialize-textarea" id="textarea3" type="text"></textarea>
+                <label for="textarea3">What is the Health/Wellness model?</label>
+              </div>
+
+              <br>
+              <div ng-if="!user.logos.step2.unlocked">
+                <button class="btn waves-effect waves blue darken-3 center" ng-click="submitKnowledge(answers)" type="submit">Submit</button>
+              </div>
+
+<!-- button disabled if section is already complete -->
+              <div ng-if="user.logos.step2.unlocked">
+                <button class="btn waves-effect waves blue darken-3 center" disabled>Submit</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>

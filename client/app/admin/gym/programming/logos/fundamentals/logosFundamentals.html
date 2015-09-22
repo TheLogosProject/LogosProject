@@ -1,0 +1,40 @@
+<!-- Will also need to bring in the gym object into this part, to create the add and edit movement URL creation -->
+<a href="/gym/main/create" class="small waves-effect waves-light btn blue darken-3">Add New Movement</a>
+
+<a class="waves-effect btn-flat green lighten-2" href="/gym/programming/gymId/fundamentals/create">Add New Movement</a>
+
+<div class="col l8 center offset-l2 m12 s12">
+  <br>
+  <h5>Current Movements:</h5>
+
+  <table>
+    <thead>
+      <tr>
+        <th data-field="Goal Name">Goal Name</th>
+        <th data-field="Edit Goal">Edit Goal</th>
+      </tr>
+    </thead>
+    <tbody>
+<!-- ng repeat the following -->
+      <tr>
+        <td>
+          <h6>Hold a 2 min Plank (straight arm)</h6>
+        </td>
+        <td>
+          <a class="waves-effect btn-flat grey lighten-2 center" ng-click="editGoal()">Edit</a>
+        </td>
+      </tr>
+<!-- end ng repeat -->
+      <tr>
+        <td>
+          <h6>Hold a 93 min Plank (straight arm)</h6>
+        </td>
+        <td>
+          <a class="waves-effect btn-flat grey lighten-2 center" ng-click="editGoal()">Edit</a>
+        </td>
+      </tr>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>

@@ -1,0 +1,26 @@
+<section class="container-fluid player" style="height: 800px">
+
+  <h2 class="text-center" style="font-size: 2.25 vw; color: black; font-weight: 200">{{ ctrl.player.name }}</h2>
+  <div class="row-fluid">
+    <div class="text-center" style="padding: 10px">
+      <img ng-src="/assets/images/{{ctrl.player.imageFile}}"/>
+    </div>
+
+    <div class="text-center" style="font-size: 1.50vw; color: black; font-weight: 200; padding: 10px">
+      <dt>Position:</dt>
+      <dd>{{ ctrl.player.position}}</dd>
+      <dt>Projected Points:</dt>
+      <dd>{{ ctrl.player.projPts }}</dd>
+      <dt>Team:</dt>
+      <dd>{{ ctrl.player.team }}</dd>
+      <dt>Bye Week:</dt>
+      <dd>{{ ctrl.player.bye }}</dd>
+
+
+      <div class="back">
+      <button class="btn btn-primary" onclick="window.history.back()" type="button">Back</button>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="section">
+
+    <div class="row">
+      <div class="col s12 center">
+        <h4>Welcome
+          {{getCurrentUser().name.first}}!</h4>
+      </div>
+      <div class="col s12 center">
+        &nbsp;
+      </div>
+      <div class="col s12 m4">
+        <div class="icon-block">
+<!-- progress chart-->
+          <div class="c100 p{{ logosPercent }} center">
+            <span>{{ logosPercent }}%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+<!-- end progress chart-->
+          <h5 class="center">Logos</h5>
+          <p class="center">
+            <a class="btn waves-effect waves-light blue darken-3" href="/path/logos" id="logos-button">Enter</a>
+          </p>
+          <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+<!-- progress chart-->
+            <div class="c100 p{{ pathosPercent }} center">
+              <span>{{ pathosPercent }}%</span>
+              <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+              </div>
+            </div>
+<!-- end progress chart-->
+            <h5 class="center">Pathos</h5>
+            <p class="center">
+              <a class="btn waves-effect waves-light blue darken-3" href="/path/pathos" id="pathos-button">Enter</a>
+            </p>
+            <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+
+<!-- Need ethosUnlocked value to test. -->
+<!-- if this doesn't work make a separate copy, one transparent and one not for each path. -->
+<!-- then use an ng-if to display the appropriate transparent or solid path based on true/false from obj -->
+<!-- <div ng-style="ethosUnlocked = true && {opacity: 0.3}"> -->
+
+      <div class="col s12 m4">
+        <div class="icon-block">
+<!-- progress chart-->
+          <div class="c100 p{{ ethosPercent }} center">
+            <span>{{ ethosPercent }}%</span>
+            <div class="slice">
+              <div class="bar"></div>
+              <div class="fill"></div>
+            </div>
+          </div>
+<!-- end progress chart-->
+          <h5 class="center">Ethos</h5>
+          <p class="center">
+            <button class="btn waves-effect waves-light blue darken-3" href="/path/ethos" id="ethos-button" ng-disabled="ethos.isActive != true">
+              Enter
+            </button>
+
+          </p>
+          <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+<!-- </div> -->
+    </div>
+  </div>
+
+<!-- Modal Questions -->
+  <div class="modal fixed-footer" id="modal1">
+    <div class="modal-content">
+      <h4 class="center">Hi,
+        {{getCurrentUser().name.first}}!</h4>
+      <form ng-submit="submitModal(answers)">
+        <div class="input-field col s12">
+          <textarea class="materialize-textarea" id="textarea1" type="text"></textarea>
+          <label for="textarea1">What brought you to CrossFit?</label>
+        </div>
+        <div class="modal-footer">
+          <button class="btn waves-effect waves blue darken-3 center modal-close" ng-click="submitModal()" type="submit">Next</button>
+        </div>
+      </form>
+    </div>
+<!-- This link will have to be the user.ID when auth is hooked up -->
+      <p class="center">We would love to get to know you better.
+        <a href="/userProfile/55fc4b7407c2e12a2e618115">Click here</a>
+        to complete your profile.</p>
+    </div>
+</div>
+<!-- script for modal -->
+    <script>
+      $(document).ready(function() {
+        $('#modal1').openModal();
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal({
+          dismissible: true, // Modal can be dismissed by clicking outside of the modal
+          opacity: .5, // Opacity of modal background
+          in_duration: 300, // Transition in duration
+          out_duration: 200, // Transition out duration
+          complete: function() {} // Callback for Modal close
+        });
+      });
+    </script>

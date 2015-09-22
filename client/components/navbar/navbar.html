@@ -1,0 +1,88 @@
+<nav class="white" role="navigation" ng-controller="NavbarCtrl">
+  <div class="nav-wrapper container">
+    <a href="/home">
+      <img class="nav-logo" height="60px" src="assets/logo.svg" width="60px"/>
+    </a>
+    <a class="brand-logo" href="/home" id="logo-container">
+      <font color="#0277BD">Logos</font>Project</a>
+    <ul class="right hide-on-med-and-down">
+<!-- Will have to look at the user state and show based on status -->
+<!-- This can be accomplished by scanning the user object if passport allows -->
+<!-- We can discuss this after auth is implemented -->
+<!-- <div ng-if="user">
+        <li><a href="#">User Link</a></li>
+        <li><a href="#">User Link</a></li>
+        <li><a href="#">User Link</a></li>
+      </div>
+      <div ng-if="coach">
+        <li><a href="#">User Link</a></li>
+        <li><a href="#">User Link</a></li>
+        <li><a href="#">User Link</a></li>
+      </div>
+      <div ng-if="master">
+        <li><a href="#">User Link</a></li>
+        <li><a href="#">User Link</a></li>
+        <li><a href="#">User Link</a></li>
+      </div> -->
+      <li>
+        <a class="small waves-effect waves-light btn blue darken-3" href="/login">Log In/Sign Up</a>
+      </li>
+    </ul>
+
+<!-- Mobile nav menu -->
+<!-- This will be the mobile nav bar if the user state === user -->
+<!-- make sure to uncomment the line below. It is currently commented out so something shows up w. out auth -->
+<!-- <div ng-if="user"> -->
+    <ul class="side-nav" id="nav-mobile">
+      <li>
+        <a href="#About">About</a>
+      </li>
+      <li>
+        <a href="/login">Log In/Sign Up</a>
+      </li>
+    </ul>
+    <a class="button-collapse" data-activates="nav-mobile" href="#">
+      <i class="small material-icons">toc</i>
+    </a>
+<!-- </div> -->
+
+<!-- This will be the mobile nav bar if the user state === coach -->
+    <div ng-if="coach">
+      <ul class="side-nav" id="nav-mobile">
+        <li>
+          <a href="#About">About</a>
+        </li>
+        <li>
+          <a href="/login">Log In/Sign Up</a>
+        </li>
+      </ul>
+      <a class="button-collapse" data-activates="nav-mobile" href="#">
+        <i class="small material-icons">toc</i>
+      </a>
+    </div>
+
+<!-- This will be the mobile nav bar if the user state === master -->
+    <div ng-if="master">
+      <ul class="side-nav" id="nav-mobile">
+        <li>
+          <a href="#About">About</a>
+        </li>
+        <li>
+          <a href="/login">Log In/Sign Up</a>
+        </li>
+      </ul>
+      <a class="button-collapse" data-activates="nav-mobile" href="#">
+        <i class="small material-icons">toc</i>
+      </a>
+    </div>
+
+<!-- Script for mobile nav menu -->
+    <script>
+      $('.button-collapse').sideNav({
+        menuWidth: 300, // Default is 240
+        edge: 'left', // Choose the horizontal origin
+        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      });
+    </script>
+<!-- end of mobile nav script -->
+  </nav>
