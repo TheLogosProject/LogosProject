@@ -6,7 +6,7 @@ angular.module('app')
       $stateProvider
           .state('main', {
               // will want to be /main/:id when live
-              url: '/',
+              url: '/main',
               templateUrl: 'app/user/main/main.html',
               controller: 'mainCtrl'
               // resolve: {

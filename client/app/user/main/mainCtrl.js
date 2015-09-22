@@ -9,6 +9,8 @@ angular.module('app')
   that.isAdmin = Auth.isAdmin;
 
   $scope.getCurrentUser = Auth.getCurrentUser;
+  console.log($scope.getCurrentUser());
+
 
 });
 }());

@@ -6,8 +6,11 @@ var User = require('./user.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
-// var teamController = require('../team/team.controller');
-// var Team = require('../team/team.model');
+var Pathway = require('../pathway/pathway.model'),
+    Gym = require('../gym/gym.model');
+
+
+
 var validationError = function(res, err) {
   return res.json(422, err);
 };
@@ -109,5 +112,7 @@ exports.me = function(req, res, next) {
 exports.authCallback = function(req, res, next) {
   res.redirect('/');
 };
+
+
 
 }());
