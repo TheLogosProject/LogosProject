@@ -36,30 +36,41 @@
 	        	<h5> Your Badges </h5>
 	        </div>
 	        <div class="col s12 m4 center">
-	        	<img class="badge" ng-src="{{logos.isActive === 'true' && 'assets/badge.svg' || 'assets/logo.jpg'}}" />
+	        	<img class="badge" ng-src="{{logos.isActive === 'true' && 'assets/badge_black.svg' || 'assets/badge_gray.svg'}}" />
 	        	<h5> Logos </h5>
 	        </div>
 	        <div class="col s12 m4 center">
-	        	<img class="badge" ng-src="{{pathos.isActive === 'true' && 'assets/badge.svg' || 'assets/incompleteBadge.svg'}}" />
+	        	<img class="badge" ng-src="{{pathos.isActive === 'true' && 'assets/badge_black.svg' || 'assets/badge_gray.svg'}}" />
 	        	<h5> Pathos </h5>
 	        </div>
 	        <div class="col s12 m4 center">
-	        	<img class="badge" ng-src="{{ethos.isActive === 'true' && 'assets/badge.svg' || 'assets/incompleteBadge.svg'}}" />
+	        	<img class="badge" ng-src="{{ethos.isActive === 'true' && 'assets/badge_black.svg' || 'assets/badge_gray.svg'}}" />
 	        	<h5> Ethos </h5>
 	        </div>
         </div>
 
         <!-- Goals -->
         <div class="row">
-            <div class="col l8 center offset-l2 m12 s12">
-                <h5> Your Goals </h5>
-                <ol>
-                    <li>ng-repeat showing goals
-                    <i class="material-icons right"> <a href="#" ng-click="deleteGoal(goal)">delete</i></a>
-                    </li>
-                </ol>
-            </div>
+          <div class="col l8 center offset-l2 m12 s12">
+            <h5>
+              <br>
+              Your Goals
+            </h5>
+            <ol>
+              <li>ng-repeat showing goals
+                <i class="material-icons right">
+                  <a href="#" ng-click="deleteGoal(goal)">delete</i>
+                </a>
+              </li>
+            </ol>
+          <!-- section for adding goal. This will need to be built out once goals are implemented in schema -->
+          <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=true">Add Goal</a>
+          <div ng-show="goalAdd">
+            <input class="validate" id="userGoal" ng-model="userInfo.goal" placeholder="Enter goal" required type="text">
+            <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false">Submit</a>
+          </div>
         </div>
-
+        </div>
+          <!-- end of adding goal section -->
     </div>
 </div>

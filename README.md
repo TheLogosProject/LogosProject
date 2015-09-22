@@ -1,1 +1,1 @@
-League Manager App
+Logos Academy Readme

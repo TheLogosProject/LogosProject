@@ -45,6 +45,9 @@ app.controller('profileCtrl', function ($scope, $stateParams, $location, profile
   getProfile(memberId);
 
 
+
+
+
 });
 
 }());

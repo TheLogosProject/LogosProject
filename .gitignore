@@ -5,3 +5,14 @@ node_modules
 client/bower_components
 dist
 /server/config/local.env.js
+
+client/bower_components
+client/client/bower_components
+*.pdf
+.tmp
+.sass-cache
+.DS_Store
+server/node_modules
+.vscode
+server/mongolab.js
+>>>>>>> master

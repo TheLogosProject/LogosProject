@@ -1,4 +1,5 @@
-'use strict';
+(function () {
+  'use strict';
 
 var mongoose = require('mongoose');
 var passport = require('passport');
@@ -74,3 +75,5 @@ exports.isAuthenticated = isAuthenticated;
 exports.hasRole = hasRole;
 exports.signToken = signToken;
 exports.setTokenCookie = setTokenCookie;
+
+}());

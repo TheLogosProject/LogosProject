@@ -1,6 +1,7 @@
 {
-  "name": "League-Manager",
-  "version": "0.0.0",
+  "name": "logos-academy",
+  "version": "1.0.0",
+  "description": "",
   "main": "server/app.js",
   "dependencies": {
     "express": "~4.0.0",
