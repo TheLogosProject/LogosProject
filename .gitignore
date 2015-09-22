@@ -1,11 +1,10 @@
 node_modules
 client/bower_components
 client/client/bower_components
-.pdf
+*.pdf
 .tmp
 .sass-cache
 .DS_Store
 server/node_modules
 .vscode
-palette.pdf
 server/mongolab.js
