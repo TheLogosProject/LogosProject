@@ -14,7 +14,7 @@ var app = angular.module('app', [
 
   app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
-      .otherwise('/');
+      .otherwise('/home');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
