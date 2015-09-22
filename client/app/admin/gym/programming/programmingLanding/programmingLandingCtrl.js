@@ -32,6 +32,20 @@ app.controller('programmingLandingCtrl', function ($scope, programmingLandingSer
                             $scope.evaluationsList = response;
                             $scope.evaluations = true;
                             $scope.evalID = '';
+                            //ADD EVALUATION
+                            $scope.addEval = function () {
+                                $scope.addView = true;
+                                $scope.evaluations = false;
+                                $scope.addEvaluation = function (evalObj) {
+                                    evalObj.gymID = id2.gymID;
+                                    evalObj.pathwayID = id2.pathwayID;
+                                    evalObj.stageID = id2.stageID;
+                                    programmingLandingService.addEvalObj(evalObj).then(function (response) {
+                                        return response;
+                                    });
+                                };
+                            };
+                            //EDIT EVALUATION
                             $scope.onEvalSelect = function (ID) {
                                 var evalSpecificsId = {
                                     gymID: id2.gymID,
@@ -44,26 +58,9 @@ app.controller('programmingLandingCtrl', function ($scope, programmingLandingSer
                                         $scope.evaluationSpecifics = response;
                                         $scope.evaluations = false;
                                         $scope.editView = true;
-                                        $scope.editEval = function () {
+                                        // $scope.editEval = function () {
 
-                                        };
-                                        $scope.addEval = function () {
-                                            $scope.addView = true;
-                                            $scope.evaluations = false;
-                                            var newEvalObj = {
-                                                gymID: id3.gymID,
-                                                pathwayID: id3.pathwayID,
-                                                stageID: id3.stageID,
-                                                name: "",
-                                                description: "",
-                                                videoURL: ""
-                                            };
-                                            (function addEvaluation(evalObj) {
-                                                programmingLandingService.addEvalObj(evalObj).then(function (response) {
-                                                    return response;
-                                                });
-                                            } (newEvalObj));
-                                        };
+                                        // };
                                     });
                                 } (evalSpecificsId));
                             };

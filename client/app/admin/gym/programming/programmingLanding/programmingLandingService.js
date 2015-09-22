@@ -44,6 +44,17 @@ app.service('programmingLandingService', function ($http) {
             });
     };
 
+    this.addEvalObj = function (evalObj) {
+        return $http({
+            method: 'POST',
+            url: 'http://localhost:8555/api/gym-add-evaluation',
+            data: evalObj
+        })
+            .then(function (response) {
+                return response;
+            });
+    };
+
     //service for updating user profile
     // this.updateUserData = function (userData) {
     //   return $http({

@@ -102,28 +102,57 @@ module.exports = {
                             res.send(err);
                         } else {
                             var newUserObj = response;
-                            newUserObj.pathways = response.gym.gym_pathway_program;
-                            User.findByIdAndUpdate(userID, newUserObj)
+                            Gym.findById(newUserObj.gym)
                                 .exec(function (err, response) {
                                     if (err) {
                                         res.send(err);
                                     } else {
-                                        Gym.findById(req.body.gym)
+                                        var pathwayCount = response.gym_pathway_program;
+                                        for (var i = 0; i < pathwayCount.length; i++) {
+                                            var stagesCount = pathwayCount[i]["stages"];
+                                            var stagesLength = stagesCount.length;
+                                            var x = 0;
+                                            while (x < stagesLength) {
+                                                stagesCount[x]["total_to_complete"] = 100 / stagesLength;
+                                                var stagesValue = stagesCount[x]["total_to_complete"];
+                                                var evaluationCount = stagesCount[x]["evaluations"];
+                                                var evaluationLength = evaluationCount.length;
+                                                var y = 0;
+                                                while (y < evaluationLength) {
+                                                    evaluationCount[y]["total_to_complete"] = stagesValue / evaluationLength;
+                                                    y++;
+                                                }
+                                                x++;
+                                            }
+                                        }
+                                        var userPathways = [];
+                                        for (var y = 0; y < pathwayCount.length; y++) {
+                                            userPathways.push(pathwayCount[y]);
+                                        }
+                                        newUserObj.pathways = userPathways;
+                                        User.findByIdAndUpdate(userID, newUserObj)
                                             .exec(function (err, response) {
                                                 if (err) {
                                                     res.send(err);
                                                 } else {
-                                                    var newMemberToGym = response.members;
-                                                    newMemberToGym.push(userID);
-                                                    var newGymObj = {
-                                                        members: newMemberToGym
-                                                    };
-                                                    Gym.findByIdAndUpdate(req.body.gym, newGymObj)
+                                                    Gym.findById(req.body.gym)
                                                         .exec(function (err, response) {
                                                             if (err) {
                                                                 res.send(err);
                                                             } else {
-                                                                res.send(response);
+                                                                var newMemberToGym = response.members;
+                                                                newMemberToGym.push(userID);
+                                                                var newGymObj = {
+                                                                    members: newMemberToGym
+                                                                };
+                                                                Gym.findByIdAndUpdate(req.body.gym, newGymObj)
+                                                                    .exec(function (err, response) {
+                                                                        if (err) {
+                                                                            res.send(err);
+                                                                        } else {
+                                                                            res.send(response);
+                                                                        }
+                                                                    });
                                                             }
                                                         });
                                                 }

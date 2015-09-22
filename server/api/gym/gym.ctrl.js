@@ -95,7 +95,6 @@ module.exports = {
                     res.send(err);
                 } else {
                     var gymPathway = response.gym_pathway_program;
-                    var evalsArr = [];
                     for (var i = 0; i < gymPathway.length; i++) {
                         if (req.body.pathwayID == gymPathway[i]["_id"]) {
                             var pathwayStages = gymPathway[i]["stages"];
@@ -140,30 +139,31 @@ module.exports = {
                 if (err) {
                     res.send(err);
                 } else {
-                    var pathwayCount = response[0]["pathway"];
-                    for (var i = 0; i < pathwayCount.length; i++) {
-                        var stagesCount = response[0]["pathway"][i]["stages"];
-                        var stagesLength = stagesCount.length;
-                        var x = 0;
-                        while (x < stagesLength) {
-                            response[0]["pathway"][i]["stages"][x]["total_to_complete"] = 100 / stagesLength;
-                            var stagesValue = response[0]["pathway"][i]["stages"][x]["total_to_complete"];
-                            var evaluationCount = response[0]["pathway"][i]["stages"][x]["evaluations"];
-                            var evaluationLength = evaluationCount.length;
-                            var y = 0;
-                            while (y < evaluationLength) {
-                                response[0]["pathway"][i]["stages"][x]["evaluations"][y]["total_to_complete"] = stagesValue / evaluationLength;
-                                y++;
-                            }
-                            x++;
-                        }
-                    }
                     var newGymObj = req.body;
-                    newGymObj.gym_pathway_program = [];
-                    for (var y = 0; y < pathwayCount.length; y++) {
-                        newGymObj.gym_pathway_program.push(response[0]["pathway"][y]);
-                    }
-                    console.log(newGymObj);
+                    newGymObj.gym_pathway_program = response[0]["pathway"];
+                    // var pathwayCount = response[0]["pathway"];
+                    // for (var i = 0; i < pathwayCount.length; i++) {
+                    //     var stagesCount = response[0]["pathway"][i]["stages"];
+                    //     var stagesLength = stagesCount.length;
+                    //     var x = 0;
+                    //     while (x < stagesLength) {
+                    //         response[0]["pathway"][i]["stages"][x]["total_to_complete"] = 100 / stagesLength;
+                    //         var stagesValue = response[0]["pathway"][i]["stages"][x]["total_to_complete"];
+                    //         var evaluationCount = response[0]["pathway"][i]["stages"][x]["evaluations"];
+                    //         var evaluationLength = evaluationCount.length;
+                    //         var y = 0;
+                    //         while (y < evaluationLength) {
+                    //             response[0]["pathway"][i]["stages"][x]["evaluations"][y]["total_to_complete"] = stagesValue / evaluationLength;
+                    //             y++;
+                    //         }
+                    //         x++;
+                    //     }
+                    // }
+                    // var newGymObj = req.body;
+                    // newGymObj.gym_pathway_program = [];
+                    // for (var y = 0; y < pathwayCount.length; y++) {
+                    //     newGymObj.gym_pathway_program.push(response[0]["pathway"][y]);
+                    // }
                     var newGym = new Gym(newGymObj);
                     newGym.save(function (err, response) {
                         if (err) {
@@ -191,7 +191,23 @@ module.exports = {
                 if (err) {
                     res.send(err);
                 } else {
-                    console.log("%%%%%%%%", response);
+                    var gymPathway = response.gym_pathway_program;
+                    for (var i = 0; i < gymPathway.length; i++) {
+                        if (req.body.pathwayID == gymPathway[i]["_id"]) {
+                            var pathwayStages = gymPathway[i]["stages"];
+                            for (var x = 0; x < pathwayStages.length; x++) {
+                                if (req.body.stageID == pathwayStages[x]["_id"]) {
+                                    var evalArr = pathwayStages[x]["evaluations"];
+                                    var evaluations = [];
+                                    for (var y = 0; y < evalArr.length; y++) {
+                                        evaluations.push(evalArr[y]);
+                                    }
+                                    var newGymObj = {};
+                                    newGymObj.gym_pathway_program[i]["stages"][x]["evaluations"] = evaluations;
+                                }
+                            }
+                        }
+                    }
                 }
             });
     },
