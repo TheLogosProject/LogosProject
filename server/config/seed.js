@@ -28,6 +28,18 @@ User.find({}).remove(function() {
       first: 'Brian',
       last: 'Ng'
     },
+    pathways: [
+      {
+        completion: {
+          amount_completed: 55
+        }
+    },
+    {
+      completion: {
+        amount_completed: 69
+      }
+  }
+  ],
     email: 'b@n.com',
     password: 'bng'
     }, {
@@ -38,6 +50,18 @@ User.find({}).remove(function() {
       first: 'Mike',
       last: 'Buckley'
     },
+    pathways: [
+      {
+        completion: {
+          amount_completed: 55
+        }
+    },
+    {
+      completion: {
+        amount_completed: 69
+      }
+    }
+    ],
     email: 'm@b.com',
     password: 'mbu'
     },
@@ -78,6 +102,18 @@ User.find({}).remove(function() {
       first: 'Brian',
       last: 'DAmore'
     },
+    pathways: [
+      {
+        completion: {
+          amount_completed: 55
+        }
+    },
+    {
+      completion: {
+        amount_completed: 69
+      }
+  }
+  ],
     email: 'b@d.com',
     password: 'bda'
     }

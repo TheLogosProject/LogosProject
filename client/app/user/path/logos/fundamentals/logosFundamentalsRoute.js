@@ -6,6 +6,7 @@ angular.module('app')
     .state('logosFundamentals', {
       url: '/path/logos/fundamentals',
       // will need to tie this to username for unique view for each member
-      templateUrl: 'app/user/path/logos/fundamentals/logosFundamentals.html'
+      templateUrl: 'app/user/path/logos/fundamentals/logosFundamentals.html',
+      controller: 'logosFundamentalsCtrl'
     });
   });

@@ -18,11 +18,9 @@ angular.module('app')
           .then(function() {
             // Logged in, redirect to home
             $location.path('/main');
-            Materialize.toast('Logged in successfully!', 2000);
           })
           .catch(function(err) {
             $scope.errors.other = err.message;
-            Materialize.toast('Invalid username/password', 2000);
           });
       }
     };

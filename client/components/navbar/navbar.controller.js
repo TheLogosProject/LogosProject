@@ -23,7 +23,6 @@
 
       $scope.logout = function () {
         Auth.logout();
-        Materialize.toast('Logged out successfully!', 2000);
         $location.path('/login');
       };
 
