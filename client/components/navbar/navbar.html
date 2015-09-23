@@ -5,9 +5,7 @@
     </a>
     <a class="brand-logo" id="logo-container" ng-href="/home">
       <font color="#0277BD">Logos</font>Academy</a>
-    <div ng-show="getCurrentUser().name.first">
-      <img alt="Contact Person" class="right responsive-img circle navProfPic" src="assets/rambo.jpg" width="34px">
-    </div>
+    <img alt="Contact Person" class="right responsive-img circle navProfPic" ng-show="getCurrentUser().name.first" src="assets/rambo.jpg" width="34px">
     <ul class="right hide-on-med-and-down">
 
 <!-- menu for users who are NOT logged in -->
@@ -44,12 +42,18 @@
             <a ng-href="/learn-more">Learn More</a>
           </li>
           <li>
+            <a ng-href="/main">Path</a>
+          </li>
+          <li>
+            <a ng-href="/stats">Stats</a>
+          </li>
+          <li>
             <a class="dropdown-button" data-activates="adminActions" data-hover="true" ng-href="#!">Admin Actions
               <i class="material-icons right">arrow_drop_down</i>
             </a>
           </li>
           <li>
-            <a class="dropdown-button" data-activates="userDropdown" data-hover="true" ng-href="#!">{{getCurrentUser().name.first}}
+            <a class="dropdown-button" data-activates="adminDropdown" data-hover="true" ng-href="#!">{{getCurrentUser().name.first}}
               {{getCurrentUser().name.last}}
               <i class="material-icons right">arrow_drop_down</i>
             </a>
@@ -62,12 +66,18 @@
             <a ng-href="/learn-more">Learn More</a>
           </li>
           <li>
+            <a ng-href="/main">Path</a>
+          </li>
+          <li>
+            <a ng-href="/stats">Stats</a>
+          </li>
+          <li>
             <a class="dropdown-button" data-activates="masterActions" data-hover="true" ng-href="#!">Master Actions
               <i class="material-icons right">arrow_drop_down</i>
             </a>
           </li>
           <li>
-            <a class="dropdown-button" data-activates="userDropdown" data-hover="true" ng-href="#!">{{getCurrentUser().name.first}}
+            <a class="dropdown-button" data-activates="masterDropdown" data-hover="true" ng-href="#!">{{getCurrentUser().name.first}}
               {{getCurrentUser().name.last}}
               <i class="material-icons right">arrow_drop_down</i>
             </a>
@@ -76,6 +86,23 @@
 
 <!-- Dropdown Structure for all -->
         <ul class="dropdown-content" id="userDropdown">
+          <li>
+            <a ng-href="/profile/{{getCurrentUser()._id}}">Update Profile</a>
+          </li>
+          <li>
+            <a ng-click="logout()">Logout</a>
+          </li>
+        </ul>
+        <ul class="dropdown-content" id="adminDropdown">
+          <li>
+            <a ng-href="/profile/{{getCurrentUser()._id}}">Update Profile</a>
+          </li>
+          <li>
+            <a ng-click="logout()">Logout</a>
+          </li>
+        </ul>
+
+        <ul class="dropdown-content" id="masterDropdown">
           <li>
             <a ng-href="/profile/{{getCurrentUser()._id}}">Update Profile</a>
           </li>
@@ -145,6 +172,12 @@
           <a ng-href="/learn-more">Learn More</a>
         </li>
         <li>
+          <a ng-href="/main">Path</a>
+        </li>
+        <li>
+          <a ng-href="/stats">Stats</a>
+        </li>
+        <li>
           <a ng-href="/gym/manage/{{getCurrentUser().gym_id}}">Manage Gym</a>
         </li>
         <li>
@@ -167,6 +200,12 @@
 
 <!-- mobile menu for master -->
       <div ng-show="getCurrentUser().is_master && !getCurrentUser().is_admin">
+        <li>
+          <a ng-href="/main">Path</a>
+        </li>
+        <li>
+          <a ng-href="/stats">Stats</a>
+        </li>
         <li>
           <a ng-href="/gym/main">Manage Gyms</a>
         </li>
