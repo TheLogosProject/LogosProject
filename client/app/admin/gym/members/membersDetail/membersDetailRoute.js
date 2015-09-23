@@ -8,7 +8,8 @@ angular.module('app')
             .state('membersDetail', {
                 // will be :gymId and :memberId when live
                 url: '/gym/members/gymId/memberId',
-                templateUrl: 'app/admin/gym/members/membersDetail.html'
+                templateUrl: 'app/admin/gym/members/membersDetail/membersDetail.html',
+                controller: 'membersDetailCtrl'
             });
     });
 
