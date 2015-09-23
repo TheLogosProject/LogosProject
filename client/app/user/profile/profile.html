@@ -2,7 +2,7 @@
   <div class="section">
     <div class="row">
 
-<!-- User Header -->
+      <!-- User Header -->
       <div class="col s12 center">
         <img class="responsive-img circle" src="assets/rambo.jpg"/>
         <br>
@@ -29,11 +29,11 @@
       </div>
     </div>
     <div class="row">
-<!-- Athlete Info -->
+      <!-- Athlete Info -->
       <div class="col l8 center offset-l2 m12 s12">
         <h5>Athlete Info</h5>
-<!--beginning of form-->
-        <form>
+        <!--beginning of form-->
+        <form name="profileForm">
           <div class="input-field col s12">
             <input class="validate" id="firstName" ng-model="userInfo.name.first" required type="text">
             <label class="active" for="firstName">First Name</label>
@@ -68,13 +68,13 @@
           <div class="input-field col s12">
             <input class="validate" id="weight" ng-model="userInfo.weight" required type="text">
             <label class="active" for="weight">Weight (lbs)</label>
-            <button class="btn waves-effect waves-light blue darken-3" id="submit-button" ng-click="updateProfile(userInfo)" type="submit">Update</button>
+            <button class="btn waves-effect waves-light blue darken-3" id="submit-button" ng-click="updateProfile(userInfo)" ng-disabled="profileForm.$invalid" type="submit">Update</button>
           </form>
           <a class="btn waves-effect waves red darken-3 center modal-close" href="/#/userLanding" type="submit">Cancel</a>
-<!--end of form-->
+          <!--end of form-->
         </div>
 
-<!-- Goals -->
+        <!-- Goals -->
         <div class="row">
           <div class="col s12">
             <h5>
