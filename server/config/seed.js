@@ -40,7 +40,11 @@ User.find({}).remove(function() {
     },
     email: 'm@b.com',
     password: 'mbu'
-    }, {
+    },
+
+
+
+    {
     provider: 'local',
     is_master: false,
     is_admin: true,
@@ -50,7 +54,11 @@ User.find({}).remove(function() {
     },
     email: 'm@g.com',
     password: 'mgu'
-    }, {
+    },
+
+
+
+     {
     provider: 'local',
     is_master: true,
     is_admin: false,
