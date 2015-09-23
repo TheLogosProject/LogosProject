@@ -40,7 +40,11 @@ User.find({}).remove(function() {
     },
     email: 'm@b.com',
     password: 'mbu'
-    }, {
+    },
+
+
+
+    {
     provider: 'local',
     is_master: false,
     is_admin: true,
@@ -48,9 +52,25 @@ User.find({}).remove(function() {
       first: 'Matt',
       last: 'Guenther'
     },
+    pathways: [
+      {
+        completion: {
+          amount_completed: 55
+        }
+    },
+    {
+      completion: {
+        amount_completed: 69
+      }
+  }
+  ],
     email: 'm@g.com',
     password: 'mgu'
-    }, {
+    },
+
+
+
+     {
     provider: 'local',
     is_master: true,
     is_admin: false,
