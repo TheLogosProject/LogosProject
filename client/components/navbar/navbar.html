@@ -1,52 +1,70 @@
 <nav class="white" role="navigation" ng-controller="NavbarCtrl">
   <div class="nav-wrapper container">
-    <a href="/home">
+    <a ng-href="/home">
       <img class="nav-logo" height="60px" src="assets/logo.svg" width="60px"/>
     </a>
-    <a class="brand-logo" href="#/home" id="logo-container">
+    <a class="brand-logo" ng-href="/home" id="logo-container">
       <font color="#0277BD">Logos</font>Academy</a>
+      <img src="assets/rambo.jpg" class="right responsive-img circle navProfPic" width="34px" alt="Contact Person">
 <ul class="right hide-on-med-and-down">
 
 <!-- menu for users who are NOT logged in -->
-        <li ng-if="!isLoggedIn"><a href="#">You are NOT logged in</a></li>
-        <li ng-if="!isLoggedIn"><a href="#">User Link</a></li>
-        <li ng-if="!isLoggedIn"><a href="#">User Link</a></li>
-        <li ng-if="!isLoggedIn">
-          <a class="small waves-effect waves-light btn blue darken-3" href="/login">Log In/Sign Up</a>
+        <li ng-if="!getCurrentUser().name.first"><a ng-href="/learn-more">Learn More</a></li>
+        <li ng-if="!getCurrentUser().name.first">
+          <a class="small waves-effect waves-light btn blue darken-3" ng-href="/login">Log In/Sign Up</a>
         </li>
 
 <!-- menu for users who are logged in and NOT admin -->
-        <li ng-if="isLoggedIn && !isAdmin"><a href="#">You are logged in</a></li>
-        <li ng-if="isLoggedIn && !isAdmin"><a href="#">User Link</a></li>
-        <li ng-if="isLoggedIn && !isAdmin"><a href="#">User Link</a></li>
-        <li ng-if="isLoggedIn && !isAdmin">
-          <a class="small waves-effect waves-light btn blue darken-3" href="/login">Log In/Sign Up</a>
-        </li>
+<div ng-show="getCurrentUser().name.first && !getCurrentUser().is_admin && !getCurrentUser().is_master">
+        <li><a ng-href="/learn-more">Learn More</a></li>
+        <li><a ng-href="/main">Path</a></li>
+        <li><a ng-href="/stats">Stats</a></li>
+        <li><a ng-href="#"><a class="dropdown-button" ng-href="#!" data-activates="userDropdown" data-hover="true">{{getCurrentUser().name.first}} {{getCurrentUser().name.last}}<i class="material-icons right">arrow_drop_down</i></a></li>
+        </div>
 
 <!-- menu for users who are admins -->
-        <li ng-if="isAdmin"><a href="#">Admin Link</a></li>
-        <li ng-if="isAdmin"><a href="#">Admin Link</a></li>
-        <li ng-if="isAdmin"> <img src="assets/rambo.jpg" class="responsive-img circle" width="45px" alt="Contact Person"></li>
-        <li ng-show="isAdmin"><a class="dropdown-button" href="#!" data-activates="dropdown1" data-hover="true">{{getCurrentUser().name.first}} {{getCurrentUser().name.last}}<i class="material-icons right">arrow_drop_down</i></a></li>
+<div ng-show="getCurrentUser().is_admin && !getCurrentUser().is_master">
+        <li><a ng-href="/learn-more">Learn More</a></li>
+        <li><a class="dropdown-button" ng-href="#!" data-activates="adminActions" data-hover="true">Admin Actions<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" ng-href="#!" data-activates="adminDropdown" data-hover="true">{{getCurrentUser().name.first}} {{getCurrentUser().name.last}}<i class="material-icons right">arrow_drop_down</i></a></li>
+      </div>
 
 <!-- menu for users who are master -->
-        <li ng-if="isMaster"><a href="#">Master Link</a></li>
-        <li ng-if="isMaster"><a href="#">Master Link</a></li>
-        <li ng-if="isMaster"> <img src="assets/rambo.jpg" class="responsive-img circle" width="45px" alt="Contact Person"></li>
-        <li ng-show="isMaster"><a class="dropdown-button" href="#!" data-activates="dropdown2" data-hover="true">{{getCurrentUser().name.first}} {{getCurrentUser().name.last}}<i class="material-icons right">arrow_drop_down</i></a></li>
+<div ng-show="getCurrentUser().is_master && !getCurrentUser().is_admin">
+        <li><a ng-href="/learn-more">Learn More</a></li>
+        <li><a class="dropdown-button" ng-href="#!" data-activates="masterActions" data-hover="true">Master Actions<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" ng-href="#!" data-activates="masterDropdown" data-hover="true">{{getCurrentUser().name.first}} {{getCurrentUser().name.last}}<i class="material-icons right">arrow_drop_down</i></a></li>
+      </div>
 
-      <!-- Dropdown Structure for isAdmin-->
-    <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">Manage Gym</a></li>
-      <li><a href="#!">Programming </a></li>
-      <li><a href="#!">Manage Members</a></li>
-      <li><a href="#!">Coach's Hub</a></li>
+      <!-- Dropdown Structure for users-->
+    <ul id="userDropdown" class="dropdown-content">
+      <li><a ng-href="/profile/{{getCurrentUser()._id}}">Update Profile</a></li>
+      <li><a ng-click="logout()">Logout</a></li>
     </ul>
 
-    <!-- Dropdown Structure for Master-->
-  <ul id="dropdown2" class="dropdown-content">
-    <li><a href="#!">Manage Gyms</a></li>
+      <!-- Dropdown Structure for isAdmin-->
+    <ul id="adminDropdown" class="dropdown-content">
+      <li><a ng-href="/profile/{{getCurrentUser()._id}}">Update Profile</a></li>
+      <li><a ng-click="logout()">Logout</a></li>
+    </ul>
+
+  <ul id="adminActions" class="dropdown-content">
+    <li><a ng-href="/gym/manage/{{getCurrentUser().gym_id}}">Manage Gym</a></li>
+    <li><a ng-href="/gym/programming/{{getCurrentUser().gym_id}}">Programming </a></li>
+    <li><a ng-href="/gym/members/gymId">Manage Members</a></li>
+    <li><a ng-href="/gym/coach/{{getCurrentUser().gym_id}}">Coach's Hub</a></li>
   </ul>
+
+    <!-- Dropdown Structure for Master-->
+  <ul id="masterDropdown" class="dropdown-content">
+    <li><a ng-href="/profile/{{getCurrentUser()._id}}">Update Profile</a></li>
+    <li><a ng-click="logout()">Logout</a></li>
+  </ul>
+
+  <ul id="masterActions" class="dropdown-content">
+    <li><a ng-href="/gym/main">Manage Gyms</a></li>
+  </ul>
+
 
 </ul>
 <!-- Mobile nav menu -->
@@ -54,14 +72,14 @@
 <!-- make sure to uncomment the line below. It is currently commented out so something shows up w. out auth -->
     <ul class="side-nav" id="nav-mobile">
       <li>
-        <a href="#About">About</a>
+        <a ng-href="#About">About</a>
       </li>
       <li>
-        <a href="/login">Log In/Sign Up</a>
-        <a href="/login">User is logged in</a>
+        <a ng-href="/login">Log In/Sign Up</a>
+        <a ng-href="/login">User is logged in</a>
       </li>
     </ul>
-    <a class="button-collapse" data-activates="nav-mobile" href="#">
+    <a class="button-collapse" data-activates="nav-mobile" ng-href="#">
       <i class="small material-icons">toc</i>
     </a>
 
@@ -69,13 +87,13 @@
     <div ng-if="coach">
       <ul class="side-nav" id="nav-mobile">
         <li>
-          <a href="#About">About</a>
+          <a ng-href="#About">About</a>
         </li>
         <li>
-          <a href="/login">Log In/Sign Up</a>
+          <a ng-href="/login">Log In/Sign Up</a>
         </li>
       </ul>
-      <a class="button-collapse" data-activates="nav-mobile" href="#">
+      <a class="button-collapse" data-activates="nav-mobile" ng-href="#">
         <i class="small material-icons">toc</i>
       </a>
     </div>
@@ -84,13 +102,13 @@
     <div ng-if="master">
       <ul class="side-nav" id="nav-mobile">
         <li>
-          <a href="#About">About</a>
+          <a ng-href="#About">About</a>
         </li>
         <li>
-          <a href="/login">Log In/Sign Up</a>
+          <a ng-href="/login">Log In/Sign Up</a>
         </li>
       </ul>
-      <a class="button-collapse" data-activates="nav-mobile" href="#">
+      <a class="button-collapse" data-activates="nav-mobile" ng-href="#">
         <i class="small material-icons">toc</i>
       </a>
     </div>

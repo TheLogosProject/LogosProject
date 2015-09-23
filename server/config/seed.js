@@ -33,7 +33,7 @@ User.find({}).remove(function() {
     }, {
     provider: 'local',
     is_master: false,
-    is_admin: true,
+    is_admin: false,
     name: {
       first: 'Mike',
       last: 'Buckley'
@@ -53,7 +53,7 @@ User.find({}).remove(function() {
     }, {
     provider: 'local',
     is_master: true,
-    is_admin: true,
+    is_admin: false,
     name: {
       first: 'Brian',
       last: 'DAmore'
