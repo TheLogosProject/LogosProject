@@ -86,7 +86,7 @@ Pathway.find({}).remove(function() {
     ]}, {
     pathway: [
       {
-        name: "Ethos" 
+        name: "Ethos"
       }
     ]});
 });

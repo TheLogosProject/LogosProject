@@ -14,8 +14,9 @@
                 </thead>
                 <tbody>
                     <!-- ng-repeat these table rows -->
-                    <tr>
-                        <td>Mike Buckley</td>
+                    <tr ng-repeat="user in users">
+                        <td>{{user.name.first}}</td>
+                        <!--set up is currently active -->
                         <td>Yes</td>
                         <td><a href="http://localhost:9000/gym/members/gymId/memberId" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
                     </tr>

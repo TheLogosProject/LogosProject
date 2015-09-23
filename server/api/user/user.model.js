@@ -20,6 +20,7 @@ var UserSchema = new Schema({
   // },
   hashedPassword: String,
   provider: String,
+  role: { type: String, default: "admin"},
   salt: String,
   gender: { type: String, default: "" },
   age: { type: Number, default: 0 },

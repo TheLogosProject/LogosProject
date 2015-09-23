@@ -11,13 +11,14 @@ var errors = require('./components/errors');
 module.exports = function(app) {
 
   // Insert routes below
-
-  app.use('/api/players', require('./api/player'));
+  app.use('/api/users', require('./api/user'));
   app.use('/api/gyms', require('./api/gym'));
   app.use('/api/pathways', require('./api/pathway'))
+
   app.use('/api/teams', require('./api/team'));
   app.use('/api/things', require('./api/thing'));
-  app.use('/api/users', require('./api/user'));
+  app.use('/api/players', require('./api/player'));
+
   app.use('/api/users', require('./api/team'));
   app.use('/auth', require('./auth'));
 
