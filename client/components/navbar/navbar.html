@@ -5,46 +5,65 @@
     </a>
     <a class="brand-logo" href="#/home" id="logo-container">
       <font color="#0277BD">Logos</font>Academy</a>
-    <ul class="right hide-on-med-and-down">
-<!-- Will have to look at the user state and show based on status -->
-<!-- This can be accomplished by scanning the user object if passport allows -->
-<!-- We can discuss this after auth is implemented -->
-<!-- <div ng-if="user">
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-      </div>
-      <div ng-if="coach">
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-      </div>
-      <div ng-if="master">
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-      </div> -->
-      <li>
-        <a class="small waves-effect waves-light btn blue darken-3" href="/login">Log In/Sign Up</a>
-      </li>
+<ul class="right hide-on-med-and-down">
+
+<!-- menu for users who are NOT logged in -->
+        <li ng-if="!isLoggedIn"><a href="#">You are NOT logged in</a></li>
+        <li ng-if="!isLoggedIn"><a href="#">User Link</a></li>
+        <li ng-if="!isLoggedIn"><a href="#">User Link</a></li>
+        <li ng-if="!isLoggedIn">
+          <a class="small waves-effect waves-light btn blue darken-3" href="/login">Log In/Sign Up</a>
+        </li>
+
+<!-- menu for users who are logged in and NOT admin -->
+        <li ng-if="isLoggedIn && !isAdmin"><a href="#">You are logged in</a></li>
+        <li ng-if="isLoggedIn && !isAdmin"><a href="#">User Link</a></li>
+        <li ng-if="isLoggedIn && !isAdmin"><a href="#">User Link</a></li>
+        <li ng-if="isLoggedIn && !isAdmin">
+          <a class="small waves-effect waves-light btn blue darken-3" href="/login">Log In/Sign Up</a>
+        </li>
+
+<!-- menu for users who are admins -->
+        <li ng-if="isAdmin"><a href="#">Admin Link</a></li>
+        <li ng-if="isAdmin"><a href="#">Admin Link</a></li>
+        <li ng-if="isAdmin"> <img src="assets/rambo.jpg" class="responsive-img circle" width="45px" alt="Contact Person"></li>
+        <li ng-show="isAdmin"><a class="dropdown-button" href="#!" data-activates="dropdown1" data-hover="true">{{getCurrentUser().name.first}} {{getCurrentUser().name.last}}<i class="material-icons right">arrow_drop_down</i></a></li>
+
+<!-- menu for users who are master -->
+        <li ng-if="isMaster"><a href="#">Master Link</a></li>
+        <li ng-if="isMaster"><a href="#">Master Link</a></li>
+        <li ng-if="isMaster"> <img src="assets/rambo.jpg" class="responsive-img circle" width="45px" alt="Contact Person"></li>
+        <li ng-show="isMaster"><a class="dropdown-button" href="#!" data-activates="dropdown2" data-hover="true">{{getCurrentUser().name.first}} {{getCurrentUser().name.last}}<i class="material-icons right">arrow_drop_down</i></a></li>
+
+      <!-- Dropdown Structure for isAdmin-->
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">Manage Gym</a></li>
+      <li><a href="#!">Programming </a></li>
+      <li><a href="#!">Manage Members</a></li>
+      <li><a href="#!">Coach's Hub</a></li>
     </ul>
 
+    <!-- Dropdown Structure for Master-->
+  <ul id="dropdown2" class="dropdown-content">
+    <li><a href="#!">Manage Gyms</a></li>
+  </ul>
+
+</ul>
 <!-- Mobile nav menu -->
 <!-- This will be the mobile nav bar if the user state === user -->
 <!-- make sure to uncomment the line below. It is currently commented out so something shows up w. out auth -->
-<!-- <div ng-if="user"> -->
     <ul class="side-nav" id="nav-mobile">
       <li>
         <a href="#About">About</a>
       </li>
       <li>
         <a href="/login">Log In/Sign Up</a>
+        <a href="/login">User is logged in</a>
       </li>
     </ul>
     <a class="button-collapse" data-activates="nav-mobile" href="#">
       <i class="small material-icons">toc</i>
     </a>
-<!-- </div> -->
 
 <!-- This will be the mobile nav bar if the user state === coach -->
     <div ng-if="coach">
@@ -75,13 +94,17 @@
         <i class="small material-icons">toc</i>
       </a>
     </div>
-
+</div>
 <!-- Script for mobile nav menu -->
     <script>
       $('.button-collapse').sideNav({
         menuWidth: 300, // Default is 240
         edge: 'left', // Choose the horizontal origin
         closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      });
+
+      $(".dropdown-button").dropdown({
+        hover: false
       });
     </script>
 <!-- end of mobile nav script -->

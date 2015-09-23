@@ -26,8 +26,12 @@
   .parallax-container .section {
     width: 100%;
   }
-  /* label focus color */
 
+  .dropdown-content a {
+    color: #1565c0 !important;
+  }
+
+  /* label focus color */
   .input-field input[type=text]:focus + label {
     color: #0C61AF;
   }
