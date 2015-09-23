@@ -4,7 +4,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var newGymSchema = new Schema({
+var GymSchema = new Schema({
     name: { type: String },
     address: {
         street: { type: String, default: "" },
@@ -36,7 +36,7 @@ var newGymSchema = new Schema({
     currently_active: { type: Boolean, default: true }
 });
 
-module.exports = mongoose.model('gyms', newGymSchema);
+module.exports = mongoose.model('Gym', GymSchema);
 
 //For testing with Postman, please don't change this info!
 /*
