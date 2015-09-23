@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var newPathwaySchema = new Schema({
+var PathwaySchema = new Schema({
     pathway: [
         {
             name: { type: String },
@@ -45,7 +45,7 @@ var newPathwaySchema = new Schema({
     ]
 });
 
-module.exports = mongoose.model('pathways', newPathwaySchema);
+module.exports = mongoose.model('Pathway', PathwaySchema);
 
 //For testing with Postman, please don't change this info!
 /*

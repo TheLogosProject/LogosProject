@@ -9,7 +9,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/LM-Logos'
+    uri: 'mongodb://localhost/logos-academy'
   }
 };
 

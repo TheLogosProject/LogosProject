@@ -7,7 +7,8 @@
   'use strict';
 
 var User = require('../api/user/user.model');
-
+var Gym = require('../api/gym/gym.model');
+var Pathway = require('../api/pathway/pathway.model')
 
 User.find({}).remove(function() {
   User.create(
@@ -63,5 +64,31 @@ User.find({}).remove(function() {
 
 )});
 
+Gym.find({}).remove(function() {
+  Gym.create({
+    name: "Generator CrossFit"
+  }, {
+    name: "Test 2"
+  });
+});
+
+Pathway.find({}).remove(function() {
+  Pathway.create({
+    pathway: [
+      {
+        name: "Logos"
+      }
+    ]}, {
+    pathway: [
+      {
+        name: "Pathos"
+      }
+    ]}, {
+    pathway: [
+      {
+        name: "Ethos" 
+      }
+    ]});
+});
 
 }());
