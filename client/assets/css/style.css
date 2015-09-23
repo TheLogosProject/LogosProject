@@ -5,7 +5,6 @@
  *
  * Made By MaterializeCSS.com
  */
-
   /* START of materialize settings */
 
   nav ul a, nav .brand-logo {
@@ -26,12 +25,11 @@
   .parallax-container .section {
     width: 100%;
   }
-
   .dropdown-content a {
     color: #1565c0 !important;
   }
-
   /* label focus color */
+
   .input-field input[type=text]:focus + label {
     color: #0C61AF;
   }
@@ -41,7 +39,6 @@
   .input-field input[type=email]:focus + label {
     color: #0C61AF;
   }
-
   /* label underline focus color */
 
   textarea:focus {
@@ -69,13 +66,12 @@
   footer.page-footer {
     margin: 0;
   }
-
   .approval-button-padding {
     padding-top: 5%;
   }
   /* END of materialize settings */
-
   /* jumbotron */
+
   blue {
     font-weight: 900;
   }
@@ -83,13 +79,18 @@
     font-weight: 900;
     color: #343434 !important;
   }
-
   /* jumbotron */
+
   .badge {
     width: 80px;
   }
+  /* profile pic on nav bar */
 
+  .navProfPic {
+    margin-top: 1.2%;
+  }
   /* START of mobile */
+
   @media only screen and (max-width: 992px) {
     .parallax-container .section {
       position: absolute;
@@ -98,7 +99,7 @@
     #index-banner .section {
       top: 10%;
     }
-    .nav-logo, .recent-activity {
+    .nav-logo, .recent-activity, .navProfPic {
       display: none;
     }
   }
@@ -110,7 +111,7 @@
       height: 50px;
       width: 50px;
     }
-    .brand-logo, .recent-activity, .get-started {
+    .brand-logo, .recent-activity, .get-started, .navProfPic {
       display: none !important;
     }
   }
