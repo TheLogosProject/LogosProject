@@ -52,6 +52,18 @@ User.find({}).remove(function() {
       first: 'Matt',
       last: 'Guenther'
     },
+    pathways: [
+      {
+        completion: {
+          amount_completed: 55
+        }
+    },
+    {
+      completion: {
+        amount_completed: 69
+      }
+  }
+  ],
     email: 'm@g.com',
     password: 'mgu'
     },
