@@ -17,3 +17,4 @@ server/node_modules
 .vscode
 server/mongolab.js
 server/npm-debug.log
+masterpathways.json
