@@ -3,10 +3,12 @@
 
 
 
-app.controller('profileCtrl', function ($scope, $stateParams, $location, profileSvc) {
+app.controller('profileCtrl', function ($scope, $stateParams, $location, profileSvc, Auth) {
 
   //Get user profile information
   var memberId = $stateParams.memberId;
+
+  $scope.getCurrentUser = Auth.getCurrentUser;
 
   var getProfile = function (memberId) {
     profileSvc.getUser(memberId).then(function (response) {
@@ -32,19 +34,18 @@ app.controller('profileCtrl', function ($scope, $stateParams, $location, profile
         //leave out for now
         // goals: response.user.goals
       };
-      $scope.updateProfile = function (userInfo) {
-        profileSvc.updateUserData(userInfo).then(function (response) {
-          Materialize.toast('Updated successfully', 5000);
-        }, function (err) {
-          Materialize.toast('There was an error', 3000);
-        });
-        console.log(userInfo);
-      };
     });
   };
   getProfile(memberId);
 
-
+  $scope.updateProfile = function (userInfo) {
+    profileSvc.updateUserData(userInfo).then(function (response) {
+      Materialize.toast('Updated successfully', 5000);
+    }, function (err) {
+      Materialize.toast('There was an error', 3000);
+    });
+    console.log(userInfo);
+  };
 
 
 

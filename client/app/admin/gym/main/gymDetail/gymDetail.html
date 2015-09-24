@@ -9,7 +9,7 @@
 
       <!-- Start of form -->
       <div class="col l8 center offset-l2 m12 s12">
-        <form>
+        <form name="gymInfo">
 
           <div class="input-field col s12">
             <input class="validate" id="gymName" ng-model="gym.name" required type="text">
@@ -56,7 +56,7 @@
             <label class="active" for="gymLogoURL"> Gym Logo URL</label>
           </div>
 
-          <button class="btn waves-effect waves blue darken-3 center" ng-click="updateGymInfo(gym)" type="submit">Submit</button>
+          <button class="btn waves-effect waves blue darken-3 center" ng-disabled="gymInfo.$invalid" ng-click="updateGymInfo(gym)" type="submit">Submit</button>
           <a href="/gym/main">
             <button class="btn waves-effect waves red darken-3 center">Cancel</button>
           </div>
