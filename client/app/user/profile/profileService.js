@@ -7,7 +7,7 @@
     this.getUser = function (memberId) {
       return $http({
         method: 'GET',
-        url: 'http://localhost:9000/api/user-details/' + memberId,
+        url: '/api/users-details/' + memberId,
       }).then(function (response) {
         return response.data;
       });
@@ -17,7 +17,7 @@
     this.updateUserData = function (userData) {
       return $http({
         method: 'PUT',
-        url: 'http://localhost:9000/api/user-update',
+        url: '/api/users-update',
         data: userData
       }).then(function (response) {
         return response.data;

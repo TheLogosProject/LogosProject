@@ -7,7 +7,7 @@ app.service('membersDetailService', function ($http, $stateParams) {
   this.toggleAdmin = function () {
     return $http({
       method: 'PUT',
-      url: 'http://localhost:9000/api/user-update-isadmin',
+      url: '/api/users-update-isadmin',
       data: userObj
     }).then(function (response) {
       return response.data;
@@ -18,7 +18,7 @@ app.service('membersDetailService', function ($http, $stateParams) {
   this.toggleAccount = function () {
     return $http({
       method: 'PUT',
-      url: 'http://localhost:9000/api/user-update-isactive',
+      url: '/api/users-update-isactive',
       data: userObj
     }).then(function (response) {
       return response.data;

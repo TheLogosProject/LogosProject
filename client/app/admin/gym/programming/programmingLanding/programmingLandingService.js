@@ -59,7 +59,7 @@ app.service('programmingLandingService', function ($http) {
     // this.updateUserData = function (userData) {
     //   return $http({
     //     method: 'PUT',
-    //     url: 'http://localhost:9000/api/user-update',
+    //     url: 'http://localhost:9000/api/users-update',
     //     data: userData
     //   }).then(function (response) {
     //     return response.data;
