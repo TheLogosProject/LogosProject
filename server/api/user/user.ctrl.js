@@ -1,6 +1,3 @@
-(function () {
-  'use strict';
-
 
 var User = require('./user.model');
 var passport = require('passport');
@@ -294,7 +291,7 @@ exports.updateUser = function (req, res) {
             });
     },
     ////UPDATES A SPECIFIC USER'S SPECIFIC EVALUATION BASED ON TRIGGERS IN THE FRONT END////
-    updateEvalStatus: function (req, res) {
+  exports.updateEvalStatus = function (req, res) {
         User.findById(req.body.userID)
             .exec(function (err, response) {
                 if (err) {
@@ -369,7 +366,7 @@ exports.updateUser = function (req, res) {
             });
     },
     ////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT AN ADMIN////
-    userIsAdminUpdate: function (req, res) {
+    exports.userIsAdminUpdate = function (req, res) {
         User.findById(req.body.userID)
             .exec(function (err, response) {
                 if (err) {
@@ -388,7 +385,7 @@ exports.updateUser = function (req, res) {
             });
     },
     ////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT ACTIVE////
-    userIsActiveUpdate: function (req, res) {
+    exports.userIsActiveUpdate = function (req, res) {
         User.findById(req.body.userID)
             .exec(function (err, response) {
                 if (err) {
@@ -406,7 +403,7 @@ exports.updateUser = function (req, res) {
                 }
             });
     }
-};
+
 
 ////DELETE ONCE PUSHED LIVE////
 
@@ -428,4 +425,3 @@ exports.updateUser = function (req, res) {
     "evalID": "5602df7192694e5da7fa4586"
 }
 */
-}());
