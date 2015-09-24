@@ -45,7 +45,7 @@ var UserSchema = new Schema({
           { type: String }
       ]
   },
-  pathways: { type: Array },
+  pathways: { type: Array, default: [{completion: {amount_completed:1}},{completion:{amount_completed:1}}] },
   login_details: {
       email: { type: String },
       hashed_password: { type: String },

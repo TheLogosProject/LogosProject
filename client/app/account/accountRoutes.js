@@ -12,18 +12,19 @@ angular.module('app')
       .state('signup', {
         url: '/signup',
         templateUrl: 'app/account/signup/signup.html',
-        controller: 'SignupCtrl'
+        controller: 'SignupCtrl',
+        resolve: {
+        gyms: function(gymLandingService) {
+           return gymLandingService.getGym().then(function (response) {
+                return response;
+            });
+          }
+        }
       })
       .state('settings', {
         url: '/settings',
         templateUrl: 'app/account/settings/settings.html',
         controller: 'SettingsCtrl',
-        authenticate: true
-      })
-      .state('nameteam', {
-        url: '/nameteam',
-        templateUrl: 'app/account/nameTeam/nameteam.html',
-        controller: 'NameTeamCtrl as ctrl',
         authenticate: true
       });
   });

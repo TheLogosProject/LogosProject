@@ -30,6 +30,12 @@
                 </div>
             </div>
 
+            <div class="col s12">
+                <select class="browser-default" ng-model="user.gym" ng-options="options.value as options.label for options in gymOptions">
+                    <option value="" disabled selected>Select Your Gym</option>
+                </select>
+            </div>
+                
             <div class="row">
               <div class="input-field col s12">
                 <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted, 'has-error': form.email.$invalid && submitted }"><label for="Email">Email:</label>
