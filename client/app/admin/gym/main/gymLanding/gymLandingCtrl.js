@@ -1,3 +1,6 @@
+(function () {
+  'use strict';
+
 app.controller('gymLandingCtrl', function ($scope, gymLandingService) {
     $scope.getGym = function () {
         gymLandingService.getGym().then(function(response) {
@@ -6,7 +9,7 @@ app.controller('gymLandingCtrl', function ($scope, gymLandingService) {
               response[i]["active"] = "Yes";
             } else {
               response[i]["active"] = "No";
-            };
+            }
           }
 
           $scope.gymInfo = response;
@@ -16,3 +19,5 @@ app.controller('gymLandingCtrl', function ($scope, gymLandingService) {
     $scope.getGym();
 
 });
+
+}());

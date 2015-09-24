@@ -1,4 +1,12 @@
 node_modules
+.tmp
+.sass-cache
+.idea
+/client/bower_components
+client/bower_components
+dist
+/server/config/local.env.js
+
 client/bower_components
 client/client/bower_components
 *.pdf
@@ -8,3 +16,4 @@ client/client/bower_components
 server/node_modules
 .vscode
 server/mongolab.js
+server/npm-debug.log

@@ -1,4 +1,5 @@
-'use strict';
+(function () {
+  'use strict';
 
 angular.module('app')
   .config(function ($stateProvider) {
@@ -8,3 +9,5 @@ angular.module('app')
       templateUrl: 'app/public/learnMore/learnMore.html'
     });
   });
+
+}());

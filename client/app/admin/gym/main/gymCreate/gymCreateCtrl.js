@@ -1,3 +1,6 @@
+(function () {
+  'use strict';
+
 app.controller('gymCreateCtrl', function ($scope, gymCreateService, $location) {
     $scope.addGym = function (gymInfo) {
         gymCreateService.createGym(gymInfo).then(function (response) {
@@ -9,3 +12,5 @@ app.controller('gymCreateCtrl', function ($scope, gymCreateService, $location) {
         });
     };
 });
+
+}());

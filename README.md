@@ -1,1 +1,1 @@
-Logos Project Readme
+Logos Academy Readme

@@ -1,88 +1,243 @@
-<nav class="white" role="navigation">
+<nav class="white" ng-controller="NavbarCtrl" role="navigation">
   <div class="nav-wrapper container">
-    <a href="#/home">
-      <img class="nav-logo" height="60px" src="app/assets/logo.svg" width="60px"/>
+    <a ng-href="/home">
+      <img class="nav-logo" height="60px" src="assets/logo.svg" width="60px"/>
     </a>
-    <a class="brand-logo" href="#/home" id="logo-container">
+    <a class="brand-logo" id="logo-container" ng-href="/home">
       <font color="#0277BD">Logos</font>Academy</a>
+    <img alt="Contact Person" class="right responsive-img circle navProfPic" ng-show="getCurrentUser().name.first" src="assets/rambo.jpg" width="34px">
     <ul class="right hide-on-med-and-down">
-<!-- Will have to look at the user state and show based on status -->
-<!-- This can be accomplished by scanning the user object if passport allows -->
-<!-- We can discuss this after auth is implemented -->
-<!-- <div ng-if="user">
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-      </div>
-      <div ng-if="coach">
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-      </div>
-      <div ng-if="master">
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-        <li><a href="#">User Link</a></li>
-      </div> -->
-      <li>
-        <a class="small waves-effect waves-light btn blue darken-3" href="#/login">Log In/Register</a>
-      </li>
-    </ul>
 
-<!-- Mobile nav menu -->
-<!-- This will be the mobile nav bar if the user state === user -->
-<!-- make sure to uncomment the line below. It is currently commented out so something shows up w. out auth -->
-<!-- <div ng-if="user"> -->
-    <ul class="side-nav" id="nav-mobile">
-      <li>
-        <a href="#About">About</a>
+      <!-- menu for users who are NOT logged in -->
+      <li ng-if="!getCurrentUser().name.first">
+        <a class="small waves-effect waves-light btn blue darken-3" ng-href="/login">Log In/Sign Up</a>
       </li>
-      <li>
-        <a href="#/login">Log In/Register</a>
-      </li>
+
+      <!-- menu for users who are logged in and NOT admin -->
+      <div ng-show="getCurrentUser().name.first && !getCurrentUser().is_admin && !getCurrentUser().is_master">
+        <li>
+          <a ng-href="/main">Path</a>
+        </li>
+        <li>
+          <a ng-href="/stats">Stats</a>
+        </li>
+        <li>
+          <a ng-href="#">
+            <a class="dropdown-button" data-activates="userDropdown" data-hover="true" ng-href="#!">{{getCurrentUser().name.first}}
+              {{getCurrentUser().name.last}}
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+        </div>
+
+        <!-- menu for users who are admins -->
+        <div ng-show="getCurrentUser().is_admin && !getCurrentUser().is_master">
+          <li>
+            <a ng-href="/main">Path</a>
+          </li>
+          <li>
+            <a ng-href="/stats">Stats</a>
+          </li>
+          <li>
+            <a class="dropdown-button" data-activates="adminActions" data-hover="true" ng-href="#!">Admin Actions
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-button" data-activates="adminDropdown" data-hover="true" ng-href="#!">{{getCurrentUser().name.first}}
+              {{getCurrentUser().name.last}}
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+        </div>
+
+        <!-- menu for users who are master -->
+        <div ng-show="getCurrentUser().is_master && !getCurrentUser().is_admin">
+          <li>
+            <a ng-href="/main">Path</a>
+          </li>
+          <li>
+            <a ng-href="/stats">Stats</a>
+          </li>
+          <li>
+            <a class="dropdown-button" data-activates="masterActions" data-hover="true" ng-href="#!">Master Actions
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-button" data-activates="masterDropdown" data-hover="true" ng-href="#!">{{getCurrentUser().name.first}}
+              {{getCurrentUser().name.last}}
+              <i class="material-icons right">arrow_drop_down</i>
+            </a>
+          </li>
+        </div>
+
+        <!-- Dropdown Structure for all -->
+        <ul class="dropdown-content" id="userDropdown">
+          <li>
+            <a ng-href="/profile">Update Profile</a>
+          </li>
+          <li>
+            <a ng-click="logout()">Logout</a>
+          </li>
+        </ul>
+        <ul class="dropdown-content" id="adminDropdown">
+          <li>
+            <a ng-href="/profile">Update Profile</a>
+          </li>
+          <li>
+            <a ng-click="logout()">Logout</a>
+          </li>
+        </ul>
+
+        <ul class="dropdown-content" id="masterDropdown">
+          <li>
+            <a ng-href="/profile">Update Profile</a>
+          </li>
+          <li>
+            <a ng-click="logout()">Logout</a>
+          </li>
+        </ul>
+
+        <ul class="dropdown-content" id="adminActions">
+          <li>
+            <a ng-href="/gym/manage/{{getCurrentUser().gym_id}}">Manage Gym</a>
+          </li>
+          <li>
+            <a ng-href="/gym/programming/{{getCurrentUser().gym_id}}">Programming
+            </a>
+          </li>
+          <li>
+            <a ng-href="/gym/members/gymId">Manage Members</a>
+          </li>
+          <li>
+            <a ng-href="/gym/coach/{{getCurrentUser().gym_id}}">Coach's Hub</a>
+          </li>
+        </ul>
+
+        <ul class="dropdown-content" id="masterActions">
+          <li class="divider"></li>
+
+          <li>
+            <a ng-href="/gym/main">Manage Gyms</a>
+          </li>
+          <li>
+            <a ng-href="/gym/programming/{{getCurrentUser().gym_id}}">Programming
+            </a>
+          </li>
+          <li>
+            <a ng-href="/gym/members/gymId">Manage Members</a>
+          </li>
+          <li>
+            <a ng-href="/gym/coach/{{getCurrentUser().gym_id}}">Coach's Hub</a>
+          </li>
+        </ul>
+
     </ul>
-    <a class="button-collapse" data-activates="nav-mobile" href="#">
+    <!-- Mobile nav menu -->
+    <ul class="side-nav" id="nav-mobile">
+
+      <!-- mobile menu for unauth users -->
+      <div ng-show="!getCurrentUser().name.first">
+        <li>
+          <a ng-href="/login">Log In/Sign Up</a>
+        </li>
+      </div>
+
+      <!-- mobile menu for authed users -->
+      <div ng-show="getCurrentUser().name.first && !getCurrentUser().is_admin && !getCurrentUser().is_master">
+        <li>
+          <a ng-href="/main">Path</a>
+        </li>
+        <li>
+          <a ng-href="/stats">Stats</a>
+        </li>
+        <li>
+          <a ng-href="/profile">Update Profile</a>
+        </li>
+        <li>
+          <a ng-click="logout()">Logout</a>
+        </li>
+      </div>
+
+      <!-- mobile menu for admins -->
+      <div ng-show="getCurrentUser().is_admin && !getCurrentUser().is_master">
+        <li>
+          <a ng-href="/main">Path</a>
+        </li>
+        <li>
+          <a ng-href="/stats">Stats</a>
+        </li>
+        <li>
+          <a ng-href="/gym/manage/{{getCurrentUser().gym_id}}">Manage Gym</a>
+        </li>
+        <li>
+          <a ng-href="/gym/programming/{{getCurrentUser().gym_id}}">Programming
+          </a>
+        </li>
+        <li>
+          <a ng-href="/gym/members/gymId">Manage Members</a>
+        </li>
+        <li>
+          <a ng-href="/gym/coach/{{getCurrentUser().gym_id}}">Coach's Hub</a>
+        </li>
+        <li>
+          <a ng-href="/profile">Update Profile</a>
+        </li>
+        <li>
+          <a ng-click="logout()">Logout</a>
+        </li>
+      </div>
+
+      <!-- mobile menu for master -->
+      <div ng-show="getCurrentUser().is_master && !getCurrentUser().is_admin">
+        <li>
+          <a ng-href="/main">Path</a>
+        </li>
+        <li>
+          <a ng-href="/stats">Stats</a>
+        </li>
+         <li class="divider"></li>
+        <li>
+          <a ng-href="/gym/main">Manage Gyms</a>
+        </li>
+        <li>
+          <a ng-href="/gym/programming/{{getCurrentUser().gym_id}}">Programming
+          </a>
+        </li>
+        <li>
+          <a ng-href="/gym/members/gymId">Manage Members</a>
+        </li>
+        <li>
+          <a ng-href="/gym/coach/{{getCurrentUser().gym_id}}">Coach's Hub</a>
+        </li>
+ <li class="divider"></li>
+        <li>
+          <a ng-href="/profile">Update Profile</a>
+        </li>
+        <li>
+          <a ng-click="logout()">Logout</a>
+        </li>
+      </div>
+
+      <!-- close list for nav menu -->
+    </ul>
+    <a class="button-collapse" data-activates="nav-mobile" ng-href="#">
       <i class="small material-icons">toc</i>
     </a>
-<!-- </div> -->
 
-<!-- This will be the mobile nav bar if the user state === coach -->
-    <div ng-if="coach">
-      <ul class="side-nav" id="nav-mobile">
-        <li>
-          <a href="#About">About</a>
-        </li>
-        <li>
-          <a href="#/login">Log In/Register</a>
-        </li>
-      </ul>
-      <a class="button-collapse" data-activates="nav-mobile" href="#">
-        <i class="small material-icons">toc</i>
-      </a>
-    </div>
+  </div>
+  <!-- Script for mobile nav menu -->
+  <script>
+    $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 240
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    });
 
-<!-- This will be the mobile nav bar if the user state === master -->
-    <div ng-if="master">
-      <ul class="side-nav" id="nav-mobile">
-        <li>
-          <a href="#About">About</a>
-        </li>
-        <li>
-          <a href="#/login">Log In/Register</a>
-        </li>
-      </ul>
-      <a class="button-collapse" data-activates="nav-mobile" href="#">
-        <i class="small material-icons">toc</i>
-      </a>
-    </div>
-
-<!-- Script for mobile nav menu -->
-    <script>
-      $('.button-collapse').sideNav({
-        menuWidth: 300, // Default is 240
-        edge: 'left', // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      });
-    </script>
-<!-- end of mobile nav script -->
-  </nav>
+    $(".dropdown-button").dropdown({
+      hover: false
+    });
+  </script>
+  <!-- end of mobile nav script -->
+</nav>

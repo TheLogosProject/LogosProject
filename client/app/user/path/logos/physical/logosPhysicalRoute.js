@@ -1,3 +1,5 @@
+(function () {
+  'use strict';
 
 angular.module('app')
   .config(function ($stateProvider) {
@@ -8,3 +10,5 @@ angular.module('app')
       templateUrl: 'app/user/path/logos/physical/logosPhysical.html'
     });
   });
+
+}());

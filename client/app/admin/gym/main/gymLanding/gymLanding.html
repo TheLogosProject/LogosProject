@@ -5,7 +5,7 @@
                 <h4> Manage Gyms </h4>
             </div>
             <div class="col l8 center offset-l2 m12 s12">
-                <a href="/#/gym/main/create" class="small waves-effect waves-light btn blue darken-3">Add New Gym</a>
+                <a href="/gym/main/create" class="small waves-effect waves-light btn blue darken-3">Add New Gym</a>
             </div>
             <table class="centered">
                 <thead>
@@ -20,7 +20,7 @@
                     <tr ng-repeat="gym in gymInfo">
                         <td>{{gym.name}}</td>
                         <td>{{gym.active}}</td>
-                        <td><a href="/#/gym/manage/{{gym._id}}" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
+                        <td><a href="/gym/manage/{{gym._id}}" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
                     </tr>
                 </tbody>
             </table>

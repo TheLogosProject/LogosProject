@@ -1,4 +1,5 @@
-'use strict';
+(function () {
+  'use strict';
 
 // access for master admin only
 
@@ -8,6 +9,8 @@ angular.module('app')
             .state('gymLanding', {
                 url: '/gym/main',
                 templateUrl: 'app/admin/gym/main/gymLanding/gymLanding.html',
-                controller: 'gymLandingCtrl'                
+                controller: 'gymLandingCtrl'
             });
     });
+
+}());

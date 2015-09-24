@@ -1,30 +1,43 @@
-//DEPENDENCIES
-var express = require('express'),
-    mongoose = require('mongoose'),
-    bodyParser = require('body-parser'),
-    cors = require('cors'),
-    MongoLab = require('./mongolab');
+/**
+ * Main application file
+ */
 
-//CONTROLLERS
-var gymsCtrl = require('./api/gym/gym.ctrl.js'),
-    userCtrl = require('./api/user/user.ctrl.js'),
-    pathwaysCtrl = require('./api/pathway/pathway.ctrl.js');
+(function () {
+  'use strict';
 
-//EXPRESS
+
+// Set default node environment to development
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+var express = require('express');
+var mongoose = require('mongoose');
+var config = require('./config/environment');
+// var io = require('socket.io').listen(app);
+
+// Connect to database
+mongoose.connect(config.mongo.uri, config.mongo.options); //development.js
+
+// Populate DB with sample data
+if(config.seedDB) { require('./config/seed'); }
+
+// Setup server
 var app = express();
+var server = require('http').createServer(app);
+var socketio = require('socket.io')(server, {
+  serveClient: (config.env === 'production') ? false : true,
+  path: '/socket.io-client'
+});
+require('./config/socketio')(socketio);
+require('./config/express')(app);
+require('./routes')(app);
 
-//CONNECTION
-var mongoUri = 'mongodb://' + MongoLab.userName + ':' + MongoLab.password + '@ds059682.mongolab.com:59682/the-logos-project';
-mongoose.set('debug', true);
-mongoose.connect(mongoUri);
-mongoose.connection.once('open', function () {
-    console.log('Now connected to The Logos Project database!!');
+// Start server
+server.listen(config.port, config.ip, function () {
+  console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
 });
 
-//MIDDLEWARE
-app.use(bodyParser.json());
-app.use(cors());
-app.use(express.static('./client'));
+// Expose app
+exports = module.exports = app;
 
 //ENDPOINTS
 //--Gym Endpoints--//
@@ -54,6 +67,3 @@ app.put('/api/user-update-isactive', userCtrl.userIsActiveUpdate);
 //--Pathway Endpoints--//
 app.get('/api/pathway', pathwaysCtrl.find);
 app.post('/api/pathway', pathwaysCtrl.save);
-
-//LISTEN
-app.listen(8555);

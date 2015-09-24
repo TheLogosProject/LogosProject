@@ -4,8 +4,7 @@
     <div class="row">
       <div class="col s12 center">
         <h4>Welcome
-          {{ user.name.first }}
-          {{ user.name.last }}!</h4>
+          {{getCurrentUser().name.first}}!</h4>
       </div>
       <div class="col s12 center">
         &nbsp;
@@ -23,7 +22,7 @@
 <!-- end progress chart-->
           <h5 class="center">Logos</h5>
           <p class="center">
-            <a class="btn waves-effect waves-light blue darken-3" href="#/path/logos" id="logos-button">Enter</a>
+            <a class="btn waves-effect waves-light blue darken-3" href="/path/logos/fundamentals" id="logos-button">Enter</a>
           </p>
           <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -42,7 +41,7 @@
 <!-- end progress chart-->
             <h5 class="center">Pathos</h5>
             <p class="center">
-              <a class="btn waves-effect waves-light blue darken-3" href="#/path/pathos" id="pathos-button">Enter</a>
+              <a class="btn waves-effect waves-light blue darken-3" href="/path/pathos" id="pathos-button">Enter</a>
             </p>
             <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -66,7 +65,7 @@
 <!-- end progress chart-->
           <h5 class="center">Ethos</h5>
           <p class="center">
-            <button class="btn waves-effect waves-light blue darken-3" href="#/path/ethos" id="ethos-button" ng-disabled="ethos.isActive != true">
+            <button class="btn waves-effect waves-light blue darken-3" href="/path/ethos" id="ethos-button" ng-disabled="ethos.isActive != true">
               Enter
             </button>
 
@@ -82,8 +81,7 @@
   <div class="modal fixed-footer" id="modal1">
     <div class="modal-content">
       <h4 class="center">Hi,
-        {{ user.name.first }}
-        {{ user.name.last }}!</h4>
+        {{getCurrentUser().name.first}}!</h4>
       <form ng-submit="submitModal(answers)">
         <div class="input-field col s12">
           <textarea class="materialize-textarea" id="textarea1" type="text"></textarea>
@@ -93,12 +91,13 @@
           <button class="btn waves-effect waves blue darken-3 center modal-close" ng-click="submitModal()" type="submit">Next</button>
         </div>
       </form>
+    </div>
 <!-- This link will have to be the user.ID when auth is hooked up -->
       <p class="center">We would love to get to know you better.
-        <a href="/#/userProfile/55fc4b7407c2e12a2e618115">Click here</a>
+        <a href="/userProfile/55fc4b7407c2e12a2e618115">Click here</a>
         to complete your profile.</p>
     </div>
-
+</div>
 <!-- script for modal -->
     <script>
       $(document).ready(function() {
