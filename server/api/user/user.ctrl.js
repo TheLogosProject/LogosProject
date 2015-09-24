@@ -1,6 +1,3 @@
-(function () {
-  'use strict';
-
 
 var User = require('./user.model');
 var passport = require('passport');
@@ -292,18 +289,139 @@ exports.updateUser = function (req, res) {
                     res.send(response);
                 }
             });
-};
+    },
+    ////UPDATES A SPECIFIC USER'S SPECIFIC EVALUATION BASED ON TRIGGERS IN THE FRONT END////
+  exports.updateEvalStatus = function (req, res) {
+        User.findById(req.body.userID)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    var pathways = response.pathways;
+                    for (var i = 0; i < pathways.length; i++) {
+                        if (req.body.pathwayID == pathways[i]["_id"]) {
+                            var stages = pathways[i]["stages"];
+                            for (var x = 0; x < stages.length; x++) {
+                                if (req.body.stageID == stages[x]["_id"]) {
+                                    var evaluations = stages[x]["evaluations"];
+                                    for (var y = 0; y < evaluations.length; y++) {
+                                        if (req.body.evalID == evaluations[y]["_id"]) {
+                                            console.log(evaluations[y]);
+                                            if (evaluations[y]["needs_approval"] === true && evaluations[y]["pending"] === false) {
+                                                response.pathways[i]["stages"][x]["evaluations"][y]["pending"] = true;
+                                                User.findByIdAndUpdate(req.body.userID, response)
+                                                    .exec(function (err, response) {
+                                                        if (err) {
+                                                            res.send(err);
+                                                        } else {
+                                                            res.send(response);
+                                                        }
+                                                    });
+                                            } else if (evaluations[y]["needs_approval"] === true && evaluations[y]["pending"] === true) {
+                                                response.pathways[i]["stages"][x]["evaluations"][y]["complete"] = true;
+                                                var completeValue1 = response.pathways[i]["stages"][x]["evaluations"][y]["total_to_complete"];
+                                                response.pathways[i]["stages"][x]["amount_completed"] += completeValue1;
+                                                if (response.pathways[i]["stages"][x]["amount_completed"] === response.pathways[i]["stages"][x]["total_to_complete"]) {
+                                                    response.pathways[i]["stages"][x]["complete"] = true;
+                                                }
+                                                response.pathways[i]["completion"]["amount_completed"] += completeValue1;
+                                                if (response.pathways[i]["completion"]["amount_completed"] === response.pathways[i]["completion"]["total_to_complete"]) {
+                                                    response.pathways[i]["completion"]["complete"] = true;
+                                                }
+                                                User.findByIdAndUpdate(req.body.userID, response)
+                                                    .exec(function (err, response) {
+                                                        if (err) {
+                                                            res.send(err);
+                                                        } else {
+                                                            res.send(response);
+                                                        }
+                                                    });
+                                            } else if (evaluations[y]["needs_approval"] === false && evaluations[y]["complete"] === false) {
+                                                response.pathways[i]["stages"][x]["evaluations"][y]["complete"] = true;
+                                                var completeValue2 = response.pathways[i]["stages"][x]["evaluations"][y]["total_to_complete"];
+                                                response.pathways[i]["stages"][x]["amount_completed"] += completeValue2;
+                                                if (response.pathways[i]["stages"][x]["amount_completed"] === response.pathways[i]["stages"][x]["total_to_complete"]) {
+                                                    response.pathways[i]["stages"][x]["complete"] = true;
+                                                }
+                                                response.pathways[i]["completion"]["amount_completed"] += completeValue2;
+                                                if (response.pathways[i]["completion"]["amount_completed"] === response.pathways[i]["completion"]["total_to_complete"]) {
+                                                    response.pathways[i]["completion"]["complete"] = true;
+                                                }
+                                                User.findByIdAndUpdate(req.body.userID, response)
+                                                    .exec(function (err, response) {
+                                                        if (err) {
+                                                            res.send(err);
+                                                        } else {
+                                                            res.send(response);
+                                                        }
+                                                    });
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+    },
+    ////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT AN ADMIN////
+    exports.userIsAdminUpdate = function (req, res) {
+        User.findById(req.body.userID)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    response.is_admin = !response.is_admin;
+                    User.findByIdAndUpdate(req.body.userID, response)
+                        .exec(function (err, response) {
+                            if (err) {
+                                res.send(err);
+                            } else {
+                                res.send(response);
+                            }
+                        });
+                }
+            });
+    },
+    ////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT ACTIVE////
+    exports.userIsActiveUpdate = function (req, res) {
+        User.findById(req.body.userID)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    response.currently_active = !response.currently_active;
+                    User.findByIdAndUpdate(req.body.userID, response)
+                        .exec(function (err, response) {
+                            if (err) {
+                                res.send(err);
+                            } else {
+                                res.send(response);
+                            }
+                        });
+                }
+            });
+    }
 
 
-/* For initial user add testing
+////DELETE ONCE PUSHED LIVE////
+
+/* For initial user add testing -- http://localhost:8555/api/add-user
 {
     "name": {
         "first": "Mike",
         "last": "Buckley"
     },
-    "gym": "55fddafabb429c4575c69617"
+    "gym": "5602fc16bfb07c49091b75d9"
 }
 */
 
-
-}());
+/* For testing user-evaluation-update -- http://localhost:8555/api/user-evaluation-update
+{
+    "userID": "5602fc2e4bca0072095351a5",
+    "pathwayID": "5602df7192694e5da7fa4584",
+    "stageID": "5602df7192694e5da7fa4585",
+    "evalID": "5602df7192694e5da7fa4586"
+}
+*/

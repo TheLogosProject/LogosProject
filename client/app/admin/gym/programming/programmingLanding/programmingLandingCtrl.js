@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  app.controller('programmingLandingCtrl', function ($scope, programmingLandingService, gymObj) {
+app.controller('programmingLandingCtrl', function ($scope, programmingLandingService, gymObj) {
 
     var pathwaysArr = [];
     for (var i = 0; i < gymObj.pathways.length; i++) {
@@ -44,7 +44,9 @@
                                     evalObj.pathwayID = id2.pathwayID;
                                     evalObj.stageID = id2.stageID;
                                     programmingLandingService.addEvalObj(evalObj).then(function (response) {
-                                        return response;
+                                        $scope.addView = false;
+                                        $scope.evaluations = true;
+                                        getStageEvals(id2);
                                     });
                                 };
                             };
@@ -58,12 +60,23 @@
                                 };
                                 (function getEvalInfo(id3) {
                                     programmingLandingService.getEvalDetails(id3).then(function (response) {
-                                        $scope.evaluationSpecifics = response;
+                                        $scope.evaluationObj = response;
                                         $scope.evaluations = false;
                                         $scope.editView = true;
-                                        // $scope.editEval = function () {
+                                        $scope.editEval = function (editedEval) {
+                                            editedEval.gymID = id3.gymID;
+                                            editedEval.pathwayID = id3.pathwayID;
+                                            editedEval.stageID = id3.stageID;
+                                            editedEval.evalID = id3.evalID;
+                                            editedEval.description = editedEval.content.explanation;
+                                            editedEval.video = editedEval.content.video;
+                                            programmingLandingService.editEvaluation(editedEval).then(function (response) {
+                                                $scope.editView = false;
+                                                $scope.evaluations = true;
+                                                getStageEvals(id2);
+                                            });
 
-                                        // };
+                                        };
                                     });
                                 } (evalSpecificsId));
                             };
@@ -79,9 +92,5 @@
         $scope.editView = false;
         $scope.addView = false;
     };
-
-
-
-  });
-  
+});
 }());

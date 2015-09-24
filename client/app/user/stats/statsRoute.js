@@ -7,7 +7,8 @@ angular.module('app')
     .state('stats', {
       // will want to be /stats/:id when live
       url: '/stats',
-      templateUrl: 'app/user/stats/stats.html'
+      templateUrl: 'app/user/stats/stats.html',
+      controller: 'StatsCtrl'
     });
   });
 
