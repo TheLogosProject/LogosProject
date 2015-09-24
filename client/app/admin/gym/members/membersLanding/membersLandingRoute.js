@@ -7,7 +7,7 @@ angular.module('app')
             .state('membersLanding', {
                 // will be :gymId when live
                 url: '/gym/members/gymId',
-                templateUrl: 'app/admin/gym/members/membersLanding.html',
+                templateUrl: 'app/admin/gym/members/membersLanding/membersLanding.html',
                 controller: 'membersLandingCtrl'
             });
     });
