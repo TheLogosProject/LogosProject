@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  app.controller('programmingLandingCtrl', function ($scope, programmingLandingService, gymObj) {
+app.controller('programmingLandingCtrl', function ($scope, programmingLandingService, gymObj) {
 
     var pathwaysArr = [];
     for (var i = 0; i < gymObj.pathways.length; i++) {
@@ -92,7 +92,5 @@
         $scope.editView = false;
         $scope.addView = false;
     };
-
-
-
 });
+}());

@@ -4,7 +4,9 @@
 
       <!-- User Header -->
       <div class="col s12 center">
-        <img class="responsive-img circle" src="assets/rambo.jpg"/>
+        <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().name.first && !getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/userAvatar.svg" width="120px">
+        <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/adminAvatar.svg" width="120px">
+        <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().is_master && !getCurrentUser().is_admin" src="assets/masterAvatar.svg" width="120px">
         <br>
         <div class="col l4 center offset-l4 s10 offset-m1 m10 offset-s1">
           <form action="#">
