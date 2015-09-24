@@ -33,7 +33,7 @@ app.get('/api/gym-names', gymsCtrl.getGymNames);
 app.get('/api/gym-details/:gymId', gymsCtrl.getGymDetails);
 app.get('/api/gym-pathway/:gymId', gymsCtrl.getGymPathway);//PROGRAMMING/GET GYM
 app.post('/api/gym-stage', gymsCtrl.getStages);//PROGRAMMING/GET STAGES
-app.post('/api/gym-evaluations', gymsCtrl.getEvaluations);//PROGRAMMING/GET EVALUATIONS
+app.post('/api/gym-evaluations', gymsCtrl.getEvaluations);//PROGRAMMING/GET EVALUATION
 app.post('/api/gym-evaluation-specifics', gymsCtrl.getSpecificEval);//PROGRAMMING/GET SPECIFIC EVALUATION
 app.post('/api/gym', gymsCtrl.saveGym);
 app.post('/api/gym-add-evaluation', gymsCtrl.addEvaluation);//PROGRAMMING/ADDING EVAL
@@ -48,6 +48,9 @@ app.get('/api/user-pathos/:memberId', userCtrl.getUserPathos);
 app.get('/api/user-ethos/:memberId', userCtrl.getUserEthos);
 app.post('/api/add-user', userCtrl.addUser);
 app.put('/api/user-update', userCtrl.updateUser);
+app.put('/api/user-evaluation-update', userCtrl.updateEvalStatus);
+app.put('/api/user-update-isadmin', userCtrl.userIsAdminUpdate);
+app.put('/api/user-update-isactive', userCtrl.userIsActiveUpdate);
 //--Pathway Endpoints--//
 app.get('/api/pathway', pathwaysCtrl.find);
 app.post('/api/pathway', pathwaysCtrl.save);

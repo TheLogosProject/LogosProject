@@ -7,13 +7,13 @@ angular.module('app')
                 // will want to be /main/:id when live
                 url: '/main',
                 templateUrl: 'app/user/main/main.html',
-                controller: 'mainCtrl'
-                // resolve: {
-                //     userObj: function ($stateParams, userService) {
-                //         var id = $stateParams.id;
-                //         return userService.getUserByID(id);
-                //     }
-                // }
+                controller: 'mainCtrl',
+                resolve: {
+                    userObj: function ($stateParams, userService) {
+                        var id = $stateParams.id;
+                        return userService.getUserByID(id);
+                    }
+                }
             });
     });
 
