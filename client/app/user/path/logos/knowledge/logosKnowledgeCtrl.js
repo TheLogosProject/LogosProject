@@ -1,6 +1,6 @@
 app.controller('logosKnowledgeCtrl', function ($scope, $stateParams, Auth) {
     $scope.getCurrentUser = Auth.getCurrentUser;
-
+    console.log($scope.getCurrentUser());
     $scope.knowledgeEvaluations = $scope.getCurrentUser().pathways[0].stages[1].evaluations;
 
     // $scope.user = userObj;
