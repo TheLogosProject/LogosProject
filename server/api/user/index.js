@@ -23,6 +23,7 @@ router.post('/', controller.create);
 // router.get('/:memberId', controller.findByID);
 router.get('/details/:memberId', controller.getUserDetails);
 router.get('-logos/:memberId', controller.getUserLogos);
+router.get('-logos/physical', controller.getUserLogos);
 router.get('-pathos/:memberId', controller.getUserPathos);
 router.get('-ethos/:memberId', controller.getUserEthos);
 
