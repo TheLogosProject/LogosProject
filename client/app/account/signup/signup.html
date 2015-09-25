@@ -59,7 +59,7 @@
             <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted, 'has-error': form.password.$invalid && submitted }">
               <label for="Password">Password:</label>
 
-              <input class="form-control" mongoose-error name="password" ng-minlength="3" ng-model="user.password" required type="password"/>
+              <input class="form-control" mongoose-error name="password" ng-minlength="3" id="password1" ng-model="user.password" required type="password"/>
 
               <p class="help-block" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">Password must be at least 3 characters.</p>
 
@@ -69,8 +69,18 @@
           </div>
         </div>
 
+
+          <div class="row">
+              <div class="input-field col s12">
+                <input class="validate" id="password2" ng-model="passwordCheck" type="password">
+                <label for="passwordCheck"> Confirm Password:</label>
+                <p id="validate-status"></p>
+              </div>
+          </div>
+
         <button class="btn waves-effect waves blue darken-3 center" type="submit">Register</button>
       </form>
+
       <div class="row">
         <div class="input-field col s12">
           <div>
@@ -87,3 +97,20 @@
     </div>
   </div>
 </div>
+
+<!-- Password match validation -->
+    <script>
+      $(document).ready(function() {
+        $("#password2").keyup(validate);
+      });
+      function validate() {
+       var password1 = $("#password1").val();
+       var password2 = $("#password2").val();
+
+         if (password1 == password2) {
+          $("#validate-status").text("Password is valid!");
+         } else {
+          $("#validate-status").text("Passwords DO NOT match!");
+         }
+      }
+  </script>
