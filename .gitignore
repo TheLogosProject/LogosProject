@@ -6,7 +6,7 @@ node_modules
 client/bower_components
 dist
 /server/config/local.env.js
-
+/server/config/seed.js
 client/bower_components
 client/client/bower_components
 *.pdf
