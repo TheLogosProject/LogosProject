@@ -6,12 +6,12 @@
 
                 <!-- Athlete Info -->
                 <img class="responsive-img circle" src="assets/rambo.jpg" />
-                <h5>User.FirstName User.LastName </h5>
+                <h5>{{ userObj.name.first }} {{ userObj.name.last }} </h5>
                 <br>
-                <h6> Athlete Info </h6>
-                <div> guentherishere@email.com </div>
-                <div> Male </div>
-                <div> Height - Weight </div>
+                <h6><b> Athlete Info </b></h6>
+                <div> {{ userObj.email }} </div>
+                <div> {{ userObj.gender }} </div>
+                <div> {{ userObj.height.feet }}'{{ userObj.height.inches }}" - {{ userObj.weight }} lbs </div>
                 <br>
                 <!-- Switches here -->
                 <div> Enable Account </div>

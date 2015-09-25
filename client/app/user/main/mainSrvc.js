@@ -3,7 +3,7 @@ app.service('mainSrvc', function ($http) {
     this.getUserByID = function (id) {
         return $http({
             method: 'GET',
-            url: 'http://localhost:8555/api/user/' + id
+            url: '/api/users/' + id
         })
             .then(function (response) {
                 return response.data;

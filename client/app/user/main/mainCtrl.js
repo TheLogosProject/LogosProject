@@ -17,5 +17,15 @@ angular.module('app')
       // $scope.pathosPercent = Math.ceil($scope.user.pathways[1]["completion"]["amount_completed"]);
       // $scope.ethosPercent = Math.ceil($scope.user.pathways.ethos.completion.amount_completed);
 
+  $scope.submitModal = function (answers) {
+      gymCreateService.createGym(gymInfo).then(function (response) {
+          $scope.gym.name = '';
+          $location.path('/gym/main');
+          Materialize.toast('Answers added successfully', 5000);
+      }, function (err) {
+        Materialize.toast('There was error.  Please try again.', 3000);
+      });
+  };
+
 });
 }());

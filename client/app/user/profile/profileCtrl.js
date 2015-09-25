@@ -1,54 +1,48 @@
 (function () {
-  'use strict';
+    'use strict';
 
 
 
-app.controller('profileCtrl', function ($scope, $stateParams, $location, profileSvc, Auth) {
+    app.controller('profileCtrl', function ($scope, $stateParams, $location, profileSvc, Auth) {
 
-  //Get user profile information
-  var memberId = $stateParams.memberId;
+        //Get user profile information
 
-  $scope.getCurrentUser = Auth.getCurrentUser;
+        var userObj = Auth.getCurrentUser();
+        $scope.gymName = userObj.gym.name;
 
-  var getProfile = function (memberId) {
-    profileSvc.getUser(memberId).then(function (response) {
-      console.log(response);
-      $scope.gymName = response.gym.name;
-      $scope.userInfo = {
-        _id: response.user._id,
-        name: {
-          first: response.user.name.first,
-          last: response.user.name.last
-        },
-        contact_info: {
-          phone: response.user.contact_info.phone,
-          email: response.user.contact_info.email
-        },
-        gender: response.user.gender,
-        height: {
-          feet: response.user.height.feet,
-          inches: response.user.height.inches
-        },
-        weight: response.user.weight
-        //needs to be added in on back-end
-        //leave out for now
-        // goals: response.user.goals
-      };
+
+        $scope.userInfo = {
+            _id: userObj._id,
+            name: {
+                first: userObj.name.first,
+                last: userObj.name.last
+            },
+            contact_info: {
+                phone: userObj.contact_info.phone,
+                email: userObj.email
+            },
+            gender: userObj.gender,
+            height: {
+                feet: userObj.height.feet,
+                inches: userObj.height.inches
+            },
+            weight: userObj.weight
+            //needs to be added in on back-end
+            //leave out for now
+            // goals: response.user.goals
+        };
+
+        $scope.updateProfile = function (userInfo) {
+            console.log(userInfo);
+            profileSvc.updateUserData(userInfo).then(function (response) {
+                Materialize.toast('Updated successfully', 5000);
+            }, function (err) {
+                Materialize.toast('There was an error', 3000);
+            });
+        };
+
+
+
     });
-  };
-  getProfile(memberId);
 
-  $scope.updateProfile = function (userInfo) {
-    profileSvc.updateUserData(userInfo).then(function (response) {
-      Materialize.toast('Updated successfully', 5000);
-    }, function (err) {
-      Materialize.toast('There was an error', 3000);
-    });
-    console.log(userInfo);
-  };
-
-
-
-});
-
-}());
+} ());
