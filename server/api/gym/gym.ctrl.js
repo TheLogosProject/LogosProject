@@ -1,3 +1,7 @@
+/* jshint -W069 */
+/* jshint -W116 */
+/* jshint -W083 */
+
 var Gym = require('./gym.model'),
     Pathway = require('../pathway/pathway.model'),
     mongoose = require('mongoose');

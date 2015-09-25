@@ -1,3 +1,8 @@
+/* jshint -W069 */
+/* jshint -W116 */
+/* jshint -W083 */
+/* jshint -W004 */
+/* jshint -W030 */
 
 var User = require('./user.model');
 var passport = require('passport');

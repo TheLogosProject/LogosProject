@@ -82,19 +82,19 @@
     <div class="modal-content">
       <h4 class="center">Hi,
         {{getCurrentUser().name.first}}!</h4>
-      <form ng-submit="submitModal(answers)">
+      <form ng-submit="submitModal(user)">
         <div class="input-field col s12">
-          <textarea class="materialize-textarea" id="textarea1" type="text"></textarea>
+          <textarea class="materialize-textarea" ng-model="user.get_to_know.answers.[0]"id="textarea1" type="text"></textarea>
           <label for="textarea1">What brought you to CrossFit?</label>
         </div>
         <div class="modal-footer">
-          <button class="btn waves-effect waves blue darken-3 center modal-close" ng-click="submitModal()" type="submit">Next</button>
+          <button class="btn waves-effect waves blue darken-3 center modal-close" ng-click="submitModal(user)" type="submit">Next</button>
         </div>
       </form>
     </div>
 <!-- This link will have to be the user.ID when auth is hooked up -->
       <p class="center">We would love to get to know you better.
-        <a href="/userProfile/55fc4b7407c2e12a2e618115">Click here</a>
+        <a href="/profile" class="modal-close">Click here</a>
         to complete your profile.</p>
     </div>
 </div>
