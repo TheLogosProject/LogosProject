@@ -21,14 +21,14 @@ router.post('/', controller.create);
 //Mike
 // router.get('/', controller.getAllUsers);
 // router.get('/:memberId', controller.findByID);
-router.get('-details/:memberId', controller.getUserDetails);
+router.get('/details/:memberId', controller.getUserDetails);
 router.get('-logos/:memberId', controller.getUserLogos);
 router.get('-logos/physical', controller.getUserLogos);
 router.get('-pathos/:memberId', controller.getUserPathos);
 router.get('-ethos/:memberId', controller.getUserEthos);
 
 // router.post('-add', controller.addUser);
-router.put('-update', controller.updateUser);
+router.put('/update', controller.updateUser);
 router.put('-update-isadmin');
 router.put('-update-isactive' );
 
