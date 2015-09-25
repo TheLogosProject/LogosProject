@@ -426,17 +426,685 @@
                     "complete": false,
                     "evaluations": [
                         {
-                            "name": "Run 2 miles under 13 minutes",
+                            "name": "Hold a 2 min plank",
                             "content": {
-                                "video": "https://www.youtube.com/watch?v=8A6Uai5sQVw",
-                                "image": "http://www.70sbig.com/wp-content/uploads/2012/03/halfsquat-fuck.jpg",
+                                "video": "",
+                                "image": "",
                                 "progressions": [
                                     {
-                                        "explanation": "Run 100 yards fast",
+                                        "explanation": "Perform 3 x 30 sec planks",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Perform 2 x 1 min planks",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Perform 50 shoulder touches in plank",
                                         "complete": false
                                     }
                                 ],
-                                "explanation": "Here is an explanation for this excersize.",
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 15 push ups in 45 sec",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Perform 20 green band push ups",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 15 blue band push ups",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "25 red band push ups in 1 min 15 sec",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 15 pull ups in 1 min",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "2 x 20 green band pull ups",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 20 blue band pull ups",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 20 red band pull ups",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 30 air squats in 1 min 15 sec",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Perform 30 air squats for time",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 30 sec max air squats",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 45 sec max air squats",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 2 rounds of Cindy unbroken",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Complete 2 rounds of Cindy unbroken",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Perform 20 pull ups and 20 push ups",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Perform 30 unbroken air squats",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Row 1000m unbroken",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Row 250m for time",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Row 2 x 250m for time",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Row 2 x 500m for time",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Run 800m unbroken",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Run 3 x 200m",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Run 400m",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Run 4 x 200m with 30 sec rest in between",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "30 KB swings unbroken 53/35",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Do 15 KB swings unbroken",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Do as many as you can in 45 sec",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Do 50 KB swings for time",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Perform 5 rebounding box jumps 24/20”",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Do 5 box jumps at 20/12”",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Do 10 box jumps to step down 24/20”",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Do 2 rebounding box jumps 24/20”",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Perform 30 burpees in 2 ½ min",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Do 10 burpees unbroken",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Do 15 burpees unbroken",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 10 unbroken burpees with 15 sec rest",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Perform 50 unbroken sit ups",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "25 unbroken sit ups",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 20 sit ups 30 sec in between",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "60 sit ups for time",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Perform 1 min bar hang",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "5 x 15 second bar hangs",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "30 second bar hang",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 30 second bar hang w/ 20 second rest",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 1 wall walk",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Complete 1 min plank",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Complete 2 x 30 shoulder touch in plank",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Complete bar walk with 20 shoulder touches",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 30 wall ball shots in 1 min",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "30 wall balls for time",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 10 wall balls unbroken",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 15 w/ 40 second rest",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 400m run in 2 min",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Complete 400m unbroken for time",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 200m in less than 1 min",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "4 x 200m with 30 sec rest",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 15 med ball cleans unbroken",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "15 med ball deadlifts touch and go",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "15 med ball high pulls touch and go",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "15 med ball balance unbroken",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Hold hollow body for 1 min",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "4 x 15 sec hollow body holds",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "40 hollow body reps",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "3 x 30 hollow body reps",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Perform 5 knee to elbows unbroken",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Complete knee to elbow",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Perform 15 sec knees up hold",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Complete 3 x 20 knees up hold",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "30 overhead squat with PVC pipe in 1 min 15 sec",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Complete 15 overhead squat unbroken",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Complete 30 sec hold in bottom of overhead squat",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Complete 30 overhead lunges",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 25 sumo deadlift high pull 1 min 53/35 pounds",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Do 25 sumo deadlift unbroken",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Do 10 sumo deadlift high pull in 30 sec",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Do 18 sumo deadlift high pull in 30 sec",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "40 Russian twists unbroken 20/14",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "30 second hold w/ feet up",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "2 x 20 Russian twists with 15 sec rest",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "60 second hold with feet up",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 1 min handstand hold",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Complete 4 x 15 sec handstand hold",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Complete 3 wall walks",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Complete 3 x 30 second handstand holds",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Complete 100 burpees in 15 min",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "Do 50 burpees for time",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Do 2 x 25 burpees with 1 min rest",
+                                        "complete": false
+                                    },
+                                    {
+                                        "explanation": "Do EMOM 10 burpees for 6 min",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
                                 "question": "",
                                 "answer": ""
                             },
