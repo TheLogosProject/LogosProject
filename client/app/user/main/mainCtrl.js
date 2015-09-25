@@ -10,6 +10,7 @@ angular.module('app')
 
   $scope.getCurrentUser = Auth.getCurrentUser;
   console.log($scope.getCurrentUser());
+  $scope.getCurrentUser();
 
   $scope.user = $scope.getCurrentUser();
       $scope.logosPercent = Math.ceil($scope.user.pathways[0].completion.amount_completed);
