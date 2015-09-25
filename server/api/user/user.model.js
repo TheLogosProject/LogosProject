@@ -33,19 +33,19 @@ var UserSchema = new Schema({
       phone: { type: String, default: "" },
       email: { type: String, default: "" }
   },
-  gym: { type: Schema.Types.ObjectId, ref: 'gyms' },
+  gym: { type: Schema.Types.ObjectId, ref: 'Gym' },
   goals: [
       { type: String, default: "" }
   ],
   get_to_know: {
       questions: [
-          { type: Schema.Types.ObjectId, ref: 'gyms' }
+          { type: Schema.Types.ObjectId, ref: 'Gym' }
       ],
       answers: [
           { type: String }
       ]
   },
-  pathways: { type: Array, default: [{completion: {amount_completed:1}},{completion:{amount_completed:1}}] },
+  pathways: { type: Array },
   login_details: {
       email: { type: String },
       hashed_password: { type: String },

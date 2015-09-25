@@ -12,8 +12,8 @@ angular.module('app')
   console.log($scope.getCurrentUser());
 
   $scope.user = $scope.getCurrentUser();
-      $scope.logosPercent = Math.ceil($scope.user.pathways[0]["completion"]["amount_completed"]);
-      $scope.pathosPercent = Math.ceil($scope.user.pathways[1]["completion"]["amount_completed"]);
+      $scope.logosPercent = Math.ceil($scope.user.pathways[0].completion.amount_completed);
+      // $scope.pathosPercent = Math.ceil($scope.user.pathways[1]["completion"]["amount_completed"]);
       // $scope.ethosPercent = Math.ceil($scope.user.pathways.ethos.completion.amount_completed);
 
 });

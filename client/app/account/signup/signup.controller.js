@@ -30,7 +30,8 @@ angular.module('app')
             last: $scope.user.name.last
           },
           email: $scope.user.email,
-          password: $scope.user.password
+          password: $scope.user.password,
+          gym: $scope.user.gym
 
           // team: $scope.user.team
         })
