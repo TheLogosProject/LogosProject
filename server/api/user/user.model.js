@@ -41,9 +41,8 @@ var UserSchema = new Schema({
       questions: [
           { type: Schema.Types.ObjectId, ref: 'Gym' }
       ],
-      answers: [
-          { type: String }
-      ]
+      answers:
+          { type: String, default: "" }
   },
   pathways: { type: Array },
   login_details: {
