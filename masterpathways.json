@@ -15,6 +15,417 @@
                     "complete": false,
                     "evaluations": [
                         {
+                            "name": "Press",
+                            "content": {
+                                "video": "https://www.youtube.com/watch?v=xe19t2_6yis",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation":
+                                "<p class="flow-text">
+                                  <div>
+                                    1. Set-up: Take bar from supports or clean to racked position. The bar sits on the shoulders with the grip slightly wider than shoulder width. The elbows are below and in front of bar. Stance is approximately shoulder width. Head is tilted slightly back allowing bar to pass. <br>
+                                    2. Press: Press the bar to a position directly overhead. <br>
+                                  </div>
+                                </p>",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Push Press",
+                            "content": {
+                                "video": "https://www.youtube.com/watch?v=X6-DMh-t4nQ",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation":
+                                "<p class="flow-text">
+                                  <div>
+                                    1. Set-up: The set-up is the same as the shoulder press. <br>
+                                    2. Dip: Initiate the dip by bending the hips and knees while keeping the torso upright. The dip will be between 1/5 and 1/4 of a squat in depth. <br>
+                                    3. Drive: With no pause at the bottom of the dip, the hips and legs are forcefully extended. <br>
+                                    4. Press: As the hips and legs complete extension the shoulders and arms forcefully press the bar overhead until the arms are fully extended. <br>
+                                  </div>
+                                </p>",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Push Jerk",
+                            "content": {
+                                "video": "https://www.youtube.com/watch?v=V-hKuAfWNUw",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation":
+                                "<p class="flow-text">
+                                  <div>
+                                    1. Set-up: The set-up is the same as for the shoulder press and push press. <br>
+                                    2. Dip: The dip is identical to the push press. <br>
+                                    3. Drive: The drive is identical to the push press. <br>
+                                    4. Press and Dip: This time instead of just pressing, you press and dip a second time simultaneously, catching the bar in a partial squat with the arms fully extended overhead. <br>
+                                    5. Finish: Stand or squat to fully erect with bar directly overhead identical to terminal position in push press and shoulder press. <br>
+                                  </div>
+                                </p>",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Deadlift",
+                            "content": {
+                                "video": "https://www.youtube.com/watch?v=op9kVnSso6Q",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation":
+                                "<p class="flow-text">
+                                  <div> The deadlift, like the squat, is essential functional movement and carries a potent hormonal punch. This is core training like no other. </div>
+                                  <br>
+                                  <h6>Coaching Points:</h6>
+                                  <br>
+                                  <div>
+                                    1. Look straight ahead <br>
+                                    2. Keep back arched <br>
+                                    3. Arms don’t pull, they’re just straps <br>
+                                    4. Bar travels along legs <br>
+                                    5. Push with the heels <br>
+                                  </div>
+                                </p>",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Sumo Deadlift High Pull",
+                            "content": {
+                                "video": "https://www.youtube.com/watch?v=o6QniJ9FaGA",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation":
+                                "<p class="flow-text">
+                                  <div> i.	For range of motion, line of action, and length and speed of action, the Sumo Deadlift High Pull is a great conjugate to the “Thruster”. At low loads this is our favorite substitute for Concept II Rowing. </div>
+                                  <br>
+                                  <h6> Coaching Points: </h6>
+                                  <br>
+                                  <div>
+                                    1. Start on ground <br>
+                                    2. Wide, “Sumo” stance <br>
+                                    3. Take narrow grip on bar <br>
+                                    4. Look straight ahead <br>
+                                    5. Keep back arched <br>
+                                    6. Pull with hips and legs only until both are at full extension <br>
+                                    7. Flick hip near full extension <br>
+                                    8. Powerfully shrug <br>
+                                    9. Immediately pull with arms continuing the bars travel up <br>
+                                    10. Keep the elbows as far above your hands as possible <br>
+                                    11. Bring the bar right up under the chin briefly <br>
+                                    12. Lower to hang <br>
+                                    13. Lower to ground <br>
+                                  </div>
+                                </p>",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Med Ball Clean",
+                            "content": {
+                                "video": "https://www.youtube.com/watch?t=2&v=-nk0GqeSTJs",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation":
+                                "<p class="flow-text">
+                                  <div>
+                                    1. Ball is on the ground, feet are just outside the ball, hands are inside the legs holding the side of the ball. <br>
+                                    2. Shoulders are just over the ball. <br>
+                                    3. Back is flat and tight. <br>
+                                  </div>
+                                  <br>
+                                  <h6> Points of performance: </h6>
+                                  <br>
+                                  <div>
+                                    1. Pull the ball from the ground completely opening the hip with the arms long. <br>
+                                    2. With a big shrug of the shoulders begin pulling yourself under the ball allowing your hands to rotate around the object. <br>
+                                    3. Receive the ball at shoulders in a full front squat with the crease of the hip below the knee.  Stand to finish the movement. <br>
+                                  </div>
+                                </p>",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Air Squat",
+                            "content": {
+                                "video": "https://www.youtube.com/watch?v=C_VtOYc6j5c",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation":
+                                "<p class="flow-text">
+                                  <div> The squat is essential to human movement, a proven performance enhancer and a gateway movement to the best exercise in strength and conditioning.</div>
+                                  <br>
+                                  <h6>Coaching Points: </h6>
+                                  <br>
+                                  <div>
+                                    1. Back arched <br>
+                                    2. Look straight ahead <br>
+                                    3. Keep weight on heels <br>
+                                    4. Good depth = below parallel <br>
+                                    5. Chest high <br>
+                                    6. Mid section tight <br>
+                                  </div>
+                                </p>",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Overhead Squat",
+                            "content": {
+                                "video": "https://www.youtube.com/watch?v=RD_vUnqwqqI",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation":
+                                "<p class="flow-text">
+                                  <div> i.	The overhead squat is an important stretch, perfect for warm ups, integral to the snatch and will expose most functional inflexibility and any mechanical deficiency in your squat. </div>
+                                  <br>
+                                  <h6>Coaching Points: </h6>
+                                  <br>
+                                  <div>
+                                    1. Grip as wide as needed <br>
+                                    2. Go slowly <br>
+                                    3. Head up! <br>
+                                    4. Stay on heels <br>
+                                    5. Break parallel <br>
+                                  </div>
+                                </p>",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Front Squat",
+                            "content": {
+                                "video": "https://www.youtube.com/watch?v=m4ytaCJZpl0",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation":
+                                "<p class="flow-text">
+                                  <div> The hardest part of the front squat may be the “racked position”. Practice until your wrists are “O.K.” with it. Handstands help. This one will force shoulder and wrist flexibility.  </div>
+                                  <br>
+                                  <h6>Coaching Points: </h6>
+                                  <br>
+                                  <div>
+                                    1. Bar rests on chest and shoulders with loose grip – “racked” <br>
+                                    2. Mechanics like other squats <br>
+                                  </div>
+                                </p>",
+                                "question": "",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        }
+                    ]
+                },
+                {
+                    "name": "Knowledge",
+                    "amount_completed": 0,
+                    "total_to_complete": 0,
+                    "complete": false,
+                    "evaluations": [
+                        {
+                            "name": "Question 1",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "What is CrossFit?",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Question 2",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "What is the Hopper model?",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Question 3",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "What is the Health/Wellness model?",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        },
+                        {
+                            "name": "Question 4",
+                            "content": {
+                                "video": "",
+                                "image": "",
+                                "progressions": [
+                                    {
+                                        "explanation": "",
+                                        "complete": false
+                                    }
+                                ],
+                                "explanation": "",
+                                "question": "What are the 10 CrossFit attributes?",
+                                "answer": ""
+                            },
+                            "total_to_complete": 0,
+                            "complete": false,
+                            "needs_approval": true,
+                            "approved_by": "",
+                            "approved_on": "",
+                            "approved": false
+                        }
+                    ]
+                },
+                {
+                    "name": "Physical",
+                    "amount_completed": 0,
+                    "total_to_complete": 0,
+                    "complete": false,
+                    "evaluations": [
+                        {
                             "name": "Run 2 miles under 13 minutes",
                             "content": {
                                 "video": "https://www.youtube.com/watch?v=8A6Uai5sQVw",
