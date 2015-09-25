@@ -3,8 +3,8 @@ var User = require('./user.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
-var Pathway = require('../pathway/pathway.model'),
-    Gym = require('../gym/gym.model');
+var Pathway = require('../pathway/pathway.model');
+var Gym = require('../gym/gym.model');
 
 
 
@@ -182,7 +182,7 @@ exports.getAllUsers = function (req, res) {
                 res.send(response);
             }
         });
-},
+};
 
 exports.findByID = function (req, res) {
     User.findById(req.params.memberId)
@@ -193,7 +193,7 @@ exports.findByID = function (req, res) {
                 res.send(response);
             }
         });
-},
+};
 
 exports.getUserDetails = function (req, res) {
     User.findById(req.params.memberId)
@@ -229,7 +229,7 @@ exports.getUserDetails = function (req, res) {
                     });
             }
         });
-},
+};
 
 exports.getUserLogos = function (req, res) {
     User.findById(req.params.memberId)
@@ -240,7 +240,7 @@ exports.getUserLogos = function (req, res) {
                 res.send(response.pathways[0]);
             }
         });
-},
+};
 
 exports.getUserPathos = function (req, res) {
     User.findById(req.params.memberId)
@@ -251,7 +251,7 @@ exports.getUserPathos = function (req, res) {
                 res.send(response.pathways[1]);
             }
         });
-},
+};
 
 exports.getUserEthos = function (req, res) {
     User.findById(req.params.memberId)
@@ -262,84 +262,7 @@ exports.getUserEthos = function (req, res) {
                 res.send(response.pathways[2]);
             }
         });
-},
-
-// exports.addUser = function (req, res) {
-//         var newUser = new User(req.body);
-//         newUser.save(function (err, response) {
-//             if (err) {
-//                 res.send(err);
-//             } else {
-//                 var userID = response._id;
-//                 User.findById(userID)
-//                     .populate('gym')
-//                     .exec(function (err, response) {
-//                         if (err) {
-//                             res.send(err);
-//                         } else {
-//                             var newUserObj = response;
-//                             Gym.findById(newUserObj.gym)
-//                                 .exec(function (err, response) {
-//                                     if (err) {
-//                                         res.send(err);
-//                                     } else {
-//                                         var pathwayCount = response.gym_pathway_program;
-//                                         for (var i = 0; i < pathwayCount.length; i++) {
-//                                             var stagesCount = pathwayCount[i]["stages"];
-//                                             var stagesLength = stagesCount.length;
-//                                             var x = 0;
-//                                             while (x < stagesLength) {
-//                                                 stagesCount[x]["total_to_complete"] = 100 / stagesLength;
-//                                                 var stagesValue = stagesCount[x]["total_to_complete"];
-//                                                 var evaluationCount = stagesCount[x]["evaluations"];
-//                                                 var evaluationLength = evaluationCount.length;
-//                                                 var y = 0;
-//                                                 while (y < evaluationLength) {
-//                                                     evaluationCount[y]["total_to_complete"] = stagesValue / evaluationLength;
-//                                                     y++;
-//                                                 }
-//                                                 x++;
-//                                             }
-//                                         }
-//                                         var userPathways = [];
-//                                         for (var y = 0; y < pathwayCount.length; y++) {
-//                                             userPathways.push(pathwayCount[y]);
-//                                         }
-//                                         newUserObj.pathways = userPathways;
-//                                         User.findByIdAndUpdate(userID, newUserObj)
-//                                             .exec(function (err, response) {
-//                                                 if (err) {
-//                                                     res.send(err);
-//                                                 } else {
-//                                                     Gym.findById(req.body.gym)
-//                                                         .exec(function (err, response) {
-//                                                             if (err) {
-//                                                                 res.send(err);
-//                                                             } else {
-//                                                                 var newMemberToGym = response.members;
-//                                                                 newMemberToGym.push(userID);
-//                                                                 var newGymObj = {
-//                                                                     members: newMemberToGym
-//                                                                 };
-//                                                                 Gym.findByIdAndUpdate(req.body.gym, newGymObj)
-//                                                                     .exec(function (err, response) {
-//                                                                         if (err) {
-//                                                                             res.send(err);
-//                                                                         } else {
-//                                                                             res.send(response);
-//                                                                         }
-//                                                                     });
-//                                                             }
-//                                                         });
-//                                                 }
-//                                             });
-//                                     }
-//                                 });
-//                         }
-//                     });
-//             }
-//         });
-// },
+};
 
 exports.updateUser = function (req, res) {
     User.findByIdAndUpdate(req.body._id, req.body)
@@ -350,7 +273,7 @@ exports.updateUser = function (req, res) {
                 res.send(response);
             }
         });
-},
+};
 ////UPDATES A SPECIFIC USER'S SPECIFIC EVALUATION BASED ON TRIGGERS IN THE FRONT END////
 exports.updateEvalStatus = function (req, res) {
     User.findById(req.body.userID)
@@ -425,7 +348,7 @@ exports.updateEvalStatus = function (req, res) {
                 }
             }
         });
-},
+};
 ////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT AN ADMIN////
 exports.userIsAdminUpdate = function (req, res) {
     User.findById(req.body.userID)
@@ -444,7 +367,7 @@ exports.userIsAdminUpdate = function (req, res) {
                     });
             }
         });
-},
+};
 ////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT ACTIVE////
 exports.userIsActiveUpdate = function (req, res) {
     User.findById(req.body.userID)
@@ -463,7 +386,7 @@ exports.userIsActiveUpdate = function (req, res) {
                     });
             }
         });
-}
+};
 
 
 ////DELETE ONCE PUSHED LIVE////
@@ -473,7 +396,7 @@ exports.userIsActiveUpdate = function (req, res) {
     "name": {
         "first": "Mike",
         "last": "Buckley"
-    },
+    };
     "gym": "5602fc16bfb07c49091b75d9"
 }
 */
