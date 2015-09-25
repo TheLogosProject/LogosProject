@@ -55,16 +55,16 @@ app.service('programmingLandingService', function ($http) {
             });
     };
 
-    //service for updating user profile
-    // this.updateUserData = function (userData) {
-    //   return $http({
-    //     method: 'PUT',
-    //     url: 'http://localhost:9000/api/users-update',
-    //     data: userData
-    //   }).then(function (response) {
-    //     return response.data;
-    //   });
-    // };
+
+    this.editEvaluation = function (evalObj) {
+      return $http({
+        method: 'PUT',
+        url: '/api/gyms/edit/evaluation',
+        data: evalObj
+      }).then(function (response) {
+        return response.data;
+      });
+    };
 
 
 });
