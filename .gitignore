@@ -18,3 +18,5 @@ server/node_modules
 server/mongolab.js
 server/npm-debug.log
 masterpathways.json
+config
+/server/config/seed.js
