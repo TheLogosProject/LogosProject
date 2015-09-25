@@ -3,148 +3,130 @@
  * to disable, edit config/environment/index.js, and set `seedDB: false`
  */
 
-(function () {
-  'use strict';
-
 var User = require('../api/user/user.model');
 var Gym = require('../api/gym/gym.model');
-var Pathway = require('../api/pathway/pathway.model')
+var Pathway = require('../api/pathway/pathway.model');
 
-User.find({}).remove(function() {
-  User.create(
+
+Pathway.create(
     {
-    provider: 'local',
-    name: {
-      first: 'Test',
-      last: 'User'
-    },
-    email: 'test@test.com',
-    password: 'test'
-    }, {
-    provider: 'local',
-    is_master: false,
-    is_admin: false,
-    name: {
-      first: 'Brian',
-      last: 'Ng'
-    },
-    pathways: [
-      {
-        completion: {
-          amount_completed: 55
-        }
-    },
-    {
-      completion: {
-        amount_completed: 69
-      }
-  }
-  ],
-    email: 'b@n.com',
-    password: 'bng'
-    }, {
-    provider: 'local',
-    is_master: false,
-    is_admin: false,
-    name: {
-      first: 'Mike',
-      last: 'Buckley'
-    },
-    pathways: [
-      {
-        completion: {
-          amount_completed: 55
-        }
-    },
-    {
-      completion: {
-        amount_completed: 69
-      }
+        "pathway": [
+            {
+                "name": "Logos",
+                "completion": {
+                    "amount_completed": 0,
+                    "total_to_complete": 100,
+                    "complete": false
+                },
+                "stages": [
+                    {
+                        "name": "Stage 1",
+                        "amount_completed": 0,
+                        "total_to_complete": 0,
+                        "complete": false,
+                        "evaluations": [
+                            {
+                                "name": "Excersize 1",
+                                "content": {
+                                    "video": "https://www.youtube.com/watch?v=8A6Uai5sQVw",
+                                    "image": "http://www.70sbig.com/wp-content/uploads/2012/03/halfsquat-fuck.jpg",
+                                    "progressions": [
+                                        {
+                                            "explanation": "Run 100 yards.",
+                                            "complete": false
+                                        }
+                                    ],
+                                    "explanation": "Here is an explanation for this excersize.",
+                                    "question": "",
+                                    "answer": "",
+                                    "complete": false,
+                                    "completed_on": ""
+                                },
+                                "total_to_complete": 0,
+                                "complete": false,
+                                "needs_approval": true,
+                                "approved_by": "",
+                                "approved_on": "",
+                                "approved": false
+                            },
+                        ]
+                    }
+                ]
+            }
+        ]
     }
-    ],
-    email: 'm@b.com',
-    password: 'mbu'
-    },
+    ).then(function (res) {
+        Pathway.find({})
+            .exec(function (err, response) {
+                var newGymObj = {
+                    "name": "Generator CrossFit"
+                };
+                newGymObj.gym_pathway_program = response[0].pathway;
+                Gym.create(newGymObj).then(function (res) {
+                    Gym.findById(res._id)
+                        .exec(function (err, response) {
+                            var newUserObj = {
+                                "name": {
+                                    "first": "Chaco",
+                                    "last": "Taco"
+                                },
+                                "email": "test@test.com",
+                                "password": "abc",
+                                "provider": "local",
+                                "is_admin": false,
+                                "is_master": true
+                            };
+                            newUserObj.gym = response._id;
+                            User.create(newUserObj).then(function (res) {
+                                var userID = res._id;
+                                User.findById(userID)
+                                    .populate('gym')
+                                    .exec(function (err, response) {
+                                        var newUserObj = response;
+                                        Gym.findById(response.gym._id)
+                                            .exec(function (err, response) {
+                                                var pathwayCount = response.gym_pathway_program;
+                                                for (var i = 0; i < pathwayCount.length; i++) {
+                                                    var stagesCount = pathwayCount[i]["stages"];
+                                                    var stagesLength = stagesCount.length;
+                                                    var x = 0;
+                                                    while (x < stagesLength) {
+                                                        stagesCount[x]["total_to_complete"] = 100 / stagesLength;
+                                                        var stagesValue = stagesCount[x]["total_to_complete"];
+                                                        var evaluationCount = stagesCount[x]["evaluations"];
+                                                        var evaluationLength = evaluationCount.length;
+                                                        var y = 0;
+                                                        while (y < evaluationLength) {
+                                                            evaluationCount[y]["total_to_complete"] = stagesValue / evaluationLength;
+                                                            y++;
+                                                        }
+                                                        x++;
+                                                    }
+                                                }
+                                                var userPathways = [];
+                                                for (var y = 0; y < pathwayCount.length; y++) {
+                                                    userPathways.push(pathwayCount[y]);
+                                                }
+                                                newUserObj.pathways = userPathways;
+                                                User.findByIdAndUpdate(userID, newUserObj)
+                                                    .exec(function (err, response) {
+                                                        Gym.findById(response.gym)
+                                                            .exec(function (err, response) {
+                                                                var newMemberToGym = [];
+                                                                newMemberToGym.push(userID);
+                                                                var newGymObj = {
+                                                                    "members": newMemberToGym
+                                                                };
+                                                                Gym.findByIdAndUpdate(response._id, newGymObj).then(function (res) {
+                                                                    console.log(res, "!!!!!");
+                                                                });
+                                                            });
+                                                    });
+                                            });
+                                    });
+                            });
+                        });
+                });
+            });
 
-
-
-    {
-    provider: 'local',
-    is_master: false,
-    is_admin: true,
-    name: {
-      first: 'Matt',
-      last: 'Guenther'
-    },
-    pathways: [
-      {
-        completion: {
-          amount_completed: 55
-        }
-    },
-    {
-      completion: {
-        amount_completed: 69
-      }
-  }
-  ],
-    email: 'm@g.com',
-    password: 'mgu'
-    },
-
-
-
-     {
-    provider: 'local',
-    is_master: true,
-    is_admin: false,
-    name: {
-      first: 'Brian',
-      last: 'DAmore'
-    },
-    pathways: [
-      {
-        completion: {
-          amount_completed: 55
-        }
-    },
-    {
-      completion: {
-        amount_completed: 69
-      }
-  }
-  ],
-    email: 'b@d.com',
-    password: 'bda'
-    }
-
-)});
-
-Gym.find({}).remove(function() {
-  Gym.create({
-    name: "Generator CrossFit"
-  }, {
-    name: "Test 2"
-  });
-});
-
-Pathway.find({}).remove(function() {
-  Pathway.create({
-    pathway: [
-      {
-        name: "Logos"
-      }
-    ]}, {
-    pathway: [
-      {
-        name: "Pathos"
-      }
-    ]}, {
-    pathway: [
-      {
-        name: "Ethos"
-      }
-    ]});
-});
-
-}());
+    });

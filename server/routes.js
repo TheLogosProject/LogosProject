@@ -13,7 +13,7 @@ module.exports = function(app) {
   // Insert routes below
   app.use('/api/users', require('./api/user'));
   app.use('/api/gyms', require('./api/gym'));
-  app.use('/api/pathways', require('./api/pathway'))
+  app.use('/api/pathways', require('./api/pathway'));
 
   app.use('/auth', require('./auth'));
 
@@ -24,7 +24,7 @@ module.exports = function(app) {
   // All other routes should redirect to the index.html
   app.route('/*')
     .get(function(req, res) {
-      res.sendfile(app.get('appPath') + '/index.html');
+      res.sendFile(app.get('appPath') + '/index.html');
     });
 };
 
