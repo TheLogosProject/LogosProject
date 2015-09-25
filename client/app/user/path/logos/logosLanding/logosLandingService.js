@@ -1,14 +1,10 @@
-app.service('logosLandingService', function ($http) {
+app.service('logosLandingService', function ($http, Auth) {
 
-  //get user profile information
-  this.getUser = function (memberId) {
-    return $http({
-      method: 'GET',
-      url: '/api/users-logos/' + memberId
-    }).then(function (response) {
-      return response.data;
-    });
-  };
+  this.getCurrentUser = function(){
+      return Auth.getCurrentUser().then(function(response){
+        return response;
+      })
+  }
 
 });
 
