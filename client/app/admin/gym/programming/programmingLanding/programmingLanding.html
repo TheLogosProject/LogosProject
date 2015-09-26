@@ -39,7 +39,7 @@
                     <!-- ng-repeat these table rows -->
                     <tr ng-repeat="field in evaluationsList">
                         <td>{{field.name}}</td>
-                        <td>{{field.content.explanation}}</td>
+                        <td ng-bind-html="field.content.explanation | unsafe"></td>
                         <td><a ng-model="field._id" ng-click="onEvalSelect(field._id)" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
                     </tr>
                 </tbody>
