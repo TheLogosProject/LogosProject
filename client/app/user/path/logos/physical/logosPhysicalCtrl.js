@@ -5,7 +5,12 @@ app.controller('logosPhysicalCtrl', function ($scope, $stateParams, Auth) {
 
     $scope.movements = $scope.user.pathways[0].stages[2].evaluations;
 
-    console.log($scope.user.pathways[0].stages[2].evaluations[0].content.explanation);
+    //unlock appropriate tabs//
+      $scope.step1 = $scope.user.pathways[0].stages[0].complete;
+      $scope.step2 = $scope.user.pathways[0].stages[1].complete;
+
+      $scope.logosPercent = Math.ceil($scope.user.pathways[0]["completion"]["amount_completed"]);
+
     // $scope.user = userObj;
     // $scope.logosPercent = Math.ceil($scope.user.pathways.logos.completion.amount_completed);
     // $scope.pathosPercent = Math.ceil($scope.user.pathways.pathos.completion.amount_completed);
