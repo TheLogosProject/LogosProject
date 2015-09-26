@@ -50,8 +50,8 @@
                 <div class="collapsible-body">
                   <h5>Progressions</h5>
                   <div ng-repeat="progression in movement.content.progressions">
-                    <input id="progression1" type="checkbox"/>
-                    <label for="progression1">{{progression.explanation}}</label>
+                    <input id="{{progression._id}}" type="checkbox"/>
+                    <label for="{{progression._id}}">{{progression.explanation}}</label>
                   </div>
                     <br>
                     <br>
