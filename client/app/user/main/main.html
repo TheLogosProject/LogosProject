@@ -82,13 +82,14 @@
     <div class="modal-content">
       <h4 class="center">Hi,
         {{getCurrentUser().name.first}}!</h4>
+        <br>
       <form ng-submit="submitModal(userInfo)">
         <div class="input-field col s12">
-          <textarea class="materialize-textarea" ng-model="userInfo.get_to_know.answers"id="textarea1" type="text"></textarea>
-          <label for="textarea1">What brought you to CrossFit?</label>
+          <textarea placeholder="" class="materialize-textarea" ng-model="userInfo.get_to_know.answers"id="textarea1" type="text"></textarea>
+          <label class="active" for="textarea1">What brought you to CrossFit?</label>
         </div>
         <div class="modal-footer">
-          <button class="btn waves-effect waves blue darken-3 center modal-close"  type="submit">Next</button>
+          <button class="btn waves-effect waves blue darken-3 center modal-close"  type="submit">Submit</button>
         </div>
       </form>
     </div>
@@ -101,7 +102,9 @@
 <!-- script for modal -->
     <script>
       $(document).ready(function() {
-        $('#modal1').openModal();
+        if modal ===0 {
+          $('#modal1').openModal();
+        }
       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
         $('.modal-trigger').leanModal({
           dismissible: true, // Modal can be dismissed by clicking outside of the modal
