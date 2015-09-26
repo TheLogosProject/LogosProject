@@ -37,11 +37,11 @@
               </li>
             </ul>
 
-            <ul class="collapsible" data-collapsible="accordion" watch>
+            <ul class="collapsible" data-collapsible="accordion">
               <!-- begining of movement -->
               <li ng-repeat="movement in movements">
                 <div class="collapsible-header" ng-if="!movement.complete">{{movement.name}}</div>
-                <div class="collapsible-header blue darken-3" ng-if="movement.complete">{{logos.movement.name}}
+                <div class="collapsible-header blue darken-3" ng-if="movement.complete">{{movement.name}}
                   - Complete</div>
 
                 <div class="collapsible-body">
@@ -54,7 +54,7 @@
 
                   <div ng-if="!movement.complete">
                     <p>
-                      <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval()" type="submit">Submit For Approval</button>
+                      <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval(movement._id)" type="submit">Submit For Approval</button>
                     </p>
                   </div>
 

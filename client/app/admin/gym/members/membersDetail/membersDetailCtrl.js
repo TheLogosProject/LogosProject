@@ -3,6 +3,9 @@
 
         var loggedUser = Auth.getCurrentUser();
 
+        $scope.userInfo = loggedUser;
+        console.log($scope.userInfo);
+
         $scope.loggedInID = loggedUser._id;
 
         $scope.memberID = {
@@ -12,7 +15,7 @@
         (function (id) {
             membersDetailService.getUser(id).then(function (response) {
                 $scope.userObj = response;
-
+                console.log($scope.userObj);
                 //Decides where switches should be when page loads
                 if ($scope.userObj.is_admin === true) {
                     $scope.is_admin = true;
