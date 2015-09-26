@@ -19,7 +19,7 @@
                     <!-- ng-repeat these table rows -->
                     <tr ng-repeat="gym in gymInfo">
                         <td>{{gym.name}}</td>
-                        <td>{{gym.active}}</td>
+                        <td>{{gym.currently_active}}</td>
                         <td><a href="/gym/manage/{{gym._id}}" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
                     </tr>
                 </tbody>
