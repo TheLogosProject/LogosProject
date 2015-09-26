@@ -17,11 +17,13 @@
           <li class=" tab col s4">
             <a class="active blue darken-3 white-text" href="#Step1">Step 1</a>
           </li>
-          <li class="tab col s4">
+
   <!-- blue tab background if unlocked -->
+          <li class="tab col s4">
             <div ng-if="user.logos.step2.unlocked === true">
               <a class="active blue darken-3 white-text" href="#Step2">Step 2</a>
             </div>
+
   <!-- grey background if not unlocked -->
             <div ng-if="!user.logos.step2.unlocked">
               <p class="grey-text text-lighten-2">Step 2</p>
@@ -34,6 +36,7 @@
   <!-- grey background if not unlocked -->
               <div ng-if="!user.logos.step3.unlocked">
                 <p class="grey-text text-lighten-2">Step 3</p>
+              </div>
               </li>
             </ul>
             <br>
@@ -52,24 +55,29 @@ and the "Complete" text will display -->
               </div>
             </div>
 
-            <form ng-submit="submitKnowledge(knowledgeInfo)">
+            <form>
 
               <div ng-repeat = "question in knowledgeEvaluations">
-                <div class="input-field col s12">
-                  <textarea class="materialize-textarea" id="textarea1" ng-model="knowledgeEvaluations.content.explanation" type="text"></textarea>
-                  <label for="textarea1"> {{question.content.explanation}} </label>
+                <div class="input-field col s12" ng-model= "question._id">
+                  <textarea ng-model="question.content.answer" class="materialize-textarea"></textarea>
+                  <label> {{question.content.explanation}} </label>
+                </div>
+                <div ng-if="!user.logos.step2.unlocked">
+                  <button class="btn waves-effect waves blue darken-3 center" type="submit" ng-click="submitKnowledge(question)">Submit</button>
                 </div>
               </div>
 
               <br>
-              <div ng-if="!user.logos.step2.unlocked">
-                <button class="btn waves-effect waves blue darken-3 center" ng-click="submitKnowledge(knowledgeInfo)" type="submit">Submit</button>
-              </div>
+              <!-- <div ng-if="!user.logos.step2.unlocked">
+                <button class="btn waves-effect waves blue darken-3 center" type="submit">Submit</button>
+              </div> -->
 
 <!-- button disabled if section is already complete -->
               <div ng-if="user.logos.step2.unlocked">
                 <button class="btn waves-effect waves blue darken-3 center" disabled>Submit</button>
               </div>
+
+            </form>
 
             </div>
           </div>

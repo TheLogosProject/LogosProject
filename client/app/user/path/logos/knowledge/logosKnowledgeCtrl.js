@@ -1,42 +1,26 @@
-app.controller('logosKnowledgeCtrl', function ($scope, $stateParams, Auth, profileSvc) {
+app.controller('logosKnowledgeCtrl', function ($scope, $stateParams, $timeout, Auth, logosKnowledgeService) {
 
+    var currentUser = Auth.getCurrentUser();
+    $scope.knowledgeEvaluations = currentUser.pathways[0].stages[1].evaluations;
+    var pathwayID = currentUser.pathways[0]._id;
+    var stageID = currentUser.pathways[0].stages[1]._id;
+    $scope.evaluationsID = currentUser.pathways[0].stages[1].evaluations;
+    $scope.logosPercent = currentUser.pathways[0].completion.amount_completed;
 
-    $scope.getCurrentUser = Auth.getCurrentUser;
-    console.log($scope.getCurrentUser());
-    $scope.knowledgeEvaluations = $scope.getCurrentUser().pathways[0].stages[1].evaluations;
+    $scope.knowledgeInfo = {
+        userID: currentUser._id,
+        pathwayID: pathwayID,
+        stageID: stageID
+    };
 
-
-    //
-    // $scope.knowledgeInfo = {
-    //     _id: userObj._id,
-    //     pathways : [
-    //       0 : {
-    //         stages : [
-    //           1 : {
-    //             evaluations : [
-    //               content : {
-    //                 explanation : knowledgeEvaluations.content.explanation
-    //               }
-    //             ]
-    //           }
-    //         ]
-    //       }
-    //     ]
-    //     // goals: response.user.goals
-    // };
-    //
-    // $scope.submitKnowledge = function (knowledgeInfo) {
-    //     console.log(knowledgeInfo);
-    //     profileSvc.updateUserData(knowledgeInfo).then(function (response) {
-    //         Materialize.toast('Updated successfully', 5000);
-    //     }, function (err) {
-    //         Materialize.toast('There was an error', 3000);
-    //     });
-    // };
-
-
-    // $scope.user = userObj;
-    // $scope.logosPercent = Math.ceil($scope.user.pathways.logos.completion.amount_completed);
-    // $scope.pathosPercent = Math.ceil($scope.user.pathways.pathos.completion.amount_completed);
-    // $scope.ethosPercent = Math.ceil($scope.user.pathways.ethos.completion.amount_completed);
+    $scope.submitKnowledge = function (obj) {
+        $scope.knowledgeInfo.answer = obj.content.answer;
+        $scope.knowledgeInfo.evalID = obj._id;
+        logosKnowledgeService.updateUserData($scope.knowledgeInfo).then(function (response) {
+            Materialize.toast('Updated successfully', 1500);
+            $timeout(function () { document.location.reload(true); }, 1500);
+        }, function (err) {
+            Materialize.toast('There was an error', 3000);
+        });
+    };
 });
