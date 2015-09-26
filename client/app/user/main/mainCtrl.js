@@ -9,18 +9,14 @@ angular.module('app')
   that.isAdmin = Auth.isAdmin;
 
   $scope.getCurrentUser = Auth.getCurrentUser;
-  console.log($scope.getCurrentUser());
-  $scope.getCurrentUser();
 
-  // $scope.modal = $scope.getCurrentUser().get_to_know.answers.length;
-  // console.log($scope.modal);
-
+  $scope.pathos = $scope.getCurrentUser().pathways[0].stages[1].complete;
 
   $scope.user = $scope.getCurrentUser();
       $scope.logosPercent = Math.ceil($scope.user.pathways[0].completion.amount_completed);
       // $scope.pathosPercent = Math.ceil($scope.user.pathways[1]["completion"]["amount_completed"]);
       // $scope.ethosPercent = Math.ceil($scope.user.pathways.ethos.completion.amount_completed);
-  
+
   ////Modal
 
   var userObj = Auth.getCurrentUser();
