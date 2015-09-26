@@ -37,11 +37,11 @@
               </li>
             </ul>
 
-            <ul class="collapsible" data-collapsible="accordion" watch>
+            <ul class="collapsible" data-collapsible="accordion">
               <!-- begining of movement -->
               <li ng-repeat="movement in movements">
                 <div class="collapsible-header" ng-if="!movement.complete">{{movement.name}}</div>
-                <div class="collapsible-header blue darken-3" ng-if="movement.complete">{{logos.movement.name}}
+                <div class="collapsible-header blue darken-3" ng-if="movement.complete">{{movement.name}}
                   - Complete</div>
 
                 <div class="collapsible-body">
