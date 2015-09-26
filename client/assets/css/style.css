@@ -90,6 +90,11 @@
     margin-top: 1.2%;
   }
 
+  .nav-logo {
+    width: 33px;
+    margin-right: 1%;
+  }
+
   /* START of mobile */
 
   @media only screen and (max-width: 992px) {
