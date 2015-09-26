@@ -29,7 +29,8 @@ var newPathwaySchema = new Schema({
                                         complete: { type: Boolean, default: false }
                                     }
                                 ],
-                                explanation: { type: String }
+                                explanation: { type: String },
+                                answer: { type: String }
                             },
                             total_to_complete: { type: Number },
                             complete: { type: Boolean, default: false },

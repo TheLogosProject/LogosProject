@@ -195,6 +195,17 @@ exports.findByID = function (req, res) {
         });
 };
 
+exports.getUsersByGym = function (req, res) {
+    User.find({ gym: { $eq: req.params.gymID } })
+        .exec(function (err, response) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.send(response);
+            }
+        });
+};
+
 exports.getUserDetails = function (req, res) {
     User.findById(req.params.memberId)
         .exec(function (err, response) {
@@ -356,7 +367,13 @@ exports.userIsAdminUpdate = function (req, res) {
             if (err) {
                 res.send(err);
             } else {
+                console.log(response);
                 response.is_admin = !response.is_admin;
+                if (response.is_admin === true) {
+                    response.role = "admin";
+                } else if(response.is_admin === false) {
+                    response.role = "user";
+                }
                 User.findByIdAndUpdate(req.body.userID, response)
                     .exec(function (err, response) {
                         if (err) {
@@ -370,11 +387,13 @@ exports.userIsAdminUpdate = function (req, res) {
 };
 ////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT ACTIVE////
 exports.userIsActiveUpdate = function (req, res) {
+    console.log(req.body.userID);
     User.findById(req.body.userID)
         .exec(function (err, response) {
             if (err) {
                 res.send(err);
             } else {
+                console.log(response);
                 response.currently_active = !response.currently_active;
                 User.findByIdAndUpdate(req.body.userID, response)
                     .exec(function (err, response) {
