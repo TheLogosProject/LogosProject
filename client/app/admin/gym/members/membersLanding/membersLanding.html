@@ -15,10 +15,10 @@
                 <tbody>
                     <!-- ng-repeat these table rows -->
                     <tr ng-repeat="user in users">
-                        <td>{{user.name.first}} {{user.name.last}}</td>
+                        <td>{{ user.name.first }} {{ user.name.last }}</td>
                         <!--still need to setup "Active", use "isCurrentlyActive prop" maybe add delete to this page?-->
                         <td>Yes</td>
-                        <td><a href="http://localhost:9000/gym/members/gymId/memberId" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
+                        <td><a ng-click="selectedID(user._id)" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
                     </tr>
                 </tbody>
             </table>
