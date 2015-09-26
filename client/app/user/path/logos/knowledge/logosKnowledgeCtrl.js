@@ -1,38 +1,29 @@
 app.controller('logosKnowledgeCtrl', function ($scope, $stateParams, Auth, profileSvc) {
 
 
-    $scope.getCurrentUser = Auth.getCurrentUser;
-    console.log($scope.getCurrentUser());
-    $scope.knowledgeEvaluations = $scope.getCurrentUser().pathways[0].stages[1].evaluations;
+    var currentUser = Auth.getCurrentUser();
+    $scope.knowledgeEvaluations = currentUser.pathways[0].stages[1].evaluations;
+    var pathwayID = currentUser.pathways[0]._id;
+    var stageID = currentUser.pathways[0].stages[1]._id;
+    $scope.evaluationsID = currentUser.pathways[0].stages[1].evaluations;
+    // $scope.answer = currentUser.pathways[0].stages[1].evaluationsID.content.answer;
 
+    $scope.knowledgeInfo = {
+      userID: currentUser._id,
+      pathwayID: pathwayID,
+      stageID: stageID
+    };
 
-    //
-    // $scope.knowledgeInfo = {
-    //     _id: userObj._id,
-    //     pathways : [
-    //       0 : {
-    //         stages : [
-    //           1 : {
-    //             evaluations : [
-    //               content : {
-    //                 explanation : knowledgeEvaluations.content.explanation
-    //               }
-    //             ]
-    //           }
-    //         ]
-    //       }
-    //     ]
-    //     // goals: response.user.goals
-    // };
-    //
-    // $scope.submitKnowledge = function (knowledgeInfo) {
-    //     console.log(knowledgeInfo);
-    //     profileSvc.updateUserData(knowledgeInfo).then(function (response) {
-    //         Materialize.toast('Updated successfully', 5000);
-    //     }, function (err) {
-    //         Materialize.toast('There was an error', 3000);
-    //     });
-    // };
+    $scope.submitKnowledge = function (obj) {
+      $scope.knowledgeInfo.answer = obj.answer;
+        $scope.knowledgeInfo.evalID = obj._id;
+        console.log($scope.knowledgeInfo);
+        profileSvc.updateUserData($scope.knowledgeInfo).then(function (response) {
+            Materialize.toast('Updated successfully', 5000);
+        }, function (err) {
+            Materialize.toast('There was an error', 3000);
+        });
+    };
 
 
     // $scope.user = userObj;
