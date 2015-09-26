@@ -3,23 +3,23 @@ app.controller('logosKnowledgeCtrl', function ($scope, $stateParams, Auth, profi
     console.log($scope.getCurrentUser());
     $scope.knowledgeEvaluations = $scope.getCurrentUser().pathways[0].stages[1].evaluations;
 
-    $scope.knowledgeInfo = {
-        _id: userObj._id,
-        pathways : [
-          0 : {
-            stages : [
-              1 : {
-                evaluations : [
-                  content : {
-                    explanation : 
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-        // goals: response.user.goals
-    };
+    // $scope.knowledgeInfo = {
+    //     _id: userObj._id,
+    //     pathways : [
+    //       0 : {
+    //         stages : [
+    //           1 : {
+    //             evaluations : [
+    //               content : {
+    //                 explanation :
+    //               }
+    //             ]
+    //           }
+    //         ]
+    //       }
+    //     ]
+    //     // goals: response.user.goals
+    // };
 
     $scope.submitKnowledge = function (knowledgeInfo) {
         console.log(knowledgeInfo);
