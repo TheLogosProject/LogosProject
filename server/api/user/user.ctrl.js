@@ -365,6 +365,40 @@ exports.updateEvalStatus = function (req, res) {
             }
         });
 };
+
+exports.updateAnswer = function (req, res) {
+    User.findById(req.body.userID)
+        .exec(function (err, response) {
+            if (err) {
+                res.send(err);
+            } else {
+                var pathways = response.pathways;
+                for (var i = 0; i < pathways.length; i++) {
+                    if (req.body.pathwayID == pathways[i]["_id"]) {
+                        var stages = pathways[i]["stages"];
+                        for (var x = 0; x < stages.length; x++) {
+                            if (req.body.stageID == stages[x]["_id"]) {
+                                var evaluations = stages[x]["evaluations"];
+                                for (var y = 0; y < evaluations.length; y++) {
+                                    if (req.body.evalID == evaluations[y]["_id"]) {
+                                        response.pathways[i]["stages"][x]["evaluations"][y]["content"]["answer"] = req.body.answer;
+                                        User.findByIdAndUpdate(req.body.userID, response)
+                                            .exec(function (err, response) {
+                                                if (err) {
+                                                    res.send(err);
+                                                } else {
+                                                    res.send(response);
+                                                }
+                                            });
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+};
 ////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT AN ADMIN////
 exports.userIsAdminUpdate = function (req, res) {
     User.findById(req.body.userID)
@@ -376,7 +410,7 @@ exports.userIsAdminUpdate = function (req, res) {
                 response.is_admin = !response.is_admin;
                 if (response.is_admin === true) {
                     response.role = "admin";
-                } else if(response.is_admin === false) {
+                } else if (response.is_admin === false) {
                     response.role = "user";
                 }
                 User.findByIdAndUpdate(req.body.userID, response)
