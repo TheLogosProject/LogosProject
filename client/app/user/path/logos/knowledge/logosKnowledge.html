@@ -52,18 +52,18 @@ and the "Complete" text will display -->
               </div>
             </div>
 
-            <form ng-submit="submitKnowledge(answers)">
+            <form ng-submit="submitKnowledge(knowledgeInfo)">
 
               <div ng-repeat = "question in knowledgeEvaluations">
                 <div class="input-field col s12">
-                  <textarea class="materialize-textarea" id="textarea1" type="text"></textarea>
-                  <label for="textarea1"> {{question.name}} </label>
+                  <textarea class="materialize-textarea" id="textarea1" ng-model="knowledgeEvaluations.content.explanation" type="text"></textarea>
+                  <label for="textarea1"> {{question.content.explanation}} </label>
                 </div>
               </div>
 
               <br>
               <div ng-if="!user.logos.step2.unlocked">
-                <button class="btn waves-effect waves blue darken-3 center" ng-click="submitKnowledge(answers)" type="submit">Submit</button>
+                <button class="btn waves-effect waves blue darken-3 center" ng-click="submitKnowledge(knowledgeInfo)" type="submit">Submit</button>
               </div>
 
 <!-- button disabled if section is already complete -->

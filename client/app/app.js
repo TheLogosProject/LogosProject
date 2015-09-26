@@ -5,16 +5,24 @@ var app = angular.module('app', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'ngAnimate'
+  'ngAnimate',
+  'ui.materialize'
 ]);
 
 (function () {
   'use strict';
 
 
-  app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  app.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $sceDelegateProvider) {
     $urlRouterProvider
       .otherwise('/home');
+
+      $sceDelegateProvider.resourceUrlWhitelist([
+    // Allow same origin resource loads.
+    'self',
+    // Allow loading from our assets domain.  Notice the difference between * and **.
+    'https://www.youtube.com/**'
+  ]);
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
