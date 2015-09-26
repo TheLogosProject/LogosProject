@@ -103,17 +103,17 @@
 
         <ul class="dropdown-content" id="adminActions">
           <li>
-            <a ng-href="/gym/manage/{{getCurrentUser().gym_id}}">Manage Gym</a>
+            <a ng-href="/gym/manage/{{getCurrentUser().gym}}">Manage Gym</a>
           </li>
           <li>
-            <a ng-href="/gym/programming/{{getCurrentUser().gym_id}}">Programming
+            <a ng-href="/gym/programming/{{getCurrentUser().gym}}">Programming
             </a>
           </li>
           <li>
             <a ng-href="/gym/members/gymId">Manage Members</a>
           </li>
           <li>
-            <a ng-href="/gym/coach/{{getCurrentUser().gym_id}}">Coach's Hub</a>
+            <a ng-href="/gym/coach/{{getCurrentUser().gym}}">Coach's Hub</a>
           </li>
         </ul>
 
@@ -124,14 +124,14 @@
             <a ng-href="/gym/main">Manage Gyms</a>
           </li>
           <li>
-            <a ng-href="/gym/programming/{{getCurrentUser().gym_id}}">Programming
+            <a ng-href="/gym/programming/{{getCurrentUser().gym}}">Programming
             </a>
           </li>
           <li>
             <a ng-href="/gym/members/gymId">Manage Members</a>
           </li>
           <li>
-            <a ng-href="/gym/coach/{{getCurrentUser().gym_id}}">Coach's Hub</a>
+            <a ng-href="/gym/coach/{{getCurrentUser().gym}}">Coach's Hub</a>
           </li>
         </ul>
 
@@ -157,6 +157,7 @@
         <li>
           <a ng-href="/profile">Update Profile</a>
         </li>
+          <li class="divider"></li>
         <li>
           <a ng-click="logout()">Logout</a>
         </li>
@@ -170,19 +171,21 @@
         <li>
           <a ng-href="/stats">Stats</a>
         </li>
+          <li class="divider"></li>
         <li>
-          <a ng-href="/gym/manage/{{getCurrentUser().gym_id}}">Manage Gym</a>
+          <a ng-href="/gym/manage/{{getCurrentUser().gym}}">Manage Gym</a>
         </li>
         <li>
-          <a ng-href="/gym/programming/{{getCurrentUser().gym_id}}">Programming
+          <a ng-href="/gym/programming/{{getCurrentUser().gym}}">Programming
           </a>
         </li>
         <li>
           <a ng-href="/gym/members/gymId">Manage Members</a>
         </li>
         <li>
-          <a ng-href="/gym/coach/{{getCurrentUser().gym_id}}">Coach's Hub</a>
+          <a ng-href="/gym/coach/{{getCurrentUser().gym}}">Coach's Hub</a>
         </li>
+          <li class="divider"></li>
         <li>
           <a ng-href="/profile">Update Profile</a>
         </li>
@@ -204,16 +207,16 @@
           <a ng-href="/gym/main">Manage Gyms</a>
         </li>
         <li>
-          <a ng-href="/gym/programming/{{getCurrentUser().gym_id}}">Programming
+          <a ng-href="/gym/programming/{{getCurrentUser().gym}}">Programming
           </a>
         </li>
         <li>
           <a ng-href="/gym/members/gymId">Manage Members</a>
         </li>
         <li>
-          <a ng-href="/gym/coach/{{getCurrentUser().gym_id}}">Coach's Hub</a>
+          <a ng-href="/gym/coach/{{getCurrentUser().gym}}">Coach's Hub</a>
         </li>
- <li class="divider"></li>
+         <li class="divider"></li>
         <li>
           <a ng-href="/profile">Update Profile</a>
         </li>
