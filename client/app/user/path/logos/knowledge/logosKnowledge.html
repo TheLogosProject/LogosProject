@@ -59,8 +59,8 @@ and the "Complete" text will display -->
 
               <div ng-repeat = "question in knowledgeEvaluations">
                 <div class="input-field col s12" ng-model= "question._id">
-                  <textarea ng-model="question.answer" class="materialize-textarea" id="textarea1" type="text"></textarea>
-                  <label for="textarea1"> {{question.content.explanation}} </label>
+                  <textarea ng-model="question.content.answer" class="materialize-textarea"></textarea>
+                  <label> {{question.content.explanation}} </label>
                 </div>
                 <div ng-if="!user.logos.step2.unlocked">
                   <button class="btn waves-effect waves blue darken-3 center" type="submit" ng-click="submitKnowledge(question)">Submit</button>
