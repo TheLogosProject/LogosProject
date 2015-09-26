@@ -27,6 +27,7 @@
     router.get('-logos/physical', controller.getUserLogos);
     router.get('-pathos/:memberId', controller.getUserPathos);
     router.get('-ethos/:memberId', controller.getUserEthos);
+    router.put('/updateEval', controller.updateEvalStatus);
 
     // router.post('-add', controller.addUser);
     router.put('/update', controller.updateUser);
