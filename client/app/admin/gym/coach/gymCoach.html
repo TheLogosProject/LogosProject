@@ -41,10 +41,10 @@
               <th class="center" data-field="price">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody ng-repeat="evaluation in evaluations">
             <!-- ng repeat the following section -->
             <tr>
-              <td class="center">Matt Guenther</td>
+              <td class="center">{{evaluation.name.first}} {{evaluation.name.last}}</td>
               <td class="center">Strict Press</td>
               <td>
 
@@ -57,32 +57,6 @@
               </td>
             </tr>
             <!-- end ng repeat. Data below is just dummy data and can be deleted -->
-            <tr>
-              <td class="center">Justin Caldwell</td>
-              <td class="center">Deadlift</td>
-              <td>
-
-                <div class="center">
-                  <a class="waves-effect btn-flat grey lighten-2" ng-click="decline()">Decline</a>
-                </div>
-                <div class="approval-button-padding center">
-                  <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="center">Brian Ng</td>
-              <td class="center">Overhead Squat</td>
-              <td>
-
-                <div class="center">
-                  <a class="waves-effect btn-flat grey lighten-2" ng-click="decline()">Decline</a>
-                </div>
-                <div class="approval-button-padding center">
-                  <a class="waves-effect btn-flat grey lighten-2" ng-click="approve()">Approve</a>
-                </div>
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>

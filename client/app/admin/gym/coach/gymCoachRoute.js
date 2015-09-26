@@ -7,8 +7,9 @@ angular.module('app')
         $stateProvider
             .state('gymCoach', {
 				// will be :gymId when live
-                url: '/gym/coach/:gymId',
-                templateUrl: 'app/admin/gym/coach/gymCoach.html'
+                url: '/gym/coach/:gymID',
+                templateUrl: 'app/admin/gym/coach/gymCoach.html',
+                controller: 'gymCoachCtrl'
             });
     });
 }());
