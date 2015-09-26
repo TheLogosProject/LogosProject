@@ -5,7 +5,14 @@
             <div class="col l6 center m12 s12">
 
                 <!-- Athlete Info -->
-                <img class="responsive-img circle" src="assets/rambo.jpg" />
+                <img alt="Contact Person" class="responsive-img circle" ng-show="userInfo.name.first && !userInfo.is_admin && !userInfo.is_master"
+                src="assets/userAvatar.svg" width="120px">
+                <img alt="Contact Person" class="responsive-img circle" ng-show="userInfo.is_admin && !userInfo.is_master"
+                src="assets/adminAvatar.svg" width="120px">
+                <img alt="Contact Person" class="responsive-img circle" ng-show="userInfo.is_master && !userInfo.is_admin"
+                src="assets/masterAvatar.svg" width="120px">
+                <br>
+
                 <h5>{{ userObj.name.first }} {{ userObj.name.last }} </h5>
                 <br>
                 <h6><b> Athlete Info: </b></h6>
