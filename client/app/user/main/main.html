@@ -22,7 +22,7 @@
 <!-- end progress chart-->
           <h5 class="center">Logos</h5>
           <p class="center">
-            <a class="btn waves-effect waves-light blue darken-3" href="/path/logos/fundamentals" id="logos-button">Enter</a>
+            <a class="btn waves-effect waves-light blue darken-3" href="/path/logos" id="logos-button">Enter</a>
           </p>
           <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -82,19 +82,20 @@
     <div class="modal-content">
       <h4 class="center">Hi,
         {{getCurrentUser().name.first}}!</h4>
-      <form ng-submit="submitModal(answers)">
+        <br>
+      <form ng-submit="submitModal(userInfo)">
         <div class="input-field col s12">
-          <textarea class="materialize-textarea" id="textarea1" type="text"></textarea>
-          <label for="textarea1">What brought you to CrossFit?</label>
+          <textarea placeholder="" class="materialize-textarea" ng-model="userInfo.get_to_know.answers"id="textarea1" type="text"></textarea>
+          <label class="active" for="textarea1">What brought you to CrossFit?</label>
         </div>
         <div class="modal-footer">
-          <button class="btn waves-effect waves blue darken-3 center modal-close" ng-click="submitModal()" type="submit">Next</button>
+          <button class="btn waves-effect waves blue darken-3 center modal-close"  type="submit">Submit</button>
         </div>
       </form>
     </div>
 <!-- This link will have to be the user.ID when auth is hooked up -->
       <p class="center">We would love to get to know you better.
-        <a class="modal-close" href="/profile">Click here</a>
+        <a href="/profile" class="modal-close">Click here</a>
         to complete your profile.</p>
     </div>
 </div>

@@ -19,7 +19,7 @@
       $scope.isAdmin = Auth.isAdmin;
       $scope.getCurrentUser = Auth.getCurrentUser;
 
-      console.log($scope.getCurrentUser());
+      console.log($scope.getCurrentUser().gym);
 
       $scope.logout = function () {
         Auth.logout();

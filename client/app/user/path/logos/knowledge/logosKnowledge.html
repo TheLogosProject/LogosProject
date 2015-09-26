@@ -54,19 +54,11 @@ and the "Complete" text will display -->
 
             <form ng-submit="submitKnowledge(answers)">
 
-              <div class="input-field col s12">
-                <textarea class="materialize-textarea" id="textarea1" type="text"></textarea>
-                <label for="textarea1">What is CrossFit?</label>
-              </div>
-
-              <div class="input-field col s12">
-                <textarea class="materialize-textarea" id="textarea2" type="text"></textarea>
-                <label for="textarea2">What is the Hopper Model?</label>
-              </div>
-
-              <div class="input-field col s12">
-                <textarea class="materialize-textarea" id="textarea3" type="text"></textarea>
-                <label for="textarea3">What is the Health/Wellness model?</label>
+              <div ng-repeat = "question in knowledgeEvaluations">
+                <div class="input-field col s12">
+                  <textarea class="materialize-textarea" id="textarea1" type="text"></textarea>
+                  <label for="textarea1"> {{question.name}} </label>
+                </div>
               </div>
 
               <br>
