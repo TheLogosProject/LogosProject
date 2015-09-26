@@ -9,7 +9,7 @@
 
         var userObj = Auth.getCurrentUser();
         $scope.gymName = userObj.gym.name;
-
+        $scope.getCurrentUser = Auth.getCurrentUser;
 
         $scope.userInfo = {
             _id: userObj._id,

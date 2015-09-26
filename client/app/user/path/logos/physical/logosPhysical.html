@@ -32,7 +32,7 @@
                 <a class="active blue darken-3 white-text" href="#Step3">Step 3</a>
               </div>
 <!-- grey background if not unlocked -->
-              <div ng-if="step2">
+              <div ng-if="!step2">
                 <p class="grey-text text-lighten-2">Step 3</p>
               </li>
             </ul>
@@ -50,8 +50,8 @@
                 <div class="collapsible-body">
                   <h5>Progressions</h5>
                   <div ng-repeat="progression in movement.content.progressions">
-                    <input id="progression1" type="checkbox"/>
-                    <label for="progression1">{{progression.explanation}}</label>
+                    <input id="{{progression._id}}" type="checkbox"/>
+                    <label for="{{progression._id}}">{{progression.explanation}}</label>
                   </div>
                     <br>
                     <br>

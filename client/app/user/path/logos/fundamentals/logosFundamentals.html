@@ -52,14 +52,15 @@
                   <br>
                   <h6 ng-bind-html="movement.content.explanation | unsafe"></h6>
 
-                  <div ng-if="!movement.complete">
+                  <!-- button enabled by default -->
+                  <div ng-if="!movement.complete && !movement.pending">
                     <p>
-                      <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval()" type="submit">Submit For Approval</button>
+                      <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval(movement._id)" type="submit">Submit For Approval</button>
                     </p>
                   </div>
 
-                  <!-- button disabled if movement is already complete -->
-                  <div ng-if="movement.complete">
+                  <!-- button disabled if movement is pending -->
+                  <div ng-if="movement.pending && !movement.complete">
                     <p>
                       <button class="btn waves-effect waves blue darken-3 center" disabled>Submit For Approval</button>
                     </p>
