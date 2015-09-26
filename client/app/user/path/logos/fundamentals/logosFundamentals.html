@@ -2,7 +2,7 @@
   <div class="section">
     <div class="row">
       <div class="col s12 center">
-<!-- progress chart-->
+        <!-- progress chart-->
         <div class="c100 p{{ logosPercent }} center">
           <span>{{ logosPercent }}%</span>
           <div class="slice">
@@ -10,7 +10,7 @@
             <div class="fill"></div>
           </div>
         </div>
-<!-- end progress chart-->
+        <!-- end progress chart-->
         <h5 class="center">Logos Progress</h5>
 
         <ul class="tabs">
@@ -18,120 +18,90 @@
             <a class="active blue darken-3 white-text" href="#Step1">Step 1</a>
           </li>
           <li class="tab col s4">
-<!-- blue tab background if unlocked -->
-            <div ng-if="user.logos.step2.unlocked === true">
+            <!-- blue tab background if unlocked -->
+            <div ng-if="step1">
               <a class="active blue darken-3 white-text" href="#Step2">Step 2</a>
             </div>
-<!-- grey background if not unlocked -->
-            <div ng-if="!user.logos.step2.unlocked">
+            <!-- grey background if not unlocked -->
+            <div ng-if="!step1">
               <p class="grey-text text-lighten-2">Step 2</p>
             </li>
             <li class="tab col s4" disabled>
-<!-- blue tab background if unlocked -->
-              <div ng-if="user.logos.step3.unlocked === true">
+              <!-- blue tab background if unlocked -->
+              <div ng-if="step2">
                 <a class="active blue darken-3 white-text" href="#Step3">Step 3</a>
               </div>
-<!-- grey background if not unlocked -->
-              <div ng-if="!user.logos.step3.unlocked">
+              <!-- grey background if not unlocked -->
+              <div ng-if="!step2">
                 <p class="grey-text text-lighten-2">Step 3</p>
               </li>
             </ul>
 
-            <ul class="collapsible" data-collapsible="accordion">
-<!-- begining of movement -->
+            <ul class="collapsible" data-collapsible="accordion" watch>
+              <!-- begining of movement -->
               <li ng-repeat="movement in movements">
-                <div ng-if="logos.movement.name.complete">
-                  <div class="collapsible-header blue darken-3">{{logos.movement.name}}
-                    - Complete</div>
-                </div>
-                <div ng-if="!logos.movement.name.complete">
-                  <div class="collapsible-header">{{logos.movement.name}}</div>
-                </div>
+                <div class="collapsible-header" ng-if="!movement.complete">{{movement.name}}</div>
+                <div class="collapsible-header blue darken-3" ng-if="movement.complete">{{logos.movement.name}}
+                  - Complete</div>
+
                 <div class="collapsible-body">
                   <h5>Movement Standard</h5>
-                  <a class="waves-effect waves btn-flat modal-trigger" href="#modalPress">
+                  <a class="waves-effect waves btn-flat modal-trigger" href="#test" modal>
                     <h6 class="grey-text">See Video</h6>
                   </a>
-                  {{logos.movement.description}}
+                  <br>
+                  <h6 ng-bind-html="movement.content.explanation | unsafe"></h6>
 
-                  <div ng-if="!logos.movement.name.complete">
+                  <div ng-if="!movement.complete">
                     <p>
                       <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval()" type="submit">Submit For Approval</button>
                     </p>
                   </div>
 
-<!-- button disabled if movement is already complete -->
-                  <div ng-if="logos.movement.name.complete">
+                  <!-- button disabled if movement is already complete -->
+                  <div ng-if="movement.complete">
                     <p>
                       <button class="btn waves-effect waves blue darken-3 center" disabled>Submit For Approval</button>
                     </p>
                   </div>
 
-<!-- Modal Structure -->
-                  <div class="modal" id="modalPress">
+                  <!-- Modal Structure -->
+                  <div class="modal" id="test">
                     <div class="modal-content">
-                      <div class="video-container">
-                        <iframe allowfullscreen frameborder="0" height="315" src="https://www.youtube.com/embed/94pwgUPhdrE" width="560"></iframe>
+                      <!-- <div class="video-container">
+                        <iframe allowfullscreen class="youtube-player" frameborder="0" height="315" ng-src="EMBEDDED VIDEO WILL GO HERE" type="text/html" width="560"></iframe>
+                      </div>
+                    </div> -->
+                      <div class="modal-footer">
+                        <button class="btn waves-effect waves blue darken-3 center modal-close" type="submit">Close</button>
                       </div>
                     </div>
-                    <div class="modal-footer">
-                      <button class="btn waves-effect waves blue darken-3 center modal-close" type="submit">Close</button>
-                    </div>
+                    <!-- End of Modal Structure -->
+
                   </div>
-<!-- End of Modal Structure -->
+                </li>
+                <!-- End of Movement -->
+                <!-- be sure to keep this </ul> below -->
+              </ul>
 
-                </div>
-              </li>
-<!-- End of Movement -->
+              <!-- Script for collapsible list  and modals-->
+              <script>
+                //script for collapsible list
+                $(document)
+                  .ready(function() {
+                    $('.collapsible').collapsible({
+                      accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+                    });
+                  });
 
-<!-- will delete these two below since there will be an ng-repeat for this. They are just here for the demo -->
-              <li>
-                <div class="collapsible-header">Push Press
-                </div>
-                <div class="collapsible-body">
-                  <p class="flow-text">
-                    <h5>Movement Standard</h5>
-                    <a class="waves-effect waves btn-flat modal-trigger" href="#modalPress">
-                      <h6 class="grey-text">See Video</h6>
-                    </a>
-                    <!-- insert div content here -->
-                    <div>
-                      1. Set-up: The set-up is the same as the shoulder press. <br>
-                      2. Dip: Initiate the dip by bending the hips and knees while keeping the torso upright. The dip will be between 1/5 and 1/4 of a squat in depth. <br>
-                      3. Drive: With no pause at the bottom of the dip, the hips and legs are forcefully extended. <br>
-                      4. Press: As the hips and legs complete extension the shoulders and arms forcefully press the bar overhead until the arms are fully extended. <br>
-                    </div>
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div class="collapsible-header">Push Jerk
-                </div>
-                <div class="collapsible-body">
-                  <p>Lorem ipsum dolor sit amet.
-                  </p>
-                </div>
-              </li>
-<!-- end of delete -->
-<!-- be sure to keep this </ul> below -->
-            </ul>
-
-<!-- Script for collapsible list  and modals-->
-            <script>
-              //script for collapsible list
-              $(document).ready(function() {
-                $('.collapsible').collapsible({
-                  accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
-                });
-              });
-
-              //script for modals
-              $(document).ready(function() {
-              // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-                $('.modal-trigger').leanModal();
-              });
-            </script>
+                //script for modals
+                $(document)
+                  .ready(function() {
+                    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                    $('.modal-trigger').leanModal();
+                  });
+              </script>
+            </div>
           </div>
         </div>
       </div>
-    </div>

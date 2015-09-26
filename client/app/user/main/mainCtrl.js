@@ -12,15 +12,15 @@ angular.module('app')
   console.log($scope.getCurrentUser());
   $scope.getCurrentUser();
 
-  $scope.modal = $scope.getCurrentUser().get_to_know.answers.length;
-  console.log($scope.modal);
+  // $scope.modal = $scope.getCurrentUser().get_to_know.answers.length;
+  // console.log($scope.modal);
 
 
   $scope.user = $scope.getCurrentUser();
       $scope.logosPercent = Math.ceil($scope.user.pathways[0].completion.amount_completed);
       // $scope.pathosPercent = Math.ceil($scope.user.pathways[1]["completion"]["amount_completed"]);
       // $scope.ethosPercent = Math.ceil($scope.user.pathways.ethos.completion.amount_completed);
-
+  
   ////Modal
 
   var userObj = Auth.getCurrentUser();
