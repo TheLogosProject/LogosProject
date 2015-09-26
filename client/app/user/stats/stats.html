@@ -9,7 +9,7 @@
               <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().is_master && !getCurrentUser().is_admin" src="assets/masterAvatar.svg" width="120px">
             </div>
             <div class="col s12 center">
-                <h5>User.FirstName User.LastName </h5>
+                <h5>{{getCurrentUser().name.first}} {{getCurrentUser().name.last}}</h5>
             </div>
         </div>
 
@@ -38,15 +38,21 @@
 	        	<h5> Your Badges </h5>
 	        </div>
 	        <div class="col s12 m4 center">
-	        	<img class="badge" ng-src="{{logos.isActive === 'true' && 'assets/badge_black.svg' || 'assets/badge_gray.svg'}}" />
+
+            <img class="badge" ng-if="logosBadge" src="assets/badge_black.svg">
+            <img class="badge" ng-if="!logosBadge" src="assets/badge_gray.svg">
+
 	        	<h5> Logos </h5>
 	        </div>
 	        <div class="col s12 m4 center">
-	        	<img class="badge" ng-src="{{pathos.isActive === 'true' && 'assets/badge_black.svg' || 'assets/badge_gray.svg'}}" />
+            <img class="badge" ng-if="pathosBadge" src="assets/badge_black.svg">
+            <img class="badge" ng-if="!pathosBadge" src="assets/badge_gray.svg">
+
 	        	<h5> Pathos </h5>
 	        </div>
 	        <div class="col s12 m4 center">
-	        	<img class="badge" ng-src="{{ethos.isActive === 'true' && 'assets/badge_black.svg' || 'assets/badge_gray.svg'}}" />
+            <img class="badge" ng-if="ethosadge" src="assets/badge_black.svg">
+            <img class="badge" ng-if="!ethosadge" src="assets/badge_gray.svg">
 	        	<h5> Ethos </h5>
 	        </div>
         </div>
