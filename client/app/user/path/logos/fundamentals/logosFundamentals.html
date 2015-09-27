@@ -69,11 +69,10 @@
                   <!-- Modal Structure -->
                   <div class="modal" id="{{movement._id}}">
                     <div class="modal-content">
-                      <h3>YouTube Embedded Link</h3>
-                      <!-- <div class="video-container">
-                        <iframe allowfullscreen class="youtube-player" frameborder="0" height="315" ng-src="EMBEDDED VIDEO WILL GO HERE" type="text/html" width="560"></iframe>
+                      <div class="video-container">
+                        <iframe allowfullscreen class="youtube-player" frameborder="0" height="315" ng-src="{{movement.content.video}}" type="text/html" width="560"></iframe>
                       </div>
-                    </div> -->
+                    </div>
                       <div class="modal-footer">
                         <button class="btn waves-effect waves blue darken-3 center modal-close" type="submit">Close</button>
                       </div>
