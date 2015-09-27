@@ -40,7 +40,7 @@ app.controller('gymCoachCtrl', function ($scope, Auth, $stateParams, gymCoachSer
     userInfo.evalID = id;
     console.log(userInfo)
     gymCoachService.submitEval(userInfo).then(function(response){
-      // document.location.reload(true)
+      document.location.reload(true)
     })
   }
 
