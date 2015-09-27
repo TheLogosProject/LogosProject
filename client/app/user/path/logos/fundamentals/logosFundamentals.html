@@ -46,7 +46,7 @@
 
                 <div class="collapsible-body">
                   <h5>Movement Standard</h5>
-                  <a class="waves-effect waves btn-flat modal-trigger" href="#test" modal>
+                  <a class="waves-effect waves btn-flat modal-trigger" href="#{{movement._id}}" modal>
                     <h6 class="grey-text">See Video</h6>
                   </a>
                   <br>
@@ -67,8 +67,9 @@
                   </div>
 
                   <!-- Modal Structure -->
-                  <div class="modal" id="test">
+                  <div class="modal" id="{{movement._id}}">
                     <div class="modal-content">
+                      <h3>YouTube Embedded Link</h3>
                       <!-- <div class="video-container">
                         <iframe allowfullscreen class="youtube-player" frameborder="0" height="315" ng-src="EMBEDDED VIDEO WILL GO HERE" type="text/html" width="560"></iframe>
                       </div>
