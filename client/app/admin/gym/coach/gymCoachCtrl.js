@@ -2,14 +2,7 @@ app.controller('gymCoachCtrl', function ($scope, Auth, $stateParams, gymCoachSer
 
   var gymID = $stateParams.gymID;
 
-  $scope.user = Auth.getCurrentUser();
-
-  var userInfo = {
-    userID: $scope.user._id,
-    pathwayID: $scope.user.pathways[0]._id,
-    stageID: $scope.user.pathways[0].stages[0]._id
-  };
-
+  // function to get pending evals for members within a gym
   $scope.getEvaluations = function(gymID) {
     var pendingEval = [];
     gymCoachService.getUserObj(gymID).then(function(response){
@@ -20,7 +13,7 @@ app.controller('gymCoachCtrl', function ($scope, Auth, $stateParams, gymCoachSer
         var fundamentalsEval = response[i].pathways[0].stages[0].evaluations;
       // loops through userObj fundamentals evaluations to check if any are pending, if so push to pendingEval array
         for (var x = 0; x < fundamentalsEval.length; x++) {
-          if (fundamentalsEval[x].pending === true ) {
+          if (fundamentalsEval[x].pending === true && fundamentalsEval[x].complete === false) {
             fundamentalsEval[x].firstName = response[i].name.first;
             fundamentalsEval[x].lastName = response[i].name.last;
             pendingEval.push(fundamentalsEval[x]);
@@ -32,16 +25,23 @@ app.controller('gymCoachCtrl', function ($scope, Auth, $stateParams, gymCoachSer
   };
 
   $scope.getEvaluations(gymID);
-  //
-  // for loop through each user object
-  // check each evaluation within the fundamentals stage and push those with pending true into a new array
-  // return that new array to ng-repeat
 
-  // $scope.submitMovementApproval = function(id) {
-  //   userInfo.evalID = id;
-  //   logosFundamentalsService.submitEval(userInfo).then(function(response){
-  //     document.location.reload(true)
-  //   })
-  // }
+
+  // function to approve movement
+  $scope.user = Auth.getCurrentUser();
+
+  var userInfo = {
+    userID: $scope.user._id,
+    pathwayID: $scope.user.pathways[0]._id,
+    stageID: $scope.user.pathways[0].stages[0]._id
+  };
+
+  $scope.submitMovementApproval = function(id) {
+    userInfo.evalID = id;
+    console.log(userInfo)
+    gymCoachService.submitEval(userInfo).then(function(response){
+      // document.location.reload(true)
+    })
+  }
 
 });
