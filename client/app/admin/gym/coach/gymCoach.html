@@ -41,11 +41,11 @@
               <th class="center" data-field="price">Action</th>
             </tr>
           </thead>
-          <tbody ng-repeat="evaluation in evaluations">
+          <tbody ng-repeat="evaluation in pendingEvaluations">
             <!-- ng repeat the following section -->
             <tr>
-              <td class="center">{{evaluation.name.first}} {{evaluation.name.last}}</td>
-              <td class="center">Strict Press</td>
+              <td class="center">{{evaluation.firstName}} {{evaluation.lastName}}</td>
+              <td class="center">{{evaluation.name}}</td>
               <td>
 
                 <div class="center">

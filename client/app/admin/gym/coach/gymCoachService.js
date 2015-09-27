@@ -3,12 +3,11 @@
 
     app.service('gymCoachService', function ($http) {
 
-        this.getEval = function (gymID) {
+        this.getUserObj = function (gymID) {
             return $http({
                 method: 'GET',
                 url: '/api/users/gym/' + gymID
             }).then(function (response) {
-                console.log(response.data);
                 return response.data;
             });
         };
