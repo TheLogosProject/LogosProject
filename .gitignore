@@ -5,8 +5,7 @@ node_modules
 /client/bower_components
 client/bower_components
 dist
-/server/config/local.env.js
-/server/config/seed.js
+
 client/bower_components
 client/client/bower_components
 *.pdf
@@ -18,5 +17,3 @@ server/node_modules
 server/mongolab.js
 server/npm-debug.log
 masterpathways.json
-config
-/server/config/seed.js
