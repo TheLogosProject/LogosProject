@@ -80,20 +80,29 @@
                                         });
                                     } (evalSpecificsId));
                                 };
+                                //DELETE EVALUATION
+                                $scope.evalDelete = function (id4) {
+                                    var evalSpecificsId = {
+                                        gymID: id2.gymID,
+                                        pathwayID: id2.pathwayID,
+                                        stageID: id2.stageID,
+                                        evalID: id4
+                                    };
+                                    programmingLandingService.deleteEval(evalSpecificsId).then(function (response) {
+                                        console.log(response);
+                                        getStageEvals(id2);
+                                    });
+                                };
                             });
                         } (stageSpecificIds));
                     };
                 });
             } (pathwaySpecificIds));
         };
-
         $scope.cancel = function () {
             $scope.evaluations = true;
             $scope.editView = false;
             $scope.addView = false;
         };
-
-
-
     });
 } ());

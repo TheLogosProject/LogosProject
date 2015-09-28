@@ -44,8 +44,8 @@
 <!-- begining of movement -->
               <li ng-repeat="movement in movements">
                 <div class="collapsible-header" ng-if="!movement.complete">{{movement.name}}</div>
-                <div class="collapsible-header blue darken-3" ng-if="movement.complete">{{movement.name}}
-                  - Complete</div>
+                <div class="collapsible-header grey lighten-1" ng-if="movement.complete">{{movement.name}}
+                  - <b>Complete</b></div>
 
                 <div class="collapsible-body">
                   <h5>Progressions</h5>
@@ -53,7 +53,12 @@
                     <input id="{{progression._id}}" type="checkbox" ng-checked="progression.complete" ng-click="changeStatus(progression, movement)"/>
                     <label for="{{progression._id}}">{{progression.explanation}}</label>
                   </div>
-                    <br>
+                    <!-- button enabled by default -->
+                    <div ng-if="!movement.complete">
+                      <p>
+                        <button class="btn waves-effect waves blue darken-3 center" ng-click="submitMovementApproval(movement._id)" type="submit"> Complete Movement</button>
+                      </p>
+                    </div>
                     <br>
                 </div>
               </li>

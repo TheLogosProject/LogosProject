@@ -255,6 +255,41 @@ module.exports = {
                     }
                 }
             });
+    },
+    removeById: function (req, res) {
+        Gym.findById(req.body.gymID)
+            .exec(function (err, response) {
+                if (err) {
+                    res.send(err);
+                } else {
+                    var pathways = response.gym_pathway_program;
+                    for (var i = 0; i < pathways.length; i++) {
+                        if (req.body.pathwayID == pathways[i]["_id"]) {
+                            var stages = pathways[i]["stages"];
+                            for (var x = 0; x < stages.length; x++) {
+                                if (req.body.stageID == stages[x]["_id"]) {
+                                    var evaluations = stages[x]["evaluations"];
+                                    for (var y = 0; y < evaluations.length; y++) {
+                                        if (req.body.evalID == evaluations[y]["_id"]) {
+                                            var index = evaluations.indexOf(evaluations[y]);
+                                            var deleted = evaluations.splice(index, 1);
+                                            response.gym_pathway_program[i]["stages"][x]["evaluations"] = evaluations;
+                                            Gym.findByIdAndUpdate(req.body.gymID, response)
+                                                .exec(function (err, response) {
+                                                    if (err) {
+                                                        res.send(err);
+                                                    } else {
+                                                        res.send(response);
+                                                    }
+                                                });
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
     }
 };
 

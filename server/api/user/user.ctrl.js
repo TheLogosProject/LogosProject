@@ -485,7 +485,6 @@ exports.updateProgression = function (req, res) {
         });
 };
 
-
 ////DELETE ONCE PUSHED LIVE////
 
 /* For initial user add testing -- http://localhost:8555/api/add-user

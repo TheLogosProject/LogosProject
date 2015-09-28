@@ -32,6 +32,7 @@
                         <th data-field="id">Movement Name</th>
                         <th data-field="name">Movement Description</th>
                         <th data-field="name">Edit Movement</th>
+                        <th data-field="name">Delete Movement</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -41,6 +42,7 @@
                         <td>{{field.name}}</td>
                         <td ng-bind-html="field.content.explanation | unsafe"></td>
                         <td><a ng-model="field._id" ng-click="onEvalSelect(field._id)" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
+                        <td><a ng-model="field._id" ng-click="evalDelete(field._id)" class="waves-effect btn-flat red darken-1">Delete</a></td>
                     </tr>
                 </tbody>
             </table>

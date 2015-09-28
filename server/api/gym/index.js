@@ -21,6 +21,7 @@ router.post('/', gymsCtrl.saveGym);
 router.post('/add/evaluation', gymsCtrl.addEvaluation);//PROGRAMMING/ADDING EVAL
 router.put('/update', gymsCtrl.updateGym);
 router.put('/edit/evaluation', gymsCtrl.editEvaluation);//PROGRAMMING/EDIT EVAL
+router.put('/removeById', gymsCtrl.removeById);//PROGRAMMING/DELETE EVAL
 
 module.exports = router;
 
