@@ -16,6 +16,7 @@ app.controller('logosFundamentalsCtrl', function ($scope, $stateParams, $sce, Au
     stageID: $scope.user.pathways[0].stages[0]._id
   };
 
+//function to update eval status to complete
   $scope.submitMovementApproval = function(id) {
     userInfo.evalID = id;
     logosFundamentalsService.submitEval(userInfo).then(function(response){

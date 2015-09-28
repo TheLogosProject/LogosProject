@@ -348,7 +348,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -377,7 +377,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -406,7 +406,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -435,7 +435,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -464,7 +464,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -493,7 +493,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -522,7 +522,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -551,7 +551,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -580,7 +580,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -609,7 +609,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -638,7 +638,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -667,7 +667,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -696,7 +696,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -725,7 +725,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -754,7 +754,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -783,7 +783,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -812,7 +812,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -841,7 +841,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -870,7 +870,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -899,7 +899,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -928,7 +928,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -957,7 +957,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -986,7 +986,7 @@ Pathway.find({}).then(function (res) {
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
