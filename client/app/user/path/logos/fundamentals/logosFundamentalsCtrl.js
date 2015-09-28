@@ -5,7 +5,6 @@ app.controller('logosFundamentalsCtrl', function ($scope, $stateParams, $sce, Au
   that.isAdmin = Auth.isAdmin;
 
   $scope.user = Auth.getCurrentUser();
-
   $scope.logosPercent = Math.ceil($scope.user.pathways[0]["completion"]["amount_completed"]);
 
 //information to ng-repeat the lists//
@@ -15,14 +14,14 @@ app.controller('logosFundamentalsCtrl', function ($scope, $stateParams, $sce, Au
     userID: $scope.user._id,
     pathwayID: $scope.user.pathways[0]._id,
     stageID: $scope.user.pathways[0].stages[0]._id
-  }
+  };
 
   $scope.submitMovementApproval = function(id) {
     userInfo.evalID = id;
     logosFundamentalsService.submitEval(userInfo).then(function(response){
       document.location.reload(true)
-    })
-  }
+    });
+  };
 
 //unlock appropriate tabs//
   $scope.step1 = $scope.user.pathways[0].stages[0].complete;
