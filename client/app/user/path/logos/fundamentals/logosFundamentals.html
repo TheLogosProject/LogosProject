@@ -46,9 +46,10 @@
 
                 <div class="collapsible-body">
                   <h5>Movement Standard</h5>
-                  <a class="waves-effect waves btn-flat modal-trigger" href="#{{movement._id}}" modal>
-                    <h6 class="grey-text">See Video</h6>
+                  <a class="waves-effect waves btn-flat modal-trigger" href="{{movement.content.video}}" target="_blank">
+                    See Video
                   </a>
+
                   <br>
                   <h6 ng-bind-html="movement.content.explanation | unsafe"></h6>
 
@@ -66,27 +67,13 @@
                     </p>
                   </div>
 
-                  <!-- Modal Structure -->
-                  <div class="modal" id="{{movement._id}}">
-                    <div class="modal-content">
-                      <div class="video-container">
-                        <iframe allowfullscreen class="youtube-player" frameborder="0" height="315" id="video" ng-src="{{movement.content.video}}" type="text/html" width="560"></iframe>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <a class="btn waves-effect waves blue darken-3 center modal-close" id="pause-button" type="submit">Close</a>
-                    </div>
-                  </div>
-                  <!-- End of Modal Structure -->
-
                 </div>
               </li>
               <!-- End of Movement -->
               <!-- be sure to keep this </ul> below -->
             </ul>
 
-            <!-- Script for collapsible list, youtube, and modals-->
-            <script src="http://www.youtube.com/player_api" type="text/javascript"></script>
+            <!-- Script for collapsible list -->
             <script>
               //script for collapsible list
               $(document)
@@ -95,38 +82,6 @@
                     accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
                   });
                 });
-
-              //script for modals
-              $(document)
-                .ready(function() {
-                  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-                  $('.modal-trigger').leanModal();
-                });
-
-              //youtube pause on modal close
-              // global variable for the player
-              var player;
-
-              // this function gets called when API is ready to use
-              function onYouTubePlayerAPIReady() {
-                // create the global player from the specific iframe (#video)
-                player = new YT.Player('video', {
-                  events: {
-                    // call this function when player is ready to use
-                    'onReady': onPlayerReady
-                  }
-                });
-              }
-
-              //button pauses video on modal close
-              function onPlayerReady(event) {
-
-                var pauseButton = document.getElementById("pause-button");
-                pauseButton
-                  .addEventListener("click", function() {
-                    player.pauseVideo();
-                  });
-              }
             </script>
           </div>
         </div>
