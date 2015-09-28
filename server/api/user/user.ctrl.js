@@ -446,6 +446,45 @@ exports.userIsActiveUpdate = function (req, res) {
         });
 };
 
+exports.updateProgression = function (req, res) {
+    User.findById(req.body.userID)
+        .exec(function (err, response) {
+            if (err) {
+                res.send(err);
+            } else {
+                var pathways = response.pathways;
+                for (var i = 0; i < pathways.length; i++) {
+                    if (req.body.pathwayID == pathways[i]["_id"]) {
+                        var stages = pathways[i]["stages"];
+                        for (var x = 0; x < stages.length; x++) {
+                            if (req.body.stageID == stages[x]["_id"]) {
+                                var evaluations = stages[x]["evaluations"];
+                                for (var y = 0; y < evaluations.length; y++) {
+                                    if (req.body.evalID == evaluations[y]["_id"]) {
+                                        var progressions = evaluations[y]["content"]["progressions"];
+                                        for (var z = 0; z < progressions.length; z++) {
+                                            if (req.body.progID == progressions[z]["_id"]) {
+                                                response.pathways[i]["stages"][x]["evaluations"][y]["content"]["progressions"][z]["complete"] = !progressions[z]["complete"];
+                                                User.findByIdAndUpdate(req.body.userID, response)
+                                                    .exec(function (err, response) {
+                                                        if (err) {
+                                                            res.send(err);
+                                                        } else {
+                                                            res.send(response);
+                                                        }
+                                                    });
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+};
+
 
 ////DELETE ONCE PUSHED LIVE////
 

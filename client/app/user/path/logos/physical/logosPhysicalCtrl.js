@@ -1,4 +1,4 @@
-app.controller('logosPhysicalCtrl', function ($scope, $stateParams, Auth) {
+app.controller('logosPhysicalCtrl', function ($scope, $stateParams, logosPhysicalService, Auth) {
 
     $scope.getCurrentUser = Auth.getCurrentUser;
     $scope.user = $scope.getCurrentUser();
@@ -11,8 +11,16 @@ app.controller('logosPhysicalCtrl', function ($scope, $stateParams, Auth) {
 
       $scope.logosPercent = Math.ceil($scope.user.pathways[0]["completion"]["amount_completed"]);
 
-    // $scope.user = userObj;
-    // $scope.logosPercent = Math.ceil($scope.user.pathways.logos.completion.amount_completed);
-    // $scope.pathosPercent = Math.ceil($scope.user.pathways.pathos.completion.amount_completed);
-    // $scope.ethosPercent = Math.ceil($scope.user.pathways.ethos.completion.amount_completed);
+      $scope.changeStatus = function (progression, movement) {
+          var userObj = {
+              userID: $scope.user._id,
+              pathwayID: $scope.user.pathways[0]._id,
+              stageID: $scope.user.pathways[0].stages[2]._id,
+              evalID: movement._id,
+              progID: progression._id
+          };
+          logosPhysicalService.updateStatus(userObj).then(function (response) {
+              return response;
+          });
+      };
 });

@@ -29,6 +29,7 @@
     router.get('-ethos/:memberId', controller.getUserEthos);
     router.put('/updateEval', controller.updateEvalStatus);
     router.put('/updateAnswer', controller.updateAnswer);
+    router.put('/updateProgression', controller.updateProgression);
 
     // router.post('-add', controller.addUser);
     router.put('/update', controller.updateUser);
