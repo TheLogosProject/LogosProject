@@ -61,9 +61,21 @@ app.service('programmingLandingService', function ($http) {
         method: 'PUT',
         url: '/api/gyms/edit/evaluation',
         data: evalObj
-      }).then(function (response) {
+      })
+          .then(function (response) {
         return response.data;
       });
+    };
+
+    this.deleteEval = function (evalObj) {
+        return $http({
+            method: 'PUT',
+            url: '/api/gyms/removeById',
+            data: evalObj
+        })
+            .then(function (response) {
+                return response;
+        });
     };
 
 
