@@ -16,6 +16,7 @@ app.controller('gymCoachCtrl', function ($scope, Auth, $stateParams, gymCoachSer
           if (fundamentalsEval[x].pending === true && fundamentalsEval[x].complete === false) {
             fundamentalsEval[x].firstName = response[i].name.first;
             fundamentalsEval[x].lastName = response[i].name.last;
+            fundamentalsEval[x].userID = response[i]._id;
             pendingEval.push(fundamentalsEval[x]);
           }
         }
@@ -30,14 +31,15 @@ app.controller('gymCoachCtrl', function ($scope, Auth, $stateParams, gymCoachSer
   // function to approve movement
   $scope.user = Auth.getCurrentUser();
 
-  var userInfo = {
-    userID: $scope.user._id,
-    pathwayID: $scope.user.pathways[0]._id,
-    stageID: $scope.user.pathways[0].stages[0]._id
-  };
 
-  $scope.submitMovementApproval = function(id) {
-    userInfo.evalID = id;
+
+  $scope.submitMovementApproval = function(evaluation) {
+    var userInfo = {
+      userID: evaluation.userID,
+      pathwayID: $scope.user.pathways[0]._id,
+      stageID: $scope.user.pathways[0].stages[0]._id,
+      evalID: evaluation._id
+    };
     console.log(userInfo)
     gymCoachService.submitEval(userInfo).then(function(response){
       document.location.reload(true)

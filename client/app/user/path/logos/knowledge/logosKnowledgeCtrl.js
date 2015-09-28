@@ -5,7 +5,7 @@ app.controller('logosKnowledgeCtrl', function ($scope, $stateParams, $timeout, A
     var pathwayID = currentUser.pathways[0]._id;
     var stageID = currentUser.pathways[0].stages[1]._id;
     $scope.evaluationsID = currentUser.pathways[0].stages[1].evaluations;
-    $scope.logosPercent = currentUser.pathways[0].completion.amount_completed;
+    $scope.logosPercent = Math.ceil(currentUser.pathways[0].completion.amount_completed);
 
     $scope.knowledgeInfo = {
         userID: currentUser._id,
