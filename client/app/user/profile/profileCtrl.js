@@ -10,6 +10,7 @@
         var userObj = Auth.getCurrentUser();
         $scope.gymName = userObj.gym.name;
         $scope.getCurrentUser = Auth.getCurrentUser;
+        $scope.goals = userObj.goals;
 
         $scope.userInfo = {
             _id: userObj._id,
@@ -26,12 +27,13 @@
                 feet: userObj.height.feet,
                 inches: userObj.height.inches
             },
-            weight: userObj.weight
-            //needs to be added in on back-end
-            //leave out for now
-            // goals: response.user.goals
+            weight: userObj.weight,
         };
 
+        $scope.goalInfo = {
+          _id: userObj._id,
+          goals: userObj._id
+        };
         $scope.updateProfile = function (userInfo) {
             console.log(userInfo);
             profileSvc.updateUserData(userInfo).then(function (response) {
@@ -41,7 +43,17 @@
             });
         };
 
+        $scope.addGoal=function(){
+            userObj.goals.push($scope.newGoal);
+            profileSvc.updateUserData(userObj);
 
+        };
+
+        $scope.deleteGoal = function(goal) {
+          var index = $scope.goals.indexOf(goal);
+          userObj.goals.splice(index, 1);
+          profileSvc.updateUserData(userObj);
+        };
 
     });
 
