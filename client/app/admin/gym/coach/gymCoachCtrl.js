@@ -26,19 +26,16 @@ app.controller('gymCoachCtrl', function ($scope, Auth, $stateParams, gymCoachSer
 
   $scope.getEvaluations(gymID);
 
-
-  // function to approve movement
   $scope.user = Auth.getCurrentUser();
 
-
-
+  // function to approve movement    
   $scope.submitMovementApproval = function(evaluation) {
     var userInfo = {
       userID: evaluation.userID,
       pathwayID: $scope.user.pathways[0]._id,
       stageID: $scope.user.pathways[0].stages[0]._id,
       evalID: evaluation._id
-    };  
+    };
     gymCoachService.submitEval(userInfo).then(function(response){
       document.location.reload(true)
     })

@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-
 angular.module('app')
   .controller('LoginCtrl', function($scope, Auth, $location, $window) {
     $scope.user = {};
