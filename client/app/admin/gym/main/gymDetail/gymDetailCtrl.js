@@ -1,8 +1,6 @@
 (function () {
   'use strict';
 
-
-
 app.controller('gymDetailCtrl', function ($scope, $location, gymDetailService, $stateParams) {
     var gymId = $stateParams.gymId;
     $scope.getGym = function (gymId) {

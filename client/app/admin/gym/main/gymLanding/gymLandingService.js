@@ -1,7 +1,6 @@
 (function () {
   'use strict';
 
-
 app.service('gymLandingService', function ($http) {
 
     this.getGym = function () {
