@@ -4,11 +4,6 @@
         var loggedUser = Auth.getCurrentUser();
 
         $scope.userInfo = loggedUser;
-        $scope.getToKnow = loggedUser.get_to_know;
-        console.log($scope.getToKnow);
-        $scope.knowledgeEval = loggedUser.pathways[0].stages[1].evaluations;
-        console.log($scope.knowledgeEval)
-
 
         $scope.loggedInID = loggedUser._id;
 
@@ -19,7 +14,9 @@
         (function (id) {
             membersDetailService.getUser(id).then(function (response) {
                 $scope.userObj = response;
-                console.log($scope.userObj);
+
+                $scope.getToKnow = $scope.userObj.get_to_know
+                $scope.knowledgeEval = $scope.userObj.pathways[0].stages[1].evaluations;
                 //Decides where switches should be when page loads
                 if ($scope.userObj.is_admin === true) {
                     $scope.is_admin = true;
