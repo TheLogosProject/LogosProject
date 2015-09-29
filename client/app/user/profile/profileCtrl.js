@@ -46,6 +46,7 @@
         $scope.addGoal=function(){
             userObj.goals.push($scope.newGoal);
             profileSvc.updateUserData(userObj);
+            $scope.newGoal="";
 
         };
 
