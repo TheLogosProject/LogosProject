@@ -111,8 +111,6 @@
          * @return {Boolean}
          */
         isLoggedIn: function () {
-          console.log("Who is logged in?");
-          console.log(currentUser);
           return currentUser.hasOwnProperty('role');
         },
 

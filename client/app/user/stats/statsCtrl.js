@@ -33,7 +33,6 @@
 //for ethos badge when ready
       // $scope.ethosBadge = $scope.getCurrentUser().pathways[2].completion.complete;
 
-      console.log($scope.getCurrentUser());
 
       $scope.logout = function () {
         Auth.logout();

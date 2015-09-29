@@ -35,7 +35,6 @@
           goals: userObj._id
         };
         $scope.updateProfile = function (userInfo) {
-            console.log(userInfo);
             profileSvc.updateUserData(userInfo).then(function (response) {
                 Materialize.toast('Updated successfully', 5000);
             }, function (err) {

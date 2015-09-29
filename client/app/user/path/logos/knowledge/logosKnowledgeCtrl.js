@@ -28,7 +28,6 @@ app.controller('logosKnowledgeCtrl', function ($scope, $stateParams, $timeout, A
         $scope.knowledgeInfo.evalID = obj._id;
         logosKnowledgeService.updateUserData($scope.knowledgeInfo).then(function (response) {
             (function (data) {
-                console.log(data);
                 logosKnowledgeService.updateEval(data).then(function (response) {
                     Materialize.toast('Updated successfully', 1500);
                 }, function (err) {
