@@ -55,6 +55,16 @@
           profileSvc.updateUserData(userObj);
         };
 
+        $scope.checkGoals = function() {
+          if ($scope.goals.length > 2) {
+            return true;
+          }
+          else {
+            return false;
+          }
+        };
+        // $scope.checkGoals();
+
     });
 
-} ());
+}());
