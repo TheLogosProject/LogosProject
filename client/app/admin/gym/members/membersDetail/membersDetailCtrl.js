@@ -4,6 +4,8 @@
         var loggedUser = Auth.getCurrentUser();
 
         $scope.userInfo = loggedUser;
+        $scope.getToKnow = loggedUser.get_to_know;
+        console.log($scope.getToKnow);
         $scope.knowledgeEval = loggedUser.pathways[0].stages[1].evaluations;
         console.log($scope.knowledgeEval)
 

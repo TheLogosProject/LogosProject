@@ -1,7 +1,7 @@
 app.controller('logosPhysicalCtrl', function ($scope, $stateParams, logosPhysicalService, Auth) {
 
-    $scope.getCurrentUser = Auth.getCurrentUser;
-    $scope.user = $scope.getCurrentUser();
+    $scope.user = Auth.getCurrentUser();
+    // $scope.user = $scope.getCurrentUser();
 
     $scope.movements = $scope.user.pathways[0].stages[2].evaluations;
 
@@ -11,6 +11,7 @@ app.controller('logosPhysicalCtrl', function ($scope, $stateParams, logosPhysica
 
       $scope.logosPercent = Math.ceil($scope.user.pathways[0]["completion"]["amount_completed"]);
 
+      // function to update progression status to complete
       $scope.changeStatus = function (progression, movement) {
           var userObj = {
               userID: $scope.user._id,
@@ -23,4 +24,20 @@ app.controller('logosPhysicalCtrl', function ($scope, $stateParams, logosPhysica
               return response;
           });
       };
+
+      // function to update eval status to complete
+      var userInfo = {
+        userID: $scope.user._id,
+        pathwayID: $scope.user.pathways[0]._id,
+        stageID: $scope.user.pathways[0].stages[2]._id
+      };
+
+      $scope.submitMovementApproval = function(id) {
+        userInfo.evalID = id;
+        console.log(userInfo)
+        logosPhysicalService.submitEval(userInfo).then(function(response){
+          document.location.reload(true)
+        });
+      };
+
 });

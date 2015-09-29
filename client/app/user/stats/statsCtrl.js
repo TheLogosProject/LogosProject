@@ -21,7 +21,9 @@
 
 
 //to display logos badge
-      $scope.logosBadge = $scope.getCurrentUser().pathways[0].completion.complete;
+      $scope.fundamentalsBadge = $scope.getCurrentUser().pathways[0].stages[0].complete;
+      $scope.knowledgeBadge = $scope.getCurrentUser().pathways[0].stages[1].complete;
+      $scope.physicalBadge = $scope.getCurrentUser().pathways[0].stages[2].complete;
 
 
 //for pathos badge when ready

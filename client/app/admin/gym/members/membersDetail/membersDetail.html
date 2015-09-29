@@ -53,11 +53,15 @@
             </div>
 
             <div class="col l6 center m12 s12">
+                <h5> Member Answers </h5>
+                <div class="divider"> </div>
+                <br>
+                <h6><b> What brought you to CrossFit? </b></h6>
+                <div> {{getToKnow.answers}} </div>
                 <!-- Logos Knowledge answers -->
-                <h5> Logos - Knowledge Answers </h5>
                 <div ng-repeat="evaluation in knowledgeEval" class="section">
                     <h6><b>{{evaluation.content.explanation}}</b></h6>
-                    <p>{{evaluation.content.answer}}</p>
+                    {{evaluation.content.answer}}
                 </div>
             </div>
         </div>
