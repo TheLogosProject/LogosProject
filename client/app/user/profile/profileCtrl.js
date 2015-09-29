@@ -1,70 +1,67 @@
 (function () {
-    'use strict';
+  'use strict';
 
+  app.controller('profileCtrl', function ($scope, $stateParams, $location, profileSvc, Auth) {
 
+    //Get user profile information
 
-    app.controller('profileCtrl', function ($scope, $stateParams, $location, profileSvc, Auth) {
+    var userObj = Auth.getCurrentUser();
+    $scope.gymName = userObj.gym.name;
+    $scope.getCurrentUser = Auth.getCurrentUser;
+    $scope.goals = userObj.goals;
 
-        //Get user profile information
+    $scope.userInfo = {
+      _id: userObj._id,
+      name: {
+        first: userObj.name.first,
+        last: userObj.name.last
+      },
+      contact_info: {
+        phone: userObj.contact_info.phone,
+        email: userObj.email
+      },
+      gender: userObj.gender,
+      height: {
+        feet: userObj.height.feet,
+        inches: userObj.height.inches
+      },
+      weight: userObj.weight,
+    };
 
-        var userObj = Auth.getCurrentUser();
-        $scope.gymName = userObj.gym.name;
-        $scope.getCurrentUser = Auth.getCurrentUser;
-        $scope.goals = userObj.goals;
+    $scope.goalInfo = {
+      _id: userObj._id,
+      goals: userObj._id
+    };
 
-        $scope.userInfo = {
-            _id: userObj._id,
-            name: {
-                first: userObj.name.first,
-                last: userObj.name.last
-            },
-            contact_info: {
-                phone: userObj.contact_info.phone,
-                email: userObj.email
-            },
-            gender: userObj.gender,
-            height: {
-                feet: userObj.height.feet,
-                inches: userObj.height.inches
-            },
-            weight: userObj.weight,
-        };
+    $scope.updateProfile = function (userInfo) {
+      profileSvc.updateUserData(userInfo).then(function (response) {
+        Materialize.toast('Updated successfully', 5000);
+      }, function (err) {
+        Materialize.toast('There was an error', 3000);
+      });
+    };
 
-        $scope.goalInfo = {
-          _id: userObj._id,
-          goals: userObj._id
-        };
-        $scope.updateProfile = function (userInfo) {
-            profileSvc.updateUserData(userInfo).then(function (response) {
-                Materialize.toast('Updated successfully', 5000);
-            }, function (err) {
-                Materialize.toast('There was an error', 3000);
-            });
-        };
+    $scope.addGoal = function () {
+      userObj.goals.push($scope.newGoal);
+      profileSvc.updateUserData(userObj);
+      $scope.newGoal = "";
 
-        $scope.addGoal=function(){
-            userObj.goals.push($scope.newGoal);
-            profileSvc.updateUserData(userObj);
-            $scope.newGoal="";
+    };
 
-        };
+    $scope.deleteGoal = function (goal) {
+      var index = $scope.goals.indexOf(goal);
+      userObj.goals.splice(index, 1);
+      profileSvc.updateUserData(userObj);
+    };
 
-        $scope.deleteGoal = function(goal) {
-          var index = $scope.goals.indexOf(goal);
-          userObj.goals.splice(index, 1);
-          profileSvc.updateUserData(userObj);
-        };
+    $scope.checkGoals = function () {
+      if ($scope.goals.length > 2) {
+        return true;
+      } else {
+        return false;
+      }
+    };
 
-        $scope.checkGoals = function() {
-          if ($scope.goals.length > 2) {
-            return true;
-          }
-          else {
-            return false;
-          }
-        };
-        // $scope.checkGoals();
-
-    });
+  });
 
 }());
