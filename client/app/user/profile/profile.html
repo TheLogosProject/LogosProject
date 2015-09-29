@@ -89,16 +89,16 @@
               </h5>
             </div>
           </div>
-          <div class="row" ng-repeat="goal in goals">
-            <div class="col s4">
+          <div class="row" ng-repeat="goal in goals | limitTo: 3">
+            <div class="col s4 m4 l4">
               <p class="left">{{$index + 1}}</p>
             </div>
-            <div class="col s4">
+            <div class="col s4 m4 l4">
               <p class="center">{{goal}}</p>
             </div>
-            <div class="col s4">
-              <a href="#" ng-click="deleteGoal(goal)"><i class="material-icons right">delete</i>
-                            </a>
+            <div class="col s4 m4 l4">
+              <p><a href="#" ng-click="deleteGoal(goal)"><i class="material-icons right">delete</i>
+              </a></p>
             </div>
           </div>
               <!-- <ol>
@@ -110,7 +110,7 @@
                         </ol> -->
 
           <!-- section for adding goal. This will need to be built out once goals are implemented in schema -->
-          <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=true">Add Goal</a>
+          <button ng-hide="checkGoals()" class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=true">Add Goal</button>
              <div ng-show="goalAdd">
                  <input class="validate" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
                  <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; addGoal()">Submit</a>
@@ -120,3 +120,5 @@
       </div>
     </div>
   </div>
+
+<!-- //ng-disabled="checkGoals" -->
