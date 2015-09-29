@@ -4,8 +4,7 @@
 
 var Gym = require('./gym.model'),
     Pathway = require('../pathway/pathway.model'),
-    mongoose = require('mongoose'),
-    ObjectID = mongoose.ObjectID;
+    mongoose = require('mongoose');
 
 module.exports = {
     getAllGyms: function (req, res) {

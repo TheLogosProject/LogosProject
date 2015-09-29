@@ -11,5 +11,15 @@ app.service('logosKnowledgeService', function ($http) {
             });
     };
 
+    this.updateEval = function (obj) {
+        return $http({
+            method: 'PUT',
+            url: '/api/users/updateEval',
+            data: obj
+        })
+            .then(function (response) {
+                return response;
+            });
+    };
 
 });
