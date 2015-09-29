@@ -35,7 +35,7 @@ var UserSchema = new Schema({
   },
   gym: { type: Schema.Types.ObjectId, ref: 'Gym' },
   goals: [
-      { type: String, default: "" }
+      { type: String, unique: true, default: "" }
   ],
   get_to_know: {
       questions: [

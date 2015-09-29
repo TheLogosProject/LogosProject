@@ -30,10 +30,10 @@
             weight: userObj.weight,
         };
 
-        $scope.goalInfo = {
-          _id: userObj._id,
-          goals: userObj._id
-        };
+        // $scope.goalInfo = {
+        //   _id: userObj._id,
+        //   goals: userObj._id
+        // };
         $scope.updateProfile = function (userInfo) {
             console.log(userInfo);
             profileSvc.updateUserData(userInfo).then(function (response) {
