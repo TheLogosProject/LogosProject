@@ -15,13 +15,13 @@
 
         <ul class="tabs">
           <li class=" tab col s4">
-            <a class="active blue darken-3 white-text" href="#Step1">Step 1</a>
+            <a class="active blue darken-3 white-text" href="/path/logos/fundamentals">Step 1</a>
           </li>
 
   <!-- blue tab background if unlocked -->
           <li class="tab col s4">
             <div ng-if="user.logos.step2.unlocked === true">
-              <a class="active blue darken-3 white-text" href="#Step2">Step 2</a>
+              <a class="active blue darken-3 white-text" href="/path/logos/knowledge">Step 2</a>
             </div>
 
   <!-- grey background if not unlocked -->
@@ -31,7 +31,7 @@
             <li class="tab col s4" disabled>
   <!-- blue tab background if unlocked -->
               <div ng-if="user.logos.step3.unlocked === true">
-                <a class="active blue darken-3 white-text" href="#Step3">Step 3</a>
+                <a class="active blue darken-3 white-text" href="/path/logos/physical">Step 3</a>
               </div>
   <!-- grey background if not unlocked -->
               <div ng-if="!user.logos.step3.unlocked">

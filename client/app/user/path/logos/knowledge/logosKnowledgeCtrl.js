@@ -17,10 +17,14 @@ app.controller('logosKnowledgeCtrl', function ($scope, $stateParams, $timeout, A
         $scope.knowledgeInfo.answer = obj.content.answer;
         $scope.knowledgeInfo.evalID = obj._id;
         logosKnowledgeService.updateUserData($scope.knowledgeInfo).then(function (response) {
-            Materialize.toast('Updated successfully', 1500);
-            $timeout(function () { document.location.reload(true); }, 1500);
-        }, function (err) {
-            Materialize.toast('There was an error', 3000);
+            (function (data) {
+                console.log(data);
+                logosKnowledgeService.updateEval(data).then(function (response) {
+                    Materialize.toast('Updated successfully', 1500);
+                }, function (err) {
+                    Materialize.toast('There was an error', 3000);
+                });
+            } ($scope.knowledgeInfo));
         });
     };
 });

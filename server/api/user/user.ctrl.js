@@ -58,13 +58,16 @@ exports.create = function (req, res, next) {
                                         var stagesLength = stagesCount.length;
                                         var x = 0;
                                         while (x < stagesLength) {
-                                            stagesCount[x]["total_to_complete"] = 100 / stagesLength;
-                                            var stagesValue = stagesCount[x]["total_to_complete"];
+                                            var stagesValue = 100 / stagesLength;
+                                            stagesValue = stagesValue.toFixed(2);
+                                            stagesValue = Number(stagesValue);
+                                            stagesCount[x]["total_to_complete"] = stagesValue;
                                             var evaluationCount = stagesCount[x]["evaluations"];
                                             var evaluationLength = evaluationCount.length;
                                             var y = 0;
                                             while (y < evaluationLength) {
-                                                evaluationCount[y]["total_to_complete"] = stagesValue / evaluationLength;
+                                                var evaluationValue = stagesValue / evaluationLength;
+                                                evaluationCount[y]["total_to_complete"] = evaluationValue;
                                                 y++;
                                             }
                                             x++;

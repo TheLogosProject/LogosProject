@@ -248,7 +248,7 @@ var Pathway = require('../api/pathway/pathway.model');
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -269,7 +269,7 @@ var Pathway = require('../api/pathway/pathway.model');
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -290,7 +290,7 @@ var Pathway = require('../api/pathway/pathway.model');
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -311,7 +311,7 @@ var Pathway = require('../api/pathway/pathway.model');
                                         },
                                         "total_to_complete": 0,
                                         "complete": false,
-                                        "needs_approval": true,
+                                        "needs_approval": false,
                                         "approved_by": "",
                                         "approved_on": "",
                                         "approved": false
@@ -1034,8 +1034,10 @@ var Pathway = require('../api/pathway/pathway.model');
                                                             var stagesLength = stagesCount.length;
                                                             var x = 0;
                                                             while (x < stagesLength) {
-                                                                stagesCount[x]["total_to_complete"] = 100 / stagesLength;
-                                                                var stagesValue = stagesCount[x]["total_to_complete"];
+                                                                var stagesValue = 100 / stagesLength;
+                                                                stagesValue = stagesValue.toFixed(2);
+                                                                stagesValue = Number(stagesValue);
+                                                                stagesCount[x]["total_to_complete"] = stagesValue;
                                                                 var evaluationCount = stagesCount[x]["evaluations"];
                                                                 var evaluationLength = evaluationCount.length;
                                                                 var y = 0;
