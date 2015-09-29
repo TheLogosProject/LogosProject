@@ -28,12 +28,12 @@
             <div class="center" ng-show="evaluations">
                 <button ng-click="addEval()" class="btn waves-effect blue darken-3">Add New Evaluation</button>
             </div>
-            <table class="centered" ng-show="evaluations">
-                <thead>
+
+            <table class="centered bordered highlight" ng-show="evaluations">
+                <thead  class="centered">
                     <tr>
                         <th data-field="id">Name</th>
                         <th data-field="name">Description</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,13 +45,13 @@
                             <div>&nbsp</div>
                             <br>
                         </td>
+                        <td ng-bind-html="field.content.explanation | unsafe"></td>
                         <td>
                             <div ng-show="progressionShow"><b><u>Progressions:</u></b></div>
                             <div ng-show="progressionShow" ng-repeat="progression in field.content.progressions">
                                 {{ progression.explanation }}
                             </div>
                         </td>
-                        <td ng-bind-html="field.content.explanation | unsafe"></td>
                         <td><a ng-model="field._id" ng-click="onEvalSelect(field._id)" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
                         <td><a ng-model="field._id" ng-click="evalDelete(field._id)" class="waves-effect btn-flat red darken-1">Delete</a></td>
                 </tbody>
