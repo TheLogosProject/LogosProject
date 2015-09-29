@@ -21,37 +21,42 @@
                 <div class="col s12 m12 l4 center offset-l4">
                     <select class="browser-default" ng-model="stageID" ng-options="options.value as options.label for options in stageOptions"
                     ng-change="onStageSelect() ">
-                        <option value="" disabled selected>Select Program</option>
+                        <option value="" disabled selected>Select Stage</option>
                     </select>
                 </div>
             </div>
-
+            <div class="center" ng-show="evaluations">
+                <button ng-click="addEval()" class="btn waves-effect blue darken-3">Add New Evaluation</button>
+            </div>
             <table class="centered" ng-show="evaluations">
                 <thead>
                     <tr>
-                        <th data-field="id">Movement Name</th>
-                        <th data-field="name">Movement Description</th>
-                        <th data-field="name">Edit Movement</th>
-                        <th data-field="name">Delete Movement</th>
+                        <th data-field="id">Name</th>
+                        <th data-field="name">Description</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <!-- ng-repeat these table rows -->
                     <tr ng-repeat="field in evaluationsList">
-                        <td>{{field.name}}</td>
+                        <td>
+                            {{field.name}}
+                            <br>
+                            <div>&nbsp</div>
+                            <br>
+                        </td>
+                        <td>
+                            <div ng-show="progressionShow"><b><u>Progressions:</u></b></div>
+                            <div ng-show="progressionShow" ng-repeat="progression in field.content.progressions">
+                                {{ progression.explanation }}
+                            </div>
+                        </td>
                         <td ng-bind-html="field.content.explanation | unsafe"></td>
                         <td><a ng-model="field._id" ng-click="onEvalSelect(field._id)" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
                         <td><a ng-model="field._id" ng-click="evalDelete(field._id)" class="waves-effect btn-flat red darken-1">Delete</a></td>
-                    </tr>
                 </tbody>
             </table>
-            <div class="center" ng-show="evaluations"><b>Or</b></div>
-            <br />
-            <div class="center" ng-show="evaluations">
-                <button ng-click="addEval()" class="btn waves-effect btn-flat grey lighten-2">Add</button>
-            </div>
-            <!--Edit evaluation (form will be pre-populated)-->
+            <!--Edit evaluation for all except Physical (form will be pre-populated)-->
             <div class="col l8 center offset-l2 m12 s12" ng-show="editView">
                 <form>
 
@@ -71,6 +76,35 @@
                     </div>
                     <button class="btn waves-effect waves blue darken-3 center" ng-click="editEval(evaluationObj)" type="submit">Save</button>
                     <button class="btn waves-effect waves red darken-3 center" ng-click="cancel()">Cancel</button>
+                </form>
+            </div>
+            <!--Edit for Physical (form will be pre-populated)-->
+            <div class="col l8 center offset-l2 m12 s12" ng-show="editProgression">
+                <form>
+
+                    <div class="input-field col s12">
+                        <input class="validate" id="movementName" ng-model="evaluationObj.name" required type="text">
+                        <label class="active" for="movementName">Movement</label>
+                    </div>
+                    <div>&nbsp</div>
+                    <b><u>Progressions:</u></b>
+                    <div class="col s12" ng-repeat="progression in evaluationObj.content.progressions">
+                        {{ progression.explanation }}
+                    </div>
+                    <div>&nbsp</div>
+                    <div class="input-field col s12">
+                        <input type="text" id="progressionAdd">
+                        <label for="progressionAdd">Add Progression</label>
+                    </div>
+                    <button class="btn btn-flat grey wave right">Add</button>
+                    <div>&nbsp</div>
+                    <div>&nbsp</div>
+                    <div>&nbsp</div>
+                    <div class="col s12">
+                        <button class="btn waves-effect waves blue darken-3 center" ng-click="editEval(evaluationObj)" type="submit">Save</button>
+                        <button class="btn waves-effect waves red darken-3 center" ng-click="cancel()">Cancel</button>
+                    </div>
+
                 </form>
             </div>
             <!--Add evaluation (form will be blank)-->
