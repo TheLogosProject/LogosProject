@@ -7,7 +7,12 @@ angular.module('app')
           .state('main', {
               url: '/main',
               templateUrl: 'app/user/main/main.html',
-              controller: 'mainCtrl'
+              controller: 'mainCtrl',
+              resolve: {
+                userObj: function(Auth) {
+                    return Auth.getCurrentUser().$promise;
+                }
+              }
           });
   });
 

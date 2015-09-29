@@ -8,4 +8,13 @@ app.service('membersLandingService', function ($http) {
                 return response.data;
             });
     };
+    this.getAllUsers = function () {
+        return $http({
+            method: 'GET',
+            url: '/api/users'
+        })
+            .then(function (response) {
+                return response.data;
+            });
+    };
 });

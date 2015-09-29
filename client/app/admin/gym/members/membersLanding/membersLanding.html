@@ -3,6 +3,15 @@
         <div class="row">
             <div class="col s12 center">
                 <h4> Manage Members </h4>
+                <div class="input-field col s5 m5">
+                <input type="text" id="first" ng-model="name">
+                <label for="first">Search Name</label>
+            </div>
+            <div>&nbsp</div>
+            <div>&nbsp</div>
+            <div>&nbsp</div>
+            <div>&nbsp</div>
+            <div>&nbsp</div>
             </div>
             <table class="centered">
                 <thead>
@@ -14,7 +23,7 @@
                 </thead>
                 <tbody>
                     <!-- ng-repeat these table rows -->
-                    <tr ng-repeat="user in users">
+                    <tr ng-repeat="user in users | filter:name">
                         <td>{{ user.name.first }} {{ user.name.last }}</td>
                         <!--still need to setup "Active", use "isCurrentlyActive prop" maybe add delete to this page?-->
                         <td>Yes</td>

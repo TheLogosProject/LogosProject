@@ -6,18 +6,21 @@
         .controller('membersLandingCtrl', function ($scope, $location, membersLandingService, $http, Auth, User) {
 
             var userObj = Auth.getCurrentUser();
-            var gymID = userObj.gym;
-            // Use the User $resource to fetch all users
-            (function (id) {
-                membersLandingService.getUsers(id).then(function (response) {
-                    console.log(response);
+            if (userObj.is_master) {
+                membersLandingService.getAllUsers().then(function (response) {
                     $scope.users = response;
                 });
-            }(gymID));
+            } else {
+                var gymID = userObj.gym;
+                (function (id) {
+                    membersLandingService.getUsers(id).then(function (response) {
+                        $scope.users = response;
+                    });
+                } (gymID));
+            }
 
             $scope.selectedID = function (memberID) {
                 $location.path('/gym/members/' + memberID);
-
             };
 
             // $scope.delete = function (user) {
