@@ -77,16 +77,16 @@
   }
   black {
     font-weight: 900;
-    color: #343434 !important;
+    color: #EDEDED !important;
   }
-  /* jumbotron */
 
+  /* jumbotron */
   .badge {
     width: 70px;
     height: 70px;
   }
-  /* profile pic on nav bar */
 
+  /* profile pic on nav bar */
   .navProfPic {
     margin-top: 1.2%;
   }
@@ -94,9 +94,8 @@
     width: 33px;
     margin-right: 1%;
   }
-
+  
   /* START of mobile */
-
   @media only screen and (max-width: 992px) {
     .parallax-container .section {
       position: absolute;
