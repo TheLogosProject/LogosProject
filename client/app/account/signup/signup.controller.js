@@ -10,7 +10,8 @@
 
       $scope.getUser = function () {
         Auth.getCurrentUser();
-};
+        console.log('test')
+      };
 
       //Drop Down
       var gymsArr = [];

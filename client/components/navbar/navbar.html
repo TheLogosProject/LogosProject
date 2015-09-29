@@ -12,7 +12,7 @@
 
       <!-- menu for users who are NOT logged in -->
       <li ng-if="!getCurrentUser().name.first">
-        <a class="small waves-effect waves-light btn blue darken-3" ng-href="/login">Log In/Sign Up</a>
+        <a class="small waves-effect waves-light btn blue darken-3" ng-href="/login">Log In/Register</a>
       </li>
 
       <!-- menu for users who are logged in and NOT admin -->
@@ -142,7 +142,7 @@
       <!-- mobile menu for unauth users -->
       <div ng-show="!getCurrentUser().name.first">
         <li>
-          <a ng-href="/login">Log In/Sign Up</a>
+          <a ng-href="/login">Log In/Register</a>
         </li>
       </div>
 

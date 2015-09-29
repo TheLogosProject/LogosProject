@@ -24,12 +24,20 @@
                     $scope.stageOptions = response;
                     $scope.stages = true;
                     $scope.stageID = "";
-                    $scope.onStageSelect = function () {
+                    $scope.onStageSelect = function (name) {
                         var stageSpecificIds = {
+                            name: name,
                             gymID: id1.gymID,
                             pathwayID: id1.pathwayID,
                             stageID: $scope.stageID
                         };
+                        for (var i = 0; i < $scope.stageOptions.length; i++) {
+                            if ($scope.stageOptions[i].value === stageSpecificIds.stageID) {
+                                $scope.progressionShow = true;
+                            } else {
+                                $scope.progressionShow = false;
+                            }
+                        }
                         (function getStageEvals(id2) {
                             programmingLandingService.getEvals(id2).then(function (response) {
                                 $scope.evaluationsList = response;
@@ -61,8 +69,16 @@
                                     (function getEvalInfo(id3) {
                                         programmingLandingService.getEvalDetails(id3).then(function (response) {
                                             $scope.evaluationObj = response;
-                                            $scope.evaluations = false;
-                                            $scope.editView = true;
+                                            console.log($scope.evaluationObj);
+                                            if ($scope.progressionShow === true) {
+                                                $scope.evaluations = false;
+                                                $scope.editView = false;
+                                                $scope.editProgression = true;
+                                            } else {
+                                                $scope.evaluations = false;
+                                                $scope.editProgression = false;
+                                                $scope.editView = true;
+                                            }
                                             $scope.editEval = function (editedEval) {
                                                 editedEval.gymID = id3.gymID;
                                                 editedEval.pathwayID = id3.pathwayID;
