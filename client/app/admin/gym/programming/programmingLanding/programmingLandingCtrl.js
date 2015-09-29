@@ -79,6 +79,15 @@
                                                 $scope.editProgression = false;
                                                 $scope.editView = true;
                                             }
+                                            $scope.addProgression = function (progression) {
+                                                progression.gymID = id3.gymID;
+                                                progression.pathwayID = id3.pathwayID;
+                                                progression.stageID = id3.stageID;
+                                                progression.evalID = id3.evalID;
+                                                programmingLandingService.addProgression(progression).then(function (response) {
+                                                    getEvalInfo(id3);
+                                                });
+                                            };
                                             $scope.editEval = function (editedEval) {
                                                 editedEval.gymID = id3.gymID;
                                                 editedEval.pathwayID = id3.pathwayID;

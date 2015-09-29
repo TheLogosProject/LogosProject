@@ -78,5 +78,16 @@ app.service('programmingLandingService', function ($http) {
         });
     };
 
+    this.addProgression = function (progression) {
+        return $http({
+            method: 'PUT',
+            url: '/api/gyms/addProgression',
+            data: progression
+        })
+            .then(function (response) {
+                return response;
+            });
+    };
+
 
 });
