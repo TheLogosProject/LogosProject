@@ -42,6 +42,9 @@
                             programmingLandingService.getEvals(id2).then(function (response) {
                                 $scope.evaluationsList = response;
                                 $scope.evaluations = true;
+                                $scope.editView = false;
+                                $scope.addView = false;
+                                $scope.editProgression = false;
                                 $scope.evalID = '';
                                 //ADD EVALUATION
                                 $scope.addEval = function () {
@@ -79,12 +82,14 @@
                                                 $scope.editProgression = false;
                                                 $scope.editView = true;
                                             }
+                                            //ADD PROGRESSION
                                             $scope.addProgression = function (progression) {
                                                 progression.gymID = id3.gymID;
                                                 progression.pathwayID = id3.pathwayID;
                                                 progression.stageID = id3.stageID;
                                                 progression.evalID = id3.evalID;
                                                 programmingLandingService.addProgression(progression).then(function (response) {
+                                                    $scope.newProgression.explanation = "";
                                                     getEvalInfo(id3);
                                                 });
                                             };
@@ -128,6 +133,7 @@
             $scope.evaluations = true;
             $scope.editView = false;
             $scope.addView = false;
+            $scope.editProgression = false;
         };
     });
 } ());
