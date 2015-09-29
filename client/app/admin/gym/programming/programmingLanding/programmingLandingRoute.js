@@ -17,20 +17,5 @@ angular.module('app')
                     }
                 }
             })
-            //
-            // .state('programming.logosFundamentals', {
-            //     url: '/fundamentals',
-            //     templateUrl: 'app/admin/gym/programming/logos/fundamentals/logosFundamentals.html'
-            // })
-            //
-            // .state('programming.logosKnowledge', {
-            //     url: '/knowledge',
-            //     templateUrl: 'app/admin/gym/programming/logos/knowledge/logosKnowledge.html'
-            // })
-            //
-            // .state('programming.logosPhysical', {
-            //     url: '/physical',
-            //     templateUrl: 'app/admin/gym/programming/logos/physical/logosPhysical.html'
-            // });
     });
 }());
