@@ -72,7 +72,6 @@
                                     (function getEvalInfo(id3) {
                                         programmingLandingService.getEvalDetails(id3).then(function (response) {
                                             $scope.evaluationObj = response;
-                                            console.log($scope.evaluationObj);
                                             if ($scope.progressionShow === true) {
                                                 $scope.evaluations = false;
                                                 $scope.editView = false;
@@ -119,7 +118,6 @@
                                         evalID: id4
                                     };
                                     programmingLandingService.deleteEval(evalSpecificsId).then(function (response) {
-                                        console.log(response);
                                         getStageEvals(id2);
                                     });
                                 };

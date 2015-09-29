@@ -8,7 +8,6 @@
                   url: '/api/users/updateEval',
                   data: userInfo
               }).then(function (response) {
-                  console.log("test");
                   return response.data;
               });
           };

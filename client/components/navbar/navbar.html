@@ -142,6 +142,9 @@
       <!-- mobile menu for unauth users -->
       <div ng-show="!getCurrentUser().name.first">
         <li>
+          <a ng-href="/home">Home</a>
+        </li>
+        <li>
           <a ng-href="/login">Log In/Register</a>
         </li>
       </div>

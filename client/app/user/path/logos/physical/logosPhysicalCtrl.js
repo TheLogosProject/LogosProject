@@ -34,7 +34,6 @@ app.controller('logosPhysicalCtrl', function ($scope, $stateParams, logosPhysica
 
       $scope.submitMovementApproval = function(id) {
         userInfo.evalID = id;
-        console.log(userInfo)
         logosPhysicalService.submitEval(userInfo).then(function(response){
           document.location.reload(true)
         });

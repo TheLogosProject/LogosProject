@@ -1,10 +1,6 @@
 <div class="container">
   <div class="section">
     <div class="row">
-
-      <!-- User Header -->
-      <!-- <div class="col s12 center"> -->
-
       <div class="col s12 center">
         <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().name.first && !getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/userAvatar.svg" width="120px">
         <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/adminAvatar.svg" width="120px">
@@ -12,6 +8,7 @@
       </div>
 
       <br>
+      <!-- Left in place for future profile pic add/delete implementation -->
       <!--<div class="col l4 center offset-l4 s10 offset-m1 m10 offset-s1">
                     <form action="#">
                         <div class="file-field input-field">
@@ -29,7 +26,6 @@
       <div class="col s6 center offset-s3">
         <h4>{{userInfo.name.first}}
           {{userInfo.name.last}}</h4>
-        <!--<h5 class="grey-text">Member of {{ gymName }}</h5>-->
       </div>
       <!-- </div> -->
       <div>&nbsp</div>
@@ -37,7 +33,6 @@
       <div class="row">
         <!-- Athlete Info -->
         <div class="col l8 center offset-l2 m12 s12">
-          <!--<h5>Athlete Info</h5>-->
           <!--beginning of form-->
           <form name="profileForm">
             <div class="input-field col s12">
@@ -88,6 +83,13 @@
                 Your Goals
               </h5>
             </div>
+            <!-- section for adding goals -->
+            <button ng-hide="checkGoals()" class="waves-effect btn blue darken-3" ng-click="goalAdd=true">Add Goal</button>
+               <div ng-show="goalAdd">
+                   <input class="validate" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
+                   <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; addGoal()">Submit</a>
+               </div>
+            <!-- end of adding goal section -->
           </div>
           <div class="row" ng-repeat="goal in goals | limitTo: 3">
             <div class="col s4 m4 l4">
@@ -109,13 +111,7 @@
                             </li>
                         </ol> -->
 
-          <!-- section for adding goal. This will need to be built out once goals are implemented in schema -->
-          <button ng-hide="checkGoals()" class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=true">Add Goal</button>
-             <div ng-show="goalAdd">
-                 <input class="validate" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
-                 <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; addGoal()">Submit</a>
-             </div>
-          <!-- end of adding goal section -->
+
         </div>
       </div>
     </div>

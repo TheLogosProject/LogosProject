@@ -6,7 +6,6 @@ app.controller('gymCoachCtrl', function ($scope, Auth, $stateParams, gymCoachSer
   $scope.getEvaluations = function(gymID) {
     var pendingEval = [];
     gymCoachService.getUserObj(gymID).then(function(response){
-      console.log(response);
       // loops through userObj
       for(var i=0; i<response.length; i++) {
         // debugger;
@@ -27,12 +26,9 @@ app.controller('gymCoachCtrl', function ($scope, Auth, $stateParams, gymCoachSer
 
   $scope.getEvaluations(gymID);
 
-
-  // function to approve movement
   $scope.user = Auth.getCurrentUser();
 
-
-
+  // function to approve movement    
   $scope.submitMovementApproval = function(evaluation) {
     var userInfo = {
       userID: evaluation.userID,
@@ -40,7 +36,6 @@ app.controller('gymCoachCtrl', function ($scope, Auth, $stateParams, gymCoachSer
       stageID: $scope.user.pathways[0].stages[0]._id,
       evalID: evaluation._id
     };
-    console.log(userInfo)
     gymCoachService.submitEval(userInfo).then(function(response){
       document.location.reload(true)
     })

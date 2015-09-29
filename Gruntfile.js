@@ -204,7 +204,6 @@ module.exports = function (grunt) {
           },
           callback: function (nodemon) {
             nodemon.on('log', function (event) {
-              console.log(event.colour);
             });
 
             // opens browser on initial server start
