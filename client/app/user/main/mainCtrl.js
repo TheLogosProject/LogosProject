@@ -2,28 +2,23 @@
   'use strict';
 
 angular.module('app')
-.controller('mainCtrl', function ($scope, $location, Auth, profileSvc) {
+.controller('mainCtrl', function ($scope, $location, Auth, profileSvc, userObj) {
 
   var that = this;
   that.isAdmin = Auth.isAdmin;
 
   $scope.getCurrentUser = Auth.getCurrentUser;
 
+
+  $scope.logosPercent = Math.ceil($scope.getCurrentUser().pathways[0].completion.amount_completed);
+  // $scope.pathosPercent = Math.ceil($scope.user.pathways[1].completion.amount_completed);
+  // $scope.ethosPercent = Math.ceil($scope.user.pathways.ethos.completion.amount_completed);
+
+  //disable button unless Logos is completed
   $scope.pathos = $scope.getCurrentUser().pathways[0].stages[1].complete;
 
-  $scope.user = function () {
-    $scope.getCurrentUser();
-    console.log("lakjsdflkjasdfkjs;kdfj");
-    console.log($scope.getCurrentUser());
 
-      $scope.logosPercent = Math.ceil($scope.getCurrentUser().pathways[0].completion.amount_completed);
-      // $scope.pathosPercent = Math.ceil($scope.user.pathways[1].completion.amount_completed);
-      // $scope.ethosPercent = Math.ceil($scope.user.pathways.ethos.completion.amount_completed);
-    };
-    $scope.user();
-
-  ////Modal
-
+  //Modal
   var userObj = Auth.getCurrentUser();
   $scope.userInfo = {
     _id: userObj._id,

@@ -40,6 +40,7 @@
 
             })
             .then(function () {
+              Auth.getCurrentUser();
               $location.path('/main');
             })
             .catch(function (err) {
