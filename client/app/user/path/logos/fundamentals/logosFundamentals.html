@@ -14,6 +14,7 @@
         <h5 class="center">Logos Progress</h5>
 
         <ul class="tabs">
+          <!-- default tab styling -->
           <li class=" tab col s4">
             <a class="active blue darken-3 white-text" href="/path/logos/fundamentals">Step 1</a>
           </li>
@@ -42,7 +43,9 @@
               <li ng-repeat="movement in movements">
                 <div class="collapsible-header" ng-if="!movement.complete">{{movement.name}}</div>
                 <div class="collapsible-header grey lighten-1" ng-if="movement.complete">{{movement.name}}
-                  - <b>Complete</b></div>
+                  -
+                  <b>Complete</b>
+                </div>
 
                 <div class="collapsible-body">
                   <h5>Movement Standard</h5>

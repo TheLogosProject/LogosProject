@@ -2,7 +2,7 @@
   <div class="section">
     <div class="row">
       <div class="col s12 center">
-<!-- progress chart-->
+        <!-- progress chart-->
         <div class="c100 p{{ logosPercent}} center">
           <span>{{ logosPercent }}%</span>
           <div class="slice">
@@ -10,7 +10,7 @@
             <div class="fill"></div>
           </div>
         </div>
-<!-- end progress chart-->
+        <!-- end progress chart-->
         <h5 class="center">Logos Progress</h5>
 
         <ul class="tabs">
@@ -18,68 +18,70 @@
             <a class="active blue darken-3 white-text" href="/path/logos/fundamentals">Step 1</a>
           </li>
 
-  <!-- blue tab background if unlocked -->
+          <!-- blue tab background if unlocked -->
           <li class="tab col s4">
             <div ng-if="step1">
               <a class="active blue darken-3 white-text" href="/path/logos/knowledge">Step 2</a>
             </div>
 
-  <!-- grey background if not unlocked -->
+            <!-- grey background if not unlocked -->
             <div ng-if="!step1">
               <p class="grey-text text-lighten-2">Step 2</p>
             </li>
             <li class="tab col s4" disabled>
-  <!-- blue tab background if unlocked -->
+              <!-- blue tab background if unlocked -->
               <div ng-if="step2">
                 <a class="active blue darken-3 white-text" href="/path/logos/physical">Step 3</a>
               </div>
-  <!-- grey background if not unlocked -->
+              <!-- grey background if not unlocked -->
               <div ng-if="!step2">
                 <p class="grey-text text-lighten-2">Step 3</p>
               </div>
-              </li>
-            </ul>
-            <br>
+            </li>
+          </ul>
+          <br>
 
-<!-- if the knowledge section is completed the BG will be blue
+          <!-- if the knowledge section is completed the BG will be blue
 and the "Complete" text will display -->
-            <div ng-if="user.logos.step2.unlocked">
-              <div class="col s12 blue darken-3">
-                <h5 class="white-text">Knowledge - Complete</h5>
+          <div ng-if="user.logos.step2.unlocked">
+            <div class="col s12 blue darken-3">
+              <h5 class="white-text">Knowledge - Complete</h5>
+            </div>
+          </div>
+
+          <div ng-if="!user.logos.step2.unlocked">
+            <div class="col s12">
+              <h5>Knowledge</h5>
+            </div>
+          </div>
+
+          <form>
+
+            <div ng-repeat="question in knowledgeEvaluations">
+              <div class="input-field col s12" ng-model="question._id">
+                <textarea class="materialize-textarea" ng-model="question.content.answer"></textarea>
+                <label>
+                  {{question.content.explanation}}
+                </label>
+              </div>
+              <div ng-if="!user.logos.step2.unlocked">
+                <button class="btn waves-effect waves blue darken-3 center" ng-click="submitKnowledge(question)" type="submit">Submit</button>
               </div>
             </div>
 
-            <div ng-if="!user.logos.step2.unlocked">
-              <div class="col s12">
-                <h5>Knowledge</h5>
-              </div>
-            </div>
-
-            <form>
-
-              <div ng-repeat = "question in knowledgeEvaluations">
-                <div class="input-field col s12" ng-model= "question._id">
-                  <textarea ng-model="question.content.answer" class="materialize-textarea"></textarea>
-                  <label> {{question.content.explanation}} </label>
-                </div>
-                <div ng-if="!user.logos.step2.unlocked">
-                  <button class="btn waves-effect waves blue darken-3 center" type="submit" ng-click="submitKnowledge(question)">Submit</button>
-                </div>
-              </div>
-
-              <br>
-              <!-- <div ng-if="!user.logos.step2.unlocked">
+            <br>
+            <!-- <div ng-if="!user.logos.step2.unlocked">
                 <button class="btn waves-effect waves blue darken-3 center" type="submit">Submit</button>
               </div> -->
 
-<!-- button disabled if section is already complete -->
-              <div ng-if="user.logos.step2.unlocked">
-                <button class="btn waves-effect waves blue darken-3 center" disabled>Submit</button>
-              </div>
-
-            </form>
-
+            <!-- button disabled if section is already complete -->
+            <div ng-if="user.logos.step2.unlocked">
+              <button class="btn waves-effect waves blue darken-3 center" disabled>Submit</button>
             </div>
-          </div>
+
+          </form>
+
         </div>
       </div>
+    </div>
+  </div>

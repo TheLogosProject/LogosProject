@@ -6,8 +6,6 @@ angular.module('app')
     $stateProvider
     .state('profile', {
       url: '/profile',
-      // url: '/profile/:memberId',
-      // will want to be /userProfile/:id when live
       templateUrl: 'app/user/profile/profile.html',
       controller: 'profileCtrl'
     });

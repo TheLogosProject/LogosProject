@@ -45,7 +45,6 @@
       userObj.goals.push($scope.newGoal);
       profileSvc.updateUserData(userObj);
       $scope.newGoal = "";
-
     };
 
     $scope.deleteGoal = function (goal) {
