@@ -1,9 +1,3 @@
-/* jshint -W069 */
-/* jshint -W116 */
-/* jshint -W083 */
-/* jshint -W004 */
-/* jshint -W030 */
-
 var User = require('./user.model');
 var passport = require('passport');
 var config = require('../../config/environment');
@@ -11,47 +5,47 @@ var jwt = require('jsonwebtoken');
 var Pathway = require('../pathway/pathway.model');
 var Gym = require('../gym/gym.model');
 
-
-
 var validationError = function (res, err) {
     return res.json(422, err);
 };
-
-/**
- * Get list of users
- * restriction: 'admin'
- */
+/////////////////////////////////////////////////
+/////Get list of users restriction: 'admin'/////
+///////////////////////////////////////////////
 exports.index = function (req, res) {
     User.find({}, '-salt -hashedPassword', function (err, users) {
         if (err) return res.send(500, err);
         res.json(200, users);
     });
 };
-
-/**
- * Creates a new user
- */
+////////////////////////////////////////////////////////////////
+//////CREATES NEW USER, SAVES AND RETURNS USER AS RESOURCE//////
+////////////////////////////////////////////////////////////////
 exports.create = function (req, res, next) {
     var newUser = new User(req.body);
     newUser.provider = 'local';
     newUser.role = 'user';
+    //SAVE USER OBJECT
     newUser.save(function (err, response) {
         if (err) {
             res.send(err);
         } else {
+            //FIND THAT USER AND SAVE _ID
             var userID = response._id;
             User.findById(userID)
+            //POPULATE THE USER'S GYM
                 .populate('gym')
                 .exec(function (err, response) {
                     if (err) {
                         res.send(err);
                     } else {
+                        //BEGIN CREATING SNAPSHOT OF USER'S GYM'S PATHWAY PROGRAM
                         var newUserObj = response;
                         Gym.findById(newUserObj.gym)
                             .exec(function (err, response) {
                                 if (err) {
                                     res.send(err);
                                 } else {
+                                    //BEGIN CALULATIONS NEEDED FOR CALCULATING PERCENT TO COMPLETE
                                     var pathwayCount = response.gym_pathway_program;
                                     for (var i = 0; i < pathwayCount.length; i++) {
                                         var stagesCount = pathwayCount[i]["stages"];
@@ -74,15 +68,18 @@ exports.create = function (req, res, next) {
                                         }
                                     }
                                     var userPathways = [];
+                                    //PUSH EACH NEWLY CREATED PATHWAY, STAGE AND EVALUATION TO USER OBJECT
                                     for (var y = 0; y < pathwayCount.length; y++) {
                                         userPathways.push(pathwayCount[y]);
                                     }
                                     newUserObj.pathways = userPathways;
+                                    //SAVE THAT NEW OBJECT 'SNAPSHOT' TO USER PROFILE
                                     User.findByIdAndUpdate(userID, newUserObj)
                                         .exec(function (err, user) {
                                             if (err) {
                                                 res.send(err);
                                             } else {
+                                                //UPDATE GYM BY PUSHING MEMBER'S _ID TO MEMBERS ARRAY
                                                 Gym.findById(req.body.gym)
                                                     .exec(function (err, response) {
                                                         if (err) {
@@ -101,6 +98,7 @@ exports.create = function (req, res, next) {
                                                                 });
                                                         }
                                                     });
+                                                //SEND BACK AUTH TOKENS
                                                 var token = jwt.sign({ _id: user._id }, config.secrets.session, { expiresInMinutes: 60 * 5 });
                                                 res.json({ token: token });
                                             }
@@ -112,34 +110,29 @@ exports.create = function (req, res, next) {
         }
     });
 };
-
-/**
- * Get a single user
- */
+////////////////////////////
+/////Get a single user/////
+//////////////////////////
 exports.show = function (req, res, next) {
     var userId = req.params.id;
-
     User.findById(userId, function (err, user) {
         if (err) return next(err);
         if (!user) return res.send(401);
         res.json(user.profile);
     });
 };
-
-/**
- * Deletes a user
- * restriction: 'admin'
- */
+////////////////////////////////////////////////
+//////Deletes a user restriction: 'admin'//////
+//////////////////////////////////////////////
 exports.destroy = function (req, res) {
     User.findByIdAndRemove(req.params.id, function (err, user) {
         if (err) return res.send(500, err);
         return res.send(204);
     });
 };
-
-/**
- * Change a users password
- */
+///////////////////////////////////
+/////Change a users password//////
+/////////////////////////////////
 exports.changePassword = function (req, res, next) {
     var userId = req.user._id;
     var oldPass = String(req.body.oldPassword);
@@ -157,10 +150,9 @@ exports.changePassword = function (req, res, next) {
         }
     });
 };
-
-/**
- * Get my info
- */
+///////////////////////
+/////Get my info//////
+/////////////////////
 exports.me = function (req, res, next) {
     var userId = req.user._id;
     User.findOne({
@@ -171,16 +163,15 @@ exports.me = function (req, res, next) {
         res.json(user);
     });
 };
-
-/**
- * Authentication callback
- */
+///////////////////////////////////
+/////Authentication callback//////
+/////////////////////////////////
 exports.authCallback = function (req, res, next) {
     res.redirect('/');
 };
-
-//Added Mike's stuff
-
+////////////////////////
+/////GET ALL USERS/////
+//////////////////////
 exports.getAllUsers = function (req, res) {
     User.find(req.query)
         .exec(function (err, response) {
@@ -191,7 +182,9 @@ exports.getAllUsers = function (req, res) {
             }
         });
 };
-
+//////////////////////////
+/////FIND USER BY ID/////
+////////////////////////
 exports.findByID = function (req, res) {
     User.findById(req.params.memberId)
         .exec(function (err, response) {
@@ -202,7 +195,9 @@ exports.findByID = function (req, res) {
             }
         });
 };
-
+///////////////////////////////////
+/////GET ALL USERS BY GYM ID//////
+/////////////////////////////////
 exports.getUsersByGym = function (req, res) {
     User.find({ gym: { $eq: req.params.gymID } })
         .exec(function (err, response) {
@@ -213,13 +208,16 @@ exports.getUsersByGym = function (req, res) {
             }
         });
 };
-
+//////////////////////////////////////
+/////GET SPECIFIC USER'S DETAILS/////
+////////////////////////////////////
 exports.getUserDetails = function (req, res) {
     User.findById(req.params.memberId)
         .exec(function (err, response) {
             if (err) {
                 res.send(err);
             } else {
+                //OBJECT TO BE RETURNED FOR USER
                 var userObj = {
                     _id: response._id,
                     name: response.name,
@@ -230,6 +228,7 @@ exports.getUserDetails = function (req, res) {
                     goals: response.goals,
                     contact_info: response.contact_info
                 };
+                //GET THE USER'S GYM DETAILS AND ADD TO OBJECT
                 Gym.findById(response.gym)
                     .exec(function (err, response) {
                         if (err) {
@@ -239,6 +238,7 @@ exports.getUserDetails = function (req, res) {
                                 _id: response._id,
                                 name: response.name
                             };
+                            //COMPLETED OBJECT TO SEND BACK
                             var newObj = {
                                 user: userObj,
                                 gym: gymObj
@@ -249,7 +249,9 @@ exports.getUserDetails = function (req, res) {
             }
         });
 };
-
+////////////////////////////////////////
+/////GET USER'S LOGOS PATHWAY BACK/////
+//////////////////////////////////////
 exports.getUserLogos = function (req, res) {
     User.findById(req.params.memberId)
         .exec(function (err, response) {
@@ -260,7 +262,9 @@ exports.getUserLogos = function (req, res) {
             }
         });
 };
-
+/////////////////////////////////////////
+/////GET USER'S PATHOS PATHWAY BACK/////
+///////////////////////////////////////
 exports.getUserPathos = function (req, res) {
     User.findById(req.params.memberId)
         .exec(function (err, response) {
@@ -271,7 +275,9 @@ exports.getUserPathos = function (req, res) {
             }
         });
 };
-
+////////////////////////////////////////
+/////GET USER'S ETHOS PATHWAY BACK/////
+//////////////////////////////////////
 exports.getUserEthos = function (req, res) {
     User.findById(req.params.memberId)
         .exec(function (err, response) {
@@ -282,7 +288,9 @@ exports.getUserEthos = function (req, res) {
             }
         });
 };
-
+////////////////////////////////////////////////
+/////UPDATE USER'S PROFILE, GENERIC UPDATE/////
+//////////////////////////////////////////////
 exports.updateUser = function (req, res) {
     User.findByIdAndUpdate(req.body._id, req.body)
         .exec(function (err, response) {
@@ -293,13 +301,16 @@ exports.updateUser = function (req, res) {
             }
         });
 };
-////UPDATES A SPECIFIC USER'S SPECIFIC EVALUATION BASED ON TRIGGERS IN THE FRONT END////
+///////////////////////////////////////////////////////////////////////////////////////////
+/////UPDATES A SPECIFIC USER'S SPECIFIC EVALUATION BASED ON TRIGGERS IN THE FRONT END/////
+/////////////////////////////////////////////////////////////////////////////////////////
 exports.updateEvalStatus = function (req, res) {
     User.findById(req.body.userID)
         .exec(function (err, response) {
             if (err) {
                 res.send(err);
             } else {
+                //LOOP DOWN AND FIND SPECIFIC PATHWAYS, STAGES AND EVALUATIONS BY ID
                 var pathways = response.pathways;
                 for (var i = 0; i < pathways.length; i++) {
                     if (req.body.pathwayID == pathways[i]["_id"]) {
@@ -310,6 +321,7 @@ exports.updateEvalStatus = function (req, res) {
                                 for (var y = 0; y < evaluations.length; y++) {
                                     if (req.body.evalID == evaluations[y]["_id"]) {
                                         console.log(evaluations[y]);
+                                        //IF NEEDS APPROVAL IS TRUE AND THE EVALUATION IS NOT ALREADY PENDING, SETS TO PENDING
                                         if (evaluations[y]["needs_approval"] === true && evaluations[y]["pending"] === false) {
                                             response.pathways[i]["stages"][x]["evaluations"][y]["pending"] = true;
                                             User.findByIdAndUpdate(req.body.userID, response)
@@ -320,6 +332,7 @@ exports.updateEvalStatus = function (req, res) {
                                                         res.send(response);
                                                     }
                                                 });
+                                        //IF NEEDS APPROVAL IS TRUE AND THE EVALUATION IS PENDING, THEN COMPLETES AND UPDATES CHAIN
                                         } else if (evaluations[y]["needs_approval"] === true && evaluations[y]["pending"] === true) {
                                             response.pathways[i]["stages"][x]["evaluations"][y]["complete"] = true;
                                             var completeValue1 = response.pathways[i]["stages"][x]["evaluations"][y]["total_to_complete"];
@@ -339,6 +352,7 @@ exports.updateEvalStatus = function (req, res) {
                                                         res.send(response);
                                                     }
                                                 });
+                                        //IF DOESN'T NEED APPROVAL AND NOT ALREADY COMPLETED, WILL UPDATE TO COMPLETE AND UPDATE CHAIN
                                         } else if (evaluations[y]["needs_approval"] === false && evaluations[y]["complete"] === false) {
                                             response.pathways[i]["stages"][x]["evaluations"][y]["complete"] = true;
                                             var completeValue2 = response.pathways[i]["stages"][x]["evaluations"][y]["total_to_complete"];
@@ -350,6 +364,7 @@ exports.updateEvalStatus = function (req, res) {
                                             if (response.pathways[i]["completion"]["amount_completed"] === response.pathways[i]["completion"]["total_to_complete"]) {
                                                 response.pathways[i]["completion"]["complete"] = true;
                                             }
+                                            //SAVES THAT NEW UPDATE TO USER OBJECT
                                             User.findByIdAndUpdate(req.body.userID, response)
                                                 .exec(function (err, response) {
                                                     if (err) {
@@ -368,13 +383,16 @@ exports.updateEvalStatus = function (req, res) {
             }
         });
 };
-
+//////////////////////////////////////////////////
+/////WHEN USER ANSWERS QUESTION UPDATES HERE/////
+////////////////////////////////////////////////
 exports.updateAnswer = function (req, res) {
     User.findById(req.body.userID)
         .exec(function (err, response) {
             if (err) {
                 res.send(err);
             } else {
+                //LOOP DOWN TO SPECIFIC QUESTION FROM KNOWLEDGE QUESTIONS IN LOGOS
                 var pathways = response.pathways;
                 for (var i = 0; i < pathways.length; i++) {
                     if (req.body.pathwayID == pathways[i]["_id"]) {
@@ -384,6 +402,7 @@ exports.updateAnswer = function (req, res) {
                                 var evaluations = stages[x]["evaluations"];
                                 for (var y = 0; y < evaluations.length; y++) {
                                     if (req.body.evalID == evaluations[y]["_id"]) {
+                                        //UPDATES THE OBJECT WITH ANSWER
                                         response.pathways[i]["stages"][x]["evaluations"][y]["content"]["answer"] = req.body.answer;
                                         User.findByIdAndUpdate(req.body.userID, response)
                                             .exec(function (err, response) {
@@ -402,7 +421,9 @@ exports.updateAnswer = function (req, res) {
             }
         });
 };
-////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT AN ADMIN////
+////////////////////////////////////////////////////////////////
+/////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT AN ADMIN/////
+//////////////////////////////////////////////////////////////
 exports.userIsAdminUpdate = function (req, res) {
     User.findById(req.body.userID)
         .exec(function (err, response) {
@@ -427,7 +448,9 @@ exports.userIsAdminUpdate = function (req, res) {
             }
         });
 };
-////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT ACTIVE////
+//////////////////////////////////////////////////////////////
+/////UPDATES WHETHER A SPECIFIC USER IS OR IS NOT ACTIVE/////
+////////////////////////////////////////////////////////////
 exports.userIsActiveUpdate = function (req, res) {
     console.log(req.body.userID);
     User.findById(req.body.userID)
@@ -448,13 +471,16 @@ exports.userIsActiveUpdate = function (req, res) {
             }
         });
 };
-
+////////////////////////////////////////////////////////////////////////////////////////
+/////UPDATES THE CHECKED BOX STATUS OF PROGRESSION ON SPECIFIC PHYSICAL EVALUATION/////
+//////////////////////////////////////////////////////////////////////////////////////
 exports.updateProgression = function (req, res) {
     User.findById(req.body.userID)
         .exec(function (err, response) {
             if (err) {
                 res.send(err);
             } else {
+                //LOOP DOWN TO THE SPECIFIC EVALUATION
                 var pathways = response.pathways;
                 for (var i = 0; i < pathways.length; i++) {
                     if (req.body.pathwayID == pathways[i]["_id"]) {
@@ -467,6 +493,7 @@ exports.updateProgression = function (req, res) {
                                         var progressions = evaluations[y]["content"]["progressions"];
                                         for (var z = 0; z < progressions.length; z++) {
                                             if (req.body.progID == progressions[z]["_id"]) {
+                                                //SAVE THE OPPOSITE OF WHATEVER THE CHECKBOX IS CURRENTLY AT
                                                 response.pathways[i]["stages"][x]["evaluations"][y]["content"]["progressions"][z]["complete"] = !progressions[z]["complete"];
                                                 User.findByIdAndUpdate(req.body.userID, response)
                                                     .exec(function (err, response) {
@@ -487,24 +514,3 @@ exports.updateProgression = function (req, res) {
             }
         });
 };
-
-////DELETE ONCE PUSHED LIVE////
-
-/* For initial user add testing -- http://localhost:8555/api/add-user
-{
-    "name": {
-        "first": "Mike",
-        "last": "Buckley"
-    };
-    "gym": "5602fc16bfb07c49091b75d9"
-}
-*/
-
-/* For testing user-evaluation-update -- http://localhost:8555/api/user-evaluation-update
-{
-    "userID": "5602fc2e4bca0072095351a5",
-    "pathwayID": "5602df7192694e5da7fa4584",
-    "stageID": "5602df7192694e5da7fa4585",
-    "evalID": "5602df7192694e5da7fa4586"
-}
-*/
