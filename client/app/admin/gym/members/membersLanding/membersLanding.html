@@ -26,7 +26,7 @@
                     <tr ng-repeat="user in users | filter:name">
                         <td>{{ user.name.first }} {{ user.name.last }}</td>
                         <!--still need to setup "Active", use "isCurrentlyActive prop" maybe add delete to this page?-->
-                        <td>Yes</td>
+                        <td>{{user.currently_active}}</td>
                         <td><a ng-click="selectedID(user._id)" class="waves-effect btn-flat grey lighten-2">Edit</a></td>
                     </tr>
                 </tbody>
