@@ -6,7 +6,7 @@
 
       <h4 class="center light-blue-text text-darken-3">Register</h4>
 
-      <form class="form" name="form" ng-submit="register(form)" novalidate>
+      <form class="form" name="form" ng-submit="register(form.$valid)" novalidate>
 
         <div class="row">
           <div class="input-field col s12">
@@ -78,7 +78,7 @@
               </div>
           </div>
 
-        <button class="btn waves-effect waves blue darken-3 center" type="submit" ng-click="getUser()">Register</button>
+        <button class="btn waves-effect waves blue darken-3 center" type="submit" ng-disabled="form.$invalid" ng-click="getUser()">Register</button>
       </form>
 
       <div class="row">
