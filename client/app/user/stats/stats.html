@@ -57,37 +57,37 @@
 	        </div>
         </div>
 
+
         <!-- Goals -->
         <div class="row">
-          <div class="col s12 center">
+          <div class="col l8 center offset-l2 m12 s12">
             <h5>
               <br>
               Your Goals
             </h5>
-          </div>
-          <!-- section for adding goals -->
-          <div class="center">
-          <button ng-hide="checkGoals()" class="waves-effect btn blue darken-3" ng-click="goalAdd=true">Add Goal</button>
+            <!-- section for adding goals -->
+            <div class="center">
+            <button ng-hide="checkGoals()" class="waves-effect btn blue darken-3" ng-click="goalAdd=true">Add Goal</button>
 
-             <div ng-show="goalAdd">
-                 <input class="validate" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
-                 <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; addGoal()">Submit</a>
-             </div>
-          </div>
+               <div ng-show="goalAdd">
+                   <input class="validate" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
+                   <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; addGoal()">Submit</a>
+               </div>
+            </div>
+            <!-- end of adding goal section -->
+            <div class="row center" ng-repeat="goal in goals | limitTo: 3">
+              <div class="col s4 m4 l4">
+                <p class="left">{{$index + 1}}</p>
+              </div>
+              <div class="col s4 m4 l4">
+                <p class="center">{{goal}}</p>
+              </div>
+              <div class="col s4 m4 l4">
+                <p><a href="#" ng-click="deleteGoal(goal)"><i class="material-icons right">delete</i>
+                </a></p>
+              </div>
+            </div>
           <!-- end of adding goal section -->
         </div>
-        <div class="row center" ng-repeat="goal in goals | limitTo: 3">
-          <div class="col s4 m4 l4">
-            <p class="left">{{$index + 1}}</p>
-          </div>
-          <div class="col s4 m4 l4">
-            <p class="center">{{goal}}</p>
-          </div>
-          <div class="col s4 m4 l4">
-            <p><a href="#" ng-click="deleteGoal(goal)"><i class="material-icons right">delete</i>
-            </a></p>
-          </div>
-        </div>
-          <!-- end of adding goal section -->
     </div>
 </div>
