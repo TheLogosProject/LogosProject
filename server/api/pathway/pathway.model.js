@@ -43,5 +43,4 @@ var newPathwaySchema = new Schema({
         }
     ]
 });
-
 module.exports = mongoose.model('pathways', newPathwaySchema);

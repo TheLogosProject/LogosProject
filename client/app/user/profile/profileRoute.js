@@ -7,7 +7,12 @@ angular.module('app')
     .state('profile', {
       url: '/profile',
       templateUrl: 'app/user/profile/profile.html',
-      controller: 'profileCtrl'
+      controller: 'profileCtrl',
+      resolve: {
+        userObj: function(Auth) {
+            return Auth.getCurrentUser().$promise;
+        }
+      }
     });
   });
 
