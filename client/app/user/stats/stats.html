@@ -70,8 +70,9 @@
           <button ng-hide="checkGoals()" class="waves-effect btn blue darken-3" ng-click="goalAdd=true">Add Goal</button>
 
              <div ng-show="goalAdd">
-                 <input class="validate" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
-                 <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; addGoal()">Submit</a>
+                 <input class="validate" ng-change="checkDuplicate()" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
+                 <a class="waves-effect btn-flat grey lighten-2" ng-if="trueOrFalse" ng-click="goalAdd=false; addGoal()">Submit</a>
+                 <div class="warn" ng-show="warning">CANNOT SUBMIT DUPLICATE GOAL!</div>
              </div>
           </div>
           <!-- end of adding goal section -->
