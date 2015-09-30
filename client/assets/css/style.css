@@ -99,6 +99,12 @@
     margin-right: 1%;
   }
 
+  /* padding for accordion on logos fundamentals page */
+  .accordion-padding {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
   /* START of mobile */
   @media only screen and (max-width: 992px) {
     .parallax-container .section {
