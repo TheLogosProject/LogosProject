@@ -57,6 +57,10 @@
     border-bottom: 1px solid #0C61AF;
     box-shadow: 0 1px 0 0 #0C61AF;
   }
+  .input-field input[type=email].invalid {
+   border-bottom: 1px solid red;
+   box-shadow: 0 1px 0 0 red;
+ }
   .icon-block {
     padding: 0 15px;
   }
@@ -94,7 +98,7 @@
     width: 33px;
     margin-right: 1%;
   }
-  
+
   /* START of mobile */
   @media only screen and (max-width: 992px) {
     .parallax-container .section {

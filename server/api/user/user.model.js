@@ -14,7 +14,7 @@
         email: { type: String, lowercase: true },
         hashedPassword: String,
         provider: String,
-        role: { type: String, default: "admin" },
+        role: { type: String, default: "user" },
         salt: String,
         gender: { type: String, default: "" },
         age: { type: Number, default: 0 },
