@@ -1,24 +1,24 @@
-app.controller('logosKnowledgeCtrl', function ($scope, $stateParams, $timeout, Auth, logosKnowledgeService) {
+app.controller('logosKnowledgeCtrl', function ($scope, $stateParams, $timeout, Auth, logosKnowledgeService, userObj) {
 
-    var currentUser = Auth.getCurrentUser();
+    $scope.userObject = userObj;
 
     // bring logos knowledge questions onto scope
-    $scope.knowledgeEvaluations = currentUser.pathways[0].stages[1].evaluations;
+    $scope.knowledgeEvaluations = $scope.userObject.pathways[0].stages[1].evaluations;
 
     // bring percentageComplete # into scope for circle
-    $scope.logosPercent = Math.ceil(currentUser.pathways[0].completion.amount_completed);
+    $scope.logosPercent = Math.ceil($scope.userObject.pathways[0].completion.amount_completed);
 
     //unlock appropriate tabs
-    $scope.step1 = currentUser.pathways[0].stages[0].complete;
-    $scope.step2 = currentUser.pathways[0].stages[1].complete;
+    $scope.step1 = $scope.userObject.pathways[0].stages[0].complete;
+    $scope.step2 = $scope.userObject.pathways[0].stages[1].complete;
 
     // set up variables to route knowledge answer to write endpoint
-    var pathwayID = currentUser.pathways[0]._id;
-    var stageID = currentUser.pathways[0].stages[1]._id;
+    var pathwayID = $scope.userObject.pathways[0]._id;
+    var stageID = $scope.userObject.pathways[0].stages[1]._id;
 
     // create knowledgeInfo object to send to endpoint
     $scope.knowledgeInfo = {
-        userID: currentUser._id,
+        userID: $scope.userObject._id,
         pathwayID: pathwayID,
         stageID: stageID
     };
