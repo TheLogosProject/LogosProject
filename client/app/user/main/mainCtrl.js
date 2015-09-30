@@ -4,21 +4,23 @@
 angular.module('app')
 .controller('mainCtrl', function ($scope, $location, Auth, profileSvc, userObj) {
 
-  var that = this;
-  that.isAdmin = Auth.isAdmin;
-
+  // function to return user
   $scope.getCurrentUser = Auth.getCurrentUser;
 
+  // userObj for modal and main page
+  $scope.userObject = userObj;
 
+  // get percentage data for stage circles
   $scope.logosPercent = Math.ceil($scope.getCurrentUser().pathways[0].completion.amount_completed);
+
+  // below percentages are commented out until programs are activated
   // $scope.pathosPercent = Math.ceil($scope.user.pathways[1].completion.amount_completed);
   // $scope.ethosPercent = Math.ceil($scope.user.pathways.ethos.completion.amount_completed);
 
   //disable button unless Logos is completed
   $scope.pathos = $scope.getCurrentUser().pathways[0].stages[1].complete;
 
-
-  //Modal
+  // create new userObj to send thru submitModal function 
   var userObj = Auth.getCurrentUser();
   $scope.userInfo = {
     _id: userObj._id,
@@ -27,8 +29,8 @@ angular.module('app')
     }
   };
 
+  // create submit function to save answer on userObj
   $scope.submitModal = function (userInfo) {
-    console.log("!!!!!!", userInfo);
     profileSvc.updateUserData(userInfo).then(function (response) {
           Materialize.toast('Answers added successfully', 5000);
       }, function (err) {

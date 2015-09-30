@@ -1,6 +1,7 @@
 app.controller('logosLandingCtrl', function ($scope, $stateParams, Auth, $location) {
   $scope.getCurrentUser = Auth.getCurrentUser;
 
+  // function to route user to correct stage, based on level of completeness
   $scope.getCurrentUser().$promise.then(function(data){
     if (data.pathways[0].stages[0].complete === false) {
       return $location.path('/path/logos/fundamentals')
@@ -16,29 +17,3 @@ app.controller('logosLandingCtrl', function ($scope, $stateParams, Auth, $locati
     }
   });
 });
-
-
-  //
-  // return Auth.getCurrentUser().then(function(response) {
-  //   console.log(response);
-  //   if (response.stages[0].complete === false) {
-  //     return '/path/logos/fundamentals'
-  //   }
-  //   else if (response.stages[0].complete && response.stages[1].complete && response.stages[2].complete === true) {
-  //     return '/path/logos/complete'
-  //   }
-  //   else if (response.stages[0].complete && response.stages[1].complete === true) {
-  //     return '/path/logos/physical'
-  //   }
-  //   else {
-  //     return '/path/logos/knowledge'
-  //   }
-  // })
-  //
-  //
-  // resolve: {
-  //   onPageLoad: function($location, logosLandingService, Auth) {
-  //     return Auth.getCurrentUser()
-  //
-  //   }
-  // }

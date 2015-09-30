@@ -1,4 +1,4 @@
-# Logos Academy
+# [Logos Academy] (http://www.TheLogosAcademy.com)
 
 ## Table of Contents
 
@@ -24,7 +24,7 @@ The Logos Academy is a Full Stack (MEAN) web application that on-boards new Cros
   * Gym admin can configure their gym's programming tailored to their gym's specific needs
   * Gym admin can track their members' progress
   * Gym admin can enable admin status for other members and disable accounts
-  
+
 ####1.3 Technologies
   * HTML/CSS
   * Materialize CSS

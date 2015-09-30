@@ -204,7 +204,6 @@ module.exports = function (grunt) {
           },
           callback: function (nodemon) {
             nodemon.on('log', function (event) {
-              console.log(event.colour);
             });
 
             // opens browser on initial server start
@@ -352,8 +351,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
-            'assets/images/{,*/}*.{webp}',
-            'assets/fonts/**/*',
+            'assets/**/*',
             'index.html'
           ]
         }, {

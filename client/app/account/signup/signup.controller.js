@@ -10,7 +10,7 @@
 
       $scope.getUser = function () {
         Auth.getCurrentUser();
-        console.log('test')
+        console.log('test');
       };
 
       //Drop Down

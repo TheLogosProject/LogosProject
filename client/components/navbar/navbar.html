@@ -4,7 +4,10 @@
       <img class="nav-logo" height="60px" src="assets/logo.svg" width="60px"/>
     </a>
     <a class="brand-logo" id="logo-container" ng-href="/home">
-    <font size="5px" color="#0277BD">Logos</font><font size="5px">Academy</font></a>
+      <font color="#0277BD" size="5px">Logos</font>
+      <font size="5px">Academy</font>
+    </a>
+    <!-- Show appropriate profile image based on the role of the user (user, admin, master) -->
     <img alt="Contact Person" class="right responsive-img circle navProfPic" ng-show="getCurrentUser().name.first && !getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/userAvatar.svg" width="36px">
     <img alt="Contact Person" class="right responsive-img circle navProfPic" ng-show="getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/adminAvatar.svg" width="36px">
     <img alt="Contact Person" class="right responsive-img circle navProfPic" ng-show="getCurrentUser().is_master && !getCurrentUser().is_admin" src="assets/masterAvatar.svg" width="36px">
@@ -160,7 +163,7 @@
         <li>
           <a ng-href="/profile">Update Profile</a>
         </li>
-          <li class="divider"></li>
+        <li class="divider"></li>
         <li>
           <a ng-click="logout()">Logout</a>
         </li>
@@ -174,7 +177,7 @@
         <li>
           <a ng-href="/stats">Stats</a>
         </li>
-          <li class="divider"></li>
+        <li class="divider"></li>
         <li>
           <a ng-href="/gym/manage/{{getCurrentUser().gym}}">Manage Gym</a>
         </li>
@@ -188,7 +191,7 @@
         <li>
           <a ng-href="/gym/coach/{{getCurrentUser().gym}}">Coach's Hub</a>
         </li>
-          <li class="divider"></li>
+        <li class="divider"></li>
         <li>
           <a ng-href="/profile">Update Profile</a>
         </li>
@@ -205,7 +208,7 @@
         <li>
           <a ng-href="/stats">Stats</a>
         </li>
-         <li class="divider"></li>
+        <li class="divider"></li>
         <li>
           <a ng-href="/gym/main">Manage Gyms</a>
         </li>
@@ -219,7 +222,7 @@
         <li>
           <a ng-href="/gym/coach/{{getCurrentUser().gym}}">Coach's Hub</a>
         </li>
-         <li class="divider"></li>
+        <li class="divider"></li>
         <li>
           <a ng-href="/profile">Update Profile</a>
         </li>
