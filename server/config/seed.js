@@ -7,8 +7,8 @@ var User = require('../api/user/user.model');
 var Gym = require('../api/gym/gym.model');
 var Pathway = require('../api/pathway/pathway.model');
 
-// Pathway.find({}).then(function (res) {
-    // if (res.length === 0) {
+Pathway.find({}).then(function (res) {
+    if (res.length === 0) {
         Pathway.create(
             {
                 "pathway": [
@@ -1073,5 +1073,5 @@ var Pathway = require('../api/pathway/pathway.model');
                     });
 
             });
-    // }
-// });
+    }
+});
