@@ -7,6 +7,11 @@ angular.module('app')
       url: '/path/logos/fundamentals',
       // will need to tie this to username for unique view for each member
       templateUrl: 'app/user/path/logos/fundamentals/logosFundamentals.html',
-      controller: 'logosFundamentalsCtrl'
+      controller: 'logosFundamentalsCtrl',
+      resolve: {
+        userObj: function(Auth) {
+            return Auth.getCurrentUser().$promise;
+        }
+      }
     });
   });
