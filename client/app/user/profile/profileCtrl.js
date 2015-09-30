@@ -1,11 +1,8 @@
 (function () {
   'use strict';
 
-  app.controller('profileCtrl', function ($scope, $stateParams, $location, profileSvc, Auth) {
+  app.controller('profileCtrl', function ($scope, $stateParams, $location, profileSvc, Auth, userObj) {
 
-    //Get user profile information
-
-    var userObj = Auth.getCurrentUser();
     $scope.gymName = userObj.gym.name;
     $scope.getCurrentUser = Auth.getCurrentUser;
     $scope.goals = userObj.goals;
