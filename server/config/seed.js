@@ -1010,11 +1010,11 @@ var Pathway = require('../api/pathway/pathway.model');
                                 .exec(function (err, response) {
                                     var newUserObj = {
                                         "name": {
-                                            "first": "Chaco",
-                                            "last": "Taco"
+                                            "first": "Chase",
+                                            "last": "Comrie"
                                         },
-                                        "email": "test@test.com",
-                                        "password": "abc",
+                                        "email": "dercomrie7777@gmail.com",
+                                        "password": "coachchaco",
                                         "provider": "local",
                                         "role": "admin",
                                         "is_admin": false,
