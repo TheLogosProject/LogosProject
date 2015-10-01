@@ -83,12 +83,6 @@
                 Your Goals
               </h5>
             </div>
-            <!-- section for adding goals -->
-            <button ng-hide="checkGoals()" class="waves-effect btn blue darken-3" ng-click="goalAdd=true">Add Goal</button>
-               <div ng-show="goalAdd">
-                   <input class="validate" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
-                   <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; addGoal()">Submit</a>
-               </div>
             <!-- end of adding goal section -->
           </div>
           <div class="row" ng-repeat="goal in goals | limitTo: 3">
@@ -103,6 +97,13 @@
               </a></p>
             </div>
           </div>
+          <!-- section for adding goals -->
+          <button ng-hide="checkGoals()" class="waves-effect btn blue darken-3" ng-click="goalAdd=true">Add Goal</button>
+            <div ng-show="goalAdd">
+                <input class="validate" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
+                <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; checkDuplicate()">Submit</a>
+            </div>
+            <div class="warn" ng-if="warning">CANNOT SUBMIT DUPLICATE GOAL!</div>
               <!-- <ol>
                             <li ng-repeat="goal in goals">{{goal}}
 

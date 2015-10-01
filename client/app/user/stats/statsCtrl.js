@@ -21,17 +21,26 @@
 
             var userObj = Auth.getCurrentUser();
             $scope.goals = userObj.goals;
+            var addGoal = function () {
+                userObj.goals.push($scope.newGoal);
+                profileSvc.updateUserData(userObj);
+                $scope.newGoal = "";
+            };
 
             $scope.checkDuplicate = function () {
-                for (var i = 0; i < $scope.goals.length; i++) {
+                var length = $scope.goals.length;
+                var i = 0;
+                while (i < length) {
                     if ($scope.goals[i] === $scope.newGoal) {
-                        $scope.trueOrFalse = false;
                         $scope.warning = true;
-                    } else {
-                        $scope.trueOrFalse = true;
-                        $scope.warning = false;
+                        $scope.newGoal = "";
+                        i = length + 1;
+                        return;
                     }
+                    i++;
                 }
+                $scope.warning = false;
+                addGoal();
             };
 
 
@@ -47,11 +56,6 @@
 
             //for ethos badge when ready
             // $scope.ethosBadge = $scope.getCurrentUser().pathways[2].completion.complete;
-            $scope.addGoal = function () {
-                userObj.goals.push($scope.newGoal);
-                profileSvc.updateUserData(userObj);
-                $scope.newGoal = "";
-            };
 
             $scope.deleteGoal = function (goal) {
                 var index = $scope.goals.indexOf(goal);
