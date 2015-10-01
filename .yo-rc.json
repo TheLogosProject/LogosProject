@@ -13,8 +13,6 @@
       "html": true,
       "sass": true,
       "uirouter": true,
-      "bootstrap": true,
-      "uibootstrap": true,
       "socketio": true,
       "mongoose": true,
       "auth": true,

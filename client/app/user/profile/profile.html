@@ -91,7 +91,7 @@
                </div>
             <!-- end of adding goal section -->
           </div>
-          <div class="row" ng-repeat="goal in goals | limitTo: 3">
+          <div class="row" ng-repeat="goal in goals track by $index | limitTo: 3">
             <div class="col s4 m4 l4">
               <p class="left">{{$index + 1}}</p>
             </div>
