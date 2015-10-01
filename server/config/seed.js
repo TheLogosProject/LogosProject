@@ -8,7 +8,7 @@ var Gym = require('../api/gym/gym.model');
 var Pathway = require('../api/pathway/pathway.model');
 
 // Pathway.find({}).then(function (res) {
-    // if (res.length === 0) {
+//     if (res.length === 0) {
         Pathway.create(
             {
                 "pathway": [
@@ -1016,6 +1016,7 @@ var Pathway = require('../api/pathway/pathway.model');
                                         "email": "test@test.com",
                                         "password": "abc",
                                         "provider": "local",
+                                        "role": "admin",
                                         "is_admin": false,
                                         "is_master": true
                                     };
@@ -1073,5 +1074,5 @@ var Pathway = require('../api/pathway/pathway.model');
                     });
 
             });
-    // }
+//     }
 // });
