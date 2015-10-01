@@ -104,7 +104,7 @@ var Pathway = require('../api/pathway/pathway.model');
                                                 }
                                             ],
                                             "explanation":
-                                            "<div> The deadlift, like the squat, is essential functional movement and carries a potent hormonal punch.This is core training like no other. </div><br><h6>Coaching Points: </h6><br><div>1. Look straight ahead <br>2. Keep back arched <br>3. Arms don't pull, they're just straps <br>4. Bar travels along legs <br>5. Push with the heels <br></div><p>",
+                                            "<div> The deadlift, like the squat, is essential functional movement and carries a potent hormonal punch.This is core training like no other. </div><br><h6>Coaching Points: </h6><br><div>1. Look straight ahead <br>2. Keep back arched <br>3. Arms don't pull, they're just straps <br>4. Bar travels along legs <br>5. Push with the heels <br></div>",
                                             "answer": ""
                                         },
                                         "total_to_complete": 0,

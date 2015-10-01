@@ -8,7 +8,15 @@
             var userObj = Auth.getCurrentUser();
             if (userObj.is_master) {
                 membersLandingService.getAllUsers().then(function (response) {
-                    $scope.users = response;
+                  for (var i = 0; i < response.length; i++) {
+                    if (response[i]["currently_active"] === true) {
+                      response[i]["currently_active"] = "Yes";
+                    } else {
+                      response[i]["currently_active"] = "No";
+                    }
+                  }
+                  $scope.users = response;
+                  console.log($scope.users);
                 });
             } else {
                 var gymID = userObj.gym;

@@ -27,7 +27,7 @@ exports.create = function (req, res, next) {
     //SAVE USER OBJECT
     newUser.save(function (err, response) {
         if (err) {
-            res.send(err);
+            return validationError(res, err);
         } else {
             //FIND THAT USER AND SAVE _ID
             var userID = response._id;

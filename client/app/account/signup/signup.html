@@ -6,7 +6,7 @@
 
       <h4 class="center light-blue-text text-darken-3">Register</h4>
 
-      <form class="form" name="form" ng-submit="register(form)" novalidate>
+      <form class="form" name="form" ng-submit="register(form.$valid)" novalidate>
 
         <div class="row">
           <div class="input-field col s12">
@@ -14,7 +14,7 @@
               <label for="First Name:">First Name:</label>
 
               <input class="form-control" name="name" ng-model="user.name.first" required type="text"/>
-              <p class="help-block" ng-show="form.name.first.$error.required && submitted">A First name is required</p>
+              <p class="help-block red-text" ng-show="form.name.first.$error.required && submitted">A First name is required</p>
             </div>
           </div>
         </div>
@@ -25,16 +25,19 @@
               <label for="Last Name:">Last Name:</label>
 
               <input class="form-control" name="name" ng-model="user.name.last" required type="text"/>
-              <p class="help-block" ng-show="form.name.$error.required && submitted">A Last Name is required</p>
+              <p class="help-block red-text" ng-show="form.name.$error.required && submitted">A Last Name is required</p>
             </div>
           </div>
         </div>
 
         <div class="col s12">
-          <select class="browser-default" ng-model="user.gym" ng-options="options.value as options.label for options in gymOptions">
+          <select class="browser-default" required ng-model="user.gym" ng-options="options.value as options.label for options in gymOptions">
             <option disabled selected value="">Select Your Gym</option>
           </select>
         </div>
+      <p>
+        &nbsp;
+      </p>
 
         <div class="row">
           <div class="input-field col s12">
@@ -43,11 +46,11 @@
 
               <input class="form-control" mongoose-error name="email" ng-model="user.email" required type="email"/>
 
-              <p class="help-block" ng-show="form.email.$error.email && submitted">Doesn't look like a valid email.</p>
+              <p class="help-block red-text" ng-show="form.email.$error.email && submitted">Doesn't look like a valid email.</p>
 
-              <p class="help-block" ng-show="form.email.$error.required && submitted">What's your email address?</p>
+              <p class="help-block red-text" ng-show="form.email.$error.required && submitted">What's your email address?</p>
 
-              <p class="help-block" ng-show="form.email.$error.mongoose">
+              <p class="help-block red-text" ng-show="form.email.$error.mongoose">
                 {{ errors.email }}
               </p>
             </div>
@@ -78,7 +81,7 @@
               </div>
           </div>
 
-        <button class="btn waves-effect waves blue darken-3 center" type="submit" ng-click="getUser()">Register</button>
+        <button class="btn waves-effect waves blue darken-3 center" type="submit" ng-disabled="form.$invalid" ng-click="getUser()">Register</button>
       </form>
 
       <div class="row">
@@ -108,9 +111,9 @@
        var password2 = $("#password2").val();
 
          if (password1 == password2) {
-          $("#validate-status").text("Password is valid!");
+          $("#validate-status").text("Password is valid!").css('color', 'green');
          } else {
-          $("#validate-status").text("Passwords DO NOT match!");
+          $("#validate-status").text("Passwords DO NOT match!").css('color', 'red');
          }
       }
   </script>
