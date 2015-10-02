@@ -1,20 +1,21 @@
 <div class="container">
-    <div class="section">
+  <div class="section">
 
-        <!-- Profile Photo and Name -->
-        <div class="row">
-            <div class="col s12 center">
-              <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().name.first && !getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/userAvatar.svg" width="120px">
-              <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/adminAvatar.svg" width="120px">
-              <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().is_master && !getCurrentUser().is_admin" src="assets/masterAvatar.svg" width="120px">
-            </div>
-            <div class="col s12 center">
-                <h5>{{getCurrentUser().name.first}} {{getCurrentUser().name.last}}</h5>
-            </div>
-        </div>
+    <!-- Profile Photo and Name -->
+    <div class="row">
+      <div class="col s12 center">
+        <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().name.first && !getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/userAvatar.svg" width="120px">
+        <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/adminAvatar.svg" width="120px">
+        <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().is_master && !getCurrentUser().is_admin" src="assets/masterAvatar.svg" width="120px">
+      </div>
+      <div class="col s12 center">
+        <h5>{{getCurrentUser().name.first}}
+          {{getCurrentUser().name.last}}</h5>
+      </div>
+    </div>
 
-        <!-- Stats - COMMENT OUT FOR NOW, ADD BACK IN LATER -->
-        <!-- <div class="row">
+    <!-- Stats - COMMENT OUT FOR NOW, ADD BACK IN LATER -->
+    <!-- <div class="row">
         	<div class="col s12 m4 center">
         		<h6> Evaluations Complete</h6>
         		<h4> 47 </h4>
@@ -32,62 +33,74 @@
         	</div>
         </div> -->
 
-        <!-- Badges -->
-        <div class="row">
-	        <div class="col s12 center">
-	        	<h5> Your Badges </h5>
-            <br>
-	        </div>
-	        <div class="col s12 m4 center">
-            <img class="badge" ng-if="fundamentalsBadge" src="assets/badges_stats/fundamentals_black.svg">
-            <img class="badge" ng-if="!fundamentalsBadge" src="assets/badges_stats/fundamentals_gray.svg">
-	        	<h5> Fundamentals </h5>
-	        </div>
+    <!-- Badges -->
+    <div class="row">
+      <div class="col s12 center">
+        <h5>
+          Your Badges
+        </h5>
+        <br>
+      </div>
+      <div class="col s12 m4 center">
+        <img class="badge" ng-if="fundamentalsBadge" src="assets/badges_stats/fundamentals_black.svg">
+        <img class="badge" ng-if="!fundamentalsBadge" src="assets/badges_stats/fundamentals_gray.svg">
+        <h5>
+          Fundamentals
+        </h5>
+      </div>
 
-	        <div class="col s12 m4 center">
-            <img class="badge" ng-if="knowledgeBadge" src="assets/badges_stats/knowledge_black.svg">
-            <img class="badge" ng-if="!knowledgeBadge" src="assets/badges_stats/knowledge_gray.svg">
-	        	<h5> Knowledge </h5>
-	        </div>
+      <div class="col s12 m4 center">
+        <img class="badge" ng-if="knowledgeBadge" src="assets/badges_stats/knowledge_black.svg">
+        <img class="badge" ng-if="!knowledgeBadge" src="assets/badges_stats/knowledge_gray.svg">
+        <h5>
+          Knowledge
+        </h5>
+      </div>
 
-	        <div class="col s12 m4 center">
-            <img class="badge" ng-if="physicalBadge" src="assets/badges_stats/knowledge_black.svg">
-            <img class="badge" ng-if="!physicalBadge" src="assets/badges_stats/knowledge_gray.svg">
-	        	<h5> Physical </h5>
-	        </div>
-        </div>
-
-
-        <!-- Goals -->
-        <div class="row">
-          <div class="col l8 center offset-l2 m12 s12">
-            <h5>
-              <br>
-              Your Goals
-            </h5>
-            <!--goal section -->
-            <div class="row center" ng-repeat="goal in goals | limitTo: 3">
-              <div class="col s4 m4 l4">
-                <p class="left">{{$index + 1}}</p>
-              </div>
-              <div class="col s4 m4 l4">
-                <p class="center">{{goal}}</p>
-              </div>
-              <div class="col s4 m4 l4">
-                <p><a href="#" ng-click="deleteGoal(goal)"><i class="material-icons right">delete</i>
-                </a></p>
-              </div>
-            </div>
-            <!-- section for adding goals -->
-            <div class="center">
-               <button ng-hide="checkGoals()" class="waves-effect btn blue darken-3" ng-click="goalAdd=true">Add Goal</button>
-               <div ng-show="goalAdd">
-                   <input class="validate" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
-                   <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; checkDuplicate()">Submit</a>
-               </div>
-               <div class="warn" ng-if="warning">CANNOT SUBMIT DUPLICATE GOAL!</div>
-            </div>
-          <!-- end of adding goal section -->
-        </div>
+      <div class="col s12 m4 center">
+        <img class="badge" ng-if="physicalBadge" src="assets/badges_stats/knowledge_black.svg">
+        <img class="badge" ng-if="!physicalBadge" src="assets/badges_stats/knowledge_gray.svg">
+        <h5>
+          Physical
+        </h5>
+      </div>
     </div>
+
+    <!-- Goals -->
+
+    <div class="row">
+      <div class="col l8 center offset-l2 m12 s12">
+        <h5>
+          <br>
+          Your Goals
+        </h5>
+        <!--goal section -->
+        <div class="row center" ng-repeat="goal in goals | limitTo: 3">
+          <div class="col s4 m4 l4">
+            <p class="left">{{$index + 1}}</p>
+          </div>
+          <div class="col s4 m4 l4">
+            <p class="center">{{goal}}</p>
+          </div>
+          <div class="col s4 m4 l4">
+            <p>
+              <a href="#" ng-click="deleteGoal(goal)">
+                <i class="material-icons right">delete</i>
+              </a>
+            </p>
+          </div>
+        </div>
+        <!-- section for adding goals -->
+        <div class="center">
+          <button class="waves-effect btn blue darken-3" ng-click="goalAdd=true" ng-hide="checkGoals()">Add Goal</button>
+          <div ng-show="goalAdd">
+            <input class="validate" id="userGoal" ng-model="newGoal" placeholder="Enter goal" required type="text">
+            <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; checkDuplicate()">Submit</a>
+          </div>
+          <div class="warn" ng-if="warning">CANNOT SUBMIT DUPLICATE GOAL!</div>
+        </div>
+        <!-- end of adding goal section -->
+      </div>
+    </div>
+  </div>
 </div>

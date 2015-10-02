@@ -6,10 +6,10 @@
         <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().is_admin && !getCurrentUser().is_master" src="assets/adminAvatar.svg" width="120px">
         <img alt="Contact Person" class="responsive-img circle" ng-show="getCurrentUser().is_master && !getCurrentUser().is_admin" src="assets/masterAvatar.svg" width="120px">
       </div>
-
-      <br>
-      <!-- Left in place for future profile pic add/delete implementation -->
-      <!--<div class="col l4 center offset-l4 s10 offset-m1 m10 offset-s1">
+    </div>
+    <br>
+    <!-- Left in place for future profile pic add/delete implementation -->
+    <!--<div class="col l4 center offset-l4 s10 offset-m1 m10 offset-s1">
                     <form action="#">
                         <div class="file-field input-field">
                             <div class="waves-effect btn-flat grey lighten-2">
@@ -23,99 +23,98 @@
                     </form>
                 </div>
             </div>-->
-      <div class="col s6 center offset-s3">
-        <h4>{{userInfo.name.first}}
-          {{userInfo.name.last}}</h4>
-      </div>
-      <!-- </div> -->
-      <div>&nbsp</div>
-      <div>&nbsp</div>
+    <div class="col s6 center offset-s3">
+      <h4>{{userInfo.name.first}}
+        {{userInfo.name.last}}</h4>
+    </div>
+    <!-- </div> -->
+    <div>&nbsp</div>
+    <div>&nbsp</div>
+
+      <!-- Athlete Info -->
+      <div class="col l8 center offset-l2 m12 s12">
       <div class="row">
-        <!-- Athlete Info -->
-        <div class="col l8 center offset-l2 m12 s12">
-          <!--beginning of form-->
-          <form name="profileForm">
-            <div class="input-field col s12">
-              <input class="validate" id="firstName" ng-model="userInfo.name.first" type="text">
-              <label class="active" for="firstName">First Name</label>
-            </div>
-            <div class="input-field col s12">
-              <input class="validate" id="lastName" ng-model="userInfo.name.last" type="text">
-              <label class="active" for="lastName">Last Name</label>
-            </div>
-            <div class="input-field col s12">
-              <input class="validate" id="email" ng-model="userInfo.contact_info.email" type="email">
-              <label class="active" for="email">E-mail</label>
-            </div>
-            <div class="input-field col s12">
-              <input class="validate" id="phone" ng-model="userInfo.contact_info.phone" type="text">
-              <label class="active" for="phone">Phone</label>
-            </div>
-            <br>
-            <h6>Gender:</h6>
-            <input class="input-field" id="male" name="group1" ng-model="userInfo.gender" type="radio" value="Male"/>
-            <label for="male">Male</label>
-            <input class="input-field" id="female" name="group1" ng-model="userInfo.gender" type="radio" value="Female"/>
-            <label for="female">Female</label>
-            <br>
-            <div class="input-field col s6">
-              <input class="validate" id="heightFeet" ng-model="userInfo.height.feet" type="text">
-              <label class="active" for="heightFeet">Height (Feet)</label>
-            </div>
-            <div class="input-field col s6">
-              <input class="validate" id="heightInches" ng-model="userInfo.height.inches" type="text">
-              <label class="active" for="heightInches">Height (Inches)</label>
-            </div>
-            <div class="input-field col s12">
-              <input class="validate" id="weight" ng-model="userInfo.weight" type="text">
-              <label class="active" for="weight">Weight (lbs)</label>
-              <button class="btn waves-effect waves-light blue darken-3" id="submit-button" ng-click="updateProfile(userInfo)" type="submit">Update</button>
-            </form>
-            <a class="btn waves-effect waves red darken-3 center modal-close" href="/main" type="submit">Cancel</a>
-            <!--end of form-->
+        <!--beginning of form-->
+        <form name="profileForm">
+          <div class="input-field col s12">
+            <input class="validate" id="firstName" ng-model="userInfo.name.first" type="text">
+            <label class="active" for="firstName">First Name</label>
           </div>
-
-          <!-- Goals -->
-          <div class="row">
-            <div class="col s12">
-              <h5>
-                <br>
-                Your Goals
-              </h5>
-            </div>
-            <!-- end of adding goal section -->
+          <div class="input-field col s12">
+            <input class="validate" id="lastName" ng-model="userInfo.name.last" type="text">
+            <label class="active" for="lastName">Last Name</label>
           </div>
-          <div class="row" ng-repeat="goal in goals track by $index | limitTo: 3">
-            <div class="col s4 m4 l4">
-              <p class="left">{{$index + 1}}</p>
-            </div>
-            <div class="col s4 m4 l4">
-              <p class="center">{{goal}}</p>
-            </div>
-            <div class="col s4 m4 l4">
-              <p><a href="#" ng-click="deleteGoal(goal)"><i class="material-icons right">delete</i>
-              </a></p>
-            </div>
+          <div class="input-field col s12">
+            <input class="validate" id="email" ng-model="userInfo.contact_info.email" type="email">
+            <label class="active" for="email">E-mail</label>
           </div>
-          <!-- section for adding goals -->
-          <button ng-hide="checkGoals()" class="waves-effect btn blue darken-3" ng-click="goalAdd=true">Add Goal</button>
-            <div ng-show="goalAdd">
-                <input class="validate" ng-model="newGoal" id="userGoal" placeholder="Enter goal" required type="text">
-                <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; checkDuplicate()">Submit</a>
-            </div>
-            <div class="warn" ng-if="warning">CANNOT SUBMIT DUPLICATE GOAL!</div>
-              <!-- <ol>
-                            <li ng-repeat="goal in goals">{{goal}}
+          <div class="input-field col s12">
+            <input class="validate" id="phone" ng-model="userInfo.contact_info.phone" type="text">
+            <label class="active" for="phone">Phone</label>
+          </div>
+          <br>
+          <h6>Gender:</h6>
+          <input class="input-field" id="male" name="group1" ng-model="userInfo.gender" type="radio" value="Male"/>
+          <label for="male">Male</label>
+          <input class="input-field" id="female" name="group1" ng-model="userInfo.gender" type="radio" value="Female"/>
+          <label for="female">Female</label>
+          <br>
+          <div class="input-field col s6">
+            <input class="validate" id="heightFeet" ng-model="userInfo.height.feet" type="text">
+            <label class="active" for="heightFeet">Height (Feet)</label>
+          </div>
+          <div class="input-field col s6">
+            <input class="validate" id="heightInches" ng-model="userInfo.height.inches" type="text">
+            <label class="active" for="heightInches">Height (Inches)</label>
+          </div>
+          <div class="input-field col s12">
+            <input class="validate" id="weight" ng-model="userInfo.weight" type="text">
+            <label class="active" for="weight">Weight (lbs)</label>
+          </div>
+          </div>
+            <button class="btn waves-effect waves-light blue darken-3" id="submit-button" ng-click="updateProfile(userInfo)" type="submit">Update</button>
+          </form>
+          <a class="btn waves-effect waves red darken-3 center modal-close" href="/main" type="submit">Cancel</a>
+          <!--end of form-->
+    </div>
 
-                  <a href="#" ng-click="deleteGoal(goal)"><i class="material-icons">delete</i>
-                                </a>
-                            </li>
-                        </ol> -->
-
-
+    <!-- Goals -->
+    <div class="row">
+      <div class="col l8 center offset-l2 m12 s12">
+        <h5>
+          <br>
+          Your Goals
+        </h5>
+        <!--goal section -->
+        <div class="row center" ng-repeat="goal in goals | limitTo: 3">
+          <div class="col s4 m4 l4">
+            <p class="left">{{$index + 1}}</p>
+          </div>
+          <div class="col s4 m4 l4">
+            <p class="center">{{goal}}</p>
+          </div>
+          <div class="col s4 m4 l4">
+            <p>
+              <a href="#" ng-click="deleteGoal(goal)">
+                <i class="material-icons right">delete</i>
+              </a>
+            </p>
+          </div>
         </div>
+        <!-- section for adding goals -->
+        <div class="center">
+          <button class="waves-effect btn blue darken-3" ng-click="goalAdd=true" ng-hide="checkGoals()">Add Goal</button>
+          <div ng-show="goalAdd">
+            <input class="validate" id="userGoal" ng-model="newGoal" placeholder="Enter goal" required type="text">
+            <a class="waves-effect btn-flat grey lighten-2" ng-click="goalAdd=false; checkDuplicate()">Submit</a>
+          </div>
+          <div class="warn" ng-if="warning">CANNOT SUBMIT DUPLICATE GOAL!</div>
+        </div>
+        <!-- end of adding goal section -->
       </div>
     </div>
+
   </div>
+</div>
 
 <!-- //ng-disabled="checkGoals" -->
