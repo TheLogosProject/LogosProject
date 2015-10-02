@@ -1,7 +1,7 @@
 app.controller('logosFundamentalsCtrl', function ($scope, $stateParams, $sce, Auth, logosFundamentalsService, $location, userObj) {
 
   $scope.userObject = userObj;
-
+  
   $scope.user = Auth.getCurrentUser();
   $scope.logosPercent = Math.ceil($scope.userObject.pathways[0]["completion"]["amount_completed"]);
 
